@@ -1,0 +1,5 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(÷ùÊÂ8§çÆéø.
+T
+java:S1172"2Remove this unused method parameter "actionEvent".(Ø˜Ñƒúÿÿÿÿ8§çÆéø.
+u	java:S116"TRename this field "_user_dao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Ãˆşÿÿÿÿ8‘ßÊéø.

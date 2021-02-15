@@ -1,0 +1,6 @@
+
+U	java:S106	"9Replace this use of System.out or System.err by a logger.(š¿Ì¤8†«Ÿéø.
+Z
+java:S1854"8Remove this useless assignment to local variable "user".(ÆÀêøÿÿÿÿ8ŠŠ£éø.
+K
+java:S1481")Remove this unused "user" local variable.(ÆÀêøÿÿÿÿ8ŠŠ£éø.
