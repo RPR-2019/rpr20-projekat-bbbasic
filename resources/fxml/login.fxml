@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="290.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LogInController">
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="290.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@/css/validacija.css" />
+   </stylesheets>
    <children>
-      <TextField minWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" GridPane.columnIndex="1" />
+      <TextField fx:id="fldKorisnickoIme" minWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" GridPane.columnIndex="1" />
       <Label text="Korisničko ime:" />
       <Label text="Lozinka:" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="291.0" text="Prijava" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-      <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="btnPrijava" mnemonicParsing="false" onAction="#clickPrijava" prefHeight="25.0" prefWidth="291.0" text="Prijava" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    </children>
    <columnConstraints>
       <ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
