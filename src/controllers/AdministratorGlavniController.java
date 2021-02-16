@@ -41,7 +41,7 @@ public class AdministratorGlavniController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/uposlenik.fxml"));
             //trece ce biti usersDAO.tehnickipregledi()
-            UposlenikController uposlenikController = new UposlenikController(null, usersDAO.uposlenici());
+            UposlenikController uposlenikController = new UposlenikController(null);
             loader.setController(uposlenikController);
             root = loader.load();
             stage.setTitle("Uposlenik");

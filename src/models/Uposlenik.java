@@ -9,14 +9,14 @@ public class Uposlenik {
     private String prezime;
     private String korisnickoIme;
     private String lozinka;
-    private Date datumRodjenja;
-    private Date datumZaposlenja;
+    private LocalDate datumRodjenja;
+    private LocalDate datumZaposlenja;
     private boolean pristup = false;
 
     public Uposlenik() {
     }
 
-    public Uposlenik(int id, String ime, String prezime, String lozinka, String korisnickoIme, Date datumRodjenja, Date datumZaposlenja, boolean pristup) {
+    public Uposlenik(int id, String ime, String prezime, String lozinka, String korisnickoIme, LocalDate datumRodjenja, LocalDate datumZaposlenja, boolean pristup) {
         this.id = id;
         this.ime = ime;
         this.prezime = prezime;
@@ -68,19 +68,19 @@ public class Uposlenik {
         this.lozinka = lozinka;
     }
 
-    public Date getDatumRodjenja() {
+    public LocalDate getDatumRodjenja() {
         return datumRodjenja;
     }
 
-    public void setDatumRodjenja(Date datumRodjenja) {
+    public void setDatumRodjenja(LocalDate datumRodjenja) {
         this.datumRodjenja = datumRodjenja;
     }
 
-    public Date getDatumZaposlenja() {
+    public LocalDate getDatumZaposlenja() {
         return datumZaposlenja;
     }
 
-    public void setDatumZaposlenja(Date datumZaposlenja) {
+    public void setDatumZaposlenja(LocalDate datumZaposlenja) {
         this.datumZaposlenja = datumZaposlenja;
     }
 
@@ -94,6 +94,6 @@ public class Uposlenik {
 
     @Override
     public String toString() {
-        return ime + " " + prezime + " " + datumZaposlenja.toLocalDate();
+        return ime + " " + prezime + " " + datumZaposlenja.toString();
     }
 }

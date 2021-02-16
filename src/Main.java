@@ -4,14 +4,22 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.sql.SQLException;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         InitDB initDB = new InitDB();
-        initDB.obrisiSve();
+        try {
+            initDB.obrisiSve();
+        }
+        catch (SQLException e) {
+
+        }
         initDB.kreirajBazu();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
@@ -19,6 +27,7 @@ public class Main extends Application {
         loader.setController(ctrl);
         Parent root = loader.load();
         primaryStage.setTitle("Prijava");
+        primaryStage.getIcons().add(new Image("/img/icon.jpg"));
         primaryStage.setScene(new Scene(root, 335, 169));
         primaryStage.setResizable(false);
         primaryStage.show();

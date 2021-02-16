@@ -10,7 +10,11 @@ import javafx.stage.Stage;
 import models.TehnickiPregled;
 import models.Uposlenik;
 
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 
 public class UposlenikController {
     private UsersDAO usersDAO;
@@ -26,16 +30,13 @@ public class UposlenikController {
     public DatePicker fldDatumRodjenja;
     public  DatePicker fldDatumZaposlenja;
 
-    public UposlenikController(Uposlenik uposlenik, ArrayList<Uposlenik> uposlenici) {
+    public UposlenikController(Uposlenik uposlenik) {
         usersDAO = new UsersDAO();
         this.uposlenik = uposlenik;
-        //, ArrayList<TehnickiPregled> tehnickiPregledi
-        //listTehnickiPregledi = FXCollections.observableArrayList(tehnickiPregledi);
     }
 
     @FXML
     public void initialize() {
-        //choiceTehnicki.setItems(listTehnickiPregledi);
         zauzetoKorisnickoIme.setVisible(false);
 
         if(uposlenik != null) {
@@ -52,7 +53,7 @@ public class UposlenikController {
         stage.close();
     }
 
-    public void clickOk(ActionEvent actionEvent) {
+    public void clickOk(ActionEvent actionEvent) throws ParseException {
         boolean sveOk = true;
 
         //validacija ime
@@ -85,10 +86,38 @@ public class UposlenikController {
 
         //valiadcija koricnickoIme
         if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText()) == false || fldKorisnickoIme.getText().isEmpty()) {
-            zauzetoKorisnickoIme.setVisible(true);
+            System.out.println("Nesta nije ok");
+            if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText()) == false)
+                zauzetoKorisnickoIme.setVisible(true);
             fldKorisnickoIme.getStyleClass().removeAll("poljeIspravno");
             fldKorisnickoIme.getStyleClass().add("poljeNijeIspravno");
             sveOk = false;
+        }
+        else {
+            fldKorisnickoIme.getStyleClass().removeAll("poljeNijeIspravno");
+            fldKorisnickoIme.getStyleClass().add("poljeIspravno");
+        }
+
+        //validacija datumrodjenja
+        if(fldDatumRodjenja.getValue() == null || Period.between(fldDatumRodjenja.getValue(), LocalDate.now()).getYears() < 18) {
+            fldDatumRodjenja.getStyleClass().removeAll("poljeIspravno");
+            fldDatumRodjenja.getStyleClass().add("poljeNijeIspravno");
+            sveOk = false;
+        }
+        else {
+            fldDatumRodjenja.getStyleClass().removeAll("poljeNijeIspravno");
+            fldDatumRodjenja.getStyleClass().add("poljeIspravno");
+        }
+
+        //validacija datumzaposlenja
+        if(fldDatumZaposlenja.getValue() == null || fldDatumZaposlenja.getValue().isAfter(LocalDate.now())) {
+            fldDatumZaposlenja.getStyleClass().removeAll("poljeIspravno");
+            fldDatumZaposlenja.getStyleClass().add("poljeNijeIspravno");
+            sveOk = false;
+        }
+        else {
+            fldDatumZaposlenja.getStyleClass().removeAll("poljeNijeIspravno");
+            fldDatumZaposlenja.getStyleClass().add("poljeIspravno");
         }
 
 
@@ -100,7 +129,10 @@ public class UposlenikController {
         uposlenik.setLozinka(fldLozinka.getText());
         uposlenik.setKorisnickoIme(fldKorisnickoIme.getText());
 
-        //uposlenik.getLetovi().addAll(pomocni);
+
+        uposlenik.setDatumRodjenja(fldDatumRodjenja.getValue());
+        uposlenik.setDatumZaposlenja(fldDatumZaposlenja.getValue());
+
         Stage stage = (Stage) fldIme.getScene().getWindow();
         stage.close();
     }

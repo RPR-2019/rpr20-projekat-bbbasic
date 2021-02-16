@@ -27,8 +27,6 @@ D
 src/dao/BaseDAO.java,9\b\9b36168e2b041f28684c7f555f18d149684d9d06
 I
 src/dao/DBConnection.java,9\f\9f1f33d4ace170612701ede7c56126f74ef2f290
-N
-src/services/DBDateHelper.java,7\3\7356e2a2c0c006322d399ac04bb405651279d985
 C
 src/dao/InitDB.java,c\1\c1ff5cab31e49243ddc4ffb973b93e9d815a2779
 O
@@ -39,3 +37,9 @@ M
 src/services/UserSession.java,9\7\9754649ef78f0e953ce45826972ea1be5a64ec89
 I
 src/models/Uposlenik.java,b\5\b5ec3ed53aa585cc79ae589e4339d611e882e155
+W
+'resources/fxml/administratorglavni.fxml,1\9\19f511e73d984d95d5934bdd6954b0e6a7d33290
+I
+resources/fxml/login.fxml,8\2\82c591fb13b8d561beda7548c6e5f0df218b604c
+L
+resources/css/validacija.css,4\5\456d252823f3eb3248fdbbbe776293b0a8969d8a

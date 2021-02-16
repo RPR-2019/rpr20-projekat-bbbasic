@@ -31,6 +31,8 @@ public class LogInController {
     @FXML
     public void initialize() {
         fldGreska.setVisible(false);
+        fldKorisnickoIme.setText("mehomehic");
+        fldLozinka.setText("lozinka");
     }
 
 
