@@ -37,8 +37,6 @@ M
 src/services/UserSession.java,9\7\9754649ef78f0e953ce45826972ea1be5a64ec89
 I
 src/models/Uposlenik.java,b\5\b5ec3ed53aa585cc79ae589e4339d611e882e155
-W
-'resources/fxml/administratorglavni.fxml,1\9\19f511e73d984d95d5934bdd6954b0e6a7d33290
 I
 resources/fxml/login.fxml,8\2\82c591fb13b8d561beda7548c6e5f0df218b604c
 L

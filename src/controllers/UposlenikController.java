@@ -40,7 +40,12 @@ public class UposlenikController {
         zauzetoKorisnickoIme.setVisible(false);
 
         if(uposlenik != null) {
-            //postavimo sve ukoliko mijenjamo grad hehe
+            fldIme.setText(uposlenik.getIme());
+            fldPrezime.setText(uposlenik.getPrezime());
+            fldLozinka.setText(uposlenik.getLozinka());
+            fldKorisnickoIme.setText(uposlenik.getKorisnickoIme());
+            fldDatumRodjenja.setValue(uposlenik.getDatumRodjenja());
+            fldDatumZaposlenja.setValue(uposlenik.getDatumZaposlenja());
         }
 
     }
@@ -85,9 +90,9 @@ public class UposlenikController {
         }
 
         //valiadcija koricnickoIme
-        if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText()) == false || fldKorisnickoIme.getText().isEmpty()) {
+        if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), uposlenik) == false || fldKorisnickoIme.getText().isEmpty()) {
             System.out.println("Nesta nije ok");
-            if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText()) == false)
+            if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), uposlenik) == false)
                 zauzetoKorisnickoIme.setVisible(true);
             fldKorisnickoIme.getStyleClass().removeAll("poljeIspravno");
             fldKorisnickoIme.getStyleClass().add("poljeNijeIspravno");
@@ -97,6 +102,8 @@ public class UposlenikController {
             fldKorisnickoIme.getStyleClass().removeAll("poljeNijeIspravno");
             fldKorisnickoIme.getStyleClass().add("poljeIspravno");
         }
+        //validacija ako uposlenik nije null korisnickoIme
+
 
         //validacija datumrodjenja
         if(fldDatumRodjenja.getValue() == null || Period.between(fldDatumRodjenja.getValue(), LocalDate.now()).getYears() < 18) {

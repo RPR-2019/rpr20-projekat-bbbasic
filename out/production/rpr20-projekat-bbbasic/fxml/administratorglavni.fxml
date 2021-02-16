@@ -42,8 +42,8 @@
             <VBox prefHeight="266.0" prefWidth="98.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowSpan="3">
                <children>
                   <Button fx:id="btnDodajUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#dodajUposlenika" text="Dodaj Uposlenika" />
-                  <Button minHeight="25.0" minWidth="120.0" mnemonicParsing="false" text="Obriši Uposlenika" />
-                  <Button minHeight="25.0" minWidth="120.0" mnemonicParsing="false" text="Izmijeni Uposlenika" />
+                  <Button fx:id="brnObrisiUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#actionObrisiUposlenika" text="Obriši Uposlenika" />
+                  <Button fx:id="btnIzmijeniUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#actionIzmijeniUposlenika" text="Izmijeni Uposlenika" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

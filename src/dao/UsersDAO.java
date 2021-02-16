@@ -7,7 +7,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class UsersDAO extends BaseDAO {
-    private PreparedStatement sviUposleniUpit, dajUposlenogUpit, dajUposlenogSaKorisnickimImenomUpit, dodajUposlenogUpit, odrediIdUposlenikaUpit;
+    private PreparedStatement sviUposleniUpit, dajUposlenogUpit, dajUposlenogSaKorisnickimImenomUpit, dodajUposlenogUpit, odrediIdUposlenikaUpit
+                            , obrisiUposlenog, promijeniUposlenogUpit;
 
     protected void kreirajUpite() {
         try {
@@ -16,6 +17,8 @@ public class UsersDAO extends BaseDAO {
             dajUposlenogSaKorisnickimImenomUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik WHERE korisnicko_ime=?");
             dodajUposlenogUpit = dbConnection.getSession().prepareStatement("INSERT INTO uposlenik VALUES(?,?,?,?,?,?,?,?)");
             odrediIdUposlenikaUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM uposlenik");
+            obrisiUposlenog = dbConnection.getSession().prepareStatement("DELETE FROM uposlenik WHERE id=?");
+            promijeniUposlenogUpit = dbConnection.getSession().prepareStatement("UPDATE uposlenik SET ime=?, prezime=?, lozinka=?, korisnicko_ime=?, datum_rodjenja=?, datum_uposlenja=? WHERE id=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -61,16 +64,48 @@ public class UsersDAO extends BaseDAO {
         }
     }
 
-    public boolean zauzetoKorisnickoIme(String korisnickoIme) {
+    public boolean zauzetoKorisnickoIme(String korisnickoIme, Uposlenik uposlenik) {
         try {
             dajUposlenogSaKorisnickimImenomUpit.setString(1, korisnickoIme);
             ResultSet resultSet = dajUposlenogSaKorisnickimImenomUpit.executeQuery();
-            if(resultSet.next())
+            if(resultSet.next()) {
+                if(uposlenik == null) return false;
+                if(resultSet.getInt(1) == uposlenik.getId() && resultSet.getString(5).equals(uposlenik.getKorisnickoIme())) {
+                    return true;
+                }
                 return false;
+            }
+
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public void obrisiUposlenog(Uposlenik uposlenik) {
+        try {
+            obrisiUposlenog.setInt(1, uposlenik.getId());
+            obrisiUposlenog.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void izmijeniUposlenog(Uposlenik uposlenik) {
+        try {
+            promijeniUposlenogUpit.setString(1, uposlenik.getIme());
+            promijeniUposlenogUpit.setString(2, uposlenik.getPrezime());
+            promijeniUposlenogUpit.setString(3, uposlenik.getLozinka());
+            promijeniUposlenogUpit.setString(4, uposlenik.getKorisnickoIme());
+            promijeniUposlenogUpit.setString(5, uposlenik.getDatumRodjenja().toString());
+            promijeniUposlenogUpit.setString(6, uposlenik.getDatumZaposlenja().toString());
+            promijeniUposlenogUpit.setInt(7, uposlenik.getId());
+            promijeniUposlenogUpit.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
