@@ -1,0 +1,15 @@
+
+W
+java:S2209"5Change this instance-reference to a static reference.(äÿÌ…ÿÿÿÿÿ8ÑÒŽ½ú.
+J
+java:S3010"(Remove this assignment of "privilegija".(äÿÌ…ÿÿÿÿÿ8ÑÒŽ½ú.
+L
+java:S3010
+"*Remove this assignment of "korisnickoIme".(ñ—®àûÿÿÿÿ8øÖ‹½ú.
+W
+java:S2209
+"5Change this instance-reference to a static reference.(ñ—®àûÿÿÿÿ8øÖ‹½ú.
+S
+java:S2696"6Make the enclosing method "static" or remove this set.(ˆï‹È8øÖ‹½ú.
+S
+java:S2696"6Make the enclosing method "static" or remove this set.(ÆÖÑ°8ÑÒŽ½ú.

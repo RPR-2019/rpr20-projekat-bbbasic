@@ -1,6 +1,17 @@
 
-U	java:S106	"9Replace this use of System.out or System.err by a logger.(š¿Ì¤8†«Ÿéø.
-Z
-java:S1854"8Remove this useless assignment to local variable "user".(ÆÀêøÿÿÿÿ8ŠŠ£éø.
+
+java:S1319\"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(”É‹Ä8¾Ð°»ú.
+i
+java:S2095U"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìï‡Àûÿÿÿÿ8•âÛºú.
+i
+java:S2095F"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìï‡Àûÿÿÿÿ8ÌÞÚºú.
 K
-java:S1481")Remove this unused "user" local variable.(ÆÀêøÿÿÿÿ8ŠŠ£éø.
+java:S1659".Declare "dajUposlenogUpit" on a separate line.(ú«ÑË8õÕæºú.
+Q
+java:S1068"4Remove this unused "dajUposlenogUpit" private field.(ú«ÑË8õÕæºú.
+Q
+java:S3740]"/Provide the parametrized type for this generic.(´Ýèƒýÿÿÿÿ8¾Ð°»ú.
+W
+java:S1141E"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÌÞÚºú.
+>
+java:S1643C"Use a StringBuilder instead.(¥…ˆÇþÿÿÿÿ8ÌÞÚºú.

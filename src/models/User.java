@@ -91,6 +91,6 @@ public class User {
 
     @Override
     public String toString() {
-        return korisnickoIme;
+        return ime + " " + prezime;
     }
 }

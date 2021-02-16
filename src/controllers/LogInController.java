@@ -57,14 +57,14 @@ public class LogInController {
         //radi OK
         try {
             Stage pstage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
-            LogInController ctrl = new LogInController();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/administrator.fxml"));
+            AdministratorController ctrl = new AdministratorController();
             loader.setController(ctrl);
             Parent root = null;
             root = loader.load();
-            stage.setTitle("Prijava");
-            stage.setScene(new Scene(root, 290, 130));
-            stage.setResizable(false);
+            stage.setTitle("Administrator");
+            stage.setScene(new Scene(root, 396, 311));
+
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
