@@ -19,8 +19,6 @@ J
 rpr20-projekat-bbbasic.iml,e\0\e06f9e3a327836045fed54c04b3fb68dbffa854a
 h
 8out/production/rpr20-projekat-bbbasic/css/validacija.css,9\2\9247481e8608056fb864ef955d53860d7afdec56
-L
-resources/css/validacija.css,4\5\456d252823f3eb3248fdbbbe776293b0a8969d8a
 K
 src/models/UserSession.java,9\b\9b9b8b15dd49a7eff558fa0f2d450851c7aba5be
 X

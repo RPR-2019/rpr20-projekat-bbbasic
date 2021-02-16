@@ -1,19 +1,22 @@
 package models;
 
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Date;
 
-public class User {
+public class Uposlenik {
     private int id;
     private String ime;
     private String prezime;
     private String korisnickoIme;
     private String lozinka;
-    private String datumRodjenja;
-    private String datumZaposlenja;
+    private Date datumRodjenja;
+    private Date datumZaposlenja;
     private boolean pristup = false;
 
-    public User(int id, String ime, String prezime, String lozinka, String korisnickoIme, String datumRodjenja, String datumZaposlenja, boolean pristup) {
+    public Uposlenik() {
+    }
+
+    public Uposlenik(int id, String ime, String prezime, String lozinka, String korisnickoIme, Date datumRodjenja, Date datumZaposlenja, boolean pristup) {
         this.id = id;
         this.ime = ime;
         this.prezime = prezime;
@@ -65,19 +68,19 @@ public class User {
         this.lozinka = lozinka;
     }
 
-    public String getDatumRodjenja() {
+    public Date getDatumRodjenja() {
         return datumRodjenja;
     }
 
-    public void setDatumRodjenja(String datumRodjenja) {
+    public void setDatumRodjenja(Date datumRodjenja) {
         this.datumRodjenja = datumRodjenja;
     }
 
-    public String getDatumZaposlenja() {
+    public Date getDatumZaposlenja() {
         return datumZaposlenja;
     }
 
-    public void setDatumZaposlenja(String datumZaposlenja) {
+    public void setDatumZaposlenja(Date datumZaposlenja) {
         this.datumZaposlenja = datumZaposlenja;
     }
 
@@ -91,6 +94,6 @@ public class User {
 
     @Override
     public String toString() {
-        return ime + " " + prezime;
+        return ime + " " + prezime + " " + datumZaposlenja.toLocalDate();
     }
 }

@@ -5,15 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private Connection conn;
+    private Connection session;
     private static DBConnection instance;
 
     private DBConnection() {
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:baza.db");
+            session = DriverManager.getConnection("jdbc:sqlite:baza.db");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public Connection getSession() {
+        return session;
     }
 
     public static DBConnection getInstance() {
@@ -29,7 +33,7 @@ public class DBConnection {
 
     public void close() {
         try {
-            conn.close();
+            session.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

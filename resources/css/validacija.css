@@ -1,8 +1,8 @@
 .poljeIspravno {
-    -fx-control-inner-background: greenyellow;
+    -fx-border-color: lightskyblue;
 }
 .poljeNijeIspravno {
-    -fx-control-inner-background: lightpink;
+    -fx-border-color: #e84040;
 }
 #btnPrijava {
     -fx-background-color: lightskyblue;

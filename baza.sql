@@ -5,14 +5,14 @@ CREATE TABLE IF NOT EXISTS "uposlenik" (
 	"prezime"	TEXT,
 	"lozinka" TEXT,
 	"korisnicko_ime"	TEXT,
-	"datum_rodjenja"	TEXT,
-	"datum_uposlenja"	TEXT,
+	"datum_rodjenja"	DATE,
+	"datum_uposlenja"	DATE,
 	"pristup"	BIT,
 	PRIMARY KEY("id")
 );
-INSERT INTO "uposlenik" VALUES (1,'Meho','Mehić','lozinka','mehomehic','11/05/1964','21/04/2000',1);
-INSERT INTO "uposlenik" VALUES (2,'Dado','Dadić','lozinka','dadodadic','01/09/1977','08/07/2000',0);
-INSERT INTO "uposlenik" VALUES (3,'Lana','Lanić','lozinka','lanalanic','26/12/1996','01/11/2000',0);
-INSERT INTO "uposlenik" VALUES (4,'Darko','Darkić','lozinka','darkodarkic','21/04/1994','20/01/2000',0);
-INSERT INTO "uposlenik" VALUES (5,'Mišo','Mišić','lozinka','misomisic','28/06/1990','10/08/2001',0);
+INSERT INTO "uposlenik" VALUES (1,'Meho','Mehić','lozinka','mehomehic','1964-07-14','2000-01-01',1);
+INSERT INTO "uposlenik" VALUES (2,'Dado','Dadić','lozinka','dadodadic','1977-03-20','2000-01-01',0);
+INSERT INTO "uposlenik" VALUES (3,'Lana','Lanić','lozinka','lanalanic','1996-11-27','2000-01-01',0);
+INSERT INTO "uposlenik" VALUES (4,'Darko','Darkić','lozinka','darkodarkic','1994-01-01','2000-01-01',0);
+INSERT INTO "uposlenik" VALUES (5,'Mišo','Mišić','lozinka','misomisic','1990-01-14','2000-01-01',0);
 COMMIT;

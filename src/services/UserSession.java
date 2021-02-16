@@ -1,4 +1,4 @@
-package models;
+package services;
 
 public final class UserSession {
 

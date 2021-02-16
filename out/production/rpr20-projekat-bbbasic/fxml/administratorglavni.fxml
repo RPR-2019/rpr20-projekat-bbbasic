@@ -41,7 +41,7 @@
             <ListView fx:id="listaUposlenici" prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="3" />
             <VBox prefHeight="266.0" prefWidth="98.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowSpan="3">
                <children>
-                  <Button minHeight="25.0" minWidth="120.0" mnemonicParsing="false" text="Dodaj Uposlenika" />
+                  <Button fx:id="btnDodajUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#dodajUposlenika" text="Dodaj Uposlenika" />
                   <Button minHeight="25.0" minWidth="120.0" mnemonicParsing="false" text="Obriši Uposlenika" />
                   <Button minHeight="25.0" minWidth="120.0" mnemonicParsing="false" text="Izmijeni Uposlenika" />
                </children>
