@@ -1,9 +1,9 @@
 .poljeIspravno {
-    -fx-border-color: lightskyblue;
+    -fx-border-color: #81c784;
 }
 .poljeNijeIspravno {
-    -fx-border-color: #e84040;
+    -fx-border-color: #f6a5c0;
 }
 #btnPrijava {
-    -fx-background-color: lightskyblue;
+    -fx-background-color: #a6d4fa;
 }

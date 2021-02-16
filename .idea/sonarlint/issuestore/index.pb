@@ -1,6 +1,4 @@
 
-D
-src/models/User.java,e\0\e01107c4905ab659dd8adcd8e3a323bf779eacc5
 E
 src/dao/UsersDAO.java,b\f\bf619acb6a15cab23d327c1260123dfaca06639b
 T
@@ -19,9 +17,25 @@ J
 rpr20-projekat-bbbasic.iml,e\0\e06f9e3a327836045fed54c04b3fb68dbffa854a
 h
 8out/production/rpr20-projekat-bbbasic/css/validacija.css,9\2\9247481e8608056fb864ef955d53860d7afdec56
-K
-src/models/UserSession.java,9\b\9b9b8b15dd49a7eff558fa0f2d450851c7aba5be
 X
 (src/controllers/UposlenikController.java,a\c\ac3bb3d513568b115d2ab0624d320a42167b982e
-\
-,src/controllers/AdministratorController.java,4\2\4230ff06854d13175c821dd6741c8c5c3d210461
+s
+Cout/production/rpr20-projekat-bbbasic/fxml/administratorglavni.fxml,6\2\62c8ecefece044cdaaf8d459c12006d0adfe9de6
+b
+2src/controllers/AdministratorGlavniController.java,f\d\fda0c809e625c515ca870d52b906cfd72c67acd2
+D
+src/dao/BaseDAO.java,9\b\9b36168e2b041f28684c7f555f18d149684d9d06
+I
+src/dao/DBConnection.java,9\f\9f1f33d4ace170612701ede7c56126f74ef2f290
+N
+src/services/DBDateHelper.java,7\3\7356e2a2c0c006322d399ac04bb405651279d985
+C
+src/dao/InitDB.java,c\1\c1ff5cab31e49243ddc4ffb973b93e9d815a2779
+O
+src/models/TehnickiPregled.java,c\1\c1da7100d358d0db0dd7b5a0c0912c3bf3c44ac5
+i
+9out/production/rpr20-projekat-bbbasic/fxml/uposlenik.fxml,8\d\8da7a7e35ee115f586c93e45f829c74fa8ad6230
+M
+src/services/UserSession.java,9\7\9754649ef78f0e953ce45826972ea1be5a64ec89
+I
+src/models/Uposlenik.java,b\5\b5ec3ed53aa585cc79ae589e4339d611e882e155

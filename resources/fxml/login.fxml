@@ -4,8 +4,9 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="290.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="center" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="335.0" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@/css/validacija.css" />
    </stylesheets>
@@ -13,8 +14,12 @@
       <TextField fx:id="fldKorisnickoIme" minWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" GridPane.columnIndex="1" />
       <Label text="Korisničko ime:" />
       <Label text="Lozinka:" GridPane.rowIndex="1" />
-      <Button fx:id="btnPrijava" mnemonicParsing="false" onAction="#clickPrijava" prefHeight="25.0" prefWidth="291.0" text="Prijava" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <Button fx:id="btnPrijava" mnemonicParsing="false" onAction="#clickPrijava" prefHeight="25.0" prefWidth="291.0" text="Prijava" GridPane.columnSpan="2" GridPane.rowIndex="3" />
       <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="fldGreska" prefHeight="2.0" prefWidth="246.0" text="Pogresno korisnicko ime ili lozinka." textFill="#e57373" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
    </children>
    <columnConstraints>
       <ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
@@ -23,9 +28,10 @@
    <rowConstraints>
       <RowConstraints minHeight="25.0" />
       <RowConstraints minHeight="25.0" />
-      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" />
+      <RowConstraints />
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" />
    </rowConstraints>
    <padding>
-      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
 </GridPane>

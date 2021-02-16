@@ -19,7 +19,7 @@ public class Main extends Application {
         loader.setController(ctrl);
         Parent root = loader.load();
         primaryStage.setTitle("Prijava");
-        primaryStage.setScene(new Scene(root, 290, 130));
+        primaryStage.setScene(new Scene(root, 335, 169));
         primaryStage.setResizable(false);
         primaryStage.show();
 

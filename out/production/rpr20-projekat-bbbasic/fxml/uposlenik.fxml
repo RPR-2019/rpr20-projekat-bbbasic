@@ -34,12 +34,12 @@
    </rowConstraints>
    <children>
       <Label text="Ime:" />
-      <Label text="Prezime:" GridPane.rowIndex="2" />
+      <Label text="Prezime:" GridPane.rowIndex="1" />
       <TextField fx:id="fldIme" GridPane.columnIndex="1" />
-      <TextField fx:id="fldPrezime" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Label text="Lozinka:" GridPane.rowIndex="3" />
-      <Label text="Korisnicko ime:" GridPane.rowIndex="4" />
-      <TextField fx:id="fldKorisnickoIme" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextField fx:id="fldPrezime" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Lozinka:" GridPane.rowIndex="2" />
+      <Label text="Korisnicko ime:" GridPane.rowIndex="3" />
+      <TextField fx:id="fldKorisnickoIme" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <DatePicker fx:id="fldDatumRodjenja" prefHeight="25.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
       <Label text="Datum rodjenja:" GridPane.rowIndex="8" />
       <Label text="Datum zaposlenja:" GridPane.rowIndex="9" />
@@ -51,12 +51,12 @@
         </buttons>
       </ButtonBar>
       <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-      <Label fx:id="zauzetoKorisnickoIme" text="Zauzeto Korisnicko ime" textFill="#e84040" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Label fx:id="zauzetoKorisnickoIme" text="Zauzeto Korisnicko ime" textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
             <Font size="10.0" />
          </font></Label>
-      <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
-      <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+      <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
