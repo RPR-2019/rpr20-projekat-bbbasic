@@ -37,7 +37,17 @@ M
 src/services/UserSession.java,9\7\9754649ef78f0e953ce45826972ea1be5a64ec89
 I
 src/models/Uposlenik.java,b\5\b5ec3ed53aa585cc79ae589e4339d611e882e155
-I
-resources/fxml/login.fxml,8\2\82c591fb13b8d561beda7548c6e5f0df218b604c
-L
-resources/css/validacija.css,4\5\456d252823f3eb3248fdbbbe776293b0a8969d8a
+F
+src/dao/VozilaDAO.java,5\a\5ae4927739da4f046b5179c85fc3b9850b93ae69
+U
+%src/controllers/VoziloController.java,4\1\4107f124b6b6b90b8318b6e0e2fc40b82c230656
+F
+src/models/Vozilo.java,c\d\cd91323c21eb98513586d134d7cc3bc354a74444
+D
+src/models/Boja.java,f\b\fb70335369ab3ae13ee5a154af4a3ee8468da2de
+H
+src/enums/TipVozila.java,3\4\34e7d43959bc1c8979513b30715e5642aafea6ec
+J
+src/enums/MarkaVozila.java,2\b\2b91a846893307c12c83b471bc15b1317b971fd8
+N
+src/constants/ModelVozila.java,5\c\5c457dd765b5beab9ca2e4d162c9d7d3aec02dfd

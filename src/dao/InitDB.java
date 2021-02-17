@@ -16,6 +16,7 @@ public class InitDB {
     public void obrisiSve() throws SQLException {
         Statement stmt = dbConnection.getSession().createStatement();
         stmt.executeUpdate("DELETE FROM uposlenik");
+        stmt.executeUpdate("DELETE FROM vozilo");
     }
 
     public void kreirajBazu() {

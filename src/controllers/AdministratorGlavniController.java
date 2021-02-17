@@ -117,4 +117,22 @@ public class AdministratorGlavniController {
             lista.setAll(usersDAO.uposlenici());
         }
     }
+
+    public void actiondodajVozilo(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
+            VoziloController voziloController = new VoziloController();
+            loader.setController(voziloController);
+            root = loader.load();
+            stage.setTitle("Vozilo");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            stage.getIcons().add(new Image("/img/icon.jpg"));
+            stage.show();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+    }
 }
