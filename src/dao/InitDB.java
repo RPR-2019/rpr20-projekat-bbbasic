@@ -17,6 +17,7 @@ public class InitDB {
         Statement stmt = dbConnection.getSession().createStatement();
         stmt.executeUpdate("DELETE FROM uposlenik");
         stmt.executeUpdate("DELETE FROM vozilo");
+        stmt.executeUpdate("DELETE FROM klijent");
     }
 
     public void kreirajBazu() {

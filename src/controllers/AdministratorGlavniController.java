@@ -14,6 +14,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import models.Klijent;
 import models.Uposlenik;
 
 
@@ -118,21 +119,21 @@ public class AdministratorGlavniController {
         }
     }
 
-    public void actiondodajVozilo(ActionEvent actionEvent) {
-        Stage stage = new Stage();
-        Parent root = null;
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
-            VoziloController voziloController = new VoziloController();
-            loader.setController(voziloController);
-            root = loader.load();
-            stage.setTitle("Vozilo");
-            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(true);
-            stage.getIcons().add(new Image("/img/icon.jpg"));
-            stage.show();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-    }
+//    public void actiondodajVozilo(ActionEvent actionEvent) {
+//        Stage stage = new Stage();
+//        Parent root = null;
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"));
+//            TP2Controller klijentController = new TP2Controller();
+//            loader.setController(klijentController);
+//            root = loader.load();
+//            stage.setTitle("Vozilo");
+//            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+//            stage.setResizable(true);
+//            stage.getIcons().add(new Image("/img/icon.jpg"));
+//            stage.show();
+//        } catch (IOException ioException) {
+//            ioException.printStackTrace();
+//        }
+//    }
 }

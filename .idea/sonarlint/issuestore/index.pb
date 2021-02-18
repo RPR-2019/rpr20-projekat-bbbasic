@@ -57,3 +57,15 @@ U
 %src/exceptions/NeispravnaTablica.java,a\b\ab35f508ab5791b712cdbd42d18c05ae47135fd8
 f
 6out/production/rpr20-projekat-bbbasic/fxml/vozilo.fxml,c\5\c542eb966ac0806fb36a05b106a93f5b502487c8
+b
+2out/production/rpr20-projekat-bbbasic/css/btns.css,5\f\5f5f23621579b5f16a45b169840a3495d4e075a4
+d
+4out/production/rpr20-projekat-bbbasic/fxml/home.fxml,f\3\f3f866ee3dbfd10b59970bf25d9940a9846bca21
+S
+#src/controllers/HomeController.java,a\a\aa5bf96505ab823bdfa6cde1d0f69d0c652099c9
+G
+src/models/Klijent.java,a\9\a9e4de03cfa6bba0d59794f5bec42c907226e7c6
+G
+src/dao/KlijentDAO.java,e\b\eb4cbb26ea9584caac0a5e61106c6aaa6e2d940c
+V
+&src/controllers/KlijentController.java,5\b\5bbb5a37068fc150b131e00bdbf8aaea564d6eba

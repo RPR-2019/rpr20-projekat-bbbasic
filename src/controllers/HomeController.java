@@ -1,13 +1,10 @@
 package controllers;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -25,8 +22,8 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
-            VoziloController voziloController = new VoziloController();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"));
+            TP1Controller voziloController = new TP1Controller(mainPane);
             loader.setController(voziloController);
             root = loader.load();
             stage.setTitle("Vozilo");
@@ -65,7 +62,6 @@ public class HomeController {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
-
     }
 
     public void onBtnIzvjestaj(ActionEvent actionEvent) {

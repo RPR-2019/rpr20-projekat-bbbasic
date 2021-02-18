@@ -1,0 +1,25 @@
+
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ıÓÙÜ8˜×ã³û.
+R
+java:S1128	"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8§ºí³û.
+J
+java:S1481B"-Remove this unused "rezultat" local variable.(¾£œÉ8úÀö³û.
+U
+java:S1068"3Remove this unused "dajKlijentaUpit" private field.(¤©üøÿÿÿÿ8Ñ»æ³û.
+L
+java:S3740 "/Provide the parametrized type for this generic.(¾£œÉ8˜×ã³û.
+J
+java:S1128"-Remove this unused import 'models.Uposlenik'.(Ô¼™³8š¶ò³û.
+€
+java:S1450"^Remove the "dajKlijentaUpit" field and declare it as a local variable in the relevant methods.(¤©üøÿÿÿÿ8Ñ»æ³û.
+O
+java:S1659"-Declare "dajKlijentaUpit" on a separate line.(¤©üøÿÿÿÿ8Ñ»æ³û.
+Q
+java:S1659"/Declare "dodajKlijentaUpit" on a separate line.(¤©üøÿÿÿÿ8æç³û.
+T
+java:S1659"2Declare "odrediIdKlijentaUpit" on a separate line.(¤©üøÿÿÿÿ8Øè³û.
+L
+java:S3740B"/Provide the parametrized type for this generic.(¾£œÉ8âìõ³û.
+Y
+java:S1854B"<Remove this useless assignment to local variable "rezultat".(¾£œÉ8úÀö³û.

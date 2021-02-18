@@ -1,39 +1,39 @@
 
-s
-java:S1104"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(¬Ğ¡§8‘»ÚÚú.
-|
-java:S1104"ZMake choiceTehnicki a static final constant or non-public and provide accessors if needed.(ûÂ¬­øÿÿÿÿ8ÊŠËÚú.
-€
-java:S1104"^Make fldDatumZaposlenja a static final constant or non-public and provide accessors if needed.(­«Ê´úÿÿÿÿ8òî¶Üú.
 ~
 java:S1104"\Make fldKorisnickoIme a static final constant or non-public and provide accessors if needed.(—É€¢ıÿÿÿÿ8â‹ÜÚú.
-o
-java:S3776="RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¥áÏÜ8òãóãú.
-
-java:S1130="qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(¥áÏÜ8æŒ¬çú.
-q
-java:S1192B"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8 …şÚú.
-o
-java:S1104"RMake fldIme a static final constant or non-public and provide accessors if needed.(ŠºÁ¾8­ªÖÚú.
-Z
-java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8Ó½ßú.
-p
-java:S1192C"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 12 times.(±‚õŒ8 …şÚú.
-x
-java:S1104"VMake fldLozinka a static final constant or non-public and provide accessors if needed.(ÅœœÉøÿÿÿÿ8â‹ÜÚú.
-O
-java:S1172="2Remove this unused method parameter "actionEvent".(¥áÏÜ8â‹ÜÚú.
-}
-java:S1104"`Make zauzetoKorisnickoIme a static final constant or non-public and provide accessors if needed.(ˆò˜´8¿—‚Ûú.
-T
-java:S11727"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8â‹ÜÚú.
-}
-java:S1104"`Make listTehnickiPregledi a static final constant or non-public and provide accessors if needed.(¨ã·8®ÆÚú.
 \
 java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8«ç–âú.
-K
-java:S1125^")Remove the literal "false" boolean value.(Ú³¢„øÿÿÿÿ8Ù†–äú.
-F
-java:S1125]")Remove the literal "false" boolean value.(º’Üì8©ÍÁÛú.
+T
+java:S11727"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8â‹ÜÚú.
+p
+java:S1192C"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 12 times.(±‚õŒ8 …şÚú.
 ~
 java:S1104"\Make fldDatumRodjenja a static final constant or non-public and provide accessors if needed.(‘œİçıÿÿÿÿ8òî¶Üú.
+Z
+java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8Ó½ßú.
+o
+java:S3776="RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¥áÏÜ8òãóãú.
+F
+java:S1125]")Remove the literal "false" boolean value.(º’Üì8©ÍÁÛú.
+€
+java:S1104"^Make fldDatumZaposlenja a static final constant or non-public and provide accessors if needed.(­«Ê´úÿÿÿÿ8òî¶Üú.
+K
+java:S1125^")Remove the literal "false" boolean value.(Ú³¢„øÿÿÿÿ8Ù†–äú.
+|
+java:S1104"ZMake choiceTehnicki a static final constant or non-public and provide accessors if needed.(ûÂ¬­øÿÿÿÿ8ÊŠËÚú.
+O
+java:S1172="2Remove this unused method parameter "actionEvent".(¥áÏÜ8â‹ÜÚú.
+
+java:S1130="qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(¥áÏÜ8æŒ¬çú.
+}
+java:S1104"`Make zauzetoKorisnickoIme a static final constant or non-public and provide accessors if needed.(ˆò˜´8¿—‚Ûú.
+s
+java:S1104"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(¬Ğ¡§8‘»ÚÚú.
+}
+java:S1104"`Make listTehnickiPregledi a static final constant or non-public and provide accessors if needed.(¨ã·8®ÆÚú.
+o
+java:S1104"RMake fldIme a static final constant or non-public and provide accessors if needed.(ŠºÁ¾8­ªÖÚú.
+q
+java:S1192B"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8 …şÚú.
+x
+java:S1104"VMake fldLozinka a static final constant or non-public and provide accessors if needed.(ÅœœÉøÿÿÿÿ8â‹ÜÚú.

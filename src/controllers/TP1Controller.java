@@ -9,16 +9,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import enums.TipVozila;
 import models.Vozilo;
 import services.VIN;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class VoziloController {
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
+
+public class TP1Controller {
     private VozilaDAO vozilaDAO;
     public Vozilo vozilo;
     public CheckBox choiceBijela, choiceCrna, choiceSmeda, choiceCrvena, choiceSiva;
@@ -42,6 +50,7 @@ public class VoziloController {
     public Label fldPogrenaRegistracija, fldPogresnaSasija, lvrstaBoje, lboja;
     public RadioButton rbObicna, rbMetalik, rbFolija;
     public String boja, vrstaBoje;
+    public BorderPane mainPane;
 
 
 
@@ -69,7 +78,8 @@ public class VoziloController {
 
     }
 
-    public VoziloController() {
+    public TP1Controller(BorderPane mainPane) {
+        this.mainPane = mainPane;
         vozilaDAO = new VozilaDAO();
         tipVozila =  FXCollections.observableArrayList(Arrays.asList(TipVozila.values()));
         markaVozila = FXCollections.observableArrayList(Arrays.asList(MarkaVozila.values()));
@@ -142,18 +152,6 @@ public class VoziloController {
                 System.out.println(neispravnaTablica.getMessage());
             }
 
-//            if (validacijaTablica(fldRegistracija.getText()) == false) {
-//
-//                fldRegistracija.getStyleClass().removeAll("poljeIspravno");
-//                fldRegistracija.getStyleClass().add("poljeNijeIspravno");
-//                fldPogrenaRegistracija.setVisible(true);
-//                sveOk = false;
-//            } else {
-//                fldRegistracija.getStyleClass().removeAll("poljeNijeIspravno");
-//                fldRegistracija.getStyleClass().add("poljeIspravno");
-//                fldPogrenaRegistracija.setVisible(false);
-//            }
-
             //validacija sasije
             try {
                 VIN.isVinValid(fldBrojSasije.getText());
@@ -199,12 +197,30 @@ public class VoziloController {
             vozilaDAO.dodajVozilo(vozilo);
         }
         else {
-            System.out.println("Odabrat cemo iz vec postojecih");
+            vozilo = choiceVozilo.getValue();
+            System.out.println("Odabrat cemo iz vec postojecih " + vozilo);
         }
-        Stage stage = (Stage) choiceBijela.getScene().getWindow();
-        stage.close();
+        //idemo dalje na klijenta i saljemo mu vozilo
+            System.out.println("Uposlenici");
+            Stage stage = new Stage();
+            Parent root = null;
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP2.fxml"));
+                TP2Controller klijentController = new TP2Controller(vozilo);
+                loader.setController(klijentController);
+                root = loader.load();
+                stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                stage.setResizable(true);
+                stage.getIcons().add(new Image("/img/icon.jpg"));
+                stage.setWidth(450);
+                stage.setHeight(580);
+                //MIJENJANJE
+                mainPane.setCenter(root);
 
-    }
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
 
     public void actionNovoVozilo(ActionEvent actionEvent) {
         if(novoVozilo.isSelected()) {

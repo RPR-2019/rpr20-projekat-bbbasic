@@ -30,4 +30,14 @@ CREATE TABLE IF NOT EXISTS "vozilo" (
 INSERT INTO "vozilo" VALUES(1, 'Putnički','Suzuki','Ignis',2007,'A12-A-345','JS1VX51L982100325','Siva','Metalik');
 INSERT INTO "vozilo" VALUES(2, 'Putnički','Fiat','Panda',2019,'E21-O-213','3C3CFFAR2ET358453','Crna','Folija');
 INSERT INTO "vozilo" VALUES(3, 'Autobus','Volvo','S60',2000,'T00-T-208','4VGJDAWF0WN861479','Smeđa','Obična');
+CREATE TABLE IF NOT EXISTS "klijent" (
+	"id"	INTEGER,
+	"ime"	TEXT,
+	"prezime"	TEXT,
+	"mjesto_prebivalista" TEXT,
+    "broj_telefona" TEXT,
+	PRIMARY KEY("id")
+);
+INSERT INTO "klijent" VALUES (1,'Patak','Patkić','Branilaca Sarajeva 21','062-222-222');
+INSERT INTO "klijent" VALUES (2,'Ivo','Ivić','Vladimira Valtera Perića 13','061-111-111');
 COMMIT;
