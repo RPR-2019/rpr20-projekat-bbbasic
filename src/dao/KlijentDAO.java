@@ -6,7 +6,6 @@ import models.Uposlenik;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class KlijentDAO extends BaseDAO {
@@ -70,7 +69,7 @@ public class KlijentDAO extends BaseDAO {
             while (rs.next()) {
                 Klijent klijent2 = new Klijent(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                 if(klijent.equals(klijent2)) {
-                    System.out.println("Postoji ovaj klijent");
+                    klijent.setId(klijent2.getId());
                     return true;
                 }
             }

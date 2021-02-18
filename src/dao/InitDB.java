@@ -18,6 +18,8 @@ public class InitDB {
         stmt.executeUpdate("DELETE FROM uposlenik");
         stmt.executeUpdate("DELETE FROM vozilo");
         stmt.executeUpdate("DELETE FROM klijent");
+        stmt.executeUpdate("DELETE FROM tim_tehnicki_pregled");
+        stmt.executeUpdate("DELETE FROM tehnicki_pregled");
     }
 
     public void kreirajBazu() {

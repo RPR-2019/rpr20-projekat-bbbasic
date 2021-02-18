@@ -4,22 +4,25 @@ public final class UserSession {
 
     private static UserSession instance;
     private static String korisnickoIme;
+    private static int ID;
     private static boolean privilegija;
 
-    private UserSession(String korisnickoIme, boolean privilegija) {
-        this.korisnickoIme = korisnickoIme;
+
+    private UserSession(int ID, boolean privilegija) {
+        this.ID = ID;
         this.privilegija = privilegija;
     }
 
-    public static UserSession getInstace(String korisnickoIme, boolean privilegija) {
+
+    public static UserSession getInstace(int ID, boolean privilegija) {
         if(instance == null) {
-            instance = new UserSession(korisnickoIme, privilegija);
+            instance = new UserSession(ID, privilegija);
         }
         return instance;
     }
 
-    public static String getUserName() {
-        return korisnickoIme;
+    public static int getID() {
+        return ID;
     }
 
     public static boolean getPrivileges() {
@@ -27,7 +30,7 @@ public final class UserSession {
     }
 
     public void cleanUserSession() {
-        korisnickoIme = "";// or null
+        ID = -1;// or null
         privilegija = false;// or null
     }
 

@@ -58,7 +58,7 @@ public class HomeController {
             stage.setHeight(483);
             //MIJENJANJE
             mainPane.setCenter(root);
-            //stage.show();
+
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

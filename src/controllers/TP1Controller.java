@@ -216,6 +216,7 @@ public class TP1Controller {
                 stage.setHeight(580);
                 //MIJENJANJE
                 mainPane.setCenter(root);
+                return;
 
             } catch (IOException ioException) {
                 ioException.printStackTrace();

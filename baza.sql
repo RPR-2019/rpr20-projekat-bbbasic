@@ -40,4 +40,17 @@ CREATE TABLE IF NOT EXISTS "klijent" (
 );
 INSERT INTO "klijent" VALUES (1,'Patak','Patkić','Branilaca Sarajeva 21','062-222-222');
 INSERT INTO "klijent" VALUES (2,'Ivo','Ivić','Vladimira Valtera Perića 13','061-111-111');
+CREATE TABLE IF NOT EXISTS "tehnicki_pregled" (
+	"id"	INTEGER,
+	"datum_pregleda" TEXT,
+	"vozilo_id"	INT,
+	"klijent_id" INT,
+    "vrsta_tehnickog_pregleda" TEXT,
+    "status_tehnickog_pregleda" TEXT,
+	PRIMARY KEY("id")
+);
+CREATE TABLE IF NOT EXISTS "tim_tehnicki_pregled" (
+    "tehnicki_pregled_id" INT,
+    "uposlenik_id" INT
+);
 COMMIT;
