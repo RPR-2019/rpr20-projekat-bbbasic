@@ -80,11 +80,12 @@ public class TehnickiPregled {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TehnickiPregled that = (TehnickiPregled) o;
-        return Objects.equals(datumPregleda, that.datumPregleda);
+        return voziloID == that.voziloID && Objects.equals(datumPregleda, that.datumPregleda);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datumPregleda);
+        return Objects.hash(datumPregleda, voziloID);
     }
 }
