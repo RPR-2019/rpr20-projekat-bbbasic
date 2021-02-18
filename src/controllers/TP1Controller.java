@@ -27,6 +27,7 @@ import java.util.Arrays;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class TP1Controller {
+    public Label l1;
     private VozilaDAO vozilaDAO;
     public Vozilo vozilo;
     public CheckBox choiceBijela, choiceCrna, choiceSmeda, choiceCrvena, choiceSiva;
@@ -56,6 +57,7 @@ public class TP1Controller {
 
     @FXML
     public void initialize() {
+        l1.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         choiceTipVozila.setItems(tipVozila);
         choiceMarkaVozila.setItems(markaVozila);
         choiceModelVozila.setDisable(true);
