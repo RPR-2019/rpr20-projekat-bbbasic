@@ -1,0 +1,71 @@
+#btnGlavnaForma {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(0, 0, 0, 0.04);
+    -fx-text-fill: rgba(0, 0, 0, 0.87);
+    -fx-background-image: url("/img/glavnaForma.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-text-position: right;
+
+}
+#btnTehnickiPregled {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(0, 0, 0, 0.04);
+    -fx-text-fill: rgba(0, 0, 0, 0.87);
+    -fx-background-image: url("/img/auto.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-text-position: right;
+
+}
+
+#btnUposleni {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(0, 0, 0, 0.04);
+    -fx-text-fill: rgba(0, 0, 0, 0.87);
+    -fx-background-image: url("/img/uposleni.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-text-position: right;
+
+}
+#btnIzvjestaj {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(0, 0, 0, 0.04);
+    -fx-text-fill: rgba(0, 0, 0, 0.87);
+    -fx-background-image: url("/img/izvjestaj.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-text-position: right;
+}
+
+#btnPretraga {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(0, 0, 0, 0.04);
+    -fx-text-fill: rgba(0, 0, 0, 0.87);
+    -fx-background-image: url("/img/pretraga.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-text-position: right;
+}
+
+
+
+#Hbar {
+    -fx-background-color: rgba(0, 0, 0, 0.08);
+}

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane hgap="20.0" prefHeight="483.0" prefWidth="440.0" vgap="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="480.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@/css/validacija.css" />
    </stylesheets>

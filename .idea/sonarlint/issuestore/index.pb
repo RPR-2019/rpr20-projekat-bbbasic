@@ -49,13 +49,11 @@ J
 src/enums/MarkaVozila.java,2\b\2b91a846893307c12c83b471bc15b1317b971fd8
 N
 src/constants/ModelVozila.java,5\c\5c457dd765b5beab9ca2e4d162c9d7d3aec02dfd
-W
-'resources/fxml/administratorglavni.fxml,1\9\19f511e73d984d95d5934bdd6954b0e6a7d33290
-C
-src/enums/Boja.java,0\0\007980ec10651d7d212fb5b6db091533bc9d35bf
 X
 (src/exceptions/NeispravanBrojSasije.java,c\4\c484b6ec630c8b59b7ab5a2a4543ea223d0598de
-L
-resources/css/validacija.css,4\5\456d252823f3eb3248fdbbbe776293b0a8969d8a
 E
 src/services/VIN.java,3\7\37f6cb4fd48201b0a51513e097db87ef8d19e842
+U
+%src/exceptions/NeispravnaTablica.java,a\b\ab35f508ab5791b712cdbd42d18c05ae47135fd8
+f
+6out/production/rpr20-projekat-bbbasic/fxml/vozilo.fxml,c\5\c542eb966ac0806fb36a05b106a93f5b502487c8

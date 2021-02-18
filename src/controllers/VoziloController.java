@@ -5,14 +5,11 @@ import dao.VozilaDAO;
 import enums.MarkaVozila;
 import exceptions.NeispravanBrojSasije;
 import exceptions.NeispravnaTablica;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import enums.TipVozila;
 import models.Vozilo;
@@ -62,7 +59,6 @@ public class VoziloController {
         //lista vozila vec unesenih
         choiceVozilo.setItems(listaVozila);
         choiceVozilo.setValue(listaVozila.get(0));
-
 
         choiceMarkaVozila.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, number2) -> {
             modelVozila = FXCollections.observableArrayList(ModelVozila.listaModelaPremaMarki.get(choiceMarkaVozila.getItems().get((Integer) number2)));

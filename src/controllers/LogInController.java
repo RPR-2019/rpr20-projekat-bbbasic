@@ -2,9 +2,6 @@ package controllers;
 
 import dao.UsersDAO;
 
-
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,14 +69,18 @@ public class LogInController {
         //radi OK
         try {
             Stage pstage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/administratorglavni.fxml"));
-            AdministratorGlavniController ctrl = new AdministratorGlavniController();
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/administratorglavni.fxml"));
+            //AdministratorGlavniController ctrl = new AdministratorGlavniController();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+            HomeController ctrl = new HomeController();
             loader.setController(ctrl);
             Parent root = null;
             root = loader.load();
-            stage.setTitle("Administrator");
+            stage.setTitle("MeCARnic");
             stage.setScene(new Scene(root, 396, 311));
-
+            stage.setWidth(900);
+            stage.setHeight(730);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
