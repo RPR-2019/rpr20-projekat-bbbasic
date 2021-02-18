@@ -24,9 +24,10 @@ CREATE TABLE IF NOT EXISTS "vozilo" (
 	"registracija" TEXT UNIQUE,
 	"broj_sasije" INT UNIQUE,
 	"boja" TEXT,
+	"vrsta_boje" TEXT,
 	PRIMARY KEY("id")
 );
-INSERT INTO "vozilo" VALUES(1, 'Putnički','Suzuki','Ignis',2007,'A12-A-345','JS1VX51L982100325','Siva');
-INSERT INTO "vozilo" VALUES(2, 'Putnički','Fiat','Panda',2019,'E21-O-213','3C3CFFAR2ET358453','Crna');
-INSERT INTO "vozilo" VALUES(3, 'Autobus','Volvo','S60',2000,'T00-T-208','4VGJDAWF0WN861479','Smeđa');
+INSERT INTO "vozilo" VALUES(1, 'Putnički','Suzuki','Ignis',2007,'A12-A-345','JS1VX51L982100325','Siva','Metalik');
+INSERT INTO "vozilo" VALUES(2, 'Putnički','Fiat','Panda',2019,'E21-O-213','3C3CFFAR2ET358453','Crna','Folija');
+INSERT INTO "vozilo" VALUES(3, 'Autobus','Volvo','S60',2000,'T00-T-208','4VGJDAWF0WN861479','Smeđa','Obična');
 COMMIT;

@@ -91,7 +91,6 @@ public class UposlenikController {
 
         //valiadcija koricnickoIme
         if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), uposlenik) == false || fldKorisnickoIme.getText().isEmpty()) {
-            System.out.println("Nesta nije ok");
             if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), uposlenik) == false)
                 zauzetoKorisnickoIme.setVisible(true);
             fldKorisnickoIme.getStyleClass().removeAll("poljeIspravno");

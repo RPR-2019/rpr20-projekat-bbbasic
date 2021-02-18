@@ -1,6 +1,5 @@
 package models;
 
-import enums.Boja;
 import enums.MarkaVozila;
 import enums.TipVozila;
 
@@ -12,12 +11,13 @@ public class Vozilo {
     private int godinaProizvodnje;
     private String registracija;
     private String brojsasije;
-    private Boja boja;
+    private String boja;
+    private String vrstaBoje;
 
     public Vozilo() {
     }
 
-    public Vozilo(int id, String tipVozila, String marka, String model, int godinaProizvodnje, String registracija, String brojsasije, String boja) {
+    public Vozilo(int id, String tipVozila, String marka, String model, int godinaProizvodnje, String registracija, String brojsasije, String boja, String vrstaBoje) {
         this.id = id;
         this.tipVozila = TipVozila.valueOf(tipVozila);
         this.marka = MarkaVozila.valueOf(marka);
@@ -25,7 +25,16 @@ public class Vozilo {
         this.model = model;
         this.registracija = registracija;
         this.brojsasije = brojsasije;
-        this.boja = Boja.valueOf(boja);
+        this.boja = boja;
+        this.vrstaBoje = vrstaBoje;
+    }
+
+    public String getVrstaBoje() {
+        return vrstaBoje;
+    }
+
+    public void setVrstaBoje(String vrstaBoje) {
+        this.vrstaBoje = vrstaBoje;
     }
 
     public int getId() {
@@ -85,8 +94,15 @@ public class Vozilo {
     }
 
     public String getBoja() {
-        return boja.toString();
+        return boja;
     }
 
-    public void setBoja(String boja) { this.boja = Boja.valueOf(boja); }
+    public void setBoja(String boja) {
+        this.boja = boja;
+    }
+
+    @Override
+    public String toString() {
+        return tipVozila + ", " + marka + ", " + model + ", " + registracija;
+    }
 }

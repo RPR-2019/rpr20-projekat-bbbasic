@@ -47,13 +47,13 @@ public class VIN {
         sum = sum % 11;
         char check = s.charAt(8);
         if (sum == 10 && check == 'X') {
-            System.out.println("OK");
+            //System.out.println("OK-VIN");
             return true;
         } else if (sum == transliterate(check)) {
-            System.out.println("OK");
+            //System.out.println("OK-VIN");
             return true;
         } else {
-            System.out.println("OK");
+            //System.out.println("OK-VIN");
             return false;
         }
 

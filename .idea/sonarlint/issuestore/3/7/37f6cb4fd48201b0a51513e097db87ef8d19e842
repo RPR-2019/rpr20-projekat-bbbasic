@@ -1,0 +1,14 @@
+
+j
+java:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(°Ό²†ωÿÿÿÿ8«ϋ.
+i
+java:S18714"LThis branch's code block is the same as the block for the branch on line 49.(υ΅ε8ζ¬ϋ.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(ωΰθό8«ϋ.
+W
+java:S1118":Add a private constructor to hide the implicit public one.(©θµ–8«ϋ.
+j
+java:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ΰκθώÿÿÿÿ8«ϋ.
+U	java:S1065"9Replace this use of System.out or System.err by a logger.(ωΰθό8«ϋ.
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(ωΰθό8«ϋ.
+t
+java:S3776>"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.( ›υϊÿÿÿÿ8«ϋ.
