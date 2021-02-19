@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.TehnickiPregled;
 import models.Uposlenik;
+import models.Vozilo;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TimTehnickiDAO extends BaseDAO{
-    private PreparedStatement sviTehnickiUpit, brojTehnickihZaID, spojiTehnickiUposlenikUpit, brojTehnickihUpit, dajUposlenikeZaTPUpit;
+    private PreparedStatement sviTehnickiUpit, brojTehnickihZaID, spojiTehnickiUposlenikUpit, brojTehnickihUpit, dajUposlenikeZaTPUpit, voziloUpit;
 
     @Override
     protected void kreirajUpite() {
@@ -22,6 +23,7 @@ public class TimTehnickiDAO extends BaseDAO{
             brojTehnickihZaID = dbConnection.getSession().prepareStatement("SELECT COUNT(*) FROM tim_tehnicki_pregled WHERE uposlenik_id=?");
             brojTehnickihUpit = dbConnection.getSession().prepareStatement("SELECT COUNT(*) FROM tim_tehnicki_pregled JOIN tehnicki_pregled ON tim_tehnicki_pregled.tehnicki_pregled_id = tehnicki_pregled.id WHERE tim_tehnicki_pregled.uposlenik_id=? AND tehnicki_pregled.status_tehnickog_pregleda=?");
             dajUposlenikeZaTPUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik JOIN tim_tehnicki_pregled ON uposlenik.id = tim_tehnicki_pregled.uposlenik_id WHERE tim_tehnicki_pregled.tehnicki_pregled_id =?");
+            voziloUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo WHERE id=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -106,7 +108,7 @@ public class TimTehnickiDAO extends BaseDAO{
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
             while (rs.next()) {
-                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getString(6));
+                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), rs.getInt(4), rs.getString(5), rs.getString(6));
                 tehnickiPregled1.setUposlenici(dajUposlenike(tehnickiPregled1));
                 System.out.println("Tehnicki je " + tehnickiPregled1);
                 tehnickiPregled.add(tehnickiPregled1);
@@ -128,6 +130,20 @@ public class TimTehnickiDAO extends BaseDAO{
                 uposlenici.add(uposlenik);
             }
             return uposlenici;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Vozilo dajVozilo(int id) {
+        try {
+            voziloUpit.setInt(1, id);
+            ResultSet rs = voziloUpit.executeQuery();
+            while (rs.next()) {
+                Vozilo vozilo = new Vozilo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8), rs.getString(9));
+                return vozilo;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

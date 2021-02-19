@@ -11,23 +11,34 @@ import java.util.Objects;
 public class TehnickiPregled {
     private int id;
     private LocalDate datumPregleda;
-    private int voziloID;
+    //private int voziloID;
+    private Vozilo vozilo;
     private int klijentID;
     private VrstaTehnickogPregleda vrstaTehnickogPregleda;
     private StatusTehnickogPregleda statusTehnickogPregleda;
-    private ArrayList<Uposlenik> uposlenici;
+    private ArrayList<Uposlenik> uposlenici = new ArrayList<>();
 
     public TehnickiPregled() {
     }
 
-    public TehnickiPregled(int id, LocalDate datumPregleda, int voziloID, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
-        this.id = id;
-        this.datumPregleda = datumPregleda;
-        this.voziloID = voziloID;
-        this.klijentID = klijentID;
-        this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
-        this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
+//    public TehnickiPregled(int id, LocalDate datumPregleda, int voziloID, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
+//        this.id = id;
+//        this.datumPregleda = datumPregleda;
+//        this.voziloID = voziloID;
+//        this.klijentID = klijentID;
+//        this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
+//        this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
+//    }
+
+    public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
+            this.id = id;
+            this.datumPregleda = datumPregleda;
+            this.vozilo = vozilo;
+            this.klijentID = klijentID;
+            this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
+            this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
     }
+
 
 
     public int getId() {
@@ -46,12 +57,21 @@ public class TehnickiPregled {
         this.datumPregleda = datumPregleda;
     }
 
-    public int getVoziloID() {
-        return voziloID;
+//    public int getVoziloID() {
+//        return voziloID;
+//    }
+//
+//    public void setVoziloID(int voziloID) {
+//        this.voziloID = voziloID;
+//    }
+
+
+    public Vozilo getVozilo() {
+        return vozilo;
     }
 
-    public void setVoziloID(int voziloID) {
-        this.voziloID = voziloID;
+    public void setVozilo(Vozilo vozilo) {
+        this.vozilo = vozilo;
     }
 
     public int getKlijentID() {
@@ -95,25 +115,39 @@ public class TehnickiPregled {
         this.uposlenici = uposlenici;
     }
 
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        TehnickiPregled that = (TehnickiPregled) o;
+//        return voziloID == that.voziloID && Objects.equals(datumPregleda, that.datumPregleda);
+//
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(datumPregleda, voziloID);
+//    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TehnickiPregled that = (TehnickiPregled) o;
-        return voziloID == that.voziloID && Objects.equals(datumPregleda, that.datumPregleda);
+        return vozilo.getId() == that.vozilo.getId() && Objects.equals(datumPregleda, that.datumPregleda);
 
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datumPregleda, voziloID);
+        return Objects.hash(datumPregleda, vozilo.getId());
     }
 
     @Override
     public String toString() {
         return "TehnickiPregled{" +
                 "datumPregleda=" + datumPregleda +
-                ", voziloID=" + voziloID +
+                ", voziloID=" + vozilo +
                 ", klijentID=" + klijentID +
                 ", vrstaTehnickogPregleda=" + vrstaTehnickogPregleda +
                 ", statusTehnickogPregleda=" + statusTehnickogPregleda +

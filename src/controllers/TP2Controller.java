@@ -1,30 +1,22 @@
 package controllers;
 
-import constants.ModelVozila;
 import dao.KlijentDAO;
-
 import dao.TehnickiPregledDAO;
 import dao.TimTehnickiDAO;
 import dao.UsersDAO;
-import enums.MarkaVozila;
 import enums.VrstaTehnickogPregleda;
 import exceptions.NeispravanTelefonskiBroj;
-import exceptions.NeispravnaTablica;
 import exceptions.ZakazanTermin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import models.Klijent;
 import models.TehnickiPregled;
 import models.Vozilo;
-import javafx.event.ActionEvent;
 import services.UserSession;
 
-import java.awt.*;
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -145,9 +137,9 @@ public class TP2Controller {
         tehnickiPregled.setStatusTehnickogPregleda("Zakazan");
 //        //ovdje smo mijenjali
 //        tehnickiPregled.setKlijent(klijent);
-//        tehnickiPregled.setVozilo(vozilo);
+        tehnickiPregled.setVozilo(vozilo);
         tehnickiPregled.setKlijentID(klijent.getId());
-        tehnickiPregled.setVoziloID(vozilo.getId());
+        //tehnickiPregled.setVoziloID(vozilo.getId());
         tehnickiPregled.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
         tehnickiPregled.setDatumPregleda(choiceDatum.getValue());
         tehnickiPregled.getUposlenici().add(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()));

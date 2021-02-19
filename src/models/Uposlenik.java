@@ -2,6 +2,7 @@ package models;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Uposlenik {
     private int id;
@@ -95,5 +96,25 @@ public class Uposlenik {
     @Override
     public String toString() {
         return ime + " " + prezime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Uposlenik uposlenik = (Uposlenik) o;
+        return id == uposlenik.id &&
+                pristup == uposlenik.pristup &&
+                Objects.equals(ime, uposlenik.ime) &&
+                Objects.equals(prezime, uposlenik.prezime) &&
+                Objects.equals(korisnickoIme, uposlenik.korisnickoIme) &&
+                Objects.equals(lozinka, uposlenik.lozinka) &&
+                Objects.equals(datumRodjenja, uposlenik.datumRodjenja) &&
+                Objects.equals(datumZaposlenja, uposlenik.datumZaposlenja);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, ime, prezime, korisnickoIme, lozinka, datumRodjenja, datumZaposlenja, pristup);
     }
 }

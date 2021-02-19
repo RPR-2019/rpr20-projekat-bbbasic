@@ -81,3 +81,13 @@ R
 "src/controllers/TP2Controller.java,5\3\5383eac4cfed00e671fe8d70c00281421371f9f7
 R
 "src/controllers/TP1Controller.java,b\0\b035899de6e2b250b679907095de04681a38b8c3
+^
+.src/controllers/TehnickiPregledController.java,9\e\9e5a03e7536ee42afbdb3cb11336f6e7d65a5d09
+n
+>out/production/rpr20-projekat-bbbasic/css/tehnickipregledi.css,d\7\d78a365b961c574446aae8970885f81653ca2d73
+p
+@out/production/rpr20-projekat-bbbasic/fxml/tehnickipregledi.fxml,c\0\c043843a75f5b298c11dbf88884f1159ce4153d0
+K
+src/dao/TimTehnickiDAO.java,7\4\74a2698665f0b142ed37b86c536de7eae5c3dc48
+R
+"resources/fxml/zakazivanjeTP1.fxml,4\8\48eb5ad15c0e8b252820c2f0e70e2e3eca162d15

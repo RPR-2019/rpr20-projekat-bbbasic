@@ -5,6 +5,7 @@
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <GridPane hgap="20.0" prefHeight="414.0" prefWidth="1010.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
@@ -23,8 +24,11 @@
       <RowConstraints maxHeight="245.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Label fx:id="labela" prefHeight="17.0" prefWidth="608.0" text="Tehnicki pregled" GridPane.columnSpan="4" />
-      <PieChart fx:id="chart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="263.0" GridPane.rowIndex="1" />
+      <Label fx:id="labela" prefHeight="17.0" prefWidth="916.0" text="Tehnicki pregled" GridPane.columnSpan="4">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <PieChart fx:id="chart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="263.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
       <TableView fx:id="tableView" prefHeight="285.0" prefWidth="685.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
         <columns>
           <TableColumn fx:id="colDatumPregleda" prefWidth="78.0" text="Zakazan" />
@@ -34,13 +38,15 @@
             <TableColumn fx:id="colUposlenici" prefWidth="655.0" text="Uposlenici" />
         </columns>
          <GridPane.margin>
-            <Insets left="-20.0" right="-20.0" top="-20.0" />
+            <Insets left="-10.0" right="-20.0" top="-20.0" />
          </GridPane.margin>
       </TableView>
       <ButtonBar prefHeight="150.0" prefWidth="465.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
         <buttons>
+            <Button fx:id="btnDodajUposlenika" minWidth="0.0" mnemonicParsing="false" onAction="#dodajUposlenika" prefHeight="27.0" text="Dodaj uposlenika" />
+            <ChoiceBox fx:id="choiceUposlenik" prefHeight="25.0" prefWidth="200.0" />
           <Button fx:id="btnDovrsiTehnicki" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Dovrsi Tehnicki pregled" />
-            <Button fx:id="btnOtkaziTehnicki" mnemonicParsing="false" text="Otkazi Tehnicki pregled" />
+            <Button fx:id="btnOtkaziTehnicki" mnemonicParsing="false" onAction="#otkaziTehnickiPregled" text="Otkazi Tehnicki pregled" />
         </buttons>
       </ButtonBar>
    </children>
