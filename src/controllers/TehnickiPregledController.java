@@ -3,7 +3,6 @@ package controllers;
 import dao.TehnickiPregledDAO;
 import dao.TimTehnickiDAO;
 import dao.UsersDAO;
-import enums.VrstaTehnickogPregleda;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -22,7 +21,6 @@ import services.UserSession;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class TehnickiPregledController {
@@ -31,7 +29,7 @@ public class TehnickiPregledController {
     public TehnickiPregledDAO tehnickiPregledDAO;
     public TimTehnickiDAO timTehnickiDAO;
     public Label labela;
-    ObservableList<PieChart.Data> pieChartData;
+    private ObservableList<PieChart.Data> pieChartData;
     public PieChart chart;
     //tabelica
     public TableColumn colDatumPregleda;
@@ -40,6 +38,7 @@ public class TehnickiPregledController {
     public TableColumn colStatusPregleda;
     public TableColumn colUposlenici;
     public TableView<TehnickiPregled> tableView;
+    //dugmadi
     public Button btnOtkaziTehnicki;
     public Button btnDodajUposlenika;
     public ChoiceBox<Uposlenik> choiceUposlenik;
@@ -57,16 +56,6 @@ public class TehnickiPregledController {
 
         choiceUposlenik.setItems(uposlenici);
         labela.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
-        chart.setData(pieChartData);
-        chart.setLabelLineLength(20);
-        chart.setLegendVisible(false);
-        pieChartData.forEach(data ->
-                data.nameProperty().bind(
-                        Bindings.concat(
-                                data.getName(), " ", data.pieValueProperty()
-                        )
-                )
-        );
         //tabelica
         colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("datumPregleda"));
         colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vozilo"));
@@ -78,7 +67,7 @@ public class TehnickiPregledController {
         btnOtkaziTehnicki.setDisable(true);
         btnDodajUposlenika.setDisable(true);
         choiceUposlenik.setDisable(true);
-
+        refresh(chart);
         tableView.setOnMouseClicked((MouseEvent event) -> {
             if(event.getButton().equals(MouseButton.PRIMARY)){
                 //brisanje
@@ -107,22 +96,18 @@ public class TehnickiPregledController {
         usersDAO = new UsersDAO();
         timTehnickiDAO = new TimTehnickiDAO();
         uposlenici = FXCollections.observableArrayList(usersDAO.uposlenici());
-        //inicijalizacija ove liste
-        System.out.println("Zakazani" + timTehnickiDAO.brojZakazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId()));
-        System.out.println("Otkazani" + timTehnickiDAO.brojOtkazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId()));
-        System.out.println("Kompletirani" + timTehnickiDAO.brojKompletiranihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId()));
-
-
-        pieChartData  = FXCollections.observableArrayList(
-                        new PieChart.Data("Zakazani", timTehnickiDAO.brojZakazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
-                        new PieChart.Data("Otkazani", timTehnickiDAO.brojOtkazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
-                        new PieChart.Data("Kompletirani", timTehnickiDAO.brojKompletiranihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())));
     }
 
     public void otkaziTehnickiPregled(ActionEvent actionEvent) {
             tehnickiPregledDAO.otkaziTehnickiPregled(tableView.getSelectionModel().getSelectedItem());
             tableView.setItems(timTehnickiDAO.sviTehnicki());
             tableView.refresh();
+            refresh(chart);
+//            chart.setData(FXCollections.observableArrayList(
+//                    new PieChart.Data("Zakazani", timTehnickiDAO.brojZakazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
+//                    new PieChart.Data("Otkazani", timTehnickiDAO.brojOtkazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
+//                    new PieChart.Data("Kompletirani", timTehnickiDAO.brojKompletiranihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId()))));
+
     }
 
     public void dodajUposlenika(ActionEvent actionEvent) {
@@ -132,4 +117,19 @@ public class TehnickiPregledController {
         tableView.refresh();
     }
 
+    public void refresh(PieChart chart) {
+        pieChartData  = FXCollections.observableArrayList(
+                new PieChart.Data("Zakazani", timTehnickiDAO.brojZakazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
+                new PieChart.Data("Otkazani", timTehnickiDAO.brojOtkazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
+                new PieChart.Data("Kompletirani", timTehnickiDAO.brojKompletiranihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())));
+        chart.setData(pieChartData);
+        chart.setLegendVisible(false);
+        pieChartData.forEach(data ->
+                data.nameProperty().bind(
+                        Bindings.concat(
+                                data.getName(), " ", data.pieValueProperty()
+                        )
+                )
+        );
+    }
 }
