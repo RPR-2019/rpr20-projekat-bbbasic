@@ -78,8 +78,6 @@ n
 n
 >out/production/rpr20-projekat-bbbasic/fxml/zakazivanjeTP2.fxml,7\1\714abb56a8cb4d0a7949183e264da472f8503775
 R
-"resources/fxml/zakazivanjeTP2.fxml,2\e\2e3bea990195223a891ae7b63d340099c1c86df1
-R
 "src/controllers/TP2Controller.java,5\3\5383eac4cfed00e671fe8d70c00281421371f9f7
 R
 "src/controllers/TP1Controller.java,b\0\b035899de6e2b250b679907095de04681a38b8c3

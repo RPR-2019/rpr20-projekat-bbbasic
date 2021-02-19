@@ -30,7 +30,7 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <Label fx:id="lUposlenici" prefHeight="17.0" prefWidth="646.0" text="Uposlenici" GridPane.columnSpan="2" />
+      <Label fx:id="lUposlenici" prefHeight="17.0" prefWidth="608.0" text="Uposlenici" GridPane.columnSpan="2" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

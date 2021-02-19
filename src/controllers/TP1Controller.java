@@ -48,7 +48,7 @@ public class TP1Controller {
     public CheckBox novoVozilo;
     public ObservableList<Vozilo> listaVozila;
     public ChoiceBox<Vozilo> choiceVozilo;
-    public Label fldPogrenaRegistracija, fldPogresnaSasija, lvrstaBoje, lboja;
+    public Label fldPogrenaRegistracija, fldPogresnaSasija, lvrstaBoje, lboja, ltehnicki;
     public RadioButton rbObicna, rbMetalik, rbFolija;
     public String boja, vrstaBoje;
     public BorderPane mainPane;
@@ -58,6 +58,7 @@ public class TP1Controller {
     @FXML
     public void initialize() {
         l1.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
+        ltehnicki.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         choiceTipVozila.setItems(tipVozila);
         choiceMarkaVozila.setItems(markaVozila);
         choiceModelVozila.setDisable(true);

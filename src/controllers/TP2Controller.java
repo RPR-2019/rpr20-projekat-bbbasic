@@ -31,7 +31,7 @@ import java.util.Arrays;
 public class TP2Controller {
     public TehnickiPregledDAO tehnickiPregledDAO;
     public UsersDAO usersDAO;
-    public Label l2, l3;
+    public Label l2, l3,ltehnicki;
     public TextField fldIme, fldPrezime, fldMjestoPrebivalista, fldBrojTelefona;
     public KlijentDAO klijentDAO;
     public Label fldPogresanBroj;
@@ -47,6 +47,7 @@ public class TP2Controller {
         fldPogresanBroj.setVisible(false);
         l2.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         l3.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
+        ltehnicki.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         choiceVrstaPregleda.setItems(vrstaTehnickogPregleda);
         choiceVrstaPregleda.setValue(vrstaTehnickogPregleda.get(0));
 
