@@ -143,13 +143,18 @@ public class TP2Controller {
         TehnickiPregled tehnickiPregled = new TehnickiPregled();
 
         tehnickiPregled.setStatusTehnickogPregleda("Zakazan");
+//        //ovdje smo mijenjali
+//        tehnickiPregled.setKlijent(klijent);
+//        tehnickiPregled.setVozilo(vozilo);
         tehnickiPregled.setKlijentID(klijent.getId());
         tehnickiPregled.setVoziloID(vozilo.getId());
         tehnickiPregled.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
         tehnickiPregled.setDatumPregleda(choiceDatum.getValue());
+        tehnickiPregled.getUposlenici().add(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()));
 
         try {
             tehnickiPregledDAO.dodajTehnicki(tehnickiPregled);
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Uspjesno ste zakazali tehnicki pregled!");

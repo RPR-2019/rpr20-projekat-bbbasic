@@ -5,39 +5,30 @@ import enums.StatusTehnickogPregleda;
 import enums.VrstaTehnickogPregleda;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class TehnickiPregled {
     private int id;
     private LocalDate datumPregleda;
-    private Vozilo vozilo;
-    private Klijent klijent;
-//    private int voziloID;
-//    private int klijentID;
+    private int voziloID;
+    private int klijentID;
     private VrstaTehnickogPregleda vrstaTehnickogPregleda;
     private StatusTehnickogPregleda statusTehnickogPregleda;
+    private ArrayList<Uposlenik> uposlenici;
 
     public TehnickiPregled() {
     }
 
-//    public TehnickiPregled(int id, LocalDate datumPregleda, int voziloID, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
-//        this.id = id;
-//        this.datumPregleda = datumPregleda;
-//        this.voziloID = voziloID;
-//        this.klijentID = klijentID;
-//        this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
-//        this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
-//    }
-
-
-    public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, Klijent klijent, VrstaTehnickogPregleda vrstaTehnickogPregleda, StatusTehnickogPregleda statusTehnickogPregleda) {
+    public TehnickiPregled(int id, LocalDate datumPregleda, int voziloID, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
         this.id = id;
         this.datumPregleda = datumPregleda;
-        this.vozilo = vozilo;
-        this.klijent = klijent;
-        this.vrstaTehnickogPregleda = vrstaTehnickogPregleda;
-        this.statusTehnickogPregleda = statusTehnickogPregleda;
+        this.voziloID = voziloID;
+        this.klijentID = klijentID;
+        this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
+        this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
     }
+
 
     public int getId() {
         return id;
@@ -54,39 +45,23 @@ public class TehnickiPregled {
     public void setDatumPregleda(LocalDate datumPregleda) {
         this.datumPregleda = datumPregleda;
     }
-//
-//    public int getVoziloID() {
-//        return voziloID;
-//    }
-//
-//    public void setVoziloID(int voziloID) {
-//        this.voziloID = voziloID;
-//    }
-//
-//    public int getKlijentID() {
-//        return klijentID;
-//    }
-//
-//    public void setKlijentID(int klijentID) {
-//        this.klijentID = klijentID;
-//    }
 
-
-    public Vozilo getVozilo() {
-        return vozilo;
+    public int getVoziloID() {
+        return voziloID;
     }
 
-    public void setVozilo(Vozilo vozilo) {
-        this.vozilo = vozilo;
+    public void setVoziloID(int voziloID) {
+        this.voziloID = voziloID;
     }
 
-    public Klijent getKlijent() {
-        return klijent;
+    public int getKlijentID() {
+        return klijentID;
     }
 
-    public void setKlijent(Klijent klijent) {
-        this.klijent = klijent;
+    public void setKlijentID(int klijentID) {
+        this.klijentID = klijentID;
     }
+
 
     public void setVrstaTehnickogPregleda(VrstaTehnickogPregleda vrstaTehnickogPregleda) {
         this.vrstaTehnickogPregleda = vrstaTehnickogPregleda;
@@ -112,31 +87,36 @@ public class TehnickiPregled {
         this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        TehnickiPregled that = (TehnickiPregled) o;
-//        return voziloID == that.voziloID && Objects.equals(datumPregleda, that.datumPregleda);
-//
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(datumPregleda, voziloID);
-//    }
+    public ArrayList<Uposlenik> getUposlenici() {
+        return uposlenici;
+    }
+
+    public void setUposlenici(ArrayList<Uposlenik> uposlenici) {
+        this.uposlenici = uposlenici;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TehnickiPregled that = (TehnickiPregled) o;
-        return vozilo.getId() == that.vozilo.getId() && Objects.equals(datumPregleda, that.datumPregleda);
+        return voziloID == that.voziloID && Objects.equals(datumPregleda, that.datumPregleda);
 
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datumPregleda, vozilo.getId());
+        return Objects.hash(datumPregleda, voziloID);
+    }
+
+    @Override
+    public String toString() {
+        return "TehnickiPregled{" +
+                "datumPregleda=" + datumPregleda +
+                ", voziloID=" + voziloID +
+                ", klijentID=" + klijentID +
+                ", vrstaTehnickogPregleda=" + vrstaTehnickogPregleda +
+                ", statusTehnickogPregleda=" + statusTehnickogPregleda +
+                '}';
     }
 }

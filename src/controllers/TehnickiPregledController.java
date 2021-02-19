@@ -56,11 +56,11 @@ public class TehnickiPregledController {
                 )
         );
         //tabelica
-        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>(""));
-        colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>(""));
-        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, Integer>(""));
-        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>(""));
-        colUposlenici.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, ArrayList<Uposlenik>>(""));
+        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("datumPregleda"));
+        colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("voziloID"));
+        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, Integer>("vrstaTehnickogPregleda"));
+        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("statusTehnickogPregleda"));
+        colUposlenici.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, ArrayList<Uposlenik>>("uposlenici"));
 
         tableView.setItems(timTehnickiDAO.sviTehnicki());
 

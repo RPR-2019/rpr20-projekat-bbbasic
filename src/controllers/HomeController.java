@@ -41,10 +41,11 @@ public class HomeController {
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/icon.jpg"));
-            stage.setWidth(450);
-            stage.setHeight(580);
+            stage.setWidth(900);
+//            stage.setHeight(580);
             //MIJENJANJE
             mainPane.setCenter(root);
+
             //stage.show();
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -65,8 +66,8 @@ public class HomeController {
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/icon.jpg"));
-            stage.setWidth(440);
-            stage.setHeight(483);
+//            stage.setWidth(440);
+//            stage.setHeight(483);
             //MIJENJANJE
             mainPane.setCenter(root);
 
@@ -95,10 +96,12 @@ public class HomeController {
             //stage.setTitle("TehnickiPregled");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-            stage.setWidth(440);
-            stage.setHeight(483);
+//            stage.setWidth(440);
+//            stage.setHeight(483);
             //MIJENJANJE
+            stage.setMaximized(true);
             mainPane.setCenter(root);
+
 
         } catch (IOException ioException) {
             ioException.printStackTrace();

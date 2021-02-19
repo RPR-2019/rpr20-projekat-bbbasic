@@ -80,7 +80,8 @@ public class LogInController {
             root = loader.load();
             stage.setTitle("MeCARnic");
             stage.setScene(new Scene(root, 396, 311));
-            stage.setWidth(900);
+            //stage.setFullScreen(true);
+            stage.setWidth(1200);
             stage.setHeight(730);
             stage.show();
         } catch (IOException e) {
