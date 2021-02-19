@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -28,6 +29,7 @@ public class AdministratorGlavniController {
     public ListView listaUposlenici;
     private ObservableList<Uposlenik> lista;
     private UsersDAO usersDAO;
+    public Label lUposlenici;
 
     public AdministratorGlavniController() {
         usersDAO = new UsersDAO();
@@ -37,6 +39,7 @@ public class AdministratorGlavniController {
 
     @FXML
     public void initialize() {
+        lUposlenici.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         listaUposlenici.setItems(lista);
 
     }

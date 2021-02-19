@@ -76,6 +76,38 @@
         -fx-background-position: left;
         -fx-text-position: right;
 }
+#btnDodajUposlenika {
+        -fx-border-color: transparent;
+        -fx-border-width: 0;
+        -fx-background-radius: 0;
+        -fx-background-color: #a6d4fa;
+        -fx-text-fill: rgba(0, 0, 0, 0.87);
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: left;
+        -fx-text-position: left;
+
+}
+#brnObrisiUposlenika {
+        -fx-border-color: transparent;
+        -fx-border-width: 0;
+        -fx-background-radius: 0;
+        -fx-background-color: rgba(0, 0, 0, 0.04);
+        -fx-text-fill: rgba(0, 0, 0, 0.87);
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: left;
+        -fx-text-position: left;
+}
+
+#btnIzmijeniUposlenika {
+        -fx-border-color: transparent;
+        -fx-border-width: 0;
+        -fx-background-radius: 0;
+        -fx-background-color: rgba(0, 0, 0, 0.04);
+        -fx-text-fill: rgba(0, 0, 0, 0.87);
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: left;
+        -fx-text-position: left;
+}
 
 #Hbar {
     -fx-background-color: rgba(0, 0, 0, 0.08);

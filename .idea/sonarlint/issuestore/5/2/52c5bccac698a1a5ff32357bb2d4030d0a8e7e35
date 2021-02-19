@@ -1,31 +1,35 @@
 
 L
-java:S3740H"/Provide the parametrized type for this generic.(¡ªñŞ8¥£‡»û.
-P
-java:S1659"3Declare "odrediIDTehnickogUpit" on a separate line.(§¡È8ª§À¹û.
-f
-java:S25831"DChange this condition so that it does not always evaluate to "false"(˜¥Ëÿÿÿÿÿ8¥£‡»û.
-O
-java:S1659"2Declare "izmijeniTehnickiUpit" on a separate line.(§¡È8³Ã¹û.
-U
-java:S1659"8Declare "spojiTehnickiUposlenikUpit" on a separate line.(§¡È8£¤¡»û.
+java:S3740""/Provide the parametrized type for this generic.(¡ªñŞ8Š×·¹û.
+T
+java:S1659"2Declare "izmijeniTehnickiUpit" on a separate line.(ƒÜ¨ıÿÿÿÿ8³Ã¹û.
+X	java:S125"<This block of commented-out lines of code should be removed.(‚Õôô8İ«Ä¹û.
 J
 java:S1481H"-Remove this unused "rezultat" local variable.(¡ªñŞ8¥£‡»û.
-L
-java:S3740""/Provide the parametrized type for this generic.(¡ªñŞ8Š×·¹û.
-J
-java:S1128"-Remove this unused import 'models.Uposlenik'.(Ô¼™³8ÍÊ»û.
-
-java:S1319!"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰£¿8Š×·¹û.
-U	java:S106c"9Replace this use of System.out or System.err by a logger.(ùçŞå8”€è¹û.
-X	java:S125"<This block of commented-out lines of code should be removed.(‚Õôô8İ«Ä¹û.
 R
 java:S1172b"6Remove this unused method parameter "tehnickiPregled".(Ó…ñ$8ñâÊ»û.
-M
-java:S1128"+Remove this unused import 'models.Klijent'.(¢àâÎøÿÿÿÿ8¥£‡»û.
 Y
 java:S1854H"<Remove this useless assignment to local variable "rezultat".(¡ªñŞ8¥£‡»û.
-L
-java:S1659"/Declare "dodajTehnickiUpit" on a separate line.(§¡È8ªà½¹û.
+Z
+java:S1659"8Declare "spojiTehnickiUposlenikUpit" on a separate line.(ƒÜ¨ıÿÿÿÿ8£¤¡»û.
+U	java:S106c"9Replace this use of System.out or System.err by a logger.(ùçŞå8”€è¹û.
+c
+java:S1659"ADeclare "dajUposlenogSaKorisnickimImenomUpit" on a separate line.(ƒÜ¨ıÿÿÿÿ8’‰€¾û.
+Z
+java:S1068"8Remove this unused "izmijeniTehnickiUpit" private field.(ƒÜ¨ıÿÿÿÿ8”€è¹û.
+M
+java:S1128"+Remove this unused import 'models.Klijent'.(¢àâÎøÿÿÿÿ8¥£‡»û.
+i
+java:S1068"GRemove this unused "dajUposlenogSaKorisnickimImenomUpit" private field.(ƒÜ¨ıÿÿÿÿ8’‰€¾û.
+
+java:S1319!"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰£¿8Š×·¹û.
 U
-java:S1068"8Remove this unused "izmijeniTehnickiUpit" private field.(§¡È8”€è¹û.
+java:S1659"3Declare "odrediIDTehnickogUpit" on a separate line.(ƒÜ¨ıÿÿÿÿ8ª§À¹û.
+f
+java:S25831"DChange this condition so that it does not always evaluate to "false"(˜¥Ëÿÿÿÿÿ8¥£‡»û.
+J
+java:S1128"-Remove this unused import 'models.Uposlenik'.(Ô¼™³8ÍÊ»û.
+Q
+java:S1659"/Declare "dodajTehnickiUpit" on a separate line.(ƒÜ¨ıÿÿÿÿ8ªà½¹û.
+L
+java:S3740H"/Provide the parametrized type for this generic.(¡ªñŞ8¥£‡»û.

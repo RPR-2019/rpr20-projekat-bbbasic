@@ -75,8 +75,6 @@ O
 src/dao/TehnickiPregledDAO.java,5\2\52c5bccac698a1a5ff32357bb2d4030d0a8e7e35
 n
 >out/production/rpr20-projekat-bbbasic/fxml/zakazivanjeTP1.fxml,2\b\2b6a07f8da14818b648e59e27f8486459db00d53
-R
-"resources/fxml/zakazivanjeTP1.fxml,4\8\48eb5ad15c0e8b252820c2f0e70e2e3eca162d15
 n
 >out/production/rpr20-projekat-bbbasic/fxml/zakazivanjeTP2.fxml,7\1\714abb56a8cb4d0a7949183e264da472f8503775
 R
@@ -85,3 +83,5 @@ R
 "src/controllers/TP2Controller.java,5\3\5383eac4cfed00e671fe8d70c00281421371f9f7
 R
 "src/controllers/TP1Controller.java,b\0\b035899de6e2b250b679907095de04681a38b8c3
+H
+resources/fxml/home.fxml,2\f\2f2858f2044fee797e3e427926835fd7b7c38b97
