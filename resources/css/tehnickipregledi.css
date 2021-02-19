@@ -1,0 +1,15 @@
+#btnDovrsiTehnicki {
+        -fx-border-color: rgba(0, 0, 0, 0.12);
+        -fx-border-width: 1;
+        -fx-background-radius: 0;
+        -fx-background-color: transparent;
+        -fx-text-fill: rgba(0, 0, 0, 0.87);
+
+}
+#btnOtkaziTehnicki {
+        -fx-border-color: rgba(0, 0, 0, 0.12);
+        -fx-border-width: 1;
+        -fx-background-radius: 0;
+        -fx-background-color: transparent;
+        -fx-text-fill: rgba(0, 0, 0, 0.87);
+}

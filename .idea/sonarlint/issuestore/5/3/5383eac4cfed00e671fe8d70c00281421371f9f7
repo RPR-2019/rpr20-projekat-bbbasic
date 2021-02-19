@@ -1,57 +1,63 @@
 
-B
-java:S1659"" Declare "l3" on a separate line.(»’ŞĞûÿÿÿÿ8îíöµû.
-Y	java:S125™"<This block of commented-out lines of code should be removed.(âã­Ô8õ¨•»û.
-s
-java:S1104$"VMake klijentDAO a static final constant or non-public and provide accessors if needed.(“äÁâ8¼ã‡¶û.
+€
+java:S1104 "^Make tehnickiPregledDAO a static final constant or non-public and provide accessors if needed.(ë©Î÷ùÿÿÿÿ8å˜ê¹û.
+T
+java:S1172A"2Remove this unused method parameter "actionEvent".(ûæÌ¯ÿÿÿÿÿ8Şİ¤¶û.
+p
+java:S1104""NMake l2 a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8ÕÕîµû.
+K
+java:S1125‚"(Remove the literal "true" boolean value.(·Ä±şÿÿÿÿ8„è…·û.
+q
+java:S1104!"TMake usersDAO a static final constant or non-public and provide accessors if needed.(ìøßß8³ô…¾û.
+I
+java:S1659""'Declare "ltehnicki" on a separate line.(ëîà§øÿÿÿÿ8“œ¸Àû.
+q
+java:S1192I"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8¶´Ì¶û.
+J
+java:S1659#"-Declare "fldBrojTelefona" on a separate line.(´†æû8ù“Ñ¶û.
+x
+java:S1104#"[Make fldBrojTelefona a static final constant or non-public and provide accessors if needed.(´†æû8ù“Ñ¶û.
 E
 java:S1659#"(Declare "fldPrezime" on a separate line.(´†æû8óñƒ¶û.
 p
-java:S1192I"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 10 times.(±‚õŒ8¶´Ì¶û.
-€
-java:S1104 "^Make tehnickiPregledDAO a static final constant or non-public and provide accessors if needed.(ë©Î÷ùÿÿÿÿ8å˜ê¹û.
-„
-java:S1104)"bMake vrstaTehnickogPregleda a static final constant or non-public and provide accessors if needed.(ñ³î£ÿÿÿÿÿ8†¨‚ºû.
-|
-java:S1104("_Make choiceVrstaPregleda a static final constant or non-public and provide accessors if needed.(‹âïË8«åü¹û.
-J
-java:S1659#"-Declare "fldBrojTelefona" on a separate line.(´†æû8ù“Ñ¶û.
-P
-java:S1128".Remove this unused import 'enums.MarkaVozila'.(Ø—ŞÎøÿÿÿÿ8üÅˆºû.
-o
-java:S1104#"RMake fldIme a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
+java:S1192J"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 10 times.(±‚õŒ8¶´Ì¶û.
+p
+java:S1104""NMake l3 a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8îíöµû.
+Œ
+java:S11920"jDefine a constant instead of duplicating this literal "-fx-background-color: rgba(0, 0, 0, 0.08)" 3 times.(‚Èäÿÿÿÿÿ8ì¸Àû.
 Q
 java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8»°¦ºû.
-T
-java:S1172@"2Remove this unused method parameter "actionEvent".(ûæÌ¯ÿÿÿÿÿ8Şİ¤¶û.
-P
-java:S1659#"3Declare "fldMjestoPrebivalista" on a separate line.(´†æû8¾Ö¶û.
-Y	java:S125¤"<This block of commented-out lines of code should be removed.(ìéâ•8Ğìí¹û.
-~
-java:S1104#"aMake fldMjestoPrebivalista a static final constant or non-public and provide accessors if needed.(´†æû8¾Ö¶û.
+B
+java:S1659"" Declare "l3" on a separate line.(ëîà§øÿÿÿÿ8îíöµû.
+Y	java:S125¥"<This block of commented-out lines of code should be removed.(ìéâ•8Ğìí¹û.
 T
 java:S1128"2Remove this unused import 'constants.ModelVozila'.(¯ƒ£ïúÿÿÿÿ8Œ¹‡ºû.
-p
-java:S1104""NMake l3 a static final constant or non-public and provide accessors if needed.(»’ŞĞûÿÿÿÿ8îíöµû.
-t
-java:S1104+"WMake choiceDatum a static final constant or non-public and provide accessors if needed.(›ËÚ8¿úŒºû.
-K
-java:S1125"(Remove the literal "true" boolean value.(·Ä±şÿÿÿÿ8„è…·û.
-}
-java:S1104%"[Make fldPogresanBroj a static final constant or non-public and provide accessors if needed.(ø¸«ÿÿÿÿÿ8¤ß‘¶û.
-U	java:S106œ"9Replace this use of System.out or System.err by a logger.(¿İ•28…øˆ»û.
-s
-java:S1104#"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
-x
-java:S1104#"[Make fldBrojTelefona a static final constant or non-public and provide accessors if needed.(´†æû8ù“Ñ¶û.
-q
-java:S1104!"TMake usersDAO a static final constant or non-public and provide accessors if needed.(ìøßß8³ô…¾û.
+P
+java:S1659#"3Declare "fldMjestoPrebivalista" on a separate line.(´†æû8¾Ö¶û.
 o
 java:S1104&"RMake vozilo a static final constant or non-public and provide accessors if needed.(ÅÖÒÍ8Şİ¤¶û.
+o
+java:S1104#"RMake fldIme a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
+|
+java:S1104("_Make choiceVrstaPregleda a static final constant or non-public and provide accessors if needed.(‹âïË8«åü¹û.
 V
 java:S1128"9Remove this unused import 'exceptions.NeispravnaTablica'.(ğ”ç8ÚÌó¶û.
-p
-java:S1104""NMake l2 a static final constant or non-public and provide accessors if needed.(»’ŞĞûÿÿÿÿ8ÕÕîµû.
-U	java:S106f"9Replace this use of System.out or System.err by a logger.(”’ƒ8¨›æ¶û.
-q
-java:S1192H"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8¶´Ì¶û.
+w
+java:S1104""UMake ltehnicki a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8“œ¸Àû.
+s
+java:S1104#"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
+t
+java:S1104+"WMake choiceDatum a static final constant or non-public and provide accessors if needed.(›ËÚ8¿úŒºû.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¿İ•28…øˆ»û.
+}
+java:S1104%"[Make fldPogresanBroj a static final constant or non-public and provide accessors if needed.(ø¸«ÿÿÿÿÿ8¤ß‘¶û.
+s
+java:S1104$"VMake klijentDAO a static final constant or non-public and provide accessors if needed.(“äÁâ8¼ã‡¶û.
+P
+java:S1128".Remove this unused import 'enums.MarkaVozila'.(Ø—ŞÎøÿÿÿÿ8üÅˆºû.
+„
+java:S1104)"bMake vrstaTehnickogPregleda a static final constant or non-public and provide accessors if needed.(ñ³î£ÿÿÿÿÿ8†¨‚ºû.
+Y	java:S125š"<This block of commented-out lines of code should be removed.(âã­Ô8õ¨•»û.
+~
+java:S1104#"aMake fldMjestoPrebivalista a static final constant or non-public and provide accessors if needed.(´†æû8¾Ö¶û.
+U	java:S106g"9Replace this use of System.out or System.err by a logger.(”’ƒ8¨›æ¶û.

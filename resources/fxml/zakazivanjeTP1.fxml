@@ -103,7 +103,7 @@
          </font>
       </Label>
       <Label fx:id="l1" prefHeight="17.0" prefWidth="608.0" text="1. Identifikacijski podaci o vozilu" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-      <Label fx:id="ltehnicki" prefHeight="17.0" prefWidth="608.0" text="Tehnicki pregled" GridPane.columnSpan="3" />
+      <Label fx:id="ltehnicki" prefHeight="17.0" prefWidth="608.0" text="Zakazivanje Tehnickog pregleda" GridPane.columnSpan="3" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

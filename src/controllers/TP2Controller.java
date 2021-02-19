@@ -4,6 +4,7 @@ import constants.ModelVozila;
 import dao.KlijentDAO;
 
 import dao.TehnickiPregledDAO;
+import dao.TimTehnickiDAO;
 import dao.UsersDAO;
 import enums.MarkaVozila;
 import enums.VrstaTehnickogPregleda;
@@ -31,6 +32,7 @@ import java.util.Arrays;
 public class TP2Controller {
     public TehnickiPregledDAO tehnickiPregledDAO;
     public UsersDAO usersDAO;
+    public TimTehnickiDAO timTehnickiDAO;
     public Label l2, l3,ltehnicki;
     public TextField fldIme, fldPrezime, fldMjestoPrebivalista, fldBrojTelefona;
     public KlijentDAO klijentDAO;
@@ -56,6 +58,7 @@ public class TP2Controller {
     public TP2Controller(Vozilo vozilo) {
         tehnickiPregledDAO = new TehnickiPregledDAO();
         usersDAO = new UsersDAO();
+        timTehnickiDAO = new TimTehnickiDAO();
         this.vozilo = vozilo;
         klijentDAO = new KlijentDAO();
         vrstaTehnickogPregleda = FXCollections.observableArrayList(Arrays.asList(VrstaTehnickogPregleda.values()));
@@ -150,7 +153,9 @@ public class TP2Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Uspjesno ste zakazali tehnicki pregled!");
-            tehnickiPregledDAO.spojiTehnickiUposlenik(tehnickiPregled.getId(), usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
+            System.out.println("ID novog tehnickog " + tehnickiPregled.getId());
+            System.out.println("ID usera je" + usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
+            timTehnickiDAO.spojiTehnickiUposlenik(tehnickiPregled.getId(), usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
         }catch (ZakazanTermin zakazanTermin) {
@@ -160,10 +165,6 @@ public class TP2Controller {
             alert.setHeaderText("Vec zakazan pregled!");
             alert.showAndWait();
         }
-
-//        nemoj zaboraviti dodat ovog zaposlenog u tim tehnickog pregleda
-//        System.out.println("Trebamo zakazati tehnicki pregled!");
-//        System.out.println("A auto je " + vozilo.toString());
 
         //mozda da se vrati na pocetnu nez
     }

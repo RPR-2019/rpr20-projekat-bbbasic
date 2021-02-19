@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
+
 import services.UserSession;
 
 import java.io.IOException;
@@ -85,6 +85,25 @@ public class HomeController {
 
     public void onBtnGlavnaForma(ActionEvent actionEvent) {
         System.out.println("Trenutno nemamo nista za glavnu formu.");
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"));
+            TehnickiPregledController tehnickiPregledController = new TehnickiPregledController();
+            loader.setController(tehnickiPregledController);
+            root = loader.load();
+            //stage.setTitle("TehnickiPregled");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            stage.setWidth(440);
+            stage.setHeight(483);
+            //MIJENJANJE
+            mainPane.setCenter(root);
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
     }
 
     public void onbtnLogOut(ActionEvent actionEvent) throws IOException {

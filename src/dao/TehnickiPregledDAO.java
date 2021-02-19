@@ -1,6 +1,7 @@
 package dao;
 
 import exceptions.ZakazanTermin;
+import javafx.scene.layout.Border;
 import models.Klijent;
 import models.TehnickiPregled;
 import models.Uposlenik;
@@ -13,14 +14,15 @@ import java.util.ArrayList;
 
 public class TehnickiPregledDAO extends BaseDAO{
 
-    private PreparedStatement sviTehnickiUpit, dodajTehnickiUpit, odrediIDTehnickogUpit, izmijeniTehnickiUpit, spojiTehnickiUposlenikUpit, dajUposlenogSaKorisnickimImenomUpit;
+    private PreparedStatement sviTehnickiUpit, dodajTehnickiUpit, odrediIDTehnickogUpit, izmijeniTehnickiUpit, spojiTehnickiUposlenikUpit, dajUposlenogSaKorisnickimImenomUpit, brojTehnickihZaID;
 
     protected void kreirajUpite() {
         try {
             sviTehnickiUpit = dbConnection.getSession().prepareStatement("SELECT * FROM tehnicki_pregled");
             dodajTehnickiUpit = dbConnection.getSession().prepareStatement("INSERT INTO tehnicki_pregled VALUES(?,?,?,?,?,?)");
             odrediIDTehnickogUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM tehnicki_pregled");
-            spojiTehnickiUposlenikUpit = dbConnection.getSession().prepareStatement("INSERT INTO tim_tehnicki_pregled VALUES(?,?)");
+//            spojiTehnickiUposlenikUpit = dbConnection.getSession().prepareStatement("INSERT INTO tim_tehnicki_pregled VALUES(?,?)");
+            //brojTehnickihZaID = dbConnection.getSession().prepareStatement("SELECT COUNT(*) FROM tim_tehnicki_pregled WHERE uposlenik_id=?");
             //ovdje ce puno trebat
             //izmijeniTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE uposlenik SET ime=?, prezime=?, lozinka=?, korisnicko_ime=?, datum_rodjenja=?, datum_uposlenja=? WHERE id=?");
         } catch (SQLException e) {
@@ -85,17 +87,32 @@ public class TehnickiPregledDAO extends BaseDAO{
         return false;
     }
 
-    public void spojiTehnickiUposlenik(int tehnickiID, int uposlenikID) {
-        try {
-            spojiTehnickiUposlenikUpit.setInt(1,tehnickiID);
-            spojiTehnickiUposlenikUpit.setInt(2,uposlenikID);
-            spojiTehnickiUposlenikUpit.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void spojiTehnickiUposlenik(int tehnickiID, int uposlenikID) {
+//        try {
+//            spojiTehnickiUposlenikUpit.setInt(1,tehnickiID);
+//            spojiTehnickiUposlenikUpit.setInt(2,uposlenikID);
+//            spojiTehnickiUposlenikUpit.executeUpdate();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void izmijeniTehnicki(TehnickiPregled tehnickiPregled) {
         System.out.println("Trebat ce mijenjat ako se stavi u kompletiran ili otkazan");
     }
+
+//    public int brojTehnickihZaKorisnika(int id) {
+//        try {
+//            brojTehnickihZaID.setInt(1, id);
+//            ResultSet resultSet = brojTehnickihZaID.executeQuery();
+//            if(resultSet.next()) {
+//                return resultSet.getInt(1);
+//            }
+//            System.out.println("Nema nista");
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return 0;
+//    }
 }

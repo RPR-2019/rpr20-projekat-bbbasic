@@ -49,8 +49,14 @@ CREATE TABLE IF NOT EXISTS "tehnicki_pregled" (
     "status_tehnickog_pregleda" TEXT,
 	PRIMARY KEY("id")
 );
+INSERT INTO "tehnicki_pregled" VALUES (1,'2000-02-02', 1, 2,'Redovni','Zakazan');
+INSERT INTO "tehnicki_pregled" VALUES (2,'2000-02-02', 2, 1,'Redovni','Kompletiran');
+INSERT INTO "tehnicki_pregled" VALUES (3,'2000-02-02', 3, 2,'Redovni','Otkazan');
 CREATE TABLE IF NOT EXISTS "tim_tehnicki_pregled" (
     "tehnicki_pregled_id" INT,
     "uposlenik_id" INT
 );
+INSERT INTO "tim_tehnicki_pregled" VALUES (1,1);
+INSERT INTO "tim_tehnicki_pregled" VALUES (2,1);
+INSERT INTO "tim_tehnicki_pregled" VALUES (3,1);
 COMMIT;
