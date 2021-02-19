@@ -94,6 +94,6 @@ public class Uposlenik {
 
     @Override
     public String toString() {
-        return ime + " " + prezime + " " + datumZaposlenja.toString();
+        return ime + " " + prezime;
     }
 }

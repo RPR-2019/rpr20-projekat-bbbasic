@@ -82,6 +82,19 @@ public class UsersDAO extends BaseDAO {
         }
         return false;
     }
+    public Uposlenik dajUposlenogSaKorisnickimImenom(String korisnickoIme) {
+        try {
+            dajUposlenogSaKorisnickimImenomUpit.setString(1, korisnickoIme);
+            ResultSet rs = dajUposlenogSaKorisnickimImenomUpit.executeQuery();
+            if(rs.next()) {
+                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                return uposlenik;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public void obrisiUposlenog(Uposlenik uposlenik) {
         try {

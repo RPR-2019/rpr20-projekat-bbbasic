@@ -6,36 +6,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@/css/btns.css" />
     </stylesheets>
-    <top>
-        <MenuBar prefHeight="25.0" prefWidth="357.0" BorderPane.alignment="CENTER">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            <Menu mnemonicParsing="false" text="Account">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Sign Out" />
-              </items>
-            </Menu>
-            </menus>
-        </MenuBar>
-    </top>
     <left>
         <ToolBar fx:id="Hbar" orientation="VERTICAL" prefHeight="325.0" prefWidth="220.0" BorderPane.alignment="CENTER">
             <items>
@@ -56,4 +30,49 @@
          </BorderPane.margin>
         </ToolBar>
     </left>
+   <top>
+       <ToolBar prefHeight="0.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <MenuBar fx:id="menuBar" prefHeight="30.0" prefWidth="132.0">
+           <menus>
+             <Menu mnemonicParsing="false" text="File">
+               <items>
+                 <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+             </Menu>
+             <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                 <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+             </Menu>
+             <Menu mnemonicParsing="false" text="Help">
+               <items>
+                 <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+             </Menu>
+           </menus>
+         </MenuBar>
+           <Pane prefHeight="29.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+            <padding>
+               <Insets left="-5.0" />
+            </padding></Pane>
+         <MenuBar prefHeight="30.0" prefWidth="122.0">
+           <menus>
+             <Menu mnemonicParsing="false">
+               <items>
+                 <MenuItem mnemonicParsing="false" onAction="#onbtnLogOut" text="Odjavi se" />
+               </items>
+                  <graphic>
+                     <Button fx:id="btnUser" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="112.0" />
+                  </graphic>
+             </Menu>
+           </menus>
+         </MenuBar>
+         <padding>
+            <Insets left="-5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+       </ToolBar>
+   </top>
 </BorderPane>

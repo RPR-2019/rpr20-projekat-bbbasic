@@ -27,8 +27,8 @@ public class Main extends Application {
         LogInController ctrl = new LogInController();
         loader.setController(ctrl);
         Parent root = loader.load();
-        primaryStage.setTitle("Prijava");
-        primaryStage.getIcons().add(new Image("/img/icon.jpg"));
+        primaryStage.setTitle("MeCARnic");
+        primaryStage.getIcons().add(new Image("/img/glavna.png"));
         primaryStage.setScene(new Scene(root, 335, 169));
         primaryStage.setResizable(false);
         primaryStage.show();

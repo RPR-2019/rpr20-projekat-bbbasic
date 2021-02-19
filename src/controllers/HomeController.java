@@ -1,12 +1,16 @@
 package controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
+import services.UserSession;
 
 import java.io.IOException;
 
@@ -15,6 +19,13 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class HomeController {
 
     public BorderPane mainPane;
+    public Button btnUser;
+
+    @FXML
+    public void initialize() {
+        btnUser.setText(String.valueOf(UserSession.getKorisnickoIme()));
+    }
+
 
 
     public void onBtnTehnickiPregled(ActionEvent actionEvent) {
@@ -74,5 +85,23 @@ public class HomeController {
 
     public void onBtnGlavnaForma(ActionEvent actionEvent) {
         System.out.println("Trenutno nemamo nista za glavnu formu.");
+    }
+
+    public void onbtnLogOut(ActionEvent actionEvent) throws IOException {
+        UserSession.cleanUserSession();
+        Stage novastage = (Stage) btnUser.getScene().getWindow();
+        novastage.close();
+
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+        LogInController ctrl = new LogInController();
+        loader.setController(ctrl);
+        Parent root = loader.load();
+        stage.setTitle("MeCARnic");
+        stage.getIcons().add(new Image("/img/glavna.png"));
+        stage.setScene(new Scene(root, 335, 169));
+        stage.setResizable(false);
+        stage.show();
+
     }
 }

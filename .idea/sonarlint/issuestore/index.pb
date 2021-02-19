@@ -39,8 +39,6 @@ I
 src/models/Uposlenik.java,b\5\b5ec3ed53aa585cc79ae589e4339d611e882e155
 F
 src/dao/VozilaDAO.java,5\a\5ae4927739da4f046b5179c85fc3b9850b93ae69
-U
-%src/controllers/VoziloController.java,4\1\4107f124b6b6b90b8318b6e0e2fc40b82c230656
 F
 src/models/Vozilo.java,c\d\cd91323c21eb98513586d134d7cc3bc354a74444
 H
@@ -55,8 +53,6 @@ E
 src/services/VIN.java,3\7\37f6cb4fd48201b0a51513e097db87ef8d19e842
 U
 %src/exceptions/NeispravnaTablica.java,a\b\ab35f508ab5791b712cdbd42d18c05ae47135fd8
-f
-6out/production/rpr20-projekat-bbbasic/fxml/vozilo.fxml,c\5\c542eb966ac0806fb36a05b106a93f5b502487c8
 b
 2out/production/rpr20-projekat-bbbasic/css/btns.css,5\f\5f5f23621579b5f16a45b169840a3495d4e075a4
 d
@@ -67,5 +63,25 @@ G
 src/models/Klijent.java,a\9\a9e4de03cfa6bba0d59794f5bec42c907226e7c6
 G
 src/dao/KlijentDAO.java,e\b\eb4cbb26ea9584caac0a5e61106c6aaa6e2d940c
+\
+,src/exceptions/NeispravanTelefonskiBroj.java,e\4\e43ce686d4bb412c2945e62c310eaca501428094
 V
-&src/controllers/KlijentController.java,5\b\5bbb5a37068fc150b131e00bdbf8aaea564d6eba
+&src/enums/StatusTehnickogPregleda.java,9\6\96fef4985eb67b195ca8bdef60ffd669d1520447
+U
+%src/enums/VrstaTehnickogPregleda.java,6\b\6bf5477185f81392da493cff4fb87ab3150d0847
+Q
+!src/exceptions/ZakazanTermin.java,8\8\8825b7bad402e7512ff0f9a4b7989ee6f57cdc7e
+O
+src/dao/TehnickiPregledDAO.java,5\2\52c5bccac698a1a5ff32357bb2d4030d0a8e7e35
+n
+>out/production/rpr20-projekat-bbbasic/fxml/zakazivanjeTP1.fxml,2\b\2b6a07f8da14818b648e59e27f8486459db00d53
+R
+"resources/fxml/zakazivanjeTP1.fxml,4\8\48eb5ad15c0e8b252820c2f0e70e2e3eca162d15
+n
+>out/production/rpr20-projekat-bbbasic/fxml/zakazivanjeTP2.fxml,7\1\714abb56a8cb4d0a7949183e264da472f8503775
+R
+"resources/fxml/zakazivanjeTP2.fxml,2\e\2e3bea990195223a891ae7b63d340099c1c86df1
+R
+"src/controllers/TP2Controller.java,5\3\5383eac4cfed00e671fe8d70c00281421371f9f7
+R
+"src/controllers/TP1Controller.java,b\0\b035899de6e2b250b679907095de04681a38b8c3

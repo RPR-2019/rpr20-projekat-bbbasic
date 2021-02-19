@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class TehnickiPregledDAO extends BaseDAO{
 
-    private PreparedStatement sviTehnickiUpit, dodajTehnickiUpit, odrediIDTehnickogUpit, izmijeniTehnickiUpit, spojiTehnickiUposlenikUpit;
+    private PreparedStatement sviTehnickiUpit, dodajTehnickiUpit, odrediIDTehnickogUpit, izmijeniTehnickiUpit, spojiTehnickiUposlenikUpit, dajUposlenogSaKorisnickimImenomUpit;
 
     protected void kreirajUpite() {
         try {

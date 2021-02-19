@@ -4,6 +4,7 @@ import constants.ModelVozila;
 import dao.KlijentDAO;
 
 import dao.TehnickiPregledDAO;
+import dao.UsersDAO;
 import enums.MarkaVozila;
 import enums.VrstaTehnickogPregleda;
 import exceptions.NeispravanTelefonskiBroj;
@@ -29,6 +30,7 @@ import java.util.Arrays;
 
 public class TP2Controller {
     public TehnickiPregledDAO tehnickiPregledDAO;
+    public UsersDAO usersDAO;
     public Label l2, l3;
     public TextField fldIme, fldPrezime, fldMjestoPrebivalista, fldBrojTelefona;
     public KlijentDAO klijentDAO;
@@ -52,6 +54,7 @@ public class TP2Controller {
 
     public TP2Controller(Vozilo vozilo) {
         tehnickiPregledDAO = new TehnickiPregledDAO();
+        usersDAO = new UsersDAO();
         this.vozilo = vozilo;
         klijentDAO = new KlijentDAO();
         vrstaTehnickogPregleda = FXCollections.observableArrayList(Arrays.asList(VrstaTehnickogPregleda.values()));
@@ -146,7 +149,7 @@ public class TP2Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Uspjesno ste zakazali tehnicki pregled!");
-            tehnickiPregledDAO.spojiTehnickiUposlenik(tehnickiPregled.getId(), UserSession.getID());
+            tehnickiPregledDAO.spojiTehnickiUposlenik(tehnickiPregled.getId(), usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
         }catch (ZakazanTermin zakazanTermin) {

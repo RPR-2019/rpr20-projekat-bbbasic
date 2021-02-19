@@ -1,15 +1,19 @@
 
-W
-java:S2209"5Change this instance-reference to a static reference.(äÿÌ…ÿÿÿÿÿ8ÑÒŽ½ú.
+R
+java:S2209"5Change this instance-reference to a static reference.(Üæñß8Û²¶»û.
 S
-java:S2696"6Make the enclosing method "static" or remove this set.(ÆÖÑ°8ÑÒŽ½ú.
-L
-java:S3010
-"*Remove this assignment of "korisnickoIme".(ñ—®àûÿÿÿÿ8øÖ‹½ú.
+java:S2696""6Make the enclosing method "static" or remove this set.(ÆÖÑ°8ÑÒŽ½ú.
+N
+java:S1068"1Remove this unused "korisnickoIme" private field.(ýôï³8ßø»»û.
 W
-java:S2209
-"5Change this instance-reference to a static reference.(ñ—®àûÿÿÿÿ8øÖ‹½ú.
+java:S2209"5Change this instance-reference to a static reference.(äÿÌ…ÿÿÿÿÿ8Û²¶»û.
+o
+java:S3008"MRename this field "ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¢ÓÎûÿÿÿÿ8ÖŸµ»û.
+<
+java:S3010"Remove this assignment of "ID".(Üæñß8©˜·»û.
 J
-java:S3010"(Remove this assignment of "privilegija".(äÿÌ…ÿÿÿÿÿ8ÑÒŽ½ú.
+java:S3010"(Remove this assignment of "privilegija".(äÿÌ…ÿÿÿÿÿ8Û²¶»û.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯†¬Ç8 ñ¶»û.
 S
-java:S2696"6Make the enclosing method "static" or remove this set.(ˆï‹È8øÖ‹½ú.
+java:S2696!"6Make the enclosing method "static" or remove this set.(•Þ×ø8øÖ‹½ú.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÄ‚¼úÿÿÿÿ8³ä»»û.

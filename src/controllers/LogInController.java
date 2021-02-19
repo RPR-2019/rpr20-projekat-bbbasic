@@ -48,7 +48,8 @@ public class LogInController {
                 fldKorisnickoIme.getStyleClass().add("poljeIspravno");
 
                 //nasli smo korisnika sada trebamo njega sacuvati
-                UserSession.getInstace(pomocni.get(i).getId(), pomocni.get(i).isPristup());
+                System.out.println("Sada je " + pomocni.get(i).getKorisnickoIme());
+                UserSession.getInstace(pomocni.get(i).getKorisnickoIme(), pomocni.get(i).isPristup());
                 closeWindow();
             }
             else {

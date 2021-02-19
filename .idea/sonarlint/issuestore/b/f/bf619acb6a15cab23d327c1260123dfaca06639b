@@ -5,25 +5,25 @@ java:S1659
 
 java:S1450
 "_Remove the "dajUposlenogUpit" field and declare it as a local variable in the relevant methods.(ì¹ÓÖúÿÿÿÿ8ç¬×ú.
-L
-java:S3740"/Provide the parametrized type for this generic.(‰óßç8¬À²×ú.
-P
-java:S1659
-".Declare "dajUposlenogUpit" on a separate line.(ì¹ÓÖúÿÿÿÿ8õÕæºú.
-Q
-java:S1659"4Declare "promijeniUposlenogUpit" on a separate line.(³ğ©ü8’–©æú.
 ’
 java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Œàİÿÿÿÿÿ8¬À²×ú.
-J
-java:S1659"-Declare "obrisiUposlenog" on a separate line.(³ğ©ü8¡Òûåú.
-c
-java:S1659
-"ADeclare "dajUposlenogSaKorisnickimImenomUpit" on a separate line.(ì¹ÓÖúÿÿÿÿ8‹¤ÆÛú.
-R
-java:S1659
-"0Declare "dodajUposlenogUpit" on a separate line.(ì¹ÓÖúÿÿÿÿ8œøÉßú.
 c
 java:S1126I"AReplace this if-then-else statement by a single return statement.(Ò™ö¤øÿÿÿÿ8Ìœ¨çú.
 V
 java:S1068
 "4Remove this unused "dajUposlenogUpit" private field.(ì¹ÓÖúÿÿÿÿ8õÕæºú.
+L
+java:S3740"/Provide the parametrized type for this generic.(‰óßç8¬À²×ú.
+J
+java:S1659"-Declare "obrisiUposlenog" on a separate line.(³ğ©ü8¡Òûåú.
+Q
+java:S1659"4Declare "promijeniUposlenogUpit" on a separate line.(³ğ©ü8’–©æú.
+P
+java:S1659
+".Declare "dajUposlenogUpit" on a separate line.(ì¹ÓÖúÿÿÿÿ8õÕæºú.
+R
+java:S1659
+"0Declare "dodajUposlenogUpit" on a separate line.(ì¹ÓÖúÿÿÿÿ8œøÉßú.
+c
+java:S1659
+"ADeclare "dajUposlenogSaKorisnickimImenomUpit" on a separate line.(ì¹ÓÖúÿÿÿÿ8‹¤ÆÛú.

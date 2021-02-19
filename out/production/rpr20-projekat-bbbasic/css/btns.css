@@ -64,7 +64,18 @@
     -fx-text-position: right;
 }
 
-
+#btnUser {
+        -fx-border-color: transparent;
+        -fx-border-width: 0;
+        -fx-background-radius: 0;
+        -fx-background-color: transparent;
+        -fx-text-fill: rgba(0, 0, 0, 0.87);
+        -fx-background-image: url("/img/user.png");
+        -fx-background-size: 20 20;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: left;
+        -fx-text-position: right;
+}
 
 #Hbar {
     -fx-background-color: rgba(0, 0, 0, 0.08);
