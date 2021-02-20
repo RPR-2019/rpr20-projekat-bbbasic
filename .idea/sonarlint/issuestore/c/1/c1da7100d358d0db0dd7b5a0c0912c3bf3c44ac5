@@ -1,10 +1,12 @@
 
+]	java:S125"<This block of commented-out lines of code should be removed.(ĞçùÒşÿÿÿÿ8Ùîíßû.
+X	java:S125F"<This block of commented-out lines of code should be removed.(òñï8¦·Èü.
+]	java:S1255"<This block of commented-out lines of code should be removed.(ÕÉø˜şÿÿÿÿ8ÓÂîßû.
+X	java:S125x"<This block of commented-out lines of code should be removed.(ôƒ˜…8¸òïßû.
+X	java:S125"<This block of commented-out lines of code should be removed.(óÅÀâ8ñåÆü.
+’
+java:S1319o"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(»±ÚÁùÿÿÿÿ8–®Şû.
 P
 java:S1128".Remove this unused import 'enums.MarkaVozila'.(Ø—ŞÎøÿÿÿÿ8šÙÒ¹û.
 ’
-java:S1319f"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(»±ÚÁùÿÿÿÿ8–®Şû.
-X	java:S125o"<This block of commented-out lines of code should be removed.(ôƒ˜…8¸òïßû.
-]	java:S1254"<This block of commented-out lines of code should be removed.(ÕÉø˜şÿÿÿÿ8ÓÂîßû.
-]	java:S125"<This block of commented-out lines of code should be removed.(ĞçùÒşÿÿÿÿ8Ùîíßû.
-’
-java:S1319j"uThe type of the "uposlenici" object should be an interface such as "List" rather than the implementation "ArrayList".(ıŠÈ8–®Şû.
+java:S1319s"uThe type of the "uposlenici" object should be an interface such as "List" rather than the implementation "ArrayList".(ıŠÈ8–®Şû.

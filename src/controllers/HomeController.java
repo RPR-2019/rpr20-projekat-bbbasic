@@ -111,7 +111,7 @@ public class HomeController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"));
-            TehnickiPregledController tehnickiPregledController = new TehnickiPregledController();
+            TehnickiPregledController tehnickiPregledController = new TehnickiPregledController(mainPane);
             loader.setController(tehnickiPregledController);
             root = loader.load();
             //stage.setTitle("TehnickiPregled");

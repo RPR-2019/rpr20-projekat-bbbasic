@@ -10,17 +10,26 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import models.TehnickiPregled;
 import models.Uposlenik;
 import services.UserSession;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 
 public class TehnickiPregledController {
@@ -42,6 +51,7 @@ public class TehnickiPregledController {
     public Button btnOtkaziTehnicki;
     public Button btnDodajUposlenika;
     public ChoiceBox<Uposlenik> choiceUposlenik;
+    public BorderPane mainPane;
 
     @FXML
     public void initialize() {
@@ -91,7 +101,8 @@ public class TehnickiPregledController {
 
 
     }
-    public TehnickiPregledController() {
+    public TehnickiPregledController(BorderPane mainPane) {
+        this.mainPane = mainPane;
         tehnickiPregledDAO = new TehnickiPregledDAO();
         usersDAO = new UsersDAO();
         timTehnickiDAO = new TimTehnickiDAO();
@@ -112,6 +123,27 @@ public class TehnickiPregledController {
         timTehnickiDAO.spojiTehnickiUposlenik(tableView.getSelectionModel().getSelectedItem().getId(), choiceUposlenik.getValue().getId());
         tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
         tableView.refresh();
+    }
+    public void dovrsiTehnicki(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/kompletiranTehnickiPregled.fxml"));
+            KompletiranTehnickiPregled kompletiranTehnickiPregled = new KompletiranTehnickiPregled();
+            loader.setController(kompletiranTehnickiPregled);
+            root = loader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            stage.getIcons().add(new Image("/img/icon.jpg"));
+            stage.setWidth(1010);
+            stage.setHeight(580);
+            //MIJENJANJE
+            mainPane.setCenter(root);
+            return;
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
 
     public void refresh(PieChart chart) {

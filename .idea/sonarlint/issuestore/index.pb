@@ -85,8 +85,6 @@ p
 @out/production/rpr20-projekat-bbbasic/fxml/tehnickipregledi.fxml,c\0\c043843a75f5b298c11dbf88884f1159ce4153d0
 K
 src/dao/TimTehnickiDAO.java,7\4\74a2698665f0b142ed37b86c536de7eae5c3dc48
-[
-+resources/fxml/adminPristupKorisnicima.fxml,f\4\f48e3035607ad290c7f23958dad13cdbd075abcd
 f
 6src/controllers/AdminPristupKorisnicimaController.java,c\f\cfbb9b52b3c84efc4d09389128b55df691af71f7
 w
@@ -97,3 +95,9 @@ h
 8out/production/rpr20-projekat-bbbasic/fxml/pretraga.fxml,f\c\fce923036613f3ac6f44fed0354ccb328a5e3088
 W
 'src/controllers/PretragaController.java,3\f\3f912414f565280e8ea45c359ca0d21311a40e8b
+f
+6out/production/rpr20-projekat-bbbasic/css/pretraga.css,7\5\75bef89b851717591d5f2541a3f3745d210eca0d
+J
+resources/css/pretraga.css,f\3\f345adb935c840bd64cde0c95d29dc16b14cc397
+L
+resources/fxml/pretraga.fxml,c\1\c1f731ba0dad15a887bd6a64d9c59f6ef50366e1

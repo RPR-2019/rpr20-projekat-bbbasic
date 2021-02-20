@@ -1,27 +1,32 @@
 
-Z	java:S106x"9Replace this use of System.out or System.err by a logger.(öíéÊøÿÿÿÿ8ñŞóÜû.
-U	java:S106z"9Replace this use of System.out or System.err by a logger.(Ññ8éµôİû.
-W	java:S1259"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
+]	java:S125l"<This block of commented-out lines of code should be removed.(ùÌÄÅûÿÿÿÿ8»’Ùü.
+K
+java:S1659"/Declare "brojTehnickihZaID" on a separate line.(Ë º8À±úÜû.
+D
+java:S1659"(Declare "voziloUpit" on a separate line.(Ë º8š³‰àû.
+J
+java:S1068".Remove this unused "voziloUpit" private field.(Ë º8ó«Ûü.
+]	java:S125"<This block of commented-out lines of code should be removed.(Øÿ»æøÿÿÿÿ8¼êÜü.
 U	java:S106W"9Replace this use of System.out or System.err by a logger.(˜û”÷8¥´Ûû.
 K
 java:S1659"/Declare "brojTehnickihUpit" on a separate line.(Ë º8ÙñÚÚû.
+W	java:S1259"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
+€
+java:S1450"dRemove the "dajUposlenikeZaTPUpit" field and declare it as a local variable in the relevant methods.(Ë º8¾¼Ùü.
+]	java:S125"<This block of commented-out lines of code should be removed.(Àîıûÿÿÿÿ8©İü.
+W	java:S125Z"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
 O
 java:S1659"3Declare "dajUposlenikeZaTPUpit" on a separate line.(Ë º8‹ª»Şû.
-D
-java:S1659"(Declare "voziloUpit" on a separate line.(Ë º8š³‰àû.
-I
-java:S1168‹"+Return an empty collection instead of null.(¥¹ï8¥ÈŞû.
-Z	java:S106s"9Replace this use of System.out or System.err by a logger.(ÈÂ£ıÿÿÿÿ8Æ´¹Şû.
-
-java:S1488¡"aImmediately return this expression instead of assigning it to the temporary variable "uposlenik".(¥ˆ…å8é‚Îãû.
-
-java:S1488“"^Immediately return this expression instead of assigning it to the temporary variable "vozilo".(ÎÛÖ¡ıÿÿÿÿ8Ü¾Šàû.
-W	java:S125I"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
 M
 java:S1659"8Declare "spojiTehnickiUposlenikUpit" on a separate line.(Ë º
-W	java:S125)"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
+^	java:S125"<This block of commented-out lines of code should be removed.(¿ŒµÛûÿÿÿÿ8ó«Ûü.
+O
+java:S1068"3Remove this unused "sviTehnickiUpit" private field.(Ë º8»’Ùü.
 I
 java:S1659"-Declare "sviTehnickiUpit" on a separate line.(Ë º8ĞÈÏãû.
-K
-java:S1659"/Declare "brojTehnickihZaID" on a separate line.(Ë º8À±úÜû.
-W	java:S125Z"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
+W	java:S125I"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
+U
+java:S1068"9Remove this unused "dajUposlenikeZaTPUpit" private field.(Ë º8¾¼Ùü.
+c
+java:S1068"GRemove this unused "dajUposlenogSaKorisnickimImenomUpit" private field.(Ë º8àİÛü.
+W	java:S125)"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
