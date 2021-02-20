@@ -152,15 +152,52 @@ public class TehnickiPregledDAO extends BaseDAO{
             while (rs.next()) {
                 TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
                 tehnickiPregled1.setUposlenici(dajUposlenike(tehnickiPregled1));
-                //System.out.println("Tehnicki je " + tehnickiPregled1);
                 if(UserSession.getPrivileges())
                     tehnickiPregled.add(tehnickiPregled1);
             }
+            if(klijent == null && tipVozila == null && localDate == null) return tehnickiPregled;
+            //klijjent
+            if(klijent != null && tipVozila == null && localDate == null)
+                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                        .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+            //tipvozila
+            if(klijent == null && tipVozila != null && localDate == null)
+                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()))
+                        .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+            //datum
+            if(klijent == null && tipVozila == null && localDate != null)
+                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda().toString().equals(localDate.toString()))
+                        .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+            //klijent + tip vozila
+            if(klijent != null && tipVozila != null && localDate == null)
+                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()) && tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                    .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+
+            //klijent + datum
+            if(klijent != null && tipVozila == null && localDate != null)
+                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda()
+                        .toString()
+                        .equals(localDate.toString()) && tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                        .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+
+            //tip vozila + datum
+            if(klijent == null && tipVozila != null && localDate != null)
+                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda()
+                        .toString()
+                        .equals(localDate.toString()) && tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()))
+                        .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+
+
+            //svi
+            return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda()
+                    .toString()
+                    .equals(localDate.toString()) && tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()) && tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                    .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
+
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
         }
-        System.out.println("TP "  + tehnickiPregled.size());
-        return tehnickiPregled;
+        return null;
     }
 
     private ArrayList<Uposlenik> dajUposlenike(TehnickiPregled tehnickiPregled) {
