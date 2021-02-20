@@ -68,7 +68,6 @@ public class TP1Controller {
         gridStaro.setDisable(false);
         choiceModelVozila.setDisable(true);
         novoVozilo.setSelected(false);
-        fldPogrenaRegistracija.setVisible(false);
         fldPogresnaSasija.setVisible(false);
         lvrstaBoje.setVisible(false);
         lboja.setVisible(false);

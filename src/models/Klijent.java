@@ -62,11 +62,7 @@ public class Klijent {
 
     @Override
     public String toString() {
-        return "Klijent{" +
-                "ime='" + ime + '\'' +
-                ", prezime='" + prezime + '\'' +
-                ", mjesto_prebivalista='" + mjestoPrebivalista + '\'' +
-                '}';
+        return ime + " " + prezime;
     }
 
     @Override
