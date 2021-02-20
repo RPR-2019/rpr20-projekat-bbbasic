@@ -21,15 +21,20 @@ public class HomeController {
     public BorderPane mainPane;
     public Button btnUser;
     public Button btnUposleni;
+    public Button btnPretraga;
 
     @FXML
     public void initialize() {
         btnUser.setText(String.valueOf(UserSession.getKorisnickoIme()));
         onBtnGlavnaForma(null);
-        if(UserSession.getPrivileges())
+        if(UserSession.getPrivileges()) {
             btnUposleni.setDisable(false);
-        else
+            btnPretraga.setDisable(false);
+        }
+        else {
             btnUposleni.setDisable(true);
+            btnPretraga.setDisable(true);
+        }
     }
 
     public void onBtnTehnickiPregled(ActionEvent actionEvent) {
