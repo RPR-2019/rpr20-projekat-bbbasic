@@ -13,8 +13,8 @@
     <left>
         <ToolBar fx:id="Hbar" orientation="VERTICAL" prefHeight="325.0" prefWidth="220.0" BorderPane.alignment="CENTER">
             <items>
-            <Button fx:id="btnGlavnaForma" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnGlavnaForma" prefHeight="25.0" prefWidth="210.0" text="Glavna forma" />
-                <Button fx:id="btnTehnickiPregled" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnTehnickiPregled" prefHeight="29.0" prefWidth="210.0" text="Tehnicki pregled" textAlignment="RIGHT">
+            <Button fx:id="btnGlavnaForma" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnGlavnaForma" prefHeight="25.0" prefWidth="210.0" text="Pocetna" />
+                <Button fx:id="btnTehnickiPregled" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnTehnickiPregled" prefHeight="29.0" prefWidth="210.0" text="Zakazi Tehnicki Pregled" textAlignment="RIGHT">
                <font>
                   <Font size="13.0" />
                </font></Button>

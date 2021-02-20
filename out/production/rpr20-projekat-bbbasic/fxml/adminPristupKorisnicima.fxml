@@ -21,7 +21,7 @@
       <VBox prefHeight="390.0" prefWidth="272.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="3">
          <children>
             <Button fx:id="btnDodajUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#dodajUposlenika" prefHeight="25.0" prefWidth="315.0" text="Dodaj Uposlenika" />
-            <Button fx:id="brnObrisiUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#actionObrisiUposlenika" prefHeight="25.0" prefWidth="314.0" text="Obriši Uposlenika" />
+            <Button fx:id="brnObrisiUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#actionObrisiUposlenika" prefHeight="25.0" prefWidth="315.0" text="Obriši Uposlenika" />
             <Button fx:id="btnIzmijeniUposlenika" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" onAction="#actionIzmijeniUposlenika" prefHeight="25.0" prefWidth="315.0" text="Izmijeni Uposlenika" />
          </children>
          <padding>
