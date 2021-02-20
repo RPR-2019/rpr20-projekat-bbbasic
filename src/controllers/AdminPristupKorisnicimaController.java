@@ -1,7 +1,6 @@
 package controllers;
 
 import dao.UsersDAO;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,23 +14,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import models.Klijent;
 import models.Uposlenik;
-
-
 
 import java.io.IOException;
 import java.util.Optional;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class AdministratorGlavniController {
+public class AdminPristupKorisnicimaController {
     public ListView listaUposlenici;
     private ObservableList<Uposlenik> lista;
     private UsersDAO usersDAO;
     public Label lUposlenici;
 
-    public AdministratorGlavniController() {
+    public AdminPristupKorisnicimaController() {
         usersDAO = new UsersDAO();
         lista = FXCollections.observableArrayList(usersDAO.uposlenici());
 

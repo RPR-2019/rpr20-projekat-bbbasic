@@ -24,9 +24,8 @@ public class HomeController {
     @FXML
     public void initialize() {
         btnUser.setText(String.valueOf(UserSession.getKorisnickoIme()));
+        onBtnGlavnaForma(null);
     }
-
-
 
     public void onBtnTehnickiPregled(ActionEvent actionEvent) {
         System.out.println("Tehnicki pregled");
@@ -42,8 +41,6 @@ public class HomeController {
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/icon.jpg"));
             stage.setWidth(900);
-//            stage.setHeight(580);
-            //MIJENJANJE
             mainPane.setCenter(root);
 
             //stage.show();
@@ -58,8 +55,8 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/administratorglavni.fxml"));
-            AdministratorGlavniController administratorGlavniController = new AdministratorGlavniController();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"));
+            AdminPristupKorisnicimaController administratorGlavniController = new AdminPristupKorisnicimaController();
             loader.setController(administratorGlavniController);
             root = loader.load();
             stage.setTitle("Vozilo");
