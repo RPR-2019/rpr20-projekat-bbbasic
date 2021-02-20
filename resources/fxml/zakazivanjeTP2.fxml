@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane hgap="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="1010.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="900.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <stylesheets>
     <URL value="@/css/validacija.css" />
   </stylesheets>
   <columnConstraints>
     <ColumnConstraints maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="442.0" minWidth="0.0" prefWidth="433.0" />
     <ColumnConstraints />
   </columnConstraints>
   <rowConstraints>
@@ -25,53 +25,58 @@
     <RowConstraints maxHeight="27.0" vgrow="SOMETIMES" />
     <RowConstraints vgrow="SOMETIMES" />
     <RowConstraints vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="27.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="23.0" minHeight="22.0" prefHeight="23.0" vgrow="SOMETIMES" />
     <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints />
+    <RowConstraints maxHeight="21.0" minHeight="16.0" prefHeight="21.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="9.0" minHeight="4.0" prefHeight="4.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
     <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="27.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
     <RowConstraints vgrow="SOMETIMES" />
     <RowConstraints vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
     <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="34.0" minHeight="11.0" prefHeight="34.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="35.0" minHeight="12.0" prefHeight="12.0" />
+    <RowConstraints vgrow="SOMETIMES" />
     <RowConstraints maxHeight="27.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="11.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints />
   </rowConstraints>
   <children>
-    <Label fx:id="l2" prefHeight="17.0" prefWidth="608.0" text="2. Identifikacijski podaci o klijentu" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+    <Label fx:id="l2" prefHeight="17.0" prefWidth="916.0" text="2. Identifikacijski podaci o klijentu" GridPane.columnSpan="3" GridPane.rowIndex="1" />
     <Label text="Ime:" GridPane.rowIndex="3" />
     <Label text="Prezime:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     <Label text="Mjesto prebivalista:" GridPane.rowIndex="5" />
     <Label text="Broj telefona:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-    <Separator prefHeight="0.0" prefWidth="608.0" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-    <TextField fx:id="fldBrojTelefona" promptText="000-000-000" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <Separator prefHeight="0.0" prefWidth="608.0" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+    <TextField fx:id="fldBrojTelefona" prefHeight="25.0" prefWidth="171.0" promptText="000-000-000" GridPane.columnIndex="1" GridPane.rowIndex="6" />
     <TextField fx:id="fldPrezime" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-    <ButtonBar prefHeight="45.0" prefWidth="420.0" GridPane.columnSpan="2" GridPane.rowIndex="22">
+    <ButtonBar prefHeight="45.0" prefWidth="420.0" GridPane.columnSpan="3" GridPane.rowIndex="20">
       <buttons>
-        <Button fx:id="btnOk" mnemonicParsing="false" onAction="#onOkClick" prefHeight="25.0" prefWidth="118.0" text="Ok" />
+        <Button fx:id="btnOk" mnemonicParsing="false" onAction="#onOkClick" prefHeight="25.0" prefWidth="219.0" text="Ok" />
       </buttons>
+         <padding>
+            <Insets right="13.0" />
+         </padding>
     </ButtonBar>
-    <Label prefHeight="17.0" prefWidth="204.0" text="Datum izvodjenja pregleda:" GridPane.rowIndex="15" />
-    <ChoiceBox fx:id="choiceVrstaPregleda" prefHeight="25.0" prefWidth="204.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+    <Label prefHeight="17.0" prefWidth="204.0" text="Datum izvodjenja pregleda:" GridPane.rowIndex="10" />
+    <ChoiceBox fx:id="choiceVrstaPregleda" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
     <Label fx:id="fldPogresanBroj" prefHeight="17.0" prefWidth="202.0" text="Neispravan format." textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="7">
       <font>
         <Font size="10.0" />
       </font></Label>
-      <Label fx:id="l3" prefHeight="17.0" prefWidth="608.0" text="3. Osnovne informacije o Tehnickom pregledu" GridPane.columnSpan="3" GridPane.rowIndex="13" />
-      <Label text="Vrsta pregleda:" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+      <Label fx:id="l3" prefHeight="17.0" prefWidth="916.0" text="3. Osnovne informacije o Tehnickom pregledu" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+      <Label text="Vrsta pregleda:" GridPane.columnIndex="1" GridPane.rowIndex="10" />
       <TextField fx:id="fldMjestoPrebivalista" GridPane.rowIndex="6" />
       <TextField fx:id="fldIme" GridPane.rowIndex="4" />
-      <DatePicker fx:id="choiceDatum" prefHeight="25.0" prefWidth="206.0" GridPane.rowIndex="16" />
-      <Label fx:id="ltehnicki" prefHeight="17.0" prefWidth="608.0" text="Tehnicki pregled" GridPane.columnSpan="3" />
+      <DatePicker fx:id="choiceDatum" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="11" />
+      <Label fx:id="ltehnicki" prefHeight="17.0" prefWidth="916.0" text="Tehnicki pregled" GridPane.columnSpan="3">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
   </children>
   <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    <Insets bottom="20.0" left="20.0" right="-5.0" top="20.0" />
   </padding>
 </GridPane>

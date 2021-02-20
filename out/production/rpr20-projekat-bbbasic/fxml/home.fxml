@@ -4,7 +4,6 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
@@ -14,10 +13,7 @@
         <ToolBar fx:id="Hbar" orientation="VERTICAL" prefHeight="325.0" prefWidth="220.0" BorderPane.alignment="CENTER">
             <items>
             <Button fx:id="btnGlavnaForma" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnGlavnaForma" prefHeight="25.0" prefWidth="210.0" text="Pocetna" />
-                <Button fx:id="btnTehnickiPregled" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnTehnickiPregled" prefHeight="29.0" prefWidth="210.0" text="Zakazi Tehnicki Pregled" textAlignment="RIGHT">
-               <font>
-                  <Font size="13.0" />
-               </font></Button>
+                <Button fx:id="btnTehnickiPregled" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnTehnickiPregled" prefHeight="29.0" prefWidth="210.0" text="Zakazi Tehnicki Pregled" textAlignment="RIGHT" />
                 <Button fx:id="btnUposleni" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnUposlenici" prefHeight="25.0" prefWidth="210.0" text="Uposlenici" textAlignment="RIGHT" />
                 <Button fx:id="btnIzvjestaj" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnIzvjestaj" prefHeight="25.0" prefWidth="210.0" text="Izvjestaj" />
             <Button fx:id="btnPretraga" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnPretraga" prefHeight="25.0" prefWidth="210.0" text="Pretraga" />
