@@ -21,14 +21,6 @@ public class TehnickiPregled {
     public TehnickiPregled() {
     }
 
-//    public TehnickiPregled(int id, LocalDate datumPregleda, int voziloID, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
-//        this.id = id;
-//        this.datumPregleda = datumPregleda;
-//        this.voziloID = voziloID;
-//        this.klijentID = klijentID;
-//        this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
-//        this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
-//    }
 
     public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
             this.id = id;

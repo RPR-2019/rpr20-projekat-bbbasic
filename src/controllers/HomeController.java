@@ -82,7 +82,22 @@ public class HomeController {
     }
 
     public void onBtnPretraga(ActionEvent actionEvent) {
-        System.out.println("Trenutno nemamo nista za Pretragu");
+        System.out.println("Pretraga");
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"));
+            PretragaController pretragaController = new PretragaController(mainPane);
+            loader.setController(pretragaController);
+            root = loader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            mainPane.setCenter(root);
+
+            //stage.show();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
 
     public void onBtnGlavnaForma(ActionEvent actionEvent) {
