@@ -6,41 +6,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="950.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="950.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="0.0" prefWidth="0.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="0.0" prefWidth="106.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="0.0" prefWidth="66.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="205.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="0.0" prefWidth="9.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="0.0" prefWidth="113.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="0.0" prefWidth="75.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="232.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="96.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="69.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="75.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="125.0" minHeight="0.0" prefHeight="14.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="125.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="261.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="261.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="249.0" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="13.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="261.0" minHeight="0.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="249.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="303.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="303.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="164.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="29.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="303.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="303.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="173.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
       <ChoiceBox prefHeight="25.0" prefWidth="199.0" GridPane.rowIndex="3" />
-      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowSpan="13" />
-      <Label prefHeight="17.0" prefWidth="316.0" text="Tehnicki Podaci o vozilu" GridPane.rowIndex="1" />
-      <Label prefHeight="17.0" prefWidth="637.0" text="Dimenzije" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="13" />
+      <Label prefHeight="17.0" prefWidth="316.0" text="Tehnicki Podaci o vozilu" textFill="#000000b0" underline="true" GridPane.rowIndex="1" />
+      <Label prefHeight="17.0" prefWidth="637.0" text="Dimenzije" textFill="#000000b0" underline="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Label text="Vrsta motora:" GridPane.rowIndex="2" />
       <Label text="Taktnost motora:" GridPane.rowIndex="4" />
       <Label text="Masa praznog vozila(kg):" GridPane.rowIndex="11" />
@@ -59,9 +59,10 @@
          <children>
             <CheckBox mnemonicParsing="false" text="Ispravno" />
             <CheckBox mnemonicParsing="false" text="Neispravno" />
+            <Label fx:id="labelaIspravnostVozila" prefHeight="17.0" prefWidth="100.0" text="Label" />
          </children>
       </HBox>
-      <TextField prefHeight="25.0" prefWidth="108.0" promptText="000.000KM" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+      <TextField prefHeight="25.0" prefWidth="108.0" GridPane.columnIndex="3" GridPane.rowIndex="13" />
       <ButtonBar prefHeight="201.0" prefWidth="193.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="14">
         <buttons>
           <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Kompletiraj" />
@@ -73,14 +74,14 @@
       <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
       <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
       <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-      <ImageView fx:id="imgdimenzije" fitHeight="160.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowSpan="6" />
+      <ImageView fx:id="imgdimenzije" fitHeight="185.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowSpan="6" />
       <Label text="Mjesta za sjesti:" GridPane.columnIndex="5" GridPane.rowIndex="2" />
       <Label text="Mjesta za stati:" GridPane.columnIndex="5" GridPane.rowIndex="3" />
       <Label text="Mjesta za lezanje:" GridPane.columnIndex="5" GridPane.rowIndex="4" />
       <TextField GridPane.columnIndex="6" GridPane.rowIndex="4" />
       <TextField GridPane.columnIndex="6" GridPane.rowIndex="2" />
       <TextField GridPane.columnIndex="6" GridPane.rowIndex="3" />
-      <Label prefHeight="17.0" prefWidth="873.0" text="Tehnicki Pregled" GridPane.columnSpan="7">
+      <Label fx:id="labelaNaslov" prefHeight="20.0" prefWidth="916.0" text="Tehnicki Pregled" GridPane.columnSpan="7">
          <font>
             <Font size="14.0" />
          </font>
@@ -88,5 +89,6 @@
             <Insets />
          </GridPane.margin>
       </Label>
+      <Label text="KM" GridPane.columnIndex="4" GridPane.rowIndex="13" />
    </children>
 </GridPane>
