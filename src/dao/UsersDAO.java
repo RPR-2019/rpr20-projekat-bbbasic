@@ -18,7 +18,7 @@ public class UsersDAO extends BaseDAO {
             dodajUposlenogUpit = dbConnection.getSession().prepareStatement("INSERT INTO uposlenik VALUES(?,?,?,?,?,?,?,?)");
             odrediIdUposlenikaUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM uposlenik");
             obrisiUposlenog = dbConnection.getSession().prepareStatement("DELETE FROM uposlenik WHERE id=?");
-            promijeniUposlenogUpit = dbConnection.getSession().prepareStatement("UPDATE uposlenik SET ime=?, prezime=?, lozinka=?, korisnicko_ime=?, datum_rodjenja=?, datum_uposlenja=? WHERE id=?");
+            promijeniUposlenogUpit = dbConnection.getSession().prepareStatement("UPDATE uposlenik SET ime=?, prezime=?, lozinka=?, korisnicko_ime=?, datum_rodjenja=?, datum_uposlenja=?, administrator=? WHERE id=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -114,7 +114,8 @@ public class UsersDAO extends BaseDAO {
             promijeniUposlenogUpit.setString(4, uposlenik.getKorisnickoIme());
             promijeniUposlenogUpit.setString(5, uposlenik.getDatumRodjenja().toString());
             promijeniUposlenogUpit.setString(6, uposlenik.getDatumZaposlenja().toString());
-            promijeniUposlenogUpit.setInt(7, uposlenik.getId());
+            promijeniUposlenogUpit.setBoolean(7, uposlenik.isPristup());
+            promijeniUposlenogUpit.setInt(8, uposlenik.getId());
             promijeniUposlenogUpit.executeUpdate();
 
         } catch (SQLException e) {

@@ -29,6 +29,7 @@ public class UposlenikController {
     public Label zauzetoKorisnickoIme;
     public DatePicker fldDatumRodjenja;
     public  DatePicker fldDatumZaposlenja;
+    public RadioButton privilegija;
 
     public UposlenikController(Uposlenik uposlenik) {
         usersDAO = new UsersDAO();
@@ -38,13 +39,14 @@ public class UposlenikController {
     @FXML
     public void initialize() {
         zauzetoKorisnickoIme.setVisible(false);
-
+        privilegija.setSelected(false);
         if(uposlenik != null) {
             fldIme.setText(uposlenik.getIme());
             fldPrezime.setText(uposlenik.getPrezime());
             fldLozinka.setText(uposlenik.getLozinka());
             fldKorisnickoIme.setText(uposlenik.getKorisnickoIme());
             fldDatumRodjenja.setValue(uposlenik.getDatumRodjenja());
+            privilegija.setSelected(uposlenik.isPristup());
             fldDatumZaposlenja.setValue(uposlenik.getDatumZaposlenja());
         }
 
@@ -134,6 +136,7 @@ public class UposlenikController {
         uposlenik.setPrezime(fldPrezime.getText());
         uposlenik.setLozinka(fldLozinka.getText());
         uposlenik.setKorisnickoIme(fldKorisnickoIme.getText());
+        uposlenik.setPristup(privilegija.isSelected());
 
 
         uposlenik.setDatumRodjenja(fldDatumRodjenja.getValue());
