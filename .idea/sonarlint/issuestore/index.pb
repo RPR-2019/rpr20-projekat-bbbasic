@@ -101,3 +101,9 @@ J
 resources/css/pretraga.css,f\3\f345adb935c840bd64cde0c95d29dc16b14cc397
 L
 resources/fxml/pretraga.fxml,c\1\c1f731ba0dad15a887bd6a64d9c59f6ef50366e1
+z
+Jout/production/rpr20-projekat-bbbasic/fxml/kompletiranTehnickiPregled.fxml,c\c\ccfd4e759a8c2d722436f050a903fc48b972dcbe
+_
+/src/controllers/KompletiranTehnickiPregled.java,a\d\adfe247d9a4dc90869dd1a758f37f3c065e9d036
+T
+$resources/fxml/tehnickipregledi.fxml,1\d\1d6b6a25d2ff73b18ed428c120096e56d61eae25
