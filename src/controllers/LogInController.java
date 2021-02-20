@@ -70,9 +70,6 @@ public class LogInController {
         //radi OK
         try {
             Stage pstage = new Stage();
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"));
-            //AdminPristupKorisnicimaController ctrl = new AdminPristupKorisnicimaController();
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
             HomeController ctrl = new HomeController();
             loader.setController(ctrl);

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane hgap="20.0" prefHeight="414.0" prefWidth="1010.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="20.0" prefHeight="700.0" prefWidth="1010.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@/css/pretraga.css" />
    </stylesheets>
@@ -17,37 +17,34 @@
    </columnConstraints>
    <rowConstraints>
       <RowConstraints maxHeight="15.0" minHeight="13.0" prefHeight="13.0" />
-      <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="29.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="12.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="152.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="310.0" minHeight="0.0" prefHeight="17.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="339.0" minHeight="0.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="344.0" minHeight="0.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="460.0" minHeight="10.0" prefHeight="174.0" />
+      <RowConstraints maxHeight="288.0" minHeight="5.0" prefHeight="286.0" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
       <Label fx:id="labelaNaslov" prefHeight="17.0" prefWidth="979.0" text="Pretraga Tehnickih Pregleda" GridPane.columnSpan="3">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="labelaInfo" prefHeight="17.0" prefWidth="1016.0" text="Pretragu mozete izvrsiti po klijentima, datumu pregleda i modelima vozila ." GridPane.columnSpan="3" GridPane.rowIndex="1" />
+      <Label fx:id="labelaInfo" prefHeight="17.0" prefWidth="1016.0" text="Pretragu mozete izvrsiti po klijentima, datumu pregleda i tipu vozila ." GridPane.columnSpan="3" GridPane.rowIndex="1" />
       <Label text="Od:" GridPane.rowIndex="3" />
-      <DatePicker prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="4" />
+      <DatePicker fx:id="choiceDatumOd" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="4" />
       <Label text="Do:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <DatePicker prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <DatePicker fx:id="choiceDatumDo" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <ComboBox fx:id="choiceTipVozila" prefHeight="25.0" prefWidth="200.0" promptText="Tip Vozila" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <Button fx:id="btnTrazi" mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" text="Trazi" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="5" GridPane.rowSpan="7">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+    <Button fx:id="btnTrazi" mnemonicParsing="false" onAction="#clickTrazi" prefHeight="25.0" prefWidth="206.0" text="Trazi" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <ComboBox fx:id="choiceKlijent" prefWidth="200.0" promptText="Klijent" GridPane.rowIndex="2" />
+      <Label fx:id="greskaUDatumima" prefHeight="0.0" prefWidth="200.0" text="Greska u unosu!" textFill="#e57373" GridPane.rowIndex="5">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
