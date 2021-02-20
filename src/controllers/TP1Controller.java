@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import enums.TipVozila;
 import models.Vozilo;
@@ -52,6 +53,7 @@ public class TP1Controller {
     public RadioButton rbObicna, rbMetalik, rbFolija;
     public String boja, vrstaBoje;
     public BorderPane mainPane;
+    public GridPane gridNovoVozilo, gridStaro;
 
 
 
@@ -61,6 +63,9 @@ public class TP1Controller {
         ltehnicki.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         choiceTipVozila.setItems(tipVozila);
         choiceMarkaVozila.setItems(markaVozila);
+        //vidljivost
+        gridNovoVozilo.setDisable(true);
+        gridStaro.setDisable(false);
         choiceModelVozila.setDisable(true);
         novoVozilo.setSelected(false);
         fldPogrenaRegistracija.setVisible(false);
@@ -228,46 +233,13 @@ public class TP1Controller {
 
     public void actionNovoVozilo(ActionEvent actionEvent) {
         if(novoVozilo.isSelected()) {
-            choiceVozilo.setDisable(true);
-            ///
-            choiceTipVozila.setDisable(false);
-            choiceMarkaVozila.setDisable(false);
-            if(choiceMarkaVozila.getValue() != null)
-                choiceModelVozila.setDisable(false);
-            fldGodinjaProizvodnje.setDisable(false);
-            fldRegistracija.setDisable(false);
-            fldBrojSasije.setDisable(false);
-
-            rbObicna.setDisable(false);
-            rbMetalik.setDisable(false);
-            rbFolija.setDisable(false);
-
-            choiceCrvena.setDisable(false);
-            choiceSiva.setDisable(false);
-            choiceBijela.setDisable(false);
-            choiceCrna.setDisable(false);
-            choiceSmeda.setDisable(false);
+            gridStaro.setDisable(true);
+            gridNovoVozilo.setDisable(false);
 
         }
         else {
-            choiceVozilo.setDisable(false);
-            //
-            choiceTipVozila.setDisable(true);
-            choiceMarkaVozila.setDisable(true);
-            choiceModelVozila.setDisable(true);
-            fldGodinjaProizvodnje.setDisable(true);
-            fldRegistracija.setDisable(true);
-            fldBrojSasije.setDisable(true);
-
-            rbObicna.setDisable(true);
-            rbMetalik.setDisable(true);
-            rbFolija.setDisable(true);
-
-            choiceCrvena.setDisable(true);
-            choiceSiva.setDisable(true);
-            choiceBijela.setDisable(true);
-            choiceCrna.setDisable(true);
-            choiceSmeda.setDisable(true);
+            gridStaro.setDisable(false);
+            gridNovoVozilo.setDisable(true);
         }
 
     }

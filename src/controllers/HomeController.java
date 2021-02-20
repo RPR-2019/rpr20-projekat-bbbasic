@@ -45,7 +45,6 @@ public class HomeController {
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/icon.jpg"));
-            stage.setWidth(900);
             mainPane.setCenter(root);
 
             //stage.show();
