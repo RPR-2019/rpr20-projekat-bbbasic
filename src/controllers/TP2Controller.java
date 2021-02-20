@@ -138,7 +138,7 @@ public class TP2Controller {
 //        //ovdje smo mijenjali
 //        tehnickiPregled.setKlijent(klijent);
         tehnickiPregled.setVozilo(vozilo);
-        tehnickiPregled.setKlijentID(klijent.getId());
+        tehnickiPregled.setKlijent(klijent);
         //tehnickiPregled.setVoziloID(vozilo.getId());
         tehnickiPregled.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
         tehnickiPregled.setDatumPregleda(choiceDatum.getValue());

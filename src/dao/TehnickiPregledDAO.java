@@ -1,21 +1,30 @@
 package dao;
 
+import enums.TipVozila;
 import exceptions.ZakazanTermin;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.layout.Border;
 import models.Klijent;
 import models.TehnickiPregled;
 import models.Uposlenik;
 import models.Vozilo;
+import services.UserSession;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toList;
 
 public class TehnickiPregledDAO extends BaseDAO{
 
-    private PreparedStatement otkaziTehnickiUpit,voziloUpit, sviTehnickiUpit, dodajTehnickiUpit, odrediIDTehnickogUpit, izmijeniTehnickiUpit, spojiTehnickiUposlenikUpit, dajUposlenogSaKorisnickimImenomUpit, brojTehnickihZaID;
+    private PreparedStatement dajKlijentaUpit, dajUposlenikeZaTPUpit, otkaziTehnickiUpit,voziloUpit, sviTehnickiUpit, dodajTehnickiUpit, odrediIDTehnickogUpit, izmijeniTehnickiUpit, spojiTehnickiUposlenikUpit, dajUposlenogSaKorisnickimImenomUpit, brojTehnickihZaID;
 
     protected void kreirajUpite() {
         try {
@@ -24,7 +33,8 @@ public class TehnickiPregledDAO extends BaseDAO{
             odrediIDTehnickogUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM tehnicki_pregled");
             voziloUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo WHERE id=?");
             otkaziTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE tehnicki_pregled SET status_tehnickog_pregleda=? WHERE id=?");
-            //spojiTehnickiUposlenikUpit = dbConnection.getSession().prepareStatement("INSERT INTO tim_tehnicki_pregled VALUES(?,?)");
+            dajUposlenikeZaTPUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik JOIN tim_tehnicki_pregled ON uposlenik.id = tim_tehnicki_pregled.uposlenik_id WHERE tim_tehnicki_pregled.tehnicki_pregled_id =?");
+            dajKlijentaUpit = dbConnection.getSession().prepareStatement("SELECT * FROM klijent WHERE id=?");
             //brojTehnickihZaID = dbConnection.getSession().prepareStatement("SELECT COUNT(*) FROM tim_tehnicki_pregled WHERE uposlenik_id=?");
             //ovdje ce puno trebat
             //izmijeniTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE uposlenik SET ime=?, prezime=?, lozinka=?, korisnicko_ime=?, datum_rodjenja=?, datum_uposlenja=? WHERE id=?");
@@ -40,13 +50,28 @@ public class TehnickiPregledDAO extends BaseDAO{
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
             while (rs.next()) {
-                TehnickiPregled tehnickiPregled = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), rs.getInt(4), rs.getString(5), rs.getString(6));
+                TehnickiPregled tehnickiPregled = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
                 rezultat.add(tehnickiPregled);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return rezultat;
+    }
+
+    private Klijent dajKlijenta(int id) {
+        try {
+            dajKlijentaUpit.setInt(1, id);
+            ResultSet rs = dajKlijentaUpit.executeQuery();
+            while (rs.next()) {
+                Klijent klijent = new Klijent(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                return klijent;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
     public void dodajTehnicki(TehnickiPregled tehnickiPregled) throws ZakazanTermin {
@@ -62,7 +87,7 @@ public class TehnickiPregledDAO extends BaseDAO{
             dodajTehnickiUpit.setInt(1, tehnickiPregled.getId());
             dodajTehnickiUpit.setString(2, tehnickiPregled.getDatumPregleda().toString());
             dodajTehnickiUpit.setInt(3, tehnickiPregled.getVozilo().getId());
-            dodajTehnickiUpit.setInt(4, tehnickiPregled.getKlijentID());
+            dodajTehnickiUpit.setInt(4, tehnickiPregled.getKlijent().getId());
             dodajTehnickiUpit.setString(5, tehnickiPregled.getVrstaTehnickogPregleda());
             dodajTehnickiUpit.setString(6, tehnickiPregled.getStatusTehnickogPregleda());
 
@@ -78,7 +103,7 @@ public class TehnickiPregledDAO extends BaseDAO{
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
             while (rs.next()) {
-                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), rs.getInt(4), rs.getString(5), rs.getString(6));
+                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
                 if(tehnickiPregled.equals(tehnickiPregled1)) {
                     throw new ZakazanTermin("Vec zakazan termin");
                 }
@@ -89,16 +114,6 @@ public class TehnickiPregledDAO extends BaseDAO{
         }
         return false;
     }
-
-//    public void spojiTehnickiUposlenik(int tehnickiID, int uposlenikID) {
-//        try {
-//            spojiTehnickiUposlenikUpit.setInt(1,tehnickiID);
-//            spojiTehnickiUposlenikUpit.setInt(2,uposlenikID);
-//            spojiTehnickiUposlenikUpit.executeUpdate();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public void izmijeniTehnicki(TehnickiPregled tehnickiPregled) {
         System.out.println("Trebat ce mijenjat ako se stavi u kompletiran ili otkazan");
@@ -130,18 +145,37 @@ public class TehnickiPregledDAO extends BaseDAO{
 
     }
 
-//    public int brojTehnickihZaKorisnika(int id) {
-//        try {
-//            brojTehnickihZaID.setInt(1, id);
-//            ResultSet resultSet = brojTehnickihZaID.executeQuery();
-//            if(resultSet.next()) {
-//                return resultSet.getInt(1);
-//            }
-//            System.out.println("Nema nista");
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return 0;
-//    }
+    public ObservableList<TehnickiPregled> pretraga(Klijent klijent, TipVozila tipVozila, LocalDate localDate) {
+        ObservableList<TehnickiPregled> tehnickiPregled = FXCollections.observableArrayList();
+        try {
+            ResultSet rs = sviTehnickiUpit.executeQuery();
+            while (rs.next()) {
+                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
+                tehnickiPregled1.setUposlenici(dajUposlenike(tehnickiPregled1));
+                //System.out.println("Tehnicki je " + tehnickiPregled1);
+                if(UserSession.getPrivileges())
+                    tehnickiPregled.add(tehnickiPregled1);
+            }
+        } catch (SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+        System.out.println("TP "  + tehnickiPregled.size());
+        return tehnickiPregled;
+    }
+
+    private ArrayList<Uposlenik> dajUposlenike(TehnickiPregled tehnickiPregled) {
+        try {
+            ArrayList<Uposlenik> uposlenici = new ArrayList<>();
+            dajUposlenikeZaTPUpit.setInt(1,tehnickiPregled.getId());
+            ResultSet rs = dajUposlenikeZaTPUpit.executeQuery();
+            while (rs.next()) {
+                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                uposlenici.add(uposlenik);
+            }
+            return uposlenici;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

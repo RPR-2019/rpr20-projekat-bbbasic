@@ -1,34 +1,44 @@
 package controllers;
 
 import dao.KlijentDAO;
+import dao.TehnickiPregledDAO;
+import dao.TimTehnickiDAO;
 import dao.VozilaDAO;
 import enums.TipVozila;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import models.Klijent;
 
 import javafx.event.ActionEvent;
+import models.TehnickiPregled;
+import models.Uposlenik;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PretragaController {
     public Label labelaNaslov, labelaInfo;
     public KlijentDAO klijentDAO;
     public VozilaDAO vozilaDAO;
+    public TehnickiPregledDAO tehnickiPregledDAO;
     public ComboBox<TipVozila> choiceTipVozila;
     public ObservableList<TipVozila> tipVozila;
     public ComboBox<Klijent> choiceKlijent;
     public ObservableList<Klijent> klijenti;
     //datumi
-    public DatePicker choiceDatumOd;
-    public DatePicker choiceDatumDo;
-    public Label greskaUDatumima;
+    public DatePicker choiceDatum;
+    public TableColumn colDatumPregleda;
+    public TableColumn colKlijent;
+    public TableColumn colVozilo;
+    public TableColumn colStatusPregleda;
+    public TableColumn colUposlenici;
+
+    public TableView<TehnickiPregled> tableView;
 
 
     @FXML
@@ -37,42 +47,29 @@ public class PretragaController {
         labelaInfo.setStyle("-fx-border-color: #a6d4fa;");
         choiceTipVozila.setItems(tipVozila);
         choiceKlijent.setItems(klijenti);
-        greskaUDatumima.setVisible(false);
+
+        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("datumPregleda"));
+        colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vozilo"));
+        colKlijent.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("klijent"));
+        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("statusTehnickogPregleda"));
+        colUposlenici.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, ArrayList<Uposlenik>>("uposlenici"));
+        tableView.setItems(tehnickiPregledDAO.pretraga(null, null, null));
 
     }
 
     public PretragaController(BorderPane gridPane) {
         klijentDAO = new KlijentDAO();
         vozilaDAO = new VozilaDAO();
+        tehnickiPregledDAO = new TehnickiPregledDAO();
         tipVozila = FXCollections.observableArrayList(Arrays.asList(TipVozila.values()));
         klijenti = FXCollections.observableArrayList(klijentDAO.klijenti());
     }
 
     public void clickTrazi(ActionEvent actionEvent) {
-        if(validacijaDatuma(choiceDatumOd.getValue(), choiceDatumDo.getValue()) == false) {
-            greskaUDatumima.setVisible(true);
-            choiceDatumDo.getStyleClass().removeAll("poljeIspravno");
-            choiceDatumDo.getStyleClass().add("poljeNijeIspravno");
+        System.out.println("Trazimo");
+        tableView.setItems(tehnickiPregledDAO.pretraga(choiceKlijent.getValue(), choiceTipVozila.getValue(), choiceDatum.getValue()));
+        tableView.refresh();
 
-            choiceDatumOd.getStyleClass().removeAll("poljeIspravno");
-            choiceDatumOd.getStyleClass().add("poljeNijeIspravno");
-        }
-        else {
-            System.out.println("Trazimo....");
-            greskaUDatumima.setVisible(false);
-            choiceDatumDo.getStyleClass().removeAll("poljeNijeIspravno");
-            choiceDatumDo.getStyleClass().add("poljeIspravno");
-
-            choiceDatumOd.getStyleClass().removeAll("poljeNijeIspravno");
-            choiceDatumOd.getStyleClass().add("poljeIspravno");
-        }
     }
 
-    private boolean validacijaDatuma(LocalDate datumod, LocalDate datumdo) {
-        if(datumdo == null && datumod == null) return true;
-        if(datumod == null && datumdo != null) return false;
-        if(datumdo == null && datumod != null) return false;
-        if(datumod.isAfter(datumdo) || datumdo.isBefore(datumod)) return false;
-        return true;
-    }
 }

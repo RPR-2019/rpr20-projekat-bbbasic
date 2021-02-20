@@ -59,11 +59,11 @@ public class TehnickiPregledController {
         //tabelica
         colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("datumPregleda"));
         colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vozilo"));
-        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, Integer>("vrstaTehnickogPregleda"));
+        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vrstaTehnickogPregleda"));
         colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("statusTehnickogPregleda"));
         colUposlenici.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, ArrayList<Uposlenik>>("uposlenici"));
 
-        tableView.setItems(timTehnickiDAO.sviTehnicki());
+        tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
         btnOtkaziTehnicki.setDisable(true);
         btnDodajUposlenika.setDisable(true);
         choiceUposlenik.setDisable(true);
@@ -100,20 +100,17 @@ public class TehnickiPregledController {
 
     public void otkaziTehnickiPregled(ActionEvent actionEvent) {
             tehnickiPregledDAO.otkaziTehnickiPregled(tableView.getSelectionModel().getSelectedItem());
-            tableView.setItems(timTehnickiDAO.sviTehnicki());
+            tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
             tableView.refresh();
             refresh(chart);
-//            chart.setData(FXCollections.observableArrayList(
-//                    new PieChart.Data("Zakazani", timTehnickiDAO.brojZakazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
-//                    new PieChart.Data("Otkazani", timTehnickiDAO.brojOtkazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
-//                    new PieChart.Data("Kompletirani", timTehnickiDAO.brojKompletiranihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId()))));
+
 
     }
 
     public void dodajUposlenika(ActionEvent actionEvent) {
         if(tableView.getSelectionModel().getSelectedItem().getUposlenici().contains(choiceUposlenik.getValue())) return;
         timTehnickiDAO.spojiTehnickiUposlenik(tableView.getSelectionModel().getSelectedItem().getId(), choiceUposlenik.getValue().getId());
-        tableView.setItems(timTehnickiDAO.sviTehnicki());
+        tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
         tableView.refresh();
     }
 

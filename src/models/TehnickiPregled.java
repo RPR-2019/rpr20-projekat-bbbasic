@@ -13,7 +13,8 @@ public class TehnickiPregled {
     private LocalDate datumPregleda;
     //private int voziloID;
     private Vozilo vozilo;
-    private int klijentID;
+    //private int klijentID;
+    private Klijent klijent;
     private VrstaTehnickogPregleda vrstaTehnickogPregleda;
     private StatusTehnickogPregleda statusTehnickogPregleda;
     private ArrayList<Uposlenik> uposlenici = new ArrayList<>();
@@ -22,11 +23,11 @@ public class TehnickiPregled {
     }
 
 
-    public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, int klijentID, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
+    public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, Klijent klijent, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
             this.id = id;
             this.datumPregleda = datumPregleda;
             this.vozilo = vozilo;
-            this.klijentID = klijentID;
+            this.klijent = klijent;
             this.vrstaTehnickogPregleda = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
             this.statusTehnickogPregleda = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
     }
@@ -66,14 +67,22 @@ public class TehnickiPregled {
         this.vozilo = vozilo;
     }
 
-    public int getKlijentID() {
-        return klijentID;
+//    public int getKlijentID() {
+//        return klijentID;
+//    }
+//
+//    public void setKlijentID(int klijentID) {
+//        this.klijentID = klijentID;
+//    }
+
+
+    public Klijent getKlijent() {
+        return klijent;
     }
 
-    public void setKlijentID(int klijentID) {
-        this.klijentID = klijentID;
+    public void setKlijent(Klijent klijent) {
+        this.klijent = klijent;
     }
-
 
     public void setVrstaTehnickogPregleda(VrstaTehnickogPregleda vrstaTehnickogPregleda) {
         this.vrstaTehnickogPregleda = vrstaTehnickogPregleda;
@@ -139,8 +148,8 @@ public class TehnickiPregled {
     public String toString() {
         return "TehnickiPregled{" +
                 "datumPregleda=" + datumPregleda +
-                ", voziloID=" + vozilo +
-                ", klijentID=" + klijentID +
+                ", vozilo=" + vozilo +
+                ", klijent=" + klijent +
                 ", vrstaTehnickogPregleda=" + vrstaTehnickogPregleda +
                 ", statusTehnickogPregleda=" + statusTehnickogPregleda +
                 '}';
