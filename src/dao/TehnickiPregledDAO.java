@@ -35,6 +35,7 @@ public class TehnickiPregledDAO extends BaseDAO{
             otkaziTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE tehnicki_pregled SET status_tehnickog_pregleda=? WHERE id=?");
             dajUposlenikeZaTPUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik JOIN tim_tehnicki_pregled ON uposlenik.id = tim_tehnicki_pregled.uposlenik_id WHERE tim_tehnicki_pregled.tehnicki_pregled_id =?");
             dajKlijentaUpit = dbConnection.getSession().prepareStatement("SELECT * FROM klijent WHERE id=?");
+            dajUposlenogSaKorisnickimImenomUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik WHERE korisnicko_ime=?");
             //ovdje ce puno trebat
             izmijeniTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE tehnicki_pregled" +
                     " SET status_tehnickog_pregleda=?, vrsta_motora=?, taktnost_motora=?, vrsta_goriva=?, vrsta_mjenjaca=?," +
@@ -181,7 +182,7 @@ public class TehnickiPregledDAO extends BaseDAO{
             while (rs.next()) {
                 TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
                 tehnickiPregled1.setUposlenici(dajUposlenike(tehnickiPregled1));
-                if(UserSession.getPrivileges())
+                if(UserSession.getPrivileges() || tehnickiPregled1.getUposlenici().contains(dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme())))
                     tehnickiPregled.add(tehnickiPregled1);
             }
             if(klijent == null && tipVozila == null && localDate == null) return tehnickiPregled;
@@ -239,6 +240,21 @@ public class TehnickiPregledDAO extends BaseDAO{
                 uposlenici.add(uposlenik);
             }
             return uposlenici;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+        public Uposlenik dajUposlenogSaKorisnickimImenom(String korisnickoIme) {
+        try {
+            System.out.println("Korisnicko ime je " + korisnickoIme);
+            dajUposlenogSaKorisnickimImenomUpit.setString(1, korisnickoIme);
+            ResultSet rs = dajUposlenogSaKorisnickimImenomUpit.executeQuery();
+            if(rs.next()) {
+                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                return uposlenik;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

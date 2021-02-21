@@ -1,149 +1,149 @@
 
-U
-java:S1172£"2Remove this unused method parameter "actionEvent".(ñŒë˜şÿÿÿÿ8¹ı—èû.
-u
-java:S1192o"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 12 times.(«Šæÿÿÿÿÿ8”Õ‡èû.
-q
-java:S11045"TMake rbFolija a static final constant or non-public and provide accessors if needed.(ã‡°Ğ8È¤€û.
-w
-java:S11046"UMake vrstaBoje a static final constant or non-public and provide accessors if needed.(¿ü¾üıÿÿÿÿ8áè¡‘û.
-L
-java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
-I
-java:S16594"'Declare "ltehnicki" on a separate line.(„‡éøÿÿÿÿ8Ò•§Àû.
-L
-java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
-L
-java:S1125»")Remove the literal "false" boolean value.(šÍçËüÿÿÿÿ8”Õ‡èû.
-y
-java:S1104""WMake choiceSmeda a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
-y
-java:S1104("WMake markaVozila a static final constant or non-public and provide accessors if needed.(°ÓË©úÿÿÿÿ8ô’Šû.
-|
-java:S11048"ZMake gridNovoVozilo a static final constant or non-public and provide accessors if needed.(ÒŞúÿÿÿÿ8ü„èû.
-P
-java:S1172ê"2Remove this unused method parameter "actionEvent".(ÅèŸÃ8”Õ‡èû.
-}
-java:S1104-"[Make fldRegistracija a static final constant or non-public and provide accessors if needed.(æîÁÒıÿÿÿÿ8ûÌö§û.
-ƒ
-java:S1104-"aMake fldGodinjaProizvodnje a static final constant or non-public and provide accessors if needed.(æîÁÒıÿÿÿÿ8ûÌö§û.
-s
-java:S11042"WMake listaVozila a static final constant or non-public and provide accessors if needed.(¡Öët8üóË’û.
 U	java:S106 "9Replace this use of System.out or System.err by a logger.(Ï·Ş8”Õ‡èû.
-P
-java:S1172š"2Remove this unused method parameter "actionEvent".(œŸÌÀ8¹ı—èû.
 w
 java:S11044"UMake ltehnicki a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8Ò•§Àû.
+L
+java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
+z
+java:S1104""XMake choiceCrvena a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+}
+java:S1104-"[Make fldRegistracija a static final constant or non-public and provide accessors if needed.(æîÁÒıÿÿÿÿ8ûÌö§û.
+i
+java:S1764À"KCorrect one of the identical sub-expressions on both sides of operator "||"(ƒ®Ğ¦8¹ı—èû.
 y
 java:S1104+"WMake modelVozila a static final constant or non-public and provide accessors if needed.(ÙÌá§ùÿÿÿÿ8ô’Šû.
-O
-java:S1172h"2Remove this unused method parameter "actionEvent".(Õšúê8”Õ‡èû.
-L
-java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
-l
-java:S1192n"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(·¿È8ûÌö§û.
-L
-java:S1125»")Remove the literal "false" boolean value.(šÍçËüÿÿÿÿ8”Õ‡èû.
-L
-java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
-U
-java:S1172ÿ"2Remove this unused method parameter "actionEvent".(Ëğ½¦ùÿÿÿÿ8¹ı—èû.
-U
-java:S1172©"2Remove this unused method parameter "actionEvent".(ìî´ıÿÿÿÿ8¹ı—èû.
-q
-java:S11045"TMake rbObicna a static final constant or non-public and provide accessors if needed.(ã‡°Ğ8È¤€û.
+{
+java:S1104/"YMake fldBrojSasije a static final constant or non-public and provide accessors if needed.(ƒé²»üÿÿÿÿ8ûÌö§û.
+J
+java:S1659""(Declare "choiceCrna" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+K
+java:S1659"")Declare "choiceSmeda" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
 z
-java:S1104""XMake choiceBijela a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8—‹õ‹û.
-D
-java:S16595"'Declare "rbMetalik" on a separate line.(ã‡°Ğ8È¤€û.
-9
-java:S3626ã"Remove this redundant jump.(ûÁİ…8”Õ‡èû.
-O
-java:S1659-"-Declare "fldRegistracija" on a separate line.(æîÁÒıÿÿÿÿ8ûÌö§û.
-o
-java:S3776h"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(Õšúê8”Õ‡èû.
-P
-java:S1172¯"2Remove this unused method parameter "actionEvent".(§áò÷8¹ı—èû.
+java:S1104*"]Make choiceModelVozila a static final constant or non-public and provide accessors if needed.(´ëØ®8ûÌö§û.
+L
+java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
+s
+java:S11044"QMake lboja a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8ûÌö§û.
 J
 java:S16594"(Declare "lvrstaBoje" on a separate line.(„‡éøÿÿÿÿ8ûÌö§û.
 L
-java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
-L
-java:S1125‹")Remove the literal "false" boolean value.(Æ„¦£ùÿÿÿÿ8”Õ‡èû.
-w
-java:S11048"UMake gridStaro a static final constant or non-public and provide accessors if needed.(ÒŞúÿÿÿÿ8÷Õ…èû.
-}
-java:S1104$"[Make choiceTipVozila a static final constant or non-public and provide accessors if needed.(¾¬·óûÿÿÿÿ8ûÌö§û.
-
-java:S11044"]Make fldPogresnaSasija a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8ûÌö§û.
-C
-java:S16595"&Declare "rbFolija" on a separate line.(ã‡°Ğ8È¤€û.
-J
-java:S1659""(Declare "choiceSiva" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
-x
-java:S11044"VMake lvrstaBoje a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8ûÌö§û.
-u
-java:S11043"XMake choiceVozilo a static final constant or non-public and provide accessors if needed.(‡Ÿ‘Ÿ8¯µ¿û.
-x
-java:S1104""VMake choiceCrna a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
-r
-java:S11045"UMake rbMetalik a static final constant or non-public and provide accessors if needed.(ã‡°Ğ8È¤€û.
-P
-java:S1172‘"2Remove this unused method parameter "actionEvent".(¸º§ç8¹ı—èû.
-r
-java:S11046"PMake boja a static final constant or non-public and provide accessors if needed.(¿ü¾üıÿÿÿÿ8áè¡‘û.
-‚
-java:S1192¾"_Define a constant instead of duplicating this literal "Neispravan format registracije" 4 times.(éŒõ–üÿÿÿÿ8¹ı—èû.
-{
-java:S1104/"YMake fldBrojSasije a static final constant or non-public and provide accessors if needed.(ƒé²»üÿÿÿÿ8ûÌö§û.
-L
-java:S1659""*Declare "choiceCrvena" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
-k
-java:S1104"NMake l1 a static final constant or non-public and provide accessors if needed.(ŸºÍá8„âü»û.
-L
 java:S1125»")Remove the literal "false" boolean value.(šÍçËüÿÿÿÿ8”Õ‡èû.
-U
-java:S1172ˆ"2Remove this unused method parameter "actionEvent".(ŠÁı‹øÿÿÿÿ8¹ı—èû.
-d
-java:S1126¸"AReplace this if-then-else statement by a single return statement.(òÔ×¥ùÿÿÿÿ8¹ı—èû.
-O
-java:S1172ö"2Remove this unused method parameter "actionEvent".(ä±ó38¹ı—èû.
-Q
-java:S16594"/Declare "fldPogresnaSasija" on a separate line.(„‡éøÿÿÿÿ8ûÌö§û.
-J
-java:S1659""(Declare "choiceCrna" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
-r
-java:S1104%"UMake tipVozila a static final constant or non-public and provide accessors if needed.(ÙÌÅÍ8ô’Šû.
-V	java:S106Ô"9Replace this use of System.out or System.err by a logger.(­Ãô®8”Õ‡èû.
-z
-java:S1104'"]Make choiceMarkaVozila a static final constant or non-public and provide accessors if needed.(ì÷¼ˆ8ûÌö§û.
-z
-java:S1104*"]Make choiceModelVozila a static final constant or non-public and provide accessors if needed.(´ëØ®8ûÌö§û.
+P
+java:S1172¯"2Remove this unused method parameter "actionEvent".(§áò÷8¹ı—èû.
 q
 java:S11047"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8ò´û.
-x
-java:S1104""VMake choiceSiva a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
-I
-java:S16598"'Declare "gridStaro" on a separate line.(ÒŞúÿÿÿÿ8÷Õ…èû.
-K
-java:S1659"")Declare "choiceSmeda" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+O
+java:S1172ö"2Remove this unused method parameter "actionEvent".(ä±ó38¹ı—èû.
 „
 java:S11044"bMake fldPogrenaRegistracija a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8°· û.
-I
-java:S16596"'Declare "vrstaBoje" on a separate line.(¿ü¾üıÿÿÿÿ8áè¡‘û.
-i
-java:S1764À"KCorrect one of the identical sub-expressions on both sides of operator "||"(ƒ®Ğ¦8¹ı—èû.
+u
+java:S1192o"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 12 times.(«Šæÿÿÿÿÿ8”Õ‡èû.
+C
+java:S16595"&Declare "rbFolija" on a separate line.(ã‡°Ğ8È¤€û.
 o
 java:S1104!"RMake vozilo a static final constant or non-public and provide accessors if needed.(ÅÖÒÍ8ûÌö§û.
+Q
+java:S16594"/Declare "fldPogresnaSasija" on a separate line.(„‡éøÿÿÿÿ8ûÌö§û.
+P
+java:S1172ê"2Remove this unused method parameter "actionEvent".(ÅèŸÃ8”Õ‡èû.
+L
+java:S1659""*Declare "choiceCrvena" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+O
+java:S1172h"2Remove this unused method parameter "actionEvent".(Õšúê8”Õ‡èû.
+P
+java:S1172‘"2Remove this unused method parameter "actionEvent".(¸º§ç8¹ı—èû.
+L
+java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
+y
+java:S1104""WMake choiceSmeda a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+U
+java:S1172©"2Remove this unused method parameter "actionEvent".(ìî´ıÿÿÿÿ8¹ı—èû.
+ƒ
+java:S1104-"aMake fldGodinjaProizvodnje a static final constant or non-public and provide accessors if needed.(æîÁÒıÿÿÿÿ8ûÌö§û.
+x
+java:S11044"VMake lvrstaBoje a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8ûÌö§û.
+U
+java:S1172ˆ"2Remove this unused method parameter "actionEvent".(ŠÁı‹øÿÿÿÿ8¹ı—èû.
+q
+java:S11045"TMake rbFolija a static final constant or non-public and provide accessors if needed.(ã‡°Ğ8È¤€û.
+}
+java:S1104$"[Make choiceTipVozila a static final constant or non-public and provide accessors if needed.(¾¬·óûÿÿÿÿ8ûÌö§û.
+I
+java:S16596"'Declare "vrstaBoje" on a separate line.(¿ü¾üıÿÿÿÿ8áè¡‘û.
+x
+java:S1104""VMake choiceCrna a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+x
+java:S1104""VMake choiceSiva a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+z
+java:S1104'"]Make choiceMarkaVozila a static final constant or non-public and provide accessors if needed.(ì÷¼ˆ8ûÌö§û.
 [	java:S106¯"9Replace this use of System.out or System.err by a logger.(Ïò³¾úÿÿÿÿ8”Õ‡èû.
-s
-java:S11041"VMake novoVozilo a static final constant or non-public and provide accessors if needed.(—Í¿Ù8ûÌö§û.
+w
+java:S11048"UMake gridStaro a static final constant or non-public and provide accessors if needed.(ÒŞúÿÿÿÿ8÷Õ…èû.
 E
 java:S16594"#Declare "lboja" on a separate line.(„‡éøÿÿÿÿ8ûÌö§û.
-s
-java:S11044"QMake lboja a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8ûÌö§û.
-z
-java:S1104""XMake choiceCrvena a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+
+java:S11044"]Make fldPogresnaSasija a static final constant or non-public and provide accessors if needed.(„‡éøÿÿÿÿ8ûÌö§û.
+L
+java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
+U
+java:S1172£"2Remove this unused method parameter "actionEvent".(ñŒë˜şÿÿÿÿ8¹ı—èû.
+I
+java:S16594"'Declare "ltehnicki" on a separate line.(„‡éøÿÿÿÿ8Ò•§Àû.
 T
 java:S1172a"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8”Õ‡èû.
+L
+java:S1125»")Remove the literal "false" boolean value.(šÍçËüÿÿÿÿ8”Õ‡èû.
+s
+java:S11042"WMake listaVozila a static final constant or non-public and provide accessors if needed.(¡Öët8üóË’û.
+u
+java:S11043"XMake choiceVozilo a static final constant or non-public and provide accessors if needed.(‡Ÿ‘Ÿ8¯µ¿û.
+|
+java:S11048"ZMake gridNovoVozilo a static final constant or non-public and provide accessors if needed.(ÒŞúÿÿÿÿ8ü„èû.
+U
+java:S1172ÿ"2Remove this unused method parameter "actionEvent".(Ëğ½¦ùÿÿÿÿ8¹ı—èû.
+k
+java:S1104"NMake l1 a static final constant or non-public and provide accessors if needed.(ŸºÍá8„âü»û.
+l
+java:S1192n"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(·¿È8ûÌö§û.
+y
+java:S1104("WMake markaVozila a static final constant or non-public and provide accessors if needed.(°ÓË©úÿÿÿÿ8ô’Šû.
+s
+java:S11041"VMake novoVozilo a static final constant or non-public and provide accessors if needed.(—Í¿Ù8ûÌö§û.
+q
+java:S11045"TMake rbObicna a static final constant or non-public and provide accessors if needed.(ã‡°Ğ8È¤€û.
+L
+java:S1125‹")Remove the literal "false" boolean value.(Æ„¦£ùÿÿÿÿ8”Õ‡èû.
 [	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(›·ıÿÿÿÿ8”Õ‡èû.
+P
+java:S1172š"2Remove this unused method parameter "actionEvent".(œŸÌÀ8¹ı—èû.
+9
+java:S3626ã"Remove this redundant jump.(ûÁİ…8”Õ‡èû.
+D
+java:S16595"'Declare "rbMetalik" on a separate line.(ã‡°Ğ8È¤€û.
+V	java:S106Ô"9Replace this use of System.out or System.err by a logger.(­Ãô®8”Õ‡èû.
+‚
+java:S1192¾"_Define a constant instead of duplicating this literal "Neispravan format registracije" 4 times.(éŒõ–üÿÿÿÿ8¹ı—èû.
+z
+java:S1104""XMake choiceBijela a static final constant or non-public and provide accessors if needed.(í‡ÔËÿÿÿÿÿ8—‹õ‹û.
+d
+java:S1126¸"AReplace this if-then-else statement by a single return statement.(òÔ×¥ùÿÿÿÿ8¹ı—èû.
+w
+java:S11046"UMake vrstaBoje a static final constant or non-public and provide accessors if needed.(¿ü¾üıÿÿÿÿ8áè¡‘û.
+I
+java:S16598"'Declare "gridStaro" on a separate line.(ÒŞúÿÿÿÿ8÷Õ…èû.
+O
+java:S1659-"-Declare "fldRegistracija" on a separate line.(æîÁÒıÿÿÿÿ8ûÌö§û.
+r
+java:S11045"UMake rbMetalik a static final constant or non-public and provide accessors if needed.(ã‡°Ğ8È¤€û.
+L
+java:S1125³")Remove the literal "false" boolean value.(è¯‘“úÿÿÿÿ8”Õ‡èû.
+r
+java:S1104%"UMake tipVozila a static final constant or non-public and provide accessors if needed.(ÙÌÅÍ8ô’Šû.
+J
+java:S1659""(Declare "choiceSiva" on a separate line.(í‡ÔËÿÿÿÿÿ8ûÌö§û.
+r
+java:S11046"PMake boja a static final constant or non-public and provide accessors if needed.(¿ü¾üıÿÿÿÿ8áè¡‘û.
+o
+java:S3776h"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(Õšúê8”Õ‡èû.
+L
+java:S1125»")Remove the literal "false" boolean value.(šÍçËüÿÿÿÿ8”Õ‡èû.

@@ -105,3 +105,5 @@ z
 Jout/production/rpr20-projekat-bbbasic/fxml/kompletiranTehnickiPregled.fxml,c\c\ccfd4e759a8c2d722436f050a903fc48b972dcbe
 _
 /src/controllers/KompletiranTehnickiPregled.java,a\d\adfe247d9a4dc90869dd1a758f37f3c065e9d036
+R
+"resources/css/tehnickipregledi.css,d\9\d9f43dddaf4a29a99bbdb4181aa124b0603ec0a2

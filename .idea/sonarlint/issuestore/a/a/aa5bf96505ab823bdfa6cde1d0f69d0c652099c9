@@ -1,31 +1,31 @@
 
-U	java:S106)"9Replace this use of System.out or System.err by a logger.(Í€µ8ƒÕò¼û.
-W	java:S1257"<This block of commented-out lines of code should be removed.(“ÁÉ?8ƒÕò¼û.
-W	java:S125f"<This block of commented-out lines of code should be removed.(“ÁÉ?8Ÿúãéû.
-y
-java:S1104"WMake btnUposleni a static final constant or non-public and provide accessors if needed.(éš„¾øÿÿÿÿ8»‡Íæû.
-O
-java:S1172>"2Remove this unused method parameter "actionEvent".(³º«¼8ƒÕò¼û.
 q
 java:S1104"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8ÚãÔ¨û.
-Z	java:S106V"9Replace this use of System.out or System.err by a logger.(÷êÜãıÿÿÿÿ8ƒÕò¼û.
-]	java:S125K"<This block of commented-out lines of code should be removed.(¶õ„šşÿÿÿÿ8Ôúßû.
-T
-java:S1172Y"2Remove this unused method parameter "actionEvent".(“ã–Øøÿÿÿÿ8ƒÕò¼û.
-U	java:S106?"9Replace this use of System.out or System.err by a logger.(­Ãô®8ƒÕò¼û.
 T
 java:S1172U"2Remove this unused method parameter "actionEvent".(ôÚ¸ªúÿÿÿÿ8ƒÕò¼û.
-Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(––ÂÛùÿÿÿÿ8Ÿúãéû.
+O
+java:S1172>"2Remove this unused method parameter "actionEvent".(³º«¼8ƒÕò¼û.
+Z	java:S106V"9Replace this use of System.out or System.err by a logger.(÷êÜãıÿÿÿÿ8ƒÕò¼û.
+]	java:S125x"<This block of commented-out lines of code should be removed.(¶õ„šşÿÿÿÿ8Ùßû.
+T
+java:S1172Y"2Remove this unused method parameter "actionEvent".(“ã–Øøÿÿÿÿ8ƒÕò¼û.
 O
 java:S1172l"2Remove this unused method parameter "actionEvent".(äÛˆÊ8ƒÕò¼û.
-t
-java:S1104"WMake btnPretraga a static final constant or non-public and provide accessors if needed.(üÊ÷8—ú­‚ü.
-O
-java:S1172("2Remove this unused method parameter "actionEvent".(Ñ‹â„8ƒÕò¼û.
-O
-java:S1172…"2Remove this unused method parameter "actionEvent".(Íåò]8é±ı¾û.
-U	java:S106m"9Replace this use of System.out or System.err by a logger.(¨ÌõÃ8ƒÕò¼û.
-]	java:S125x"<This block of commented-out lines of code should be removed.(¶õ„šşÿÿÿÿ8Ùßû.
 u
 java:S1104"SMake btnUser a static final constant or non-public and provide accessors if needed.(¨—ºƒùÿÿÿÿ8ï¢›¾û.
+U	java:S106?"9Replace this use of System.out or System.err by a logger.(­Ãô®8ƒÕò¼û.
+U	java:S106m"9Replace this use of System.out or System.err by a logger.(¨ÌõÃ8ƒÕò¼û.
+t
+java:S1104"WMake btnPretraga a static final constant or non-public and provide accessors if needed.(üÊ÷8—ú­‚ü.
+Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(––ÂÛùÿÿÿÿ8Ÿúãéû.
+O
+java:S1172…"2Remove this unused method parameter "actionEvent".(Íåò]8é±ı¾û.
+y
+java:S1104"WMake btnUposleni a static final constant or non-public and provide accessors if needed.(éš„¾øÿÿÿÿ8»‡Íæû.
+U	java:S106)"9Replace this use of System.out or System.err by a logger.(Í€µ8ƒÕò¼û.
+O
+java:S1172("2Remove this unused method parameter "actionEvent".(Ñ‹â„8ƒÕò¼û.
+W	java:S1257"<This block of commented-out lines of code should be removed.(“ÁÉ?8ƒÕò¼û.
+]	java:S125K"<This block of commented-out lines of code should be removed.(¶õ„šşÿÿÿÿ8Ôúßû.
+W	java:S125f"<This block of commented-out lines of code should be removed.(“ÁÉ?8Ÿúãéû.
 ]	java:S125u"<This block of commented-out lines of code should be removed.(ø¡¿Œúÿÿÿÿ8”Ë²Úû.
