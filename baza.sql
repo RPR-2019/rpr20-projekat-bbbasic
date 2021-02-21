@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS "klijent" (
 );
 INSERT INTO "klijent" VALUES (1,'Patak','Patkić','Branilaca Sarajeva 21','062-222-222');
 INSERT INTO "klijent" VALUES (2,'Ivo','Ivić','Vladimira Valtera Perića 13','061-111-111');
+INSERT INTO "klijent" VALUES (3,'Huso','Husić','Grbavica 13','065-141-111');
 CREATE TABLE IF NOT EXISTS "tehnicki_pregled" (
 	"id"	INTEGER,
 	"datum_pregleda" TEXT,
@@ -63,11 +64,18 @@ CREATE TABLE IF NOT EXISTS "tehnicki_pregled" (
 	PRIMARY KEY("id")
 );
 INSERT INTO "tehnicki_pregled" VALUES (1,'2022-02-02', 1, 2,'Redovni','Zakazan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "tehnicki_pregled" VALUES (3,'2022-02-02', 3, 2,'Redovni','Otkazan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "tehnicki_pregled" VALUES (2,'2022-02-02', 3, 2,'Redovni','Otkazan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "tehnicki_pregled" VALUES (3,'2021-03-05', 2, 3,'Redovni','Kompletiran', 'Otto', 'Dvotaktni', 'Diesel', 'Automatski', 1000, 1000, 1000, 2, 2, 2, 'Sve OK!', 1, 200.00);
+INSERT INTO "tehnicki_pregled" VALUES (4,'2020-09-08', 1, 1,'Redovni','Kompletiran', 'Kombinovani pogon', 'Dvotaktni', 'Benzin','Automatski', 1200, 1200, 1100, 2, 2, 2, 'Sve OK!', 1, 200.00);
 CREATE TABLE IF NOT EXISTS "tim_tehnicki_pregled" (
     "tehnicki_pregled_id" INT,
     "uposlenik_id" INT
 );
 INSERT INTO "tim_tehnicki_pregled" VALUES (1,1);
 INSERT INTO "tim_tehnicki_pregled" VALUES (3,1);
+INSERT INTO "tim_tehnicki_pregled" VALUES (4,4);
+INSERT INTO "tim_tehnicki_pregled" VALUES (3,4);
+INSERT INTO "tim_tehnicki_pregled" VALUES (2,2);
+INSERT INTO "tim_tehnicki_pregled" VALUES (3,2);
+INSERT INTO "tim_tehnicki_pregled" VALUES (3,3);
 COMMIT;
