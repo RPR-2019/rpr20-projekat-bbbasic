@@ -51,6 +51,7 @@ public class TehnickiPregledController {
     public Button btnOtkaziTehnicki;
     public Button btnDodajUposlenika;
     public ChoiceBox<Uposlenik> choiceUposlenik;
+    public Button btnDovrsiTehnicki;
     public BorderPane mainPane;
 
     @FXML
@@ -77,6 +78,7 @@ public class TehnickiPregledController {
         btnOtkaziTehnicki.setDisable(true);
         btnDodajUposlenika.setDisable(true);
         choiceUposlenik.setDisable(true);
+        btnDovrsiTehnicki.setDisable(true);
         refresh(chart);
         tableView.setOnMouseClicked((MouseEvent event) -> {
             if(event.getButton().equals(MouseButton.PRIMARY)){
@@ -84,9 +86,12 @@ public class TehnickiPregledController {
                 if(tableView.getSelectionModel().getSelectedItem().getStatusTehnickogPregleda() == "Zakazan" ||
                         (tableView.getSelectionModel().getSelectedItem().getDatumPregleda().isEqual(LocalDate.now()))) {
                         btnOtkaziTehnicki.setDisable(false);
+                    if(tableView.getSelectionModel().getSelectedItem().getStatusTehnickogPregleda().equals("Zakazan"))
+                        btnDovrsiTehnicki.setDisable(false);
                 }
                 else {
                     btnOtkaziTehnicki.setDisable(true);
+                    btnDovrsiTehnicki.setDisable(true);
                 }
                 choiceUposlenik.setDisable(false);
             }
@@ -129,7 +134,7 @@ public class TehnickiPregledController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/kompletiranTehnickiPregled.fxml"));
-            KompletiranTehnickiPregled kompletiranTehnickiPregled = new KompletiranTehnickiPregled();
+            KompletiranTehnickiPregled kompletiranTehnickiPregled = new KompletiranTehnickiPregled(tableView.getSelectionModel().getSelectedItem());
             loader.setController(kompletiranTehnickiPregled);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

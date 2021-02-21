@@ -47,16 +47,27 @@ CREATE TABLE IF NOT EXISTS "tehnicki_pregled" (
 	"klijent_id" INT,
     "vrsta_tehnickog_pregleda" TEXT,
     "status_tehnickog_pregleda" TEXT,
+    "vrsta_motora" TEXT,
+    "taktnost_motora" TEXT,
+    "vrsta_goriva" TEXT,
+    "vrsta_mjenjaca" TEXT,
+    "sirina" DOUBLE,
+    "duzina" DOUBLE,
+    "visina" DOUBLE,
+    "mjesta_za_sjesti" INT,
+    "mjesta_za_stati" INT,
+    "mjesta_za_lezati" INT,
+    "komentar" TEXT,
+    "ispravnost" BIT,
+    "cijena" DOUBLE,
 	PRIMARY KEY("id")
 );
-INSERT INTO "tehnicki_pregled" VALUES (1,'2022-02-02', 1, 2,'Redovni','Zakazan');
-INSERT INTO "tehnicki_pregled" VALUES (2,'2000-02-02', 2, 1,'Redovni','Kompletiran');
-INSERT INTO "tehnicki_pregled" VALUES (3,'2022-02-02', 3, 2,'Redovni','Otkazan');
+INSERT INTO "tehnicki_pregled" VALUES (1,'2022-02-02', 1, 2,'Redovni','Zakazan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "tehnicki_pregled" VALUES (3,'2022-02-02', 3, 2,'Redovni','Otkazan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 CREATE TABLE IF NOT EXISTS "tim_tehnicki_pregled" (
     "tehnicki_pregled_id" INT,
     "uposlenik_id" INT
 );
 INSERT INTO "tim_tehnicki_pregled" VALUES (1,1);
-INSERT INTO "tim_tehnicki_pregled" VALUES (2,1);
 INSERT INTO "tim_tehnicki_pregled" VALUES (3,1);
 COMMIT;

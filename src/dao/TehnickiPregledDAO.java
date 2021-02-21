@@ -29,15 +29,19 @@ public class TehnickiPregledDAO extends BaseDAO{
     protected void kreirajUpite() {
         try {
             sviTehnickiUpit = dbConnection.getSession().prepareStatement("SELECT * FROM tehnicki_pregled");
-            dodajTehnickiUpit = dbConnection.getSession().prepareStatement("INSERT INTO tehnicki_pregled VALUES(?,?,?,?,?,?)");
+            dodajTehnickiUpit = dbConnection.getSession().prepareStatement("INSERT INTO tehnicki_pregled VALUES(?,?,?,?,?,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)");
             odrediIDTehnickogUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM tehnicki_pregled");
             voziloUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo WHERE id=?");
             otkaziTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE tehnicki_pregled SET status_tehnickog_pregleda=? WHERE id=?");
             dajUposlenikeZaTPUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik JOIN tim_tehnicki_pregled ON uposlenik.id = tim_tehnicki_pregled.uposlenik_id WHERE tim_tehnicki_pregled.tehnicki_pregled_id =?");
             dajKlijentaUpit = dbConnection.getSession().prepareStatement("SELECT * FROM klijent WHERE id=?");
-            //brojTehnickihZaID = dbConnection.getSession().prepareStatement("SELECT COUNT(*) FROM tim_tehnicki_pregled WHERE uposlenik_id=?");
             //ovdje ce puno trebat
-            //izmijeniTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE uposlenik SET ime=?, prezime=?, lozinka=?, korisnicko_ime=?, datum_rodjenja=?, datum_uposlenja=? WHERE id=?");
+            izmijeniTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE tehnicki_pregled" +
+                    " SET status_tehnickog_pregleda=?, vrsta_motora=?, taktnost_motora=?, vrsta_goriva=?, vrsta_mjenjaca=?," +
+                    "sirina=?, duzina=?, visina=?," +
+                    "mjesta_za_sjesti=?, mjesta_za_stati=?, mjesta_za_lezati=?," +
+                    "komentar=?, ispravnost=?, cijena=?" +
+                    "WHERE id=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -116,7 +120,32 @@ public class TehnickiPregledDAO extends BaseDAO{
     }
 
     public void izmijeniTehnicki(TehnickiPregled tehnickiPregled) {
-        System.out.println("Trebat ce mijenjat ako se stavi u kompletiran ili otkazan");
+        try {
+            izmijeniTehnickiUpit.setString(1,tehnickiPregled.getStatusTehnickogPregleda());
+            izmijeniTehnickiUpit.setString(2,tehnickiPregled.getVrsta_motora());
+            izmijeniTehnickiUpit.setString(3,tehnickiPregled.getTaktnost_motora());
+            izmijeniTehnickiUpit.setString(4,tehnickiPregled.getVrsta_goriva());
+            izmijeniTehnickiUpit.setString(5,tehnickiPregled.getVrsta_mjenjaca());
+
+            izmijeniTehnickiUpit.setDouble(6,tehnickiPregled.getSirina());
+            izmijeniTehnickiUpit.setDouble(7,tehnickiPregled.getDuzina());
+            izmijeniTehnickiUpit.setDouble(8,tehnickiPregled.getVisina());
+
+            izmijeniTehnickiUpit.setInt(9,tehnickiPregled.getMjesta_za_sjesti());
+            izmijeniTehnickiUpit.setInt(10,tehnickiPregled.getMjesta_za_stati());
+            izmijeniTehnickiUpit.setInt(11,tehnickiPregled.getMjesta_za_leci());
+
+            izmijeniTehnickiUpit.setString(12,tehnickiPregled.getKomentar());
+            izmijeniTehnickiUpit.setBoolean(13,tehnickiPregled.isIspravnost());
+            izmijeniTehnickiUpit.setDouble(14,tehnickiPregled.getCijena());
+            //zadnji
+            izmijeniTehnickiUpit.setInt(15,tehnickiPregled.getId());
+
+            izmijeniTehnickiUpit.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public Vozilo dajVozilo(int id) {
