@@ -72,9 +72,6 @@ public class HomeController {
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/icon.jpg"));
-//            stage.setWidth(440);
-//            stage.setHeight(483);
-            //MIJENJANJE
             mainPane.setCenter(root);
 
         } catch (IOException ioException) {
@@ -83,7 +80,21 @@ public class HomeController {
     }
 
     public void onBtnIzvjestaj(ActionEvent actionEvent) {
-        System.out.println("Trenutno nemamo nista za Izvjestaje");
+        System.out.println("Izvjestaji");
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"));
+            IzvjestajiController izvjestajiController = new IzvjestajiController();
+            loader.setController(izvjestajiController);
+            root = loader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            mainPane.setCenter(root);
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
 
     public void onBtnPretraga(ActionEvent actionEvent) {
