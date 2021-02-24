@@ -4,6 +4,7 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.swing.JRViewer;
 
 import javax.swing.*;
+import java.awt.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +29,9 @@ public class IspravnaVozilaIzvjestaj  extends JFrame {
                 this.add(viewer);
                 this.setSize(700, 500);
                 this.setVisible(true);
+                this.setIconImage(Toolkit.getDefaultToolkit().getImage(
+                        getClass().getResource("/img/glavna.png")));
+                this.setTitle("Ispravna vozila");
             } catch (JRException e) {
                 System.out.println(e.getMessage());
                 System.out.println(e.getLocalizedMessage());

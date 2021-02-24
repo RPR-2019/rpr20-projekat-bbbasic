@@ -5,18 +5,21 @@ import dao.TehnickiPregledDAO;
 import dao.TimTehnickiDAO;
 import dao.VozilaDAO;
 import enums.TipVozila;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
 import models.Klijent;
 
 import javafx.event.ActionEvent;
 import models.TehnickiPregled;
 import models.Uposlenik;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +33,7 @@ public class PretragaController {
     public ObservableList<TipVozila> tipVozila;
     public ComboBox<Klijent> choiceKlijent;
     public ObservableList<Klijent> klijenti;
+    public Button btnSave;
     //datumi
     public DatePicker choiceDatum;
     public TableColumn colDatumPregleda;
@@ -66,10 +70,20 @@ public class PretragaController {
     }
 
     public void clickTrazi(ActionEvent actionEvent) {
-        System.out.println("Trazimo");
         tableView.setItems(tehnickiPregledDAO.pretraga(choiceKlijent.getValue(), choiceTipVozila.getValue(), choiceDatum.getValue()));
         tableView.refresh();
+        if(tableView.getItems().isEmpty())
+            btnSave.setDisable(true);
+        else
+            btnSave.setDisable(false);
 
+    }
+    public void clickSave(ActionEvent actionEvent) {
+        FileChooser izbornik  = new FileChooser();
+        izbornik.setTitle("Izaberite datoteku");
+        izbornik.getExtensionFilters().add(new FileChooser.ExtensionFilter("Tekstualna", "*.txt"));
+        File izabrani = izbornik.showOpenDialog(labelaNaslov.getScene().getWindow());
+        tehnickiPregledDAO.zapisiDatoteku(izabrani, tableView.getItems());
     }
 
 }

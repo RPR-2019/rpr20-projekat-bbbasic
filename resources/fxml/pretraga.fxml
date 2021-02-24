@@ -49,6 +49,7 @@
             <TableColumn fx:id="colUposlenici" prefWidth="493.0" text="Uposlenici" />
         </columns>
       </TableView>
+      <Button fx:id="btnSave" mnemonicParsing="false" onAction="#clickSave" prefHeight="30.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.rowSpan="2" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

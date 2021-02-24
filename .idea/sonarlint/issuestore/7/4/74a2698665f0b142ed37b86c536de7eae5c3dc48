@@ -1,32 +1,23 @@
 
-^	java:S125"<This block of commented-out lines of code should be removed.(¿ŒµÛûÿÿÿÿ8ó«Ûü.
-O
-java:S1068"3Remove this unused "sviTehnickiUpit" private field.(Ë º8»’Ùü.
-J
-java:S1068".Remove this unused "voziloUpit" private field.(Ë º8ó«Ûü.
-]	java:S125"<This block of commented-out lines of code should be removed.(Øÿ»æøÿÿÿÿ8¼êÜü.
-W	java:S1259"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
-€
-java:S1450"dRemove the "dajUposlenikeZaTPUpit" field and declare it as a local variable in the relevant methods.(Ë º8¾¼Ùü.
-W	java:S125I"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
-O
-java:S1659"3Declare "dajUposlenikeZaTPUpit" on a separate line.(Ë º8‹ª»Şû.
-M
-java:S1659"8Declare "spojiTehnickiUposlenikUpit" on a separate line.(Ë º
-]	java:S125l"<This block of commented-out lines of code should be removed.(ùÌÄÅûÿÿÿÿ8»’Ùü.
-U	java:S106W"9Replace this use of System.out or System.err by a logger.(˜û”÷8¥´Ûû.
-K
-java:S1659"/Declare "brojTehnickihZaID" on a separate line.(Ë º8À±úÜû.
-I
-java:S1659"-Declare "sviTehnickiUpit" on a separate line.(Ë º8ĞÈÏãû.
-D
-java:S1659"(Declare "voziloUpit" on a separate line.(Ë º8š³‰àû.
-]	java:S125"<This block of commented-out lines of code should be removed.(Àîıûÿÿÿÿ8©İü.
-W	java:S125Z"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
-c
-java:S1068"GRemove this unused "dajUposlenogSaKorisnickimImenomUpit" private field.(Ë º8àİÛü.
-K
-java:S1659"/Declare "brojTehnickihUpit" on a separate line.(Ë º8ÙñÚÚû.
+Q
+java:S1659"/Declare "brojTehnickihZaID" on a separate line.(¼çäÏøÿÿÿÿ8¬ğã®ı.
+W
+java:S2209"5Change this instance-reference to a static reference.(›¸À¸ùÿÿÿÿ8íÒİ®ı.
+R
+java:S2209"5Change this instance-reference to a static reference.(¹­çÓ8íÒİ®ı.
+‚
+java:S1450"`Remove the "brojTehnickihZaID" field and declare it as a local variable in the relevant methods.(¼çäÏøÿÿÿÿ8¾¸å®ı.
+W
+java:S1068"5Remove this unused "brojTehnickihZaID" private field.(¼çäÏøÿÿÿÿ8¾¸å®ı.
+[
+java:S1068"9Remove this unused "dajUposlenikeZaTPUpit" private field.(¼çäÏøÿÿÿÿ8œ‘ä®ı.
+R
+java:S2209"5Change this instance-reference to a static reference.(¿íÇä8íÒİ®ı.
+Q
+java:S1659"/Declare "brojTehnickihUpit" on a separate line.(¼çäÏøÿÿÿÿ8ÙñÚÚû.
+†
+java:S1450"dRemove the "dajUposlenikeZaTPUpit" field and declare it as a local variable in the relevant methods.(¼çäÏøÿÿÿÿ8œ‘ä®ı.
 U
-java:S1068"9Remove this unused "dajUposlenikeZaTPUpit" private field.(Ë º8¾¼Ùü.
-W	java:S125)"<This block of commented-out lines of code should be removed.(†¿¥;8Ğ¨ĞÚû.
+java:S1659"3Declare "dajUposlenikeZaTPUpit" on a separate line.(¼çäÏøÿÿÿÿ8œ‘ä®ı.
+R
+java:S2209"5Change this instance-reference to a static reference.(õ²¹8íÒİ®ı.

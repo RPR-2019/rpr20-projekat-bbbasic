@@ -51,7 +51,7 @@ public class AdminPristupKorisnicimaController {
             stage.setTitle("Uposlenik");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-            stage.getIcons().add(new Image("/img/icon.jpg"));
+            stage.getIcons().add(new Image("/img/glavna.png"));
             stage.show();
 
             stage.setOnHiding( event -> {
@@ -80,7 +80,7 @@ public class AdminPristupKorisnicimaController {
             stage.setTitle("Uposlenik");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-            stage.getIcons().add(new Image("/img/icon.jpg"));
+            stage.getIcons().add(new Image("/img/glavna.png"));
             stage.show();
 
             stage.setOnHiding( event -> {
@@ -109,7 +109,7 @@ public class AdminPristupKorisnicimaController {
         alert.setHeaderText("Brisanje uposlenika " + uposlenik.getIme() + " " + uposlenik.getPrezime());
         alert.setContentText("Da li ste sigurni da zelite obrisati uposlenog?");
         Stage stage = (Stage )alert.getDialogPane().getScene().getWindow();
-        stage.getIcons().add(new Image("/img/icon.jpg"));
+        stage.getIcons().add(new Image("/img/glavna.png"));
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){

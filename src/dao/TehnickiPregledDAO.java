@@ -12,6 +12,10 @@ import models.Uposlenik;
 import models.Vozilo;
 import services.UserSession;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -259,5 +263,27 @@ public class TehnickiPregledDAO extends BaseDAO{
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void zapisiDatoteku(File izabrani, ObservableList<TehnickiPregled> tehnickiPregled) {
+        if(izabrani != null) {
+            try {
+                PrintWriter izlaz;
+                izlaz = new PrintWriter(new FileWriter(izabrani));
+                for (int i = 0; i < tehnickiPregled.size(); i++) {
+                    izlaz.println(tehnickiPregled.get(i).getDatumPregleda() + ":"
+                            + tehnickiPregled.get(i).getKlijent().getIme() + ":"
+                            + tehnickiPregled.get(i).getKlijent().getPrezime() + ":"
+                            + tehnickiPregled.get(i).getVozilo().getTipVozila() + ":"
+                            + tehnickiPregled.get(i).getVozilo().getMarka() + ":"
+                            + tehnickiPregled.get(i).getVozilo().getModel() + ":"
+                            + tehnickiPregled.get(i).getStatusTehnickogPregleda() + ":"
+                            + tehnickiPregled.get(i).getUposlenici());
+                }
+                izlaz.close();
+            } catch (IOException e) {
+                System.out.println("Greska prilikom ucitavanja");
+            }
+        }
     }
 }

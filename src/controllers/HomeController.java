@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
 import services.UserSession;
 
 import java.io.IOException;
@@ -23,17 +22,19 @@ public class HomeController {
     public Button btnUposleni;
     public Button btnPretraga;
 
+
     @FXML
     public void initialize() {
+
         btnUser.setText(String.valueOf(UserSession.getKorisnickoIme()));
         onBtnGlavnaForma(null);
         if(UserSession.getPrivileges()) {
             btnUposleni.setDisable(false);
-            //btnPretraga.setDisable(false);
+            btnPretraga.setDisable(false);
         }
         else {
             btnUposleni.setDisable(true);
-            //btnPretraga.setDisable(true);
+            btnPretraga.setDisable(true);
         }
     }
 
@@ -46,13 +47,9 @@ public class HomeController {
             TP1Controller voziloController = new TP1Controller(mainPane);
             loader.setController(voziloController);
             root = loader.load();
-            stage.setTitle("Vozilo");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-            stage.getIcons().add(new Image("/img/icon.jpg"));
             mainPane.setCenter(root);
-
-            //stage.show();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -68,10 +65,8 @@ public class HomeController {
             AdminPristupKorisnicimaController administratorGlavniController = new AdminPristupKorisnicimaController();
             loader.setController(administratorGlavniController);
             root = loader.load();
-            stage.setTitle("Vozilo");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-            stage.getIcons().add(new Image("/img/icon.jpg"));
             mainPane.setCenter(root);
 
         } catch (IOException ioException) {
@@ -109,15 +104,12 @@ public class HomeController {
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             mainPane.setCenter(root);
-
-            //stage.show();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
     }
 
     public void onBtnGlavnaForma(ActionEvent actionEvent) {
-        System.out.println("Trenutno nemamo nista za glavnu formu.");
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -125,12 +117,8 @@ public class HomeController {
             TehnickiPregledController tehnickiPregledController = new TehnickiPregledController(mainPane);
             loader.setController(tehnickiPregledController);
             root = loader.load();
-            //stage.setTitle("TehnickiPregled");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-//            stage.setWidth(440);
-//            stage.setHeight(483);
-            //MIJENJANJE
             stage.setMaximized(true);
             mainPane.setCenter(root);
 
