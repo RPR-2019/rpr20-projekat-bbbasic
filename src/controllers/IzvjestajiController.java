@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import net.sf.jasperreports.engine.JRException;
 import reports.IspravnaVozilaIzvjestaj;
 import reports.NeispravnaVozilaIzvjestaj;
+import reports.SviIzvjestaji;
 
 
 public class IzvjestajiController {
@@ -35,6 +36,11 @@ public class IzvjestajiController {
 
     }
     public void clickMjesecni(ActionEvent actionEvent) {
+        try {
+            new SviIzvjestaji().showReport(DBConnection.getSession());
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
 
     }
 }
