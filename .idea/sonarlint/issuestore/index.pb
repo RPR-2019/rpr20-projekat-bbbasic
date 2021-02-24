@@ -97,8 +97,6 @@ W
 'src/controllers/PretragaController.java,3\f\3f912414f565280e8ea45c359ca0d21311a40e8b
 f
 6out/production/rpr20-projekat-bbbasic/css/pretraga.css,7\5\75bef89b851717591d5f2541a3f3745d210eca0d
-L
-resources/fxml/pretraga.fxml,c\1\c1f731ba0dad15a887bd6a64d9c59f6ef50366e1
 z
 Jout/production/rpr20-projekat-bbbasic/fxml/kompletiranTehnickiPregled.fxml,c\c\ccfd4e759a8c2d722436f050a903fc48b972dcbe
 _

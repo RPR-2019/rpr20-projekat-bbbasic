@@ -14,9 +14,9 @@
             <items>
             <Button fx:id="btnGlavnaForma" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnGlavnaForma" prefHeight="25.0" prefWidth="210.0" text="Pocetna" />
                 <Button fx:id="btnTehnickiPregled" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnTehnickiPregled" prefHeight="29.0" prefWidth="210.0" text="Zakazi Tehnicki Pregled" textAlignment="RIGHT" />
+            <Button fx:id="btnPretraga" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnPretraga" prefHeight="25.0" prefWidth="210.0" text="Pretraga" />
                 <Button fx:id="btnUposleni" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnUposlenici" prefHeight="25.0" prefWidth="210.0" text="Uposlenici" textAlignment="RIGHT" />
                 <Button fx:id="btnIzvjestaj" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnIzvjestaj" prefHeight="25.0" prefWidth="210.0" text="Izvjestaj" />
-            <Button fx:id="btnPretraga" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnPretraga" prefHeight="25.0" prefWidth="210.0" text="Pretraga" />
             </items>
          <opaqueInsets>
             <Insets />

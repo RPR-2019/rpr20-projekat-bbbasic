@@ -29,11 +29,11 @@ public class HomeController {
         onBtnGlavnaForma(null);
         if(UserSession.getPrivileges()) {
             btnUposleni.setDisable(false);
-            btnPretraga.setDisable(false);
+            //btnPretraga.setDisable(false);
         }
         else {
             btnUposleni.setDisable(true);
-            btnPretraga.setDisable(true);
+            //btnPretraga.setDisable(true);
         }
     }
 
