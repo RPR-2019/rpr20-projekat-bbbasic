@@ -1,12 +1,17 @@
 package controllers;
 
+import dao.BaseDAO;
+import dao.DBConnection;
+import dao.TehnickiPregledDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
-
+import net.sf.jasperreports.engine.JRException;
+import reports.IspravnaVozilaIzvjestaj;
+import reports.NeispravnaVozilaIzvjestaj;
 
 
 public class IzvjestajiController {
+    public TehnickiPregledDAO tehnickiPregledDAO;
 
 
     @FXML
@@ -14,10 +19,19 @@ public class IzvjestajiController {
 
     }
 
-    public void clickIspravna(ActionEvent actionEvent) {
-
+    public void clickIspravna(ActionEvent actionEvent)  {
+        try {
+            new IspravnaVozilaIzvjestaj().showReport(DBConnection.getSession());
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
     }
     public void clickNeispravna(ActionEvent actionEvent) {
+        try {
+            new NeispravnaVozilaIzvjestaj().showReport(DBConnection.getSession());
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
 
     }
     public void clickMjesecni(ActionEvent actionEvent) {

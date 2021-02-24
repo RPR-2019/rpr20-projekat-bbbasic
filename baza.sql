@@ -67,6 +67,7 @@ INSERT INTO "tehnicki_pregled" VALUES (1,'2022-02-02', 1, 2,'Redovni','Zakazan',
 INSERT INTO "tehnicki_pregled" VALUES (2,'2022-02-02', 3, 2,'Redovni','Otkazan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO "tehnicki_pregled" VALUES (3,'2021-03-05', 2, 3,'Redovni','Kompletiran', 'Otto', 'Dvotaktni', 'Diesel', 'Automatski', 1000, 1000, 1000, 2, 2, 2, 'Sve OK!', 1, 200.00);
 INSERT INTO "tehnicki_pregled" VALUES (4,'2020-09-08', 1, 1,'Redovni','Kompletiran', 'Kombinovani pogon', 'Dvotaktni', 'Benzin','Automatski', 1200, 1200, 1100, 2, 2, 2, 'Sve OK!', 1, 200.00);
+INSERT INTO "tehnicki_pregled" VALUES (5,'2020-03-05', 2, 3,'Redovni','Kompletiran', 'Otto', 'Dvotaktni', 'Diesel', 'Automatski', 900, 900, 800, 0, 1, 1, 'Dimenzije vozila nisu po pravilima!', 0, 250.00);
 CREATE TABLE IF NOT EXISTS "tim_tehnicki_pregled" (
     "tehnicki_pregled_id" INT,
     "uposlenik_id" INT
@@ -78,4 +79,6 @@ INSERT INTO "tim_tehnicki_pregled" VALUES (3,4);
 INSERT INTO "tim_tehnicki_pregled" VALUES (2,2);
 INSERT INTO "tim_tehnicki_pregled" VALUES (3,2);
 INSERT INTO "tim_tehnicki_pregled" VALUES (3,3);
+INSERT INTO "tim_tehnicki_pregled" VALUES (5,4);
+INSERT INTO "tim_tehnicki_pregled" VALUES (5,5);
 COMMIT;

@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private Connection session;
+    private static Connection session;
+    //private Connection session;
     private static DBConnection instance;
 
     private DBConnection() {
@@ -16,7 +17,7 @@ public class DBConnection {
         }
     }
 
-    public Connection getSession() {
+    public static Connection getSession() {
         return session;
     }
 
