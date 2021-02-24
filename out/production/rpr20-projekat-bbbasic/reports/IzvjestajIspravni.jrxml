@@ -57,13 +57,22 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 	<title>
 		<band height="94" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="0" width="822" height="65" forecolor="#92BDD4" backcolor="#8AB8D1" uuid="83f5e806-cc04-4161-87a9-07633f604bc1"/>
+				<reportElement mode="Opaque" x="-20" y="0" width="822" height="65" forecolor="#92BDD4" backcolor="#8AB8D1" uuid="83f5e806-cc04-4161-87a9-07633f604bc1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<staticText>
 					<reportElement style="Title" x="231" y="0" width="578" height="65" uuid="f5cd9ee0-5caa-4e48-8946-c7e84d82a845"/>
 					<textElement textAlignment="Right">
-						<font size="54" isBold="false"/>
+						<font fontName="Times New Roman" size="54" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Tehnički ispravna vozila]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="558" y="50" width="217" height="29" uuid="d6f3be04-e569-473a-affa-d3cb92ea9ff6"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MeCARnic]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -80,7 +89,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f921b1a-72ff-4a4d-91b8-8069dbcb18f8"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="true"/>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Datum pregleda]]></text>
 				</staticText>
@@ -89,7 +98,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2cac74e4-3774-4a0c-bc01-bd220e25db17"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="true"/>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Vrsta pregleda]]></text>
 				</staticText>
@@ -98,7 +107,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6afa4a07-ecbf-4869-8cef-cb72ce6148ad"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="true"/>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Tip vozila]]></text>
 				</staticText>
@@ -107,7 +116,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="07b8f181-34d2-4bb7-b4ec-100d1569de71"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="true"/>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Marka vozila]]></text>
 				</staticText>
@@ -116,7 +125,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="72964bce-dbdc-4b26-b547-80342af1778c"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="true"/>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Model vozila]]></text>
 				</staticText>
@@ -124,9 +133,9 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="35" splitType="Stretch">
+		<band height="19" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="10" y="15" width="792" height="1" uuid="ad4e998c-7071-4467-b7fa-4441cc53d3f6"/>
+				<reportElement positionType="FixRelativeToBottom" x="80" y="14" width="700" height="3" uuid="ad4e998c-7071-4467-b7fa-4441cc53d3f6"/>
 			</line>
 			<frame>
 				<reportElement x="20" y="0" width="782" height="14" uuid="822bafe9-34ee-4b4f-aa76-3eae029c4911"/>
@@ -135,7 +144,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f921b1a-72ff-4a4d-91b8-8069dbcb18f8"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{datum_pregleda}]]></textFieldExpression>
 				</textField>
@@ -144,7 +153,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2cac74e4-3774-4a0c-bc01-bd220e25db17"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{vrsta_tehnickog_pregleda}]]></textFieldExpression>
 				</textField>
@@ -153,7 +162,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6afa4a07-ecbf-4869-8cef-cb72ce6148ad"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{tip_vozila}]]></textFieldExpression>
 				</textField>
@@ -162,7 +171,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="07b8f181-34d2-4bb7-b4ec-100d1569de71"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{marka}]]></textFieldExpression>
 				</textField>
@@ -171,15 +180,18 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="72964bce-dbdc-4b26-b547-80342af1778c"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
 				</textField>
+				<textField>
+					<reportElement x="19" y="2" width="40" height="15" uuid="e151b9d2-e223-496b-8638-2d1528bec959"/>
+					<textElement>
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
 			</frame>
-			<textField>
-				<reportElement x="20" y="0" width="60" height="15" uuid="e151b9d2-e223-496b-8638-2d1528bec959"/>
-				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
-			</textField>
 		</band>
 	</detail>
 	<columnFooter>
@@ -192,10 +204,16 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 			</line>
 			<textField>
 				<reportElement x="170" y="30" width="140" height="20" uuid="48d575aa-8990-4146-bf22-88b88e3a0c29"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="30" width="170" height="21" uuid="ab392360-fc8b-493a-b627-ba79afb1e323"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
 				<text><![CDATA[Broj tehnički ispravnih vozila:]]></text>
 			</staticText>
 		</band>
@@ -207,21 +225,21 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 				<textField evaluationTime="Report">
 					<reportElement style="Column header" x="753" y="0" width="40" height="16" forecolor="#FFFFFF" uuid="970781d6-87a0-4d3d-a07b-5ae173a1317a"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement style="Column header" x="673" y="0" width="80" height="16" forecolor="#FFFFFF" uuid="42664b34-c87b-42f8-911b-bd9c2ab9111e"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
 					<reportElement style="Column header" x="2" y="0" width="197" height="16" forecolor="#FFFFFF" uuid="06b3d6e8-b4a5-4251-b1fb-f640689933e8"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="12" isBold="false"/>
+						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>

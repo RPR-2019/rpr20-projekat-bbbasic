@@ -121,8 +121,6 @@ Y
 )resources/reports/IzvjestajIspravni.jrxml,c\8\c8861a022e60896d0b7c2aba3697663c0f52dedb
 w
 Gout/production/rpr20-projekat-bbbasic/reports/izvjestajNeispravni.jrxml,3\0\30ea0b782d31d325b081b3b22b6b154dfeec2c02
-[
-+resources/reports/izvjestajNeispravni.jrxml,9\a\9a8e94d0fb3fa061ab7d4edbc9a0c334cfa856e5
 Z
 *src/reports/NeispravnaVozilaIzvjestaj.java,a\b\abe7a84ed099bb755146e992f12184e8cb48394f
 m
