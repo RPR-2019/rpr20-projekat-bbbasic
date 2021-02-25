@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 public class DBConnection {
     private static Connection session;
-    //private Connection session;
     private static DBConnection instance;
 
     private DBConnection() {

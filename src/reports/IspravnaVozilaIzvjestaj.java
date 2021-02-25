@@ -31,7 +31,7 @@ public class IspravnaVozilaIzvjestaj  extends JFrame {
                 this.setVisible(true);
                 this.setIconImage(Toolkit.getDefaultToolkit().getImage(
                         getClass().getResource("/img/glavna.png")));
-                this.setTitle("Ispravna vozila");
+                this.setTitle("Ispravna vehicles");
             } catch (JRException e) {
                 System.out.println(e.getMessage());
                 System.out.println(e.getLocalizedMessage());

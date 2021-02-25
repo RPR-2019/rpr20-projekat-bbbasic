@@ -36,7 +36,7 @@
             <Insets right="20.0" />
          </padding>
       </ButtonBar>
-      <CheckBox fx:id="novoVozilo" mnemonicParsing="false" onAction="#actionNovoVozilo" prefHeight="17.0" prefWidth="201.0" text="Novo vozilo" GridPane.rowIndex="2" />
+      <CheckBox fx:id="novoVozilo" mnemonicParsing="false" onAction="#actionNovoVozilo" prefHeight="17.0" prefWidth="201.0" text="Novo vehicle" GridPane.rowIndex="2" />
       <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
       <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="6" />
       <Label fx:id="l1" prefHeight="17.0" prefWidth="916.0" text="1. Identifikacijski podaci o vozilu" GridPane.columnSpan="3" GridPane.rowIndex="1" />

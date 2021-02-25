@@ -5,8 +5,8 @@ public abstract class BaseDAO {
 
     public BaseDAO() {
         dbConnection = DBConnection.getInstance();
-        kreirajUpite();
+        prepareStatements();
     }
 
-    protected abstract void kreirajUpite();
+    protected abstract void prepareStatements();
 }

@@ -32,10 +32,10 @@
       <TableView fx:id="tableView" prefHeight="285.0" prefWidth="685.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
         <columns>
           <TableColumn fx:id="colDatumPregleda" prefWidth="78.0" text="Zakazan" />
-          <TableColumn fx:id="colVozilo" text="Vozilo" />
-            <TableColumn fx:id="colVrstaPregleda" prefWidth="65.0" text="Vrsta" />
-            <TableColumn fx:id="colStatusPregleda" prefWidth="77.0" text="Status" />
-            <TableColumn fx:id="colUposlenici" prefWidth="655.0" text="Uposlenici" />
+          <TableColumn fx:id="colVozilo" prefWidth="167.0" text="Vozilo" />
+            <TableColumn fx:id="colVrstaPregleda" prefWidth="87.0" text="Vrsta" />
+            <TableColumn fx:id="colStatusPregleda" prefWidth="86.0" text="Status" />
+            <TableColumn fx:id="colUposlenici" prefWidth="537.0" text="Uposlenici" />
         </columns>
          <GridPane.margin>
             <Insets left="-10.0" right="-20.0" top="-20.0" />

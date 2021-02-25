@@ -1,7 +1,7 @@
 package controllers;
 
 import constants.ModelVozila;
-import dao.VozilaDAO;
+import dao.VehicleDAO;
 import enums.MarkaVozila;
 import exceptions.NeispravanBrojSasije;
 import exceptions.NeispravnaTablica;
@@ -29,7 +29,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class TP1Controller {
     public Label l1;
-    private VozilaDAO vozilaDAO;
+    private VehicleDAO vehicleDAO;
     public Vehicle vehicle;
     public CheckBox choiceBijela, choiceCrna, choiceSmeda, choiceCrvena, choiceSiva;
 
@@ -73,7 +73,7 @@ public class TP1Controller {
         lvrstaBoje.setVisible(false);
         lboja.setVisible(false);
         actionNovoVozilo(null);
-        //lista vozila vec unesenih
+        //lista vehicles vec unesenih
         choiceVozilo.setItems(listaVozila);
         choiceVozilo.setValue(listaVozila.get(0));
 
@@ -88,10 +88,10 @@ public class TP1Controller {
 
     public TP1Controller(BorderPane mainPane) {
         this.mainPane = mainPane;
-        vozilaDAO = new VozilaDAO();
+        vehicleDAO = new VehicleDAO();
         tipVozila =  FXCollections.observableArrayList(Arrays.asList(TipVozila.values()));
         markaVozila = FXCollections.observableArrayList(Arrays.asList(MarkaVozila.values()));
-        listaVozila = FXCollections.observableArrayList(vozilaDAO.vozila());
+        listaVozila = FXCollections.observableArrayList(vehicleDAO.vehicles());
     }
 
     public void clickCancel(ActionEvent actionEvent) {
@@ -147,7 +147,7 @@ public class TP1Controller {
             //validacija tablica
             try {
                 validacijaTablica(fldRegistracija.getText());
-                vozilaDAO.jeLiZauzetaRegistracija(fldRegistracija.getText(), vehicle);
+                vehicleDAO.isRegistrationTaken(fldRegistracija.getText(), vehicle);
                 fldRegistracija.getStyleClass().removeAll("poljeNijeIspravno");
                 fldRegistracija.getStyleClass().add("poljeIspravno");
                 fldPogrenaRegistracija.setVisible(false);
@@ -163,7 +163,7 @@ public class TP1Controller {
             //validacija sasije
             try {
                 VIN.isVinValid(fldBrojSasije.getText());
-                vozilaDAO.jeLiZauzetaSasija(fldBrojSasije.getText(), vehicle);
+                vehicleDAO.isChassisNumberTaken(fldBrojSasije.getText(), vehicle);
                 fldBrojSasije.getStyleClass().removeAll("poljeNijeIspravno");
                 fldBrojSasije.getStyleClass().add("poljeIspravno");
                 fldPogresnaSasija.setVisible(false);
@@ -202,7 +202,7 @@ public class TP1Controller {
             vehicle.setChassisNumber(fldBrojSasije.getText());
             vehicle.setColor(boja);
             vehicle.setColorType(vrstaBoje);
-            vozilaDAO.dodajVozilo(vehicle);
+            vehicleDAO.addVehicle(vehicle);
         }
         else {
             vehicle = choiceVozilo.getValue();
@@ -219,7 +219,6 @@ public class TP1Controller {
                 root = loader.load();
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 stage.setResizable(true);
-                stage.getIcons().add(new Image("/img/icon.jpg"));
                 stage.setWidth(450);
                 stage.setHeight(580);
                 //MIJENJANJE

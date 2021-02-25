@@ -1,9 +1,9 @@
 package controllers;
 
-import dao.KlijentDAO;
-import dao.TehnickiPregledDAO;
-import dao.TimTehnickiDAO;
-import dao.UsersDAO;
+import dao.CustomerDAO;
+import dao.TechnicalInspectionDAO;
+import dao.TechnicalInspectionTeamDAO;
+import dao.EmployeeDAO;
 import enums.VrstaTehnickogPregleda;
 import exceptions.NeispravanTelefonskiBroj;
 import exceptions.ZakazanTermin;
@@ -22,12 +22,12 @@ import java.util.Arrays;
 
 
 public class TP2Controller {
-    public TehnickiPregledDAO tehnickiPregledDAO;
-    public UsersDAO usersDAO;
-    public TimTehnickiDAO timTehnickiDAO;
+    public TechnicalInspectionDAO technicalInspectionDAO;
+    public EmployeeDAO employeeDAO;
+    public TechnicalInspectionTeamDAO technicalInspectionTeamDAO;
     public Label l2, l3,ltehnicki;
     public TextField fldIme, fldPrezime, fldMjestoPrebivalista, fldBrojTelefona;
-    public KlijentDAO klijentDAO;
+    public CustomerDAO customerDAO;
     public Label fldPogresanBroj;
     public Vehicle vehicle;
 
@@ -48,11 +48,11 @@ public class TP2Controller {
     }
 
     public TP2Controller(Vehicle vehicle) {
-        tehnickiPregledDAO = new TehnickiPregledDAO();
-        usersDAO = new UsersDAO();
-        timTehnickiDAO = new TimTehnickiDAO();
+        technicalInspectionDAO = new TechnicalInspectionDAO();
+        employeeDAO = new EmployeeDAO();
+        technicalInspectionTeamDAO = new TechnicalInspectionTeamDAO();
         this.vehicle = vehicle;
-        klijentDAO = new KlijentDAO();
+        customerDAO = new CustomerDAO();
         vrstaTehnickogPregleda = FXCollections.observableArrayList(Arrays.asList(VrstaTehnickogPregleda.values()));
 
     }
@@ -129,7 +129,7 @@ public class TP2Controller {
         klijent.setAddress(fldMjestoPrebivalista.getText());
         klijent.setPhoneNumber(fldBrojTelefona.getText());
 
-        klijentDAO.dodajKlijenta(klijent);
+        customerDAO.addCustomer(klijent);
 
         //pravimo tehnicki da ga dodamo jer je sve ok
         TechnicalInspection technicalInspection = new TechnicalInspection();
@@ -137,22 +137,22 @@ public class TP2Controller {
         technicalInspection.setStatusTehnickogPregleda("Zakazan");
 //        //ovdje smo mijenjali
 //        technicalInspection.setKlijent(klijent);
-        technicalInspection.setVozilo(vehicle);
+        technicalInspection.setVehicle(vehicle);
         technicalInspection.setCustomer(klijent);
         //technicalInspection.setVoziloID(vehicle.getId());
         technicalInspection.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
         technicalInspection.setDateOfInspection(choiceDatum.getValue());
-        technicalInspection.getEmployees().add(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()));
+        technicalInspection.getEmployees().add(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()));
 
         try {
-            tehnickiPregledDAO.dodajTehnicki(technicalInspection);
+            technicalInspectionDAO.addTI(technicalInspection);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Uspjesno ste zakazali tehnicki pregled!");
             System.out.println("ID novog tehnickog " + technicalInspection.getId());
-            System.out.println("ID usera je" + usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
-            timTehnickiDAO.spojiTehnickiUposlenik(technicalInspection.getId(), usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
+            System.out.println("ID usera je" + employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId());
+            technicalInspectionTeamDAO.connectTIAndEmployee(technicalInspection.getId(), employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
         }catch (ZakazanTermin zakazanTermin) {

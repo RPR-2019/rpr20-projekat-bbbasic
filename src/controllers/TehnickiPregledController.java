@@ -1,8 +1,8 @@
 package controllers;
 
-import dao.TehnickiPregledDAO;
-import dao.TimTehnickiDAO;
-import dao.UsersDAO;
+import dao.TechnicalInspectionDAO;
+import dao.TechnicalInspectionTeamDAO;
+import dao.EmployeeDAO;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -33,10 +33,10 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 
 public class TehnickiPregledController {
-    public UsersDAO usersDAO;
+    public EmployeeDAO employeeDAO;
     public ObservableList<Employee> uposlenici;
-    public TehnickiPregledDAO tehnickiPregledDAO;
-    public TimTehnickiDAO timTehnickiDAO;
+    public TechnicalInspectionDAO technicalInspectionDAO;
+    public TechnicalInspectionTeamDAO technicalInspectionTeamDAO;
     public Label labela;
     private ObservableList<PieChart.Data> pieChartData;
     public PieChart chart;
@@ -68,13 +68,13 @@ public class TehnickiPregledController {
         choiceUposlenik.setItems(uposlenici);
         labela.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         //tabelica
-        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("datumPregleda"));
+        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("dateOfInspection"));
         colVozilo.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vehicle"));
-        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vrstaTehnickogPregleda"));
-        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusTehnickogPregleda"));
-        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("uposlenici"));
+        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("typeOfTechnicalInspection"));
+        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusOfTechnicalInspection"));
+        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("employees"));
 
-        tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
+        tableView.setItems(technicalInspectionDAO.search(null,null,null));
         btnOtkaziTehnicki.setDisable(true);
         btnDodajUposlenika.setDisable(true);
         choiceUposlenik.setDisable(true);
@@ -108,15 +108,15 @@ public class TehnickiPregledController {
     }
     public TehnickiPregledController(BorderPane mainPane) {
         this.mainPane = mainPane;
-        tehnickiPregledDAO = new TehnickiPregledDAO();
-        usersDAO = new UsersDAO();
-        timTehnickiDAO = new TimTehnickiDAO();
-        uposlenici = FXCollections.observableArrayList(usersDAO.uposlenici());
+        technicalInspectionDAO = new TechnicalInspectionDAO();
+        employeeDAO = new EmployeeDAO();
+        technicalInspectionTeamDAO = new TechnicalInspectionTeamDAO();
+        uposlenici = FXCollections.observableArrayList(employeeDAO.employees());
     }
 
     public void otkaziTehnickiPregled(ActionEvent actionEvent) {
-            tehnickiPregledDAO.otkaziTehnickiPregled(tableView.getSelectionModel().getSelectedItem());
-            tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
+            technicalInspectionDAO.cancelTI(tableView.getSelectionModel().getSelectedItem());
+            tableView.setItems(technicalInspectionDAO.search(null,null,null));
             tableView.refresh();
             refresh(chart);
 
@@ -125,8 +125,8 @@ public class TehnickiPregledController {
 
     public void dodajUposlenika(ActionEvent actionEvent) {
         if(tableView.getSelectionModel().getSelectedItem().getEmployees().contains(choiceUposlenik.getValue())) return;
-        timTehnickiDAO.spojiTehnickiUposlenik(tableView.getSelectionModel().getSelectedItem().getId(), choiceUposlenik.getValue().getId());
-        tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
+        technicalInspectionTeamDAO.connectTIAndEmployee(tableView.getSelectionModel().getSelectedItem().getId(), choiceUposlenik.getValue().getId());
+        tableView.setItems(technicalInspectionDAO.search(null,null,null));
         tableView.refresh();
     }
     public void dovrsiTehnicki(ActionEvent actionEvent) {
@@ -153,9 +153,9 @@ public class TehnickiPregledController {
 
     public void refresh(PieChart chart) {
         pieChartData  = FXCollections.observableArrayList(
-                new PieChart.Data("Zakazani", timTehnickiDAO.brojZakazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
-                new PieChart.Data("Otkazani", timTehnickiDAO.brojOtkazanihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())),
-                new PieChart.Data("Kompletirani", timTehnickiDAO.brojKompletiranihPregleda(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId())));
+                new PieChart.Data("Zakazani", technicalInspectionTeamDAO.countScheduledTI(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId())),
+                new PieChart.Data("Otkazani", technicalInspectionTeamDAO.countCanceledTI(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId())),
+                new PieChart.Data("Kompletirani", technicalInspectionTeamDAO.countcompletedTI(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId())));
         chart.setData(pieChartData);
         chart.setLegendVisible(false);
         pieChartData.forEach(data ->

@@ -1,6 +1,6 @@
 package controllers;
 
-import dao.UsersDAO;
+import dao.EmployeeDAO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +16,7 @@ import java.time.Period;
 
 
 public class UposlenikController {
-    private UsersDAO usersDAO;
+    private EmployeeDAO employeeDAO;
     private Employee employee;
     public ObservableList<TechnicalInspection> listTehnickiPregledi;
     public ChoiceBox<TechnicalInspection> choiceTehnicki;
@@ -31,7 +31,7 @@ public class UposlenikController {
     public RadioButton privilegija;
 
     public UposlenikController(Employee employee) {
-        usersDAO = new UsersDAO();
+        employeeDAO = new EmployeeDAO();
         this.employee = employee;
     }
 
@@ -91,8 +91,8 @@ public class UposlenikController {
         }
 
         //valiadcija koricnickoIme
-        if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), employee) == false || fldKorisnickoIme.getText().isEmpty()) {
-            if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), employee) == false)
+        if(employeeDAO.isUserNameTaken(fldKorisnickoIme.getText(), employee) == false || fldKorisnickoIme.getText().isEmpty()) {
+            if(employeeDAO.isUserNameTaken(fldKorisnickoIme.getText(), employee) == false)
                 zauzetoKorisnickoIme.setVisible(true);
             fldKorisnickoIme.getStyleClass().removeAll("poljeIspravno");
             fldKorisnickoIme.getStyleClass().add("poljeNijeIspravno");

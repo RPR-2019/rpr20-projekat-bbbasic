@@ -1,6 +1,6 @@
 package controllers;
 
-import dao.TehnickiPregledDAO;
+import dao.TechnicalInspectionDAO;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,12 +11,12 @@ import models.TechnicalInspection;
 
 
 public class KompletiranTehnickiPregled {
-    public TehnickiPregledDAO tehnickiPregledDAO;
+    public TechnicalInspectionDAO technicalInspectionDAO;
     public ImageView imgdimenzije;
     public Label labelaNaslov;
     //odabir
     public ChoiceBox<String> choiceVrstaMotora, vrstaGoriva, vrstaMjenjaca, taktnostMotora;
-    //dimenzije vozila
+    //dimenzije vehicles
     public TextField sirinaVozila, visinaVozila, duzinaVozila;
     //mjesta
     public TextField mjestaZaSjesti,mjestaZaStati, mjestaZaLezanje;
@@ -29,7 +29,7 @@ public class KompletiranTehnickiPregled {
     public TechnicalInspection technicalInspection;
 
     public KompletiranTehnickiPregled(TechnicalInspection selectedItem) {
-        tehnickiPregledDAO = new TehnickiPregledDAO();
+        technicalInspectionDAO = new TechnicalInspectionDAO();
         technicalInspection = selectedItem;
     }
 
@@ -171,7 +171,7 @@ public class KompletiranTehnickiPregled {
         technicalInspection.setPrice(Double.parseDouble(cijena.getText()));
 
         technicalInspection.setStatusTehnickogPregleda("Kompletiran");
-        tehnickiPregledDAO.izmijeniTehnicki(technicalInspection);
+        technicalInspectionDAO.updateTI(technicalInspection);
 
     }
 

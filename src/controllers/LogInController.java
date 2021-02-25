@@ -1,6 +1,6 @@
 package controllers;
 
-import dao.UsersDAO;
+import dao.EmployeeDAO;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +23,7 @@ public class LogInController {
     public Label fldGreska;
 
 
-    private UsersDAO dao;
+    private EmployeeDAO dao;
 
     @FXML
     public void initialize() {
@@ -34,11 +34,11 @@ public class LogInController {
 
 
     public LogInController() {
-        dao = new UsersDAO();
+        dao = new EmployeeDAO();
     }
 
     public void clickPrijava(ActionEvent actionEvent) throws InterruptedException {
-        ArrayList<Employee> pomocni = dao.uposlenici();
+        ArrayList<Employee> pomocni = dao.employees();
         for(int i = 0; i < pomocni.size(); i++) {
             if(pomocni.get(i).getUserName().equals(fldKorisnickoIme.getText()) && pomocni.get(i).getPassword().equals(fldLozinka.getText())) {
                 fldLozinka.getStyleClass().removeAll("poljeNijeIspravno");

@@ -1,8 +1,8 @@
 package controllers;
 
-import dao.KlijentDAO;
-import dao.TehnickiPregledDAO;
-import dao.VozilaDAO;
+import dao.CustomerDAO;
+import dao.TechnicalInspectionDAO;
+import dao.VehicleDAO;
 import enums.TipVozila;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,9 +23,9 @@ import java.util.Arrays;
 
 public class PretragaController {
     public Label labelaNaslov, labelaInfo;
-    public KlijentDAO klijentDAO;
-    public VozilaDAO vozilaDAO;
-    public TehnickiPregledDAO tehnickiPregledDAO;
+    public CustomerDAO customerDAO;
+    public VehicleDAO vehicleDAO;
+    public TechnicalInspectionDAO technicalInspectionDAO;
     public ComboBox<TipVozila> choiceTipVozila;
     public ObservableList<TipVozila> tipVozila;
     public ComboBox<Customer> choiceKlijent;
@@ -49,25 +49,25 @@ public class PretragaController {
         choiceTipVozila.setItems(tipVozila);
         choiceKlijent.setItems(klijenti);
 
-        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("datumPregleda"));
+        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("dateOfInspection"));
         colVozilo.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vehicle"));
-        colKlijent.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("klijent"));
-        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusTehnickogPregleda"));
-        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("uposlenici"));
-        tableView.setItems(tehnickiPregledDAO.pretraga(null, null, null));
+        colKlijent.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("customer"));
+        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusOfTechnicalInspection"));
+        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("employees"));
+        tableView.setItems(technicalInspectionDAO.search(null, null, null));
 
     }
 
     public PretragaController(BorderPane gridPane) {
-        klijentDAO = new KlijentDAO();
-        vozilaDAO = new VozilaDAO();
-        tehnickiPregledDAO = new TehnickiPregledDAO();
+        customerDAO = new CustomerDAO();
+        vehicleDAO = new VehicleDAO();
+        technicalInspectionDAO = new TechnicalInspectionDAO();
         tipVozila = FXCollections.observableArrayList(Arrays.asList(TipVozila.values()));
-        klijenti = FXCollections.observableArrayList(klijentDAO.klijenti());
+        klijenti = FXCollections.observableArrayList(customerDAO.customers());
     }
 
     public void clickTrazi(ActionEvent actionEvent) {
-        tableView.setItems(tehnickiPregledDAO.pretraga(choiceKlijent.getValue(), choiceTipVozila.getValue(), choiceDatum.getValue()));
+        tableView.setItems(technicalInspectionDAO.search(choiceKlijent.getValue(), choiceTipVozila.getValue(), choiceDatum.getValue()));
         tableView.refresh();
         if(tableView.getItems().isEmpty())
             btnSave.setDisable(true);
@@ -80,7 +80,7 @@ public class PretragaController {
         izbornik.setTitle("Izaberite datoteku");
         izbornik.getExtensionFilters().add(new FileChooser.ExtensionFilter("Tekstualna", "*.txt"));
         File izabrani = izbornik.showOpenDialog(labelaNaslov.getScene().getWindow());
-        tehnickiPregledDAO.zapisiDatoteku(izabrani, tableView.getItems());
+        technicalInspectionDAO.recordFile(izabrani, tableView.getItems());
     }
 
 }

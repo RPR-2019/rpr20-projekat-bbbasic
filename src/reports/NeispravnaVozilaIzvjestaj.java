@@ -32,7 +32,7 @@ public class NeispravnaVozilaIzvjestaj  extends JFrame {
             this.setVisible(true);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(
                     getClass().getResource("/img/glavna.png")));
-            this.setTitle("Neispravna vozila");
+            this.setTitle("Neispravna vehicles");
         } catch (JRException e) {
             System.out.println(e.getMessage());
             System.out.println(e.getLocalizedMessage());

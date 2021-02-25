@@ -1,7 +1,7 @@
 package controllers;
 
 import dao.DBConnection;
-import dao.TehnickiPregledDAO;
+import dao.TechnicalInspectionDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import net.sf.jasperreports.engine.JRException;
@@ -11,7 +11,7 @@ import reports.SviTehnicki;
 
 
 public class IzvjestajiController {
-    public TehnickiPregledDAO tehnickiPregledDAO;
+    public TechnicalInspectionDAO technicalInspectionDAO;
 
 
     @FXML

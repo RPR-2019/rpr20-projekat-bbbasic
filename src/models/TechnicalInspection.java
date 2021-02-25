@@ -155,11 +155,11 @@ public class TechnicalInspection {
     }
 
 
-    public Vehicle getVozilo() {
+    public Vehicle getVehicle() {
         return vehicle;
     }
 
-    public void setVozilo(Vehicle vehicle) {
+    public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 

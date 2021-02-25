@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import services.VIN;
 
 import java.sql.SQLException;
 
@@ -16,12 +15,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         InitDB initDB = new InitDB();
         try {
-            initDB.obrisiSve();
+            initDB.delete();
         }
         catch (SQLException e) {
 
         }
-        initDB.kreirajBazu();
+        initDB.createDB();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         LogInController ctrl = new LogInController();

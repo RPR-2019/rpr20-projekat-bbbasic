@@ -13,16 +13,16 @@ public class InitDB {
         dbConnection = DBConnection.getInstance();
     }
 
-    public void obrisiSve() throws SQLException {
+    public void delete() throws SQLException {
         Statement stmt = dbConnection.getSession().createStatement();
-        stmt.executeUpdate("DELETE FROM uposlenik");
+        stmt.executeUpdate("DELETE FROM employee");
         stmt.executeUpdate("DELETE FROM vehicle");
-        stmt.executeUpdate("DELETE FROM klijent");
-        stmt.executeUpdate("DELETE FROM tim_tehnicki_pregled");
-        stmt.executeUpdate("DELETE FROM tehnicki_pregled");
+        stmt.executeUpdate("DELETE FROM customer");
+        stmt.executeUpdate("DELETE FROM technical_inspection_team");
+        stmt.executeUpdate("DELETE FROM technical_inspection");
     }
 
-    public void kreirajBazu() {
+    public void createDB() {
         Scanner ulaz = null;
         try {
             ulaz = new Scanner(new FileInputStream("baza.sql"));
