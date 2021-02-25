@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import models.Uposlenik;
+import models.Employee;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -23,7 +23,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class AdminPristupKorisnicimaController {
     public ListView listaUposlenici;
-    private ObservableList<Uposlenik> lista;
+    private ObservableList<Employee> lista;
     private UsersDAO usersDAO;
     public Label lUposlenici;
 
@@ -48,16 +48,16 @@ public class AdminPristupKorisnicimaController {
             UposlenikController uposlenikController = new UposlenikController(null);
             loader.setController(uposlenikController);
             root = loader.load();
-            stage.setTitle("Uposlenik");
+            stage.setTitle("Employee");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/glavna.png"));
             stage.show();
 
             stage.setOnHiding( event -> {
-                Uposlenik uposlenik = uposlenikController.getUposlenik();
-                if (uposlenik != null) {
-                    usersDAO.dodajUposlenog(uposlenik);
+                Employee employee = uposlenikController.getUposlenik();
+                if (employee != null) {
+                    usersDAO.dodajUposlenog(employee);
                     lista.setAll(usersDAO.uposlenici());
                 }
             } );
@@ -67,28 +67,28 @@ public class AdminPristupKorisnicimaController {
     }
 
     public void actionIzmijeniUposlenika(ActionEvent actionEvent) {
-        Uposlenik uposlenik = (Uposlenik) listaUposlenici.getSelectionModel().getSelectedItem();
-        if (uposlenik == null) return;
+        Employee employee = (Employee) listaUposlenici.getSelectionModel().getSelectedItem();
+        if (employee == null) return;
 
         Stage stage = new Stage();
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/uposlenik.fxml"));
-            UposlenikController uposlenikController = new UposlenikController(uposlenik);
+            UposlenikController uposlenikController = new UposlenikController(employee);
             loader.setController(uposlenikController);
             root = loader.load();
-            stage.setTitle("Uposlenik");
+            stage.setTitle("Employee");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/glavna.png"));
             stage.show();
 
             stage.setOnHiding( event -> {
-                Uposlenik uposlenik1 = uposlenikController.getUposlenik();
-                if (uposlenik1 != null) {
+                Employee employee1 = uposlenikController.getUposlenik();
+                if (employee1 != null) {
                     // Ovdje ne smije doći do izuzetka, jer se prozor neće zatvoriti
                     try {
-                        usersDAO.izmijeniUposlenog(uposlenik1);
+                        usersDAO.izmijeniUposlenog(employee1);
                         lista.setAll(usersDAO.uposlenici());
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -101,19 +101,19 @@ public class AdminPristupKorisnicimaController {
     }
 
     public void actionObrisiUposlenika(ActionEvent actionEvent) {
-        Uposlenik uposlenik = (Uposlenik) listaUposlenici.getSelectionModel().getSelectedItem();
-        if (uposlenik == null) return;
+        Employee employee = (Employee) listaUposlenici.getSelectionModel().getSelectedItem();
+        if (employee == null) return;
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potvrda brisanja Uposlenika");
-        alert.setHeaderText("Brisanje uposlenika " + uposlenik.getIme() + " " + uposlenik.getPrezime());
+        alert.setHeaderText("Brisanje uposlenika " + employee.getFirstName() + " " + employee.getLastName());
         alert.setContentText("Da li ste sigurni da zelite obrisati uposlenog?");
         Stage stage = (Stage )alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image("/img/glavna.png"));
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            usersDAO.obrisiUposlenog(uposlenik);
+            usersDAO.obrisiUposlenog(employee);
             lista.setAll(usersDAO.uposlenici());
         }
     }

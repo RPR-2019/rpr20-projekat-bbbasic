@@ -2,7 +2,7 @@ package dao;
 
 import exceptions.NeispravanBrojSasije;
 import exceptions.NeispravnaTablica;
-import models.Vozilo;
+import models.Vehicle;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,11 +16,11 @@ public class VozilaDAO extends BaseDAO{
 
     protected void kreirajUpite() {
         try {
-            svaVozilaUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo");
-            dodajVoziloUpit = dbConnection.getSession().prepareStatement("INSERT INTO vozilo VALUES(?,?,?,?,?,?,?,?,?)");
-            odrediIdVozilaUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM vozilo");
-            dajVoziloSaSasijom = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo WHERE broj_sasije=?");
-            dajVoziloSaRegistracijom = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo WHERE registracija=?");
+            svaVozilaUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vehicle");
+            dodajVoziloUpit = dbConnection.getSession().prepareStatement("INSERT INTO vehicle VALUES(?,?,?,?,?,?,?,?,?)");
+            odrediIdVozilaUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM vehicle");
+            dajVoziloSaSasijom = dbConnection.getSession().prepareStatement("SELECT * FROM vehicle WHERE broj_sasije=?");
+            dajVoziloSaRegistracijom = dbConnection.getSession().prepareStatement("SELECT * FROM vehicle WHERE registracija=?");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -28,13 +28,13 @@ public class VozilaDAO extends BaseDAO{
 
     }
 
-    public ArrayList<Vozilo> vozila() {
-        ArrayList<Vozilo> rezultat = new ArrayList();
+    public ArrayList<Vehicle> vozila() {
+        ArrayList<Vehicle> rezultat = new ArrayList();
         try {
             ResultSet rs = svaVozilaUpit.executeQuery();
             while (rs.next()) {
-                Vozilo vozilo = new Vozilo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8), rs.getString(9));
-                rezultat.add(vozilo);
+                Vehicle vehicle = new Vehicle(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8), rs.getString(9));
+                rezultat.add(vehicle);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,24 +42,24 @@ public class VozilaDAO extends BaseDAO{
         return rezultat;
     }
 
-    public void dodajVozilo(Vozilo vozilo) {
+    public void dodajVozilo(Vehicle vehicle) {
         try {
             ResultSet rs = odrediIdVozilaUpit.executeQuery();
             int id = 1;
             if (rs.next()) {
                 id = rs.getInt(1);
             }
-            vozilo.setId(id);
+            vehicle.setId(id);
 
-            dodajVoziloUpit.setInt(1, vozilo.getId());
-            dodajVoziloUpit.setString(2, vozilo.getTipVozila());
-            dodajVoziloUpit.setString(3, vozilo.getMarka());
-            dodajVoziloUpit.setString(4, vozilo.getModel());
-            dodajVoziloUpit.setInt(5, vozilo.getGodinaProizvodnje());
-            dodajVoziloUpit.setString(6, vozilo.getRegistracija());
-            dodajVoziloUpit.setString(7, vozilo.getBrojsasije());
-            dodajVoziloUpit.setString(8, vozilo.getBoja());
-            dodajVoziloUpit.setString(9, vozilo.getVrstaBoje());
+            dodajVoziloUpit.setInt(1, vehicle.getId());
+            dodajVoziloUpit.setString(2, vehicle.getType());
+            dodajVoziloUpit.setString(3, vehicle.getBrand());
+            dodajVoziloUpit.setString(4, vehicle.getModel());
+            dodajVoziloUpit.setInt(5, vehicle.getYearOfProduction());
+            dodajVoziloUpit.setString(6, vehicle.getRegistration());
+            dodajVoziloUpit.setString(7, vehicle.getChassisNumber());
+            dodajVoziloUpit.setString(8, vehicle.getColor());
+            dodajVoziloUpit.setString(9, vehicle.getColorType());
 
             dodajVoziloUpit.executeUpdate();
         } catch (SQLException e) {
@@ -67,13 +67,13 @@ public class VozilaDAO extends BaseDAO{
         }
     }
 
-    public boolean jeLiZauzetaSasija(String text, Vozilo vozilo) throws NeispravanBrojSasije {
+    public boolean jeLiZauzetaSasija(String text, Vehicle vehicle) throws NeispravanBrojSasije {
         try {
             dajVoziloSaSasijom.setString(1, text);
             ResultSet resultSet = dajVoziloSaSasijom.executeQuery();
             if(resultSet.next()) {
-                if(vozilo == null) throw new NeispravanBrojSasije("VIN vec postoji u bazi");
-                if(resultSet.getInt(1) == vozilo.getId() && resultSet.getString(7).equals(vozilo.getBrojsasije())) {
+                if(vehicle == null) throw new NeispravanBrojSasije("VIN vec postoji u bazi");
+                if(resultSet.getInt(1) == vehicle.getId() && resultSet.getString(7).equals(vehicle.getChassisNumber())) {
                     return true;
                 }
                 throw new NeispravanBrojSasije("VIN vec postoji u bazi");
@@ -86,13 +86,13 @@ public class VozilaDAO extends BaseDAO{
         return false;
     }
 
-    public boolean jeLiZauzetaRegistracija(String text, Vozilo vozilo) throws NeispravnaTablica {
+    public boolean jeLiZauzetaRegistracija(String text, Vehicle vehicle) throws NeispravnaTablica {
         try {
             dajVoziloSaRegistracijom.setString(1, text);
             ResultSet resultSet = dajVoziloSaRegistracijom.executeQuery();
             if(resultSet.next()) {
-                if(vozilo == null) throw new NeispravnaTablica("Registracija vec postoji u bazi");
-                if(resultSet.getInt(1) == vozilo.getId() && resultSet.getString(6).equals(vozilo.getBrojsasije())) {
+                if(vehicle == null) throw new NeispravnaTablica("Registracija vec postoji u bazi");
+                if(resultSet.getInt(1) == vehicle.getId() && resultSet.getString(6).equals(vehicle.getChassisNumber())) {
                     return true;
                 }
                 throw new NeispravnaTablica("Registracija vec postoji u bazi");

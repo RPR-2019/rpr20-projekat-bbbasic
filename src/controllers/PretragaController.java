@@ -14,8 +14,8 @@ import javafx.stage.FileChooser;
 import models.Customer;
 
 import javafx.event.ActionEvent;
-import models.TehnickiPregled;
-import models.Uposlenik;
+import models.Employee;
+import models.TechnicalInspection;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class PretragaController {
     public TableColumn colStatusPregleda;
     public TableColumn colUposlenici;
 
-    public TableView<TehnickiPregled> tableView;
+    public TableView<TechnicalInspection> tableView;
 
 
     @FXML
@@ -49,11 +49,11 @@ public class PretragaController {
         choiceTipVozila.setItems(tipVozila);
         choiceKlijent.setItems(klijenti);
 
-        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("datumPregleda"));
-        colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vozilo"));
-        colKlijent.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("klijent"));
-        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("statusTehnickogPregleda"));
-        colUposlenici.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, ArrayList<Uposlenik>>("uposlenici"));
+        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("datumPregleda"));
+        colVozilo.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vehicle"));
+        colKlijent.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("klijent"));
+        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusTehnickogPregleda"));
+        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("uposlenici"));
         tableView.setItems(tehnickiPregledDAO.pretraga(null, null, null));
 
     }

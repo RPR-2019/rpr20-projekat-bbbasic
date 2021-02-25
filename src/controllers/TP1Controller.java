@@ -18,7 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import enums.TipVozila;
-import models.Vozilo;
+import models.Vehicle;
 import services.VIN;
 
 import java.io.IOException;
@@ -30,7 +30,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class TP1Controller {
     public Label l1;
     private VozilaDAO vozilaDAO;
-    public Vozilo vozilo;
+    public Vehicle vehicle;
     public CheckBox choiceBijela, choiceCrna, choiceSmeda, choiceCrvena, choiceSiva;
 
     public ChoiceBox<TipVozila> choiceTipVozila = new ChoiceBox<>();
@@ -47,8 +47,8 @@ public class TP1Controller {
     public TextField fldBrojSasije;
 
     public CheckBox novoVozilo;
-    public ObservableList<Vozilo> listaVozila;
-    public ChoiceBox<Vozilo> choiceVozilo;
+    public ObservableList<Vehicle> listaVozila;
+    public ChoiceBox<Vehicle> choiceVozilo;
     public Label fldPogrenaRegistracija, fldPogresnaSasija, lvrstaBoje, lboja, ltehnicki;
     public RadioButton rbObicna, rbMetalik, rbFolija;
     public String boja, vrstaBoje;
@@ -95,7 +95,7 @@ public class TP1Controller {
     }
 
     public void clickCancel(ActionEvent actionEvent) {
-        vozilo = null;
+        vehicle = null;
         Stage stage = (Stage) choiceBijela.getScene().getWindow();
         stage.close();
     }
@@ -147,7 +147,7 @@ public class TP1Controller {
             //validacija tablica
             try {
                 validacijaTablica(fldRegistracija.getText());
-                vozilaDAO.jeLiZauzetaRegistracija(fldRegistracija.getText(), vozilo);
+                vozilaDAO.jeLiZauzetaRegistracija(fldRegistracija.getText(), vehicle);
                 fldRegistracija.getStyleClass().removeAll("poljeNijeIspravno");
                 fldRegistracija.getStyleClass().add("poljeIspravno");
                 fldPogrenaRegistracija.setVisible(false);
@@ -163,7 +163,7 @@ public class TP1Controller {
             //validacija sasije
             try {
                 VIN.isVinValid(fldBrojSasije.getText());
-                vozilaDAO.jeLiZauzetaSasija(fldBrojSasije.getText(), vozilo);
+                vozilaDAO.jeLiZauzetaSasija(fldBrojSasije.getText(), vehicle);
                 fldBrojSasije.getStyleClass().removeAll("poljeNijeIspravno");
                 fldBrojSasije.getStyleClass().add("poljeIspravno");
                 fldPogresnaSasija.setVisible(false);
@@ -192,29 +192,29 @@ public class TP1Controller {
             }
 
             if (!sveOk) return;
-            vozilo = new Vozilo();
+            vehicle = new Vehicle();
             //POSTAVI SVE !!!!!!
-            vozilo.setTipVozila(choiceTipVozila.getValue().toString());
-            vozilo.setMarka(choiceMarkaVozila.getValue().toString());
-            vozilo.setModel(choiceModelVozila.getValue());
-            vozilo.setGodinaProizvodnje(Integer.parseInt(fldGodinjaProizvodnje.getText()));
-            vozilo.setRegistracija(fldRegistracija.getText());
-            vozilo.setBrojsasije(fldBrojSasije.getText());
-            vozilo.setBoja(boja);
-            vozilo.setVrstaBoje(vrstaBoje);
-            vozilaDAO.dodajVozilo(vozilo);
+            vehicle.setType(choiceTipVozila.getValue().toString());
+            vehicle.setBrand(choiceMarkaVozila.getValue().toString());
+            vehicle.setModel(choiceModelVozila.getValue());
+            vehicle.setYearOfProduction(Integer.parseInt(fldGodinjaProizvodnje.getText()));
+            vehicle.setRegistration(fldRegistracija.getText());
+            vehicle.setChassisNumber(fldBrojSasije.getText());
+            vehicle.setColor(boja);
+            vehicle.setColorType(vrstaBoje);
+            vozilaDAO.dodajVozilo(vehicle);
         }
         else {
-            vozilo = choiceVozilo.getValue();
-            System.out.println("Odabrat cemo iz vec postojecih " + vozilo);
+            vehicle = choiceVozilo.getValue();
+            System.out.println("Odabrat cemo iz vec postojecih " + vehicle);
         }
-        //idemo dalje na klijenta i saljemo mu vozilo
+        //idemo dalje na klijenta i saljemo mu vehicle
             System.out.println("Uposlenici");
             Stage stage = new Stage();
             Parent root = null;
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP2.fxml"));
-                TP2Controller klijentController = new TP2Controller(vozilo);
+                TP2Controller klijentController = new TP2Controller(vehicle);
                 loader.setController(klijentController);
                 root = loader.load();
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

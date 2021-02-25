@@ -4,20 +4,20 @@ import java.util.Objects;
 
 public class Customer {
     	private int id;
-    	private String first_name;
-    	private String last_name;
+    	private String firstName;
+    	private String lastName;
     	private String address;
-    	private String phone_number;
+    	private String phoneNumber;
 
     public Customer() {
     }
 
-    public Customer(int id, String first_name, String last_name, String adress, String phone_number) {
+    public Customer(int id, String firstName, String lastName, String adress, String phoneNumber) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = adress;
-        this.phone_number = phone_number;
+        this.phoneNumber = phoneNumber;
     }
 
     public int getId() {
@@ -28,20 +28,20 @@ public class Customer {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getAddress() {
@@ -52,17 +52,17 @@ public class Customer {
         this.address = address;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-        return first_name + " " + last_name;
+        return firstName + " " + lastName;
     }
 
     @Override
@@ -70,14 +70,14 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer klijent = (Customer) o;
-        return Objects.equals(first_name, klijent.first_name) &&
-                Objects.equals(last_name, klijent.last_name) &&
+        return Objects.equals(firstName, klijent.firstName) &&
+                Objects.equals(lastName, klijent.lastName) &&
                 Objects.equals(address, klijent.address) &&
-                Objects.equals(phone_number, klijent.phone_number);
+                Objects.equals(phoneNumber, klijent.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(first_name, last_name, address, phone_number);
+        return Objects.hash(firstName, lastName, address, phoneNumber);
     }
 }

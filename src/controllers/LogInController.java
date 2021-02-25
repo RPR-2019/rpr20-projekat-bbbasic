@@ -11,7 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.Uposlenik;
+import models.Employee;
 import services.UserSession;
 
 import java.io.IOException;
@@ -38,9 +38,9 @@ public class LogInController {
     }
 
     public void clickPrijava(ActionEvent actionEvent) throws InterruptedException {
-        ArrayList<Uposlenik> pomocni = dao.uposlenici();
+        ArrayList<Employee> pomocni = dao.uposlenici();
         for(int i = 0; i < pomocni.size(); i++) {
-            if(pomocni.get(i).getKorisnickoIme().equals(fldKorisnickoIme.getText()) && pomocni.get(i).getLozinka().equals(fldLozinka.getText())) {
+            if(pomocni.get(i).getUserName().equals(fldKorisnickoIme.getText()) && pomocni.get(i).getPassword().equals(fldLozinka.getText())) {
                 fldLozinka.getStyleClass().removeAll("poljeNijeIspravno");
                 fldLozinka.getStyleClass().add("poljeIspravno");
 
@@ -48,8 +48,8 @@ public class LogInController {
                 fldKorisnickoIme.getStyleClass().add("poljeIspravno");
 
                 //nasli smo korisnika sada trebamo njega sacuvati
-                System.out.println("Sada je " + pomocni.get(i).getKorisnickoIme());
-                UserSession.getInstace(pomocni.get(i).getKorisnickoIme(), pomocni.get(i).isPristup());
+                System.out.println("Sada je " + pomocni.get(i).getUserName());
+                UserSession.getInstace(pomocni.get(i).getUserName(), pomocni.get(i).isAdmin());
                 closeWindow();
             }
             else {

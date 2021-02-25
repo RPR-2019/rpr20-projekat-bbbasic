@@ -5,9 +5,9 @@ import exceptions.ZakazanTermin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Customer;
-import models.TehnickiPregled;
-import models.Uposlenik;
-import models.Vozilo;
+import models.Employee;
+import models.TechnicalInspection;
+import models.Vehicle;
 import services.UserSession;
 
 import java.io.File;
@@ -32,7 +32,7 @@ public class TehnickiPregledDAO extends BaseDAO{
             sviTehnickiUpit = dbConnection.getSession().prepareStatement("SELECT * FROM tehnicki_pregled");
             dodajTehnickiUpit = dbConnection.getSession().prepareStatement("INSERT INTO tehnicki_pregled VALUES(?,?,?,?,?,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)");
             odrediIDTehnickogUpit = dbConnection.getSession().prepareStatement("SELECT MAX(id)+1 FROM tehnicki_pregled");
-            voziloUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vozilo WHERE id=?");
+            voziloUpit = dbConnection.getSession().prepareStatement("SELECT * FROM vehicle WHERE id=?");
             otkaziTehnickiUpit = dbConnection.getSession().prepareStatement("UPDATE tehnicki_pregled SET status_tehnickog_pregleda=? WHERE id=?");
             dajUposlenikeZaTPUpit = dbConnection.getSession().prepareStatement("SELECT * FROM uposlenik JOIN tim_tehnicki_pregled ON uposlenik.id = tim_tehnicki_pregled.uposlenik_id WHERE tim_tehnicki_pregled.tehnicki_pregled_id =?");
             dajKlijentaUpit = dbConnection.getSession().prepareStatement("SELECT * FROM klijent WHERE id=?");
@@ -51,13 +51,13 @@ public class TehnickiPregledDAO extends BaseDAO{
 
     //funkcije
 
-    public ArrayList<TehnickiPregled> tehnicki() {
-        ArrayList<TehnickiPregled> rezultat = new ArrayList();
+    public ArrayList<TechnicalInspection> tehnicki() {
+        ArrayList<TechnicalInspection> rezultat = new ArrayList();
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
             while (rs.next()) {
-                TehnickiPregled tehnickiPregled = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
-                rezultat.add(tehnickiPregled);
+                TechnicalInspection technicalInspection = new TechnicalInspection(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
+                rezultat.add(technicalInspection);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,22 +80,22 @@ public class TehnickiPregledDAO extends BaseDAO{
 
     }
 
-    public void dodajTehnicki(TehnickiPregled tehnickiPregled) throws ZakazanTermin {
+    public void dodajTehnicki(TechnicalInspection technicalInspection) throws ZakazanTermin {
         try {
-            if(postojiZakazanTehnicki(tehnickiPregled)) return;
+            if(postojiZakazanTehnicki(technicalInspection)) return;
             ResultSet rs = odrediIDTehnickogUpit.executeQuery();
             int id = 1;
             if (rs.next()) {
                 id = rs.getInt(1);
             }
-            tehnickiPregled.setId(id);
+            technicalInspection.setId(id);
 
-            dodajTehnickiUpit.setInt(1, tehnickiPregled.getId());
-            dodajTehnickiUpit.setString(2, tehnickiPregled.getDatumPregleda().toString());
-            dodajTehnickiUpit.setInt(3, tehnickiPregled.getVozilo().getId());
-            dodajTehnickiUpit.setInt(4, tehnickiPregled.getKlijent().getId());
-            dodajTehnickiUpit.setString(5, tehnickiPregled.getVrstaTehnickogPregleda());
-            dodajTehnickiUpit.setString(6, tehnickiPregled.getStatusTehnickogPregleda());
+            dodajTehnickiUpit.setInt(1, technicalInspection.getId());
+            dodajTehnickiUpit.setString(2, technicalInspection.getDateOfInspection().toString());
+            dodajTehnickiUpit.setInt(3, technicalInspection.getVozilo().getId());
+            dodajTehnickiUpit.setInt(4, technicalInspection.getCustomer().getId());
+            dodajTehnickiUpit.setString(5, technicalInspection.getTypeOfTechnicalInspection());
+            dodajTehnickiUpit.setString(6, technicalInspection.getStatusOfTechnicalInspection());
 
 
             dodajTehnickiUpit.executeUpdate();
@@ -104,13 +104,13 @@ public class TehnickiPregledDAO extends BaseDAO{
         }
     }
 
-    private boolean postojiZakazanTehnicki(TehnickiPregled tehnickiPregled) throws ZakazanTermin {
-        ArrayList<TehnickiPregled> rezultat = new ArrayList();
+    private boolean postojiZakazanTehnicki(TechnicalInspection technicalInspection) throws ZakazanTermin {
+        ArrayList<TechnicalInspection> rezultat = new ArrayList();
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
             while (rs.next()) {
-                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
-                if(tehnickiPregled.equals(tehnickiPregled1)) {
+                TechnicalInspection technicalInspection1 = new TechnicalInspection(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
+                if(technicalInspection.equals(technicalInspection1)) {
                     throw new ZakazanTermin("Vec zakazan termin");
                 }
             }
@@ -121,27 +121,27 @@ public class TehnickiPregledDAO extends BaseDAO{
         return false;
     }
 
-    public void izmijeniTehnicki(TehnickiPregled tehnickiPregled) {
+    public void izmijeniTehnicki(TechnicalInspection technicalInspection) {
         try {
-            izmijeniTehnickiUpit.setString(1,tehnickiPregled.getStatusTehnickogPregleda());
-            izmijeniTehnickiUpit.setString(2,tehnickiPregled.getVrsta_motora());
-            izmijeniTehnickiUpit.setString(3,tehnickiPregled.getTaktnost_motora());
-            izmijeniTehnickiUpit.setString(4,tehnickiPregled.getVrsta_goriva());
-            izmijeniTehnickiUpit.setString(5,tehnickiPregled.getVrsta_mjenjaca());
+            izmijeniTehnickiUpit.setString(1, technicalInspection.getStatusOfTechnicalInspection());
+            izmijeniTehnickiUpit.setString(2, technicalInspection.getEngineType());
+            izmijeniTehnickiUpit.setString(3, technicalInspection.getEngineTact());
+            izmijeniTehnickiUpit.setString(4, technicalInspection.getTypeOfFuel());
+            izmijeniTehnickiUpit.setString(5, technicalInspection.getTypeOfGearbox());
 
-            izmijeniTehnickiUpit.setDouble(6,tehnickiPregled.getSirina());
-            izmijeniTehnickiUpit.setDouble(7,tehnickiPregled.getDuzina());
-            izmijeniTehnickiUpit.setDouble(8,tehnickiPregled.getVisina());
+            izmijeniTehnickiUpit.setDouble(6, technicalInspection.getWidth());
+            izmijeniTehnickiUpit.setDouble(7, technicalInspection.getLength());
+            izmijeniTehnickiUpit.setDouble(8, technicalInspection.getHeight());
 
-            izmijeniTehnickiUpit.setInt(9,tehnickiPregled.getMjesta_za_sjesti());
-            izmijeniTehnickiUpit.setInt(10,tehnickiPregled.getMjesta_za_stati());
-            izmijeniTehnickiUpit.setInt(11,tehnickiPregled.getMjesta_za_leci());
+            izmijeniTehnickiUpit.setInt(9, technicalInspection.getPlacesToSit());
+            izmijeniTehnickiUpit.setInt(10, technicalInspection.getPlacesToStand());
+            izmijeniTehnickiUpit.setInt(11, technicalInspection.getPlacesToLieDown());
 
-            izmijeniTehnickiUpit.setString(12,tehnickiPregled.getKomentar());
-            izmijeniTehnickiUpit.setBoolean(13,tehnickiPregled.isIspravnost());
-            izmijeniTehnickiUpit.setDouble(14,tehnickiPregled.getCijena());
+            izmijeniTehnickiUpit.setString(12, technicalInspection.getComment());
+            izmijeniTehnickiUpit.setBoolean(13, technicalInspection.isValid());
+            izmijeniTehnickiUpit.setDouble(14, technicalInspection.getPrice());
             //zadnji
-            izmijeniTehnickiUpit.setInt(15,tehnickiPregled.getId());
+            izmijeniTehnickiUpit.setInt(15, technicalInspection.getId());
 
             izmijeniTehnickiUpit.executeUpdate();
 
@@ -150,13 +150,13 @@ public class TehnickiPregledDAO extends BaseDAO{
         }
     }
 
-    public Vozilo dajVozilo(int id) {
+    public Vehicle dajVozilo(int id) {
         try {
             voziloUpit.setInt(1, id);
             ResultSet rs = voziloUpit.executeQuery();
             while (rs.next()) {
-                Vozilo vozilo = new Vozilo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8), rs.getString(9));
-                return vozilo;
+                Vehicle vehicle = new Vehicle(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8), rs.getString(9));
+                return vehicle;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -164,11 +164,11 @@ public class TehnickiPregledDAO extends BaseDAO{
         return null;
     }
 
-    public void otkaziTehnickiPregled(TehnickiPregled tehnickiPregled) {
+    public void otkaziTehnickiPregled(TechnicalInspection technicalInspection) {
 
         try {
             otkaziTehnickiUpit.setString(1,"Otkazan");
-            otkaziTehnickiUpit.setInt(2, tehnickiPregled.getId());
+            otkaziTehnickiUpit.setInt(2, technicalInspection.getId());
             otkaziTehnickiUpit.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -176,53 +176,53 @@ public class TehnickiPregledDAO extends BaseDAO{
 
     }
 
-    public ObservableList<TehnickiPregled> pretraga(Customer klijent, TipVozila tipVozila, LocalDate localDate) {
-        ObservableList<TehnickiPregled> tehnickiPregled = FXCollections.observableArrayList();
+    public ObservableList<TechnicalInspection> pretraga(Customer klijent, TipVozila tipVozila, LocalDate localDate) {
+        ObservableList<TechnicalInspection> technicalInspection = FXCollections.observableArrayList();
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
             while (rs.next()) {
-                TehnickiPregled tehnickiPregled1 = new TehnickiPregled(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
-                tehnickiPregled1.setUposlenici(dajUposlenike(tehnickiPregled1));
-                if(UserSession.getPrivileges() || tehnickiPregled1.getUposlenici().contains(dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme())))
-                    tehnickiPregled.add(tehnickiPregled1);
+                TechnicalInspection technicalInspection1 = new TechnicalInspection(rs.getInt(1),  LocalDate.parse(rs.getString(2)), dajVozilo(rs.getInt(3)), dajKlijenta(rs.getInt(4)), rs.getString(5), rs.getString(6));
+                technicalInspection1.setEmployees(dajUposlenike(technicalInspection1));
+                if(UserSession.getPrivileges() || technicalInspection1.getEmployees().contains(dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme())))
+                    technicalInspection.add(technicalInspection1);
             }
-            if(klijent == null && tipVozila == null && localDate == null) return tehnickiPregled;
+            if(klijent == null && tipVozila == null && localDate == null) return technicalInspection;
             //klijjent
             if(klijent != null && tipVozila == null && localDate == null)
-                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getCustomer().getId() == klijent.getId())
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
             //tipvozila
             if(klijent == null && tipVozila != null && localDate == null)
-                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()))
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVozilo().getType().equals(tipVozila.name()))
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
             //datum
             if(klijent == null && tipVozila == null && localDate != null)
-                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda().toString().equals(localDate.toString()))
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection().toString().equals(localDate.toString()))
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
             //klijent + tip vozila
             if(klijent != null && tipVozila != null && localDate == null)
-                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()) && tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVozilo().getType().equals(tipVozila.name()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
                     .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
             //klijent + datum
             if(klijent != null && tipVozila == null && localDate != null)
-                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda()
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection()
                         .toString()
-                        .equals(localDate.toString()) && tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                        .equals(localDate.toString()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
             //tip vozila + datum
             if(klijent == null && tipVozila != null && localDate != null)
-                return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda()
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection()
                         .toString()
-                        .equals(localDate.toString()) && tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()))
+                        .equals(localDate.toString()) && tehnickiPregled1.getVozilo().getType().equals(tipVozila.name()))
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
 
             //svi
-            return tehnickiPregled.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDatumPregleda()
+            return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection()
                     .toString()
-                    .equals(localDate.toString()) && tehnickiPregled1.getVozilo().getTipVozila().equals(tipVozila.name()) && tehnickiPregled1.getKlijent().getId() == klijent.getId())
+                    .equals(localDate.toString()) && tehnickiPregled1.getVozilo().getType().equals(tipVozila.name()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
                     .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
         } catch (SQLException sqlException) {
@@ -231,14 +231,14 @@ public class TehnickiPregledDAO extends BaseDAO{
         return null;
     }
 
-    private ArrayList<Uposlenik> dajUposlenike(TehnickiPregled tehnickiPregled) {
+    private ArrayList<Employee> dajUposlenike(TechnicalInspection technicalInspection) {
         try {
-            ArrayList<Uposlenik> uposlenici = new ArrayList<>();
-            dajUposlenikeZaTPUpit.setInt(1,tehnickiPregled.getId());
+            ArrayList<Employee> uposlenici = new ArrayList<>();
+            dajUposlenikeZaTPUpit.setInt(1, technicalInspection.getId());
             ResultSet rs = dajUposlenikeZaTPUpit.executeQuery();
             while (rs.next()) {
-                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
-                uposlenici.add(uposlenik);
+                Employee employee = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                uposlenici.add(employee);
             }
             return uposlenici;
         } catch (SQLException e) {
@@ -247,14 +247,14 @@ public class TehnickiPregledDAO extends BaseDAO{
         return null;
     }
 
-        public Uposlenik dajUposlenogSaKorisnickimImenom(String korisnickoIme) {
+        public Employee dajUposlenogSaKorisnickimImenom(String korisnickoIme) {
         try {
             System.out.println("Korisnicko ime je " + korisnickoIme);
             dajUposlenogSaKorisnickimImenomUpit.setString(1, korisnickoIme);
             ResultSet rs = dajUposlenogSaKorisnickimImenomUpit.executeQuery();
             if(rs.next()) {
-                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
-                return uposlenik;
+                Employee employee = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                return employee;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -262,20 +262,20 @@ public class TehnickiPregledDAO extends BaseDAO{
         return null;
     }
 
-    public void zapisiDatoteku(File izabrani, ObservableList<TehnickiPregled> tehnickiPregled) {
+    public void zapisiDatoteku(File izabrani, ObservableList<TechnicalInspection> technicalInspection) {
         if(izabrani != null) {
             try {
                 PrintWriter izlaz;
                 izlaz = new PrintWriter(new FileWriter(izabrani));
-                for (int i = 0; i < tehnickiPregled.size(); i++) {
-                    izlaz.println(tehnickiPregled.get(i).getDatumPregleda() + ":"
-                            + tehnickiPregled.get(i).getKlijent().getFirst_name() + ":"
-                            + tehnickiPregled.get(i).getKlijent().getLast_name() + ":"
-                            + tehnickiPregled.get(i).getVozilo().getTipVozila() + ":"
-                            + tehnickiPregled.get(i).getVozilo().getMarka() + ":"
-                            + tehnickiPregled.get(i).getVozilo().getModel() + ":"
-                            + tehnickiPregled.get(i).getStatusTehnickogPregleda() + ":"
-                            + tehnickiPregled.get(i).getUposlenici());
+                for (int i = 0; i < technicalInspection.size(); i++) {
+                    izlaz.println(technicalInspection.get(i).getDateOfInspection() + ":"
+                            + technicalInspection.get(i).getCustomer().getFirstName() + ":"
+                            + technicalInspection.get(i).getCustomer().getLastName() + ":"
+                            + technicalInspection.get(i).getVozilo().getType() + ":"
+                            + technicalInspection.get(i).getVozilo().getBrand() + ":"
+                            + technicalInspection.get(i).getVozilo().getModel() + ":"
+                            + technicalInspection.get(i).getStatusOfTechnicalInspection() + ":"
+                            + technicalInspection.get(i).getEmployees());
                 }
                 izlaz.close();
             } catch (IOException e) {

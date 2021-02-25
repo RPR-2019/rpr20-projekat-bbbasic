@@ -51,10 +51,10 @@ public class KlijentDAO extends BaseDAO {
             klijent.setId(id);
 
             dodajKlijentaUpit.setInt(1, klijent.getId());
-            dodajKlijentaUpit.setString(2, klijent.getFirst_name());
-            dodajKlijentaUpit.setString(3, klijent.getLast_name());
+            dodajKlijentaUpit.setString(2, klijent.getFirstName());
+            dodajKlijentaUpit.setString(3, klijent.getLastName());
             dodajKlijentaUpit.setString(4, klijent.getAddress());
-            dodajKlijentaUpit.setString(5, klijent.getPhone_number());
+            dodajKlijentaUpit.setString(5, klijent.getPhoneNumber());
 
             dodajKlijentaUpit.executeUpdate();
         } catch (SQLException e) {

@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import models.TehnickiPregled;
+import models.TechnicalInspection;
 
 
 public class KompletiranTehnickiPregled {
@@ -26,11 +26,11 @@ public class KompletiranTehnickiPregled {
     public CheckBox checkIspravno, checkNeispravno;
     public Button btnNeispravno, btnIspravno;
     public TextField cijena, masaPraznogVozila;
-    public TehnickiPregled tehnickiPregled;
+    public TechnicalInspection technicalInspection;
 
-    public KompletiranTehnickiPregled(TehnickiPregled selectedItem) {
+    public KompletiranTehnickiPregled(TechnicalInspection selectedItem) {
         tehnickiPregledDAO = new TehnickiPregledDAO();
-        tehnickiPregled = selectedItem;
+        technicalInspection = selectedItem;
     }
 
     @FXML
@@ -153,25 +153,25 @@ public class KompletiranTehnickiPregled {
 
         System.out.println("Sve oki doki");
         //mijenjamo
-        tehnickiPregled.setVrsta_motora(choiceVrstaMotora.getValue());
-        tehnickiPregled.setTaktnost_motora(taktnostMotora.getValue());
-        tehnickiPregled.setVrsta_goriva(vrstaGoriva.getValue());
-        tehnickiPregled.setVrsta_mjenjaca(vrstaMjenjaca.getValue());
+        technicalInspection.setEngineType(choiceVrstaMotora.getValue());
+        technicalInspection.setEngineTact(taktnostMotora.getValue());
+        technicalInspection.setTypeOfFuel(vrstaGoriva.getValue());
+        technicalInspection.setTypeOfGearbox(vrstaMjenjaca.getValue());
 
-        tehnickiPregled.setVisina(Double.parseDouble(visinaVozila.getText()));
-        tehnickiPregled.setSirina(Double.parseDouble(sirinaVozila.getText()));
-        tehnickiPregled.setDuzina(Double.parseDouble(duzinaVozila.getText()));
+        technicalInspection.setHeight(Double.parseDouble(visinaVozila.getText()));
+        technicalInspection.setWidth(Double.parseDouble(sirinaVozila.getText()));
+        technicalInspection.setLength(Double.parseDouble(duzinaVozila.getText()));
 
-        tehnickiPregled.setMjesta_za_sjesti(Integer.parseInt(mjestaZaSjesti.getText()));
-        tehnickiPregled.setMjesta_za_stati(Integer.parseInt(mjestaZaStati.getText()));
-        tehnickiPregled.setMjesta_za_leci(Integer.parseInt(mjestaZaLezanje.getText()));
+        technicalInspection.setPlacesToSit(Integer.parseInt(mjestaZaSjesti.getText()));
+        technicalInspection.setPlacesToStand(Integer.parseInt(mjestaZaStati.getText()));
+        technicalInspection.setPlacesToLieDown(Integer.parseInt(mjestaZaLezanje.getText()));
 
-        tehnickiPregled.setKomentar(komentar.getText());
-        tehnickiPregled.setIspravnost(checkIspravno.isSelected());
-        tehnickiPregled.setCijena(Double.parseDouble(cijena.getText()));
+        technicalInspection.setComment(komentar.getText());
+        technicalInspection.setValid(checkIspravno.isSelected());
+        technicalInspection.setPrice(Double.parseDouble(cijena.getText()));
 
-        tehnickiPregled.setStatusTehnickogPregleda("Kompletiran");
-        tehnickiPregledDAO.izmijeniTehnicki(tehnickiPregled);
+        technicalInspection.setStatusTehnickogPregleda("Kompletiran");
+        tehnickiPregledDAO.izmijeniTehnicki(technicalInspection);
 
     }
 

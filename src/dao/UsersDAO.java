@@ -1,6 +1,6 @@
 package dao;
 
-import models.Uposlenik;
+import models.Employee;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -26,13 +26,13 @@ public class UsersDAO extends BaseDAO {
 
     //funkcije
 
-    public ArrayList<Uposlenik> uposlenici() {
-        ArrayList<Uposlenik> rezultat = new ArrayList();
+    public ArrayList<Employee> uposlenici() {
+        ArrayList<Employee> rezultat = new ArrayList();
         try {
             ResultSet rs = sviUposleniUpit.executeQuery();
             while (rs.next()) {
-                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
-                rezultat.add(uposlenik);
+                Employee employee = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                rezultat.add(employee);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -40,23 +40,23 @@ public class UsersDAO extends BaseDAO {
         return rezultat;
     }
 
-    public void dodajUposlenog(Uposlenik uposlenik) {
+    public void dodajUposlenog(Employee employee) {
         try {
             ResultSet rs = odrediIdUposlenikaUpit.executeQuery();
             int id = 1;
             if (rs.next()) {
                 id = rs.getInt(1);
             }
-            uposlenik.setId(id);
+            employee.setId(id);
 
-            dodajUposlenogUpit.setInt(1, uposlenik.getId());
-            dodajUposlenogUpit.setString(2, uposlenik.getIme());
-            dodajUposlenogUpit.setString(3, uposlenik.getPrezime());
-            dodajUposlenogUpit.setString(4, uposlenik.getLozinka());
-            dodajUposlenogUpit.setString(5, uposlenik.getKorisnickoIme());
-            dodajUposlenogUpit.setString(6, uposlenik.getDatumRodjenja().toString());
-            dodajUposlenogUpit.setString(7, uposlenik.getDatumRodjenja().toString());
-            dodajUposlenogUpit.setBoolean(8, uposlenik.isPristup());
+            dodajUposlenogUpit.setInt(1, employee.getId());
+            dodajUposlenogUpit.setString(2, employee.getFirstName());
+            dodajUposlenogUpit.setString(3, employee.getLastName());
+            dodajUposlenogUpit.setString(4, employee.getPassword());
+            dodajUposlenogUpit.setString(5, employee.getUserName());
+            dodajUposlenogUpit.setString(6, employee.getBirthDate().toString());
+            dodajUposlenogUpit.setString(7, employee.getBirthDate().toString());
+            dodajUposlenogUpit.setBoolean(8, employee.isAdmin());
 
             dodajUposlenogUpit.executeUpdate();
         } catch (SQLException e) {
@@ -64,13 +64,13 @@ public class UsersDAO extends BaseDAO {
         }
     }
 
-    public boolean zauzetoKorisnickoIme(String korisnickoIme, Uposlenik uposlenik) {
+    public boolean zauzetoKorisnickoIme(String korisnickoIme, Employee employee) {
         try {
             dajUposlenogSaKorisnickimImenomUpit.setString(1, korisnickoIme);
             ResultSet resultSet = dajUposlenogSaKorisnickimImenomUpit.executeQuery();
             if(resultSet.next()) {
-                if(uposlenik == null) return false;
-                if(resultSet.getInt(1) == uposlenik.getId() && resultSet.getString(5).equals(uposlenik.getKorisnickoIme())) {
+                if(employee == null) return false;
+                if(resultSet.getInt(1) == employee.getId() && resultSet.getString(5).equals(employee.getUserName())) {
                     return true;
                 }
                 return false;
@@ -82,13 +82,13 @@ public class UsersDAO extends BaseDAO {
         }
         return false;
     }
-    public Uposlenik dajUposlenogSaKorisnickimImenom(String korisnickoIme) {
+    public Employee dajUposlenogSaKorisnickimImenom(String korisnickoIme) {
         try {
             dajUposlenogSaKorisnickimImenomUpit.setString(1, korisnickoIme);
             ResultSet rs = dajUposlenogSaKorisnickimImenomUpit.executeQuery();
             if(rs.next()) {
-                Uposlenik uposlenik = new Uposlenik(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
-                return uposlenik;
+                Employee employee = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), LocalDate.parse(rs.getString(6)), LocalDate.parse(rs.getString(7)), rs.getBoolean(8));
+                return employee;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,9 +96,9 @@ public class UsersDAO extends BaseDAO {
         return null;
     }
 
-    public void obrisiUposlenog(Uposlenik uposlenik) {
+    public void obrisiUposlenog(Employee employee) {
         try {
-            obrisiUposlenog.setInt(1, uposlenik.getId());
+            obrisiUposlenog.setInt(1, employee.getId());
             obrisiUposlenog.executeUpdate();
 
         } catch (SQLException e) {
@@ -106,16 +106,16 @@ public class UsersDAO extends BaseDAO {
         }
     }
 
-    public void izmijeniUposlenog(Uposlenik uposlenik) {
+    public void izmijeniUposlenog(Employee employee) {
         try {
-            promijeniUposlenogUpit.setString(1, uposlenik.getIme());
-            promijeniUposlenogUpit.setString(2, uposlenik.getPrezime());
-            promijeniUposlenogUpit.setString(3, uposlenik.getLozinka());
-            promijeniUposlenogUpit.setString(4, uposlenik.getKorisnickoIme());
-            promijeniUposlenogUpit.setString(5, uposlenik.getDatumRodjenja().toString());
-            promijeniUposlenogUpit.setString(6, uposlenik.getDatumZaposlenja().toString());
-            promijeniUposlenogUpit.setBoolean(7, uposlenik.isPristup());
-            promijeniUposlenogUpit.setInt(8, uposlenik.getId());
+            promijeniUposlenogUpit.setString(1, employee.getFirstName());
+            promijeniUposlenogUpit.setString(2, employee.getLastName());
+            promijeniUposlenogUpit.setString(3, employee.getPassword());
+            promijeniUposlenogUpit.setString(4, employee.getUserName());
+            promijeniUposlenogUpit.setString(5, employee.getBirthDate().toString());
+            promijeniUposlenogUpit.setString(6, employee.getHireDate().toString());
+            promijeniUposlenogUpit.setBoolean(7, employee.isAdmin());
+            promijeniUposlenogUpit.setInt(8, employee.getId());
             promijeniUposlenogUpit.executeUpdate();
 
         } catch (SQLException e) {

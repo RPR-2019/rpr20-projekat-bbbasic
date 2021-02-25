@@ -1,14 +1,13 @@
 package controllers;
 
 import dao.UsersDAO;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import models.TehnickiPregled;
-import models.Uposlenik;
+import models.TechnicalInspection;
+import models.Employee;
 
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -18,9 +17,9 @@ import java.time.Period;
 
 public class UposlenikController {
     private UsersDAO usersDAO;
-    private Uposlenik uposlenik;
-    public ObservableList<TehnickiPregled> listTehnickiPregledi;
-    public ChoiceBox<TehnickiPregled> choiceTehnicki;
+    private Employee employee;
+    public ObservableList<TechnicalInspection> listTehnickiPregledi;
+    public ChoiceBox<TechnicalInspection> choiceTehnicki;
 
     public TextField fldIme;
     public TextField fldPrezime;
@@ -31,31 +30,31 @@ public class UposlenikController {
     public  DatePicker fldDatumZaposlenja;
     public RadioButton privilegija;
 
-    public UposlenikController(Uposlenik uposlenik) {
+    public UposlenikController(Employee employee) {
         usersDAO = new UsersDAO();
-        this.uposlenik = uposlenik;
+        this.employee = employee;
     }
 
     @FXML
     public void initialize() {
         zauzetoKorisnickoIme.setVisible(false);
         privilegija.setSelected(false);
-        if(uposlenik != null) {
-            fldIme.setText(uposlenik.getIme());
-            fldPrezime.setText(uposlenik.getPrezime());
-            fldLozinka.setText(uposlenik.getLozinka());
-            fldKorisnickoIme.setText(uposlenik.getKorisnickoIme());
-            fldDatumRodjenja.setValue(uposlenik.getDatumRodjenja());
-            privilegija.setSelected(uposlenik.isPristup());
-            fldDatumZaposlenja.setValue(uposlenik.getDatumZaposlenja());
+        if(employee != null) {
+            fldIme.setText(employee.getFirstName());
+            fldPrezime.setText(employee.getLastName());
+            fldLozinka.setText(employee.getPassword());
+            fldKorisnickoIme.setText(employee.getUserName());
+            fldDatumRodjenja.setValue(employee.getBirthDate());
+            privilegija.setSelected(employee.isAdmin());
+            fldDatumZaposlenja.setValue(employee.getHireDate());
         }
 
     }
 
-    public Uposlenik getUposlenik() { return uposlenik; }
+    public Employee getUposlenik() { return employee; }
 
     public void clickCancel(ActionEvent actionEvent) {
-        uposlenik = null;
+        employee = null;
         Stage stage = (Stage) fldIme.getScene().getWindow();
         stage.close();
     }
@@ -92,8 +91,8 @@ public class UposlenikController {
         }
 
         //valiadcija koricnickoIme
-        if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), uposlenik) == false || fldKorisnickoIme.getText().isEmpty()) {
-            if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), uposlenik) == false)
+        if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), employee) == false || fldKorisnickoIme.getText().isEmpty()) {
+            if(usersDAO.zauzetoKorisnickoIme(fldKorisnickoIme.getText(), employee) == false)
                 zauzetoKorisnickoIme.setVisible(true);
             fldKorisnickoIme.getStyleClass().removeAll("poljeIspravno");
             fldKorisnickoIme.getStyleClass().add("poljeNijeIspravno");
@@ -103,7 +102,7 @@ public class UposlenikController {
             fldKorisnickoIme.getStyleClass().removeAll("poljeNijeIspravno");
             fldKorisnickoIme.getStyleClass().add("poljeIspravno");
         }
-        //validacija ako uposlenik nije null korisnickoIme
+        //validacija ako employee nije null korisnickoIme
 
 
         //validacija datumrodjenja
@@ -131,16 +130,16 @@ public class UposlenikController {
 
         if (!sveOk) return;
 
-        if (uposlenik == null) uposlenik = new Uposlenik();
-        uposlenik.setIme(fldIme.getText());
-        uposlenik.setPrezime(fldPrezime.getText());
-        uposlenik.setLozinka(fldLozinka.getText());
-        uposlenik.setKorisnickoIme(fldKorisnickoIme.getText());
-        uposlenik.setPristup(privilegija.isSelected());
+        if (employee == null) employee = new Employee();
+        employee.setFirstName(fldIme.getText());
+        employee.setLastName(fldPrezime.getText());
+        employee.setPassword(fldLozinka.getText());
+        employee.setUserName(fldKorisnickoIme.getText());
+        employee.setAdmin(privilegija.isSelected());
 
 
-        uposlenik.setDatumRodjenja(fldDatumRodjenja.getValue());
-        uposlenik.setDatumZaposlenja(fldDatumZaposlenja.getValue());
+        employee.setBirthDate(fldDatumRodjenja.getValue());
+        employee.setHireDate(fldDatumZaposlenja.getValue());
 
         Stage stage = (Stage) fldIme.getScene().getWindow();
         stage.close();

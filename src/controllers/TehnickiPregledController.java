@@ -21,8 +21,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import models.TehnickiPregled;
-import models.Uposlenik;
+import models.Employee;
+import models.TechnicalInspection;
 import services.UserSession;
 
 import java.io.IOException;
@@ -34,7 +34,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class TehnickiPregledController {
     public UsersDAO usersDAO;
-    public ObservableList<Uposlenik> uposlenici;
+    public ObservableList<Employee> uposlenici;
     public TehnickiPregledDAO tehnickiPregledDAO;
     public TimTehnickiDAO timTehnickiDAO;
     public Label labela;
@@ -46,11 +46,11 @@ public class TehnickiPregledController {
     public TableColumn colVrstaPregleda;
     public TableColumn colStatusPregleda;
     public TableColumn colUposlenici;
-    public TableView<TehnickiPregled> tableView;
+    public TableView<TechnicalInspection> tableView;
     //dugmadi
     public Button btnOtkaziTehnicki;
     public Button btnDodajUposlenika;
-    public ChoiceBox<Uposlenik> choiceUposlenik;
+    public ChoiceBox<Employee> choiceUposlenik;
     public Button btnDovrsiTehnicki;
     public BorderPane mainPane;
 
@@ -68,11 +68,11 @@ public class TehnickiPregledController {
         choiceUposlenik.setItems(uposlenici);
         labela.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         //tabelica
-        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("datumPregleda"));
-        colVozilo.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vozilo"));
-        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("vrstaTehnickogPregleda"));
-        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, String>("statusTehnickogPregleda"));
-        colUposlenici.setCellValueFactory(new PropertyValueFactory<TehnickiPregled, ArrayList<Uposlenik>>("uposlenici"));
+        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("datumPregleda"));
+        colVozilo.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vehicle"));
+        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vrstaTehnickogPregleda"));
+        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusTehnickogPregleda"));
+        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("uposlenici"));
 
         tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
         btnOtkaziTehnicki.setDisable(true);
@@ -83,10 +83,10 @@ public class TehnickiPregledController {
         tableView.setOnMouseClicked((MouseEvent event) -> {
             if(event.getButton().equals(MouseButton.PRIMARY)){
                 //brisanje
-                if(tableView.getSelectionModel().getSelectedItem().getStatusTehnickogPregleda() == "Zakazan" ||
-                        (tableView.getSelectionModel().getSelectedItem().getDatumPregleda().isEqual(LocalDate.now()))) {
+                if(tableView.getSelectionModel().getSelectedItem().getStatusOfTechnicalInspection() == "Zakazan" ||
+                        (tableView.getSelectionModel().getSelectedItem().getDateOfInspection().isEqual(LocalDate.now()))) {
                         btnOtkaziTehnicki.setDisable(false);
-                    if(tableView.getSelectionModel().getSelectedItem().getStatusTehnickogPregleda().equals("Zakazan"))
+                    if(tableView.getSelectionModel().getSelectedItem().getStatusOfTechnicalInspection().equals("Zakazan"))
                         btnDovrsiTehnicki.setDisable(false);
                 }
                 else {
@@ -124,7 +124,7 @@ public class TehnickiPregledController {
     }
 
     public void dodajUposlenika(ActionEvent actionEvent) {
-        if(tableView.getSelectionModel().getSelectedItem().getUposlenici().contains(choiceUposlenik.getValue())) return;
+        if(tableView.getSelectionModel().getSelectedItem().getEmployees().contains(choiceUposlenik.getValue())) return;
         timTehnickiDAO.spojiTehnickiUposlenik(tableView.getSelectionModel().getSelectedItem().getId(), choiceUposlenik.getValue().getId());
         tableView.setItems(tehnickiPregledDAO.pretraga(null,null,null));
         tableView.refresh();

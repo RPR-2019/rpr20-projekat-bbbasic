@@ -13,8 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import models.Customer;
-import models.TehnickiPregled;
-import models.Vozilo;
+import models.TechnicalInspection;
+import models.Vehicle;
 import services.UserSession;
 
 import java.time.LocalDate;
@@ -29,7 +29,7 @@ public class TP2Controller {
     public TextField fldIme, fldPrezime, fldMjestoPrebivalista, fldBrojTelefona;
     public KlijentDAO klijentDAO;
     public Label fldPogresanBroj;
-    public Vozilo vozilo;
+    public Vehicle vehicle;
 
     public ChoiceBox<VrstaTehnickogPregleda> choiceVrstaPregleda;
     public ObservableList<VrstaTehnickogPregleda> vrstaTehnickogPregleda;
@@ -47,11 +47,11 @@ public class TP2Controller {
 
     }
 
-    public TP2Controller(Vozilo vozilo) {
+    public TP2Controller(Vehicle vehicle) {
         tehnickiPregledDAO = new TehnickiPregledDAO();
         usersDAO = new UsersDAO();
         timTehnickiDAO = new TimTehnickiDAO();
-        this.vozilo = vozilo;
+        this.vehicle = vehicle;
         klijentDAO = new KlijentDAO();
         vrstaTehnickogPregleda = FXCollections.observableArrayList(Arrays.asList(VrstaTehnickogPregleda.values()));
 
@@ -124,35 +124,35 @@ public class TP2Controller {
 
         if(sveOk != true) return;
         Customer klijent= new Customer();
-        klijent.setFirst_name(fldIme.getText());
-        klijent.setLast_name(fldPrezime.getText());
+        klijent.setFirstName(fldIme.getText());
+        klijent.setLastName(fldPrezime.getText());
         klijent.setAddress(fldMjestoPrebivalista.getText());
-        klijent.setPhone_number(fldBrojTelefona.getText());
+        klijent.setPhoneNumber(fldBrojTelefona.getText());
 
         klijentDAO.dodajKlijenta(klijent);
 
         //pravimo tehnicki da ga dodamo jer je sve ok
-        TehnickiPregled tehnickiPregled = new TehnickiPregled();
+        TechnicalInspection technicalInspection = new TechnicalInspection();
 
-        tehnickiPregled.setStatusTehnickogPregleda("Zakazan");
+        technicalInspection.setStatusTehnickogPregleda("Zakazan");
 //        //ovdje smo mijenjali
-//        tehnickiPregled.setKlijent(klijent);
-        tehnickiPregled.setVozilo(vozilo);
-        tehnickiPregled.setKlijent(klijent);
-        //tehnickiPregled.setVoziloID(vozilo.getId());
-        tehnickiPregled.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
-        tehnickiPregled.setDatumPregleda(choiceDatum.getValue());
-        tehnickiPregled.getUposlenici().add(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()));
+//        technicalInspection.setKlijent(klijent);
+        technicalInspection.setVozilo(vehicle);
+        technicalInspection.setCustomer(klijent);
+        //technicalInspection.setVoziloID(vehicle.getId());
+        technicalInspection.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
+        technicalInspection.setDateOfInspection(choiceDatum.getValue());
+        technicalInspection.getEmployees().add(usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()));
 
         try {
-            tehnickiPregledDAO.dodajTehnicki(tehnickiPregled);
+            tehnickiPregledDAO.dodajTehnicki(technicalInspection);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Uspjesno ste zakazali tehnicki pregled!");
-            System.out.println("ID novog tehnickog " + tehnickiPregled.getId());
+            System.out.println("ID novog tehnickog " + technicalInspection.getId());
             System.out.println("ID usera je" + usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
-            timTehnickiDAO.spojiTehnickiUposlenik(tehnickiPregled.getId(), usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
+            timTehnickiDAO.spojiTehnickiUposlenik(technicalInspection.getId(), usersDAO.dajUposlenogSaKorisnickimImenom(UserSession.getKorisnickoIme()).getId());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
         }catch (ZakazanTermin zakazanTermin) {

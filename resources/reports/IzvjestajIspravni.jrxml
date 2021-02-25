@@ -22,7 +22,7 @@
 	<queryString language="SQL">
 		<![CDATA[SELECT t.datum_pregleda,  t.vrsta_tehnickog_pregleda,  v.tip_vozila, v.marka,  v.model
 FROM tehnicki_pregled t
-JOIN vozilo v
+JOIN vehicle v
 ON t.vozilo_id = v.id
 WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 	</queryString>
@@ -39,17 +39,17 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 1]]>
 	<field name="tip_vozila" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="tip_vozila"/>
 		<property name="com.jaspersoft.studio.field.label" value="tip_vozila"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="vozilo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehicle"/>
 	</field>
 	<field name="marka" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="marka"/>
 		<property name="com.jaspersoft.studio.field.label" value="marka"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="vozilo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehicle"/>
 	</field>
 	<field name="model" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="model"/>
 		<property name="com.jaspersoft.studio.field.label" value="model"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="vozilo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehicle"/>
 	</field>
 	<background>
 		<band height="555" splitType="Stretch"/>
