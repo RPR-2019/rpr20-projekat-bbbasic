@@ -7,16 +7,16 @@
 
 <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
-        <URL value="@/css/btns.css" />
+        <URL value="@/css/home.css" />
     </stylesheets>
     <left>
         <ToolBar fx:id="Hbar" orientation="VERTICAL" prefHeight="325.0" prefWidth="220.0" BorderPane.alignment="CENTER">
             <items>
-            <Button fx:id="btnGlavnaForma" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnGlavnaForma" prefHeight="25.0" prefWidth="210.0" text="Pocetna" />
-                <Button fx:id="btnTehnickiPregled" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnTehnickiPregled" prefHeight="29.0" prefWidth="210.0" text="Zakazi Tehnicki Pregled" textAlignment="RIGHT" />
-            <Button fx:id="btnPretraga" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnPretraga" prefHeight="25.0" prefWidth="210.0" text="Pretraga" />
-                <Button fx:id="btnUposleni" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnUposlenici" prefHeight="25.0" prefWidth="210.0" text="Uposlenici" textAlignment="RIGHT" />
-                <Button fx:id="btnIzvjestaj" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onBtnIzvjestaj" prefHeight="25.0" prefWidth="210.0" text="Izvjestaj" />
+            <Button fx:id="btnHome" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onHome" prefHeight="25.0" prefWidth="210.0" text="%home" />
+                <Button fx:id="btnTI" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onTI" prefHeight="29.0" prefWidth="210.0" text="%schedule" textAlignment="RIGHT" />
+            <Button fx:id="btnSearch" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onSearch" prefHeight="25.0" prefWidth="210.0" text="%search" />
+                <Button fx:id="btnEmployees" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onEmployees" prefHeight="25.0" prefWidth="210.0" text="%employees" textAlignment="RIGHT" />
+                <Button fx:id="btnReport" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onReport" prefHeight="25.0" prefWidth="210.0" text="%reports" />
             </items>
          <opaqueInsets>
             <Insets />
@@ -30,10 +30,10 @@
        <ToolBar prefHeight="0.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
          <MenuBar fx:id="menuBar" prefHeight="30.0" prefWidth="132.0">
            <menus>
-             <Menu mnemonicParsing="false" text="File">
+             <Menu mnemonicParsing="false" text="%file">
                <items>
-                 <MenuItem mnemonicParsing="false" text="Close" />
-                     <Menu mnemonicParsing="false" text="Language">
+                 <MenuItem mnemonicParsing="false" text="%close" />
+                     <Menu mnemonicParsing="false" text="%language">
                        <items>
                          <MenuItem mnemonicParsing="false" onAction="#choiceLanguageEng" text="Engleski" />
                            <MenuItem mnemonicParsing="false" onAction="#choiceLanguageBs" text="Bosanski" />
@@ -41,9 +41,9 @@
                      </Menu>
                </items>
              </Menu>
-             <Menu mnemonicParsing="false" text="Help">
+             <Menu mnemonicParsing="false" text="%help">
                <items>
-                 <MenuItem mnemonicParsing="false" text="About" />
+                 <MenuItem mnemonicParsing="false" text="%about" />
                </items>
              </Menu>
            </menus>
@@ -56,7 +56,7 @@
            <menus>
              <Menu mnemonicParsing="false">
                <items>
-                 <MenuItem mnemonicParsing="false" onAction="#onbtnLogOut" text="Odjavi se" />
+                 <MenuItem mnemonicParsing="false" onAction="#onbtnLogOut" text="%logOut" />
                </items>
                   <graphic>
                      <Button fx:id="btnUser" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="112.0" />

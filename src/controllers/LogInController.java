@@ -16,6 +16,7 @@ import services.UserSession;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class LogInController {
     public TextField fldUserName;
@@ -64,7 +65,7 @@ public class LogInController {
         Stage stage = (Stage) fldPassword.getScene().getWindow();
         stage.close();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"), ResourceBundle.getBundle("Translation"));
             HomeController ctrl = new HomeController();
             loader.setController(ctrl);
             Parent root = null;

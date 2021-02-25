@@ -1,4 +1,4 @@
-#btnGlavnaForma {
+#btnHome {
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
@@ -11,7 +11,7 @@
     -fx-text-position: right;
 
 }
-#btnTehnickiPregled {
+#btnTI {
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
@@ -25,7 +25,7 @@
 
 }
 
-#btnUposleni {
+#btnEmployees {
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
@@ -38,7 +38,7 @@
     -fx-text-position: right;
 
 }
-#btnIzvjestaj {
+#btnReport {
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
@@ -51,7 +51,7 @@
     -fx-text-position: right;
 }
 
-#btnPretraga {
+#btnSearch {
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;

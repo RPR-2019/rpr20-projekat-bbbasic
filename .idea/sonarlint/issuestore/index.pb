@@ -133,8 +133,6 @@ S
 #src/models/TechnicalInspection.java,c\a\ca65776a1872ed8a9bc2ec0d32134989ebadc92f
 L
 src/reports/AllTIReport.java,1\0\10123b2e22f149770937e827ec173284ec825de2
-F
-resources/css/btns.css,c\2\c26f7a25efe8617bae0e2620a52aeaa35b1bbaa5
 Q
 !src/reports/NonValidTIReport.java,e\6\e6c9994f9f064b88fff162616521773847d7f8f5
 N

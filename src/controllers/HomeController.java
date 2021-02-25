@@ -21,27 +21,25 @@ public class HomeController {
 
     public BorderPane mainPane;
     public Button btnUser;
-    public Button btnUposleni;
-    public Button btnPretraga;
+    public Button btnEmployees;
+    public Button btnReport;
 
 
     @FXML
     public void initialize() {
-
         btnUser.setText(String.valueOf(UserSession.getUserName()));
-        onBtnGlavnaForma(null);
+        onHome(null);
         if(UserSession.getPrivileges()) {
-            btnUposleni.setDisable(false);
-            btnPretraga.setDisable(false);
+            btnEmployees.setDisable(false);
+            btnReport.setDisable(false);
         }
         else {
-            btnUposleni.setDisable(true);
-            btnPretraga.setDisable(true);
+            btnEmployees.setDisable(true);
+            btnReport.setDisable(true);
         }
     }
 
-    public void onBtnTehnickiPregled(ActionEvent actionEvent) {
-        System.out.println("Tehnicki pregled");
+    public void onTI(ActionEvent actionEvent) {
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -58,7 +56,7 @@ public class HomeController {
     }
 
 
-    public void onBtnUposlenici(ActionEvent actionEvent) {
+    public void onEmployees(ActionEvent actionEvent) {
         System.out.println("Uposlenici");
         Stage stage = new Stage();
         Parent root = null;
@@ -76,7 +74,7 @@ public class HomeController {
         }
     }
 
-    public void onBtnIzvjestaj(ActionEvent actionEvent) {
+    public void onReport(ActionEvent actionEvent) {
         System.out.println("Izvjestaji");
         Stage stage = new Stage();
         Parent root = null;
@@ -94,7 +92,7 @@ public class HomeController {
         }
     }
 
-    public void onBtnPretraga(ActionEvent actionEvent) {
+    public void onSearch(ActionEvent actionEvent) {
         System.out.println("Pretraga");
         Stage stage = new Stage();
         Parent root = null;
@@ -111,7 +109,7 @@ public class HomeController {
         }
     }
 
-    public void onBtnGlavnaForma(ActionEvent actionEvent) {
+    public void onHome(ActionEvent actionEvent) {
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -131,21 +129,25 @@ public class HomeController {
 
     }
 
-    public void onbtnLogOut(ActionEvent actionEvent) throws IOException {
+    public void onbtnLogOut(ActionEvent actionEvent) {
         UserSession.cleanUserSession();
         Stage novastage = (Stage) btnUser.getScene().getWindow();
         novastage.close();
 
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), ResourceBundle.getBundle("Translation"));
-        LogInController ctrl = new LogInController();
-        loader.setController(ctrl);
-        Parent root = loader.load();
-        stage.setTitle("MeCARnic");
-        stage.getIcons().add(new Image("/img/mainicon.png"));
-        stage.setScene(new Scene(root, 335, 169));
-        stage.setResizable(false);
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), ResourceBundle.getBundle("Translation"));
+            LogInController ctrl = new LogInController();
+            loader.setController(ctrl);
+            Parent root = loader.load();
+            stage.setTitle("MeCARnic");
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+            stage.setScene(new Scene(root, 335, 169));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
     public void choiceLanguageEng(ActionEvent actionEvent) {
