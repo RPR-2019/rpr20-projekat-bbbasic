@@ -17,7 +17,9 @@ import javafx.stage.Stage;
 import models.Employee;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -103,13 +105,22 @@ public class EmployeesController {
         Employee employee = (Employee) listEmployees.getSelectionModel().getSelectedItem();
         if (employee == null) return;
 
-
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Potvrda brisanja Uposlenika");
-        alert.setHeaderText("Brisanje uposlenika " + employee.getFirstName() + " " + employee.getLastName());
-        alert.setContentText("Da li ste sigurni da zelite obrisati uposlenog?");
-        Stage stage = (Stage )alert.getDialogPane().getScene().getWindow();
-        stage.getIcons().add(new Image("/img/mainicon.png"));
+
+        if(ResourceBundle.getBundle("EmployeesTranslation").getLocale().equals(new Locale("bs"))) {
+            alert.setTitle("Potvrda brisanja Uposlenika");
+            alert.setHeaderText("Brisanje uposlenika " + employee.getFirstName() + " " + employee.getLastName());
+            alert.setContentText("Da li ste sigurni da zelite obrisati uposlenog?");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+        }
+        else {
+            alert.setTitle("Confirmation of deletion of Employees");
+            alert.setHeaderText("Deleting Employee " + employee.getFirstName() + " " + employee.getLastName());
+            alert.setContentText("Are You sure about this?");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+        }
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
