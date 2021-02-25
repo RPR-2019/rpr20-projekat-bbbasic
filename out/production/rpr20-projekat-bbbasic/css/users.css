@@ -30,17 +30,11 @@
         -fx-background-position: left;
         -fx-text-position: left;
 }
-.poljeIspravno {
+.valid {
     -fx-border-color: #81c784;
 }
-.poljeNijeIspravno {
+.nonvalid {
     -fx-border-color: #f6a5c0;
-}
-#btnPrijava {
-    -fx-background-color: #a6d4fa;
-}
-#btnDalje {
-    -fx-background-color: #a6d4fa;
 }
 #btnOk {
     -fx-background-color: #a6d4fa;

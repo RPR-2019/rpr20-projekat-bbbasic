@@ -61,7 +61,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"), ResourceBundle.getBundle("EmployeesTranslation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/employees.fxml"), ResourceBundle.getBundle("EmployeesTranslation"));
             EmployeesController administratorGlavniController = new EmployeesController();
             loader.setController(administratorGlavniController);
             root = loader.load();

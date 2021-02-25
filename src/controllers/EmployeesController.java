@@ -45,18 +45,21 @@ public class EmployeesController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/uposlenik.fxml"));
-            UposlenikController uposlenikController = new UposlenikController(null);
-            loader.setController(uposlenikController);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/employee.fxml"), ResourceBundle.getBundle("EmployeesTranslation"));
+            EmployeeController employeeController = new EmployeeController(null);
+            loader.setController(employeeController);
             root = loader.load();
-            stage.setTitle("Employee");
+            if(ResourceBundle.getBundle("EmployeesTranslation").getLocale().equals(new Locale("bs")))
+                stage.setTitle("Uposlenik");
+            else
+                stage.setTitle("Employee");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/mainicon.png"));
             stage.show();
 
             stage.setOnHiding( event -> {
-                Employee employee = uposlenikController.getUposlenik();
+                Employee employee = employeeController.getEmployee();
                 if (employee != null) {
                     employeeDAO.addEmployee(employee);
                     list.setAll(employeeDAO.employees());
@@ -74,18 +77,21 @@ public class EmployeesController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/uposlenik.fxml"));
-            UposlenikController uposlenikController = new UposlenikController(employee);
-            loader.setController(uposlenikController);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/employee.fxml"), ResourceBundle.getBundle("EmployeesTranslation"));
+            EmployeeController employeeController = new EmployeeController(employee);
+            loader.setController(employeeController);
             root = loader.load();
-            stage.setTitle("Employee");
+            if(ResourceBundle.getBundle("EmployeesTranslation").getLocale().equals(new Locale("bs")))
+                stage.setTitle("Uposlenik");
+            else
+                stage.setTitle("Employee");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
             stage.getIcons().add(new Image("/img/mainicon.png"));
             stage.show();
 
             stage.setOnHiding( event -> {
-                Employee employee1 = uposlenikController.getUposlenik();
+                Employee employee1 = employeeController.getEmployee();
                 if (employee1 != null) {
                     // Ovdje ne smije doći do izuzetka, jer se prozor neće zatvoriti
                     try {
