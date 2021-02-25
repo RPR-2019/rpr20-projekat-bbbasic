@@ -21,30 +21,29 @@ import java.util.Optional;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class AdminPristupKorisnicimaController {
-    public ListView listaUposlenici;
-    private ObservableList<Employee> lista;
+public class EmployeesController {
+    public ListView listEmployees;
+    private ObservableList<Employee> list;
     private EmployeeDAO employeeDAO;
-    public Label lUposlenici;
+    public Label lmain;
 
-    public AdminPristupKorisnicimaController() {
+    public EmployeesController() {
         employeeDAO = new EmployeeDAO();
-        lista = FXCollections.observableArrayList(employeeDAO.employees());
+        list = FXCollections.observableArrayList(employeeDAO.employees());
 
     }
 
     @FXML
     public void initialize() {
-        lUposlenici.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
-        listaUposlenici.setItems(lista);
+        lmain.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
+        listEmployees.setItems(list);
 
     }
-    public void dodajUposlenika(ActionEvent actionEvent) {
+    public void addEmployee(ActionEvent actionEvent) {
         Stage stage = new Stage();
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/uposlenik.fxml"));
-            //trece ce biti employeeDAO.tehnickipregledi()
             UposlenikController uposlenikController = new UposlenikController(null);
             loader.setController(uposlenikController);
             root = loader.load();
@@ -58,7 +57,7 @@ public class AdminPristupKorisnicimaController {
                 Employee employee = uposlenikController.getUposlenik();
                 if (employee != null) {
                     employeeDAO.addEmployee(employee);
-                    lista.setAll(employeeDAO.employees());
+                    list.setAll(employeeDAO.employees());
                 }
             } );
         } catch (IOException e) {
@@ -66,8 +65,8 @@ public class AdminPristupKorisnicimaController {
         }
     }
 
-    public void actionIzmijeniUposlenika(ActionEvent actionEvent) {
-        Employee employee = (Employee) listaUposlenici.getSelectionModel().getSelectedItem();
+    public void updateEmployee(ActionEvent actionEvent) {
+        Employee employee = (Employee) listEmployees.getSelectionModel().getSelectedItem();
         if (employee == null) return;
 
         Stage stage = new Stage();
@@ -89,7 +88,7 @@ public class AdminPristupKorisnicimaController {
                     // Ovdje ne smije doći do izuzetka, jer se prozor neće zatvoriti
                     try {
                         employeeDAO.updateEmployee(employee1);
-                        lista.setAll(employeeDAO.employees());
+                        list.setAll(employeeDAO.employees());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -100,9 +99,10 @@ public class AdminPristupKorisnicimaController {
         }
     }
 
-    public void actionObrisiUposlenika(ActionEvent actionEvent) {
-        Employee employee = (Employee) listaUposlenici.getSelectionModel().getSelectedItem();
+    public void deleteEmployee(ActionEvent actionEvent) {
+        Employee employee = (Employee) listEmployees.getSelectionModel().getSelectedItem();
         if (employee == null) return;
+
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potvrda brisanja Uposlenika");
@@ -114,7 +114,7 @@ public class AdminPristupKorisnicimaController {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             employeeDAO.deleteEmployee(employee);
-            lista.setAll(employeeDAO.employees());
+            list.setAll(employeeDAO.employees());
         }
     }
 }

@@ -61,8 +61,8 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"));
-            AdminPristupKorisnicimaController administratorGlavniController = new AdminPristupKorisnicimaController();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"), ResourceBundle.getBundle("EmployeesTranslation"));
+            EmployeesController administratorGlavniController = new EmployeesController();
             loader.setController(administratorGlavniController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
