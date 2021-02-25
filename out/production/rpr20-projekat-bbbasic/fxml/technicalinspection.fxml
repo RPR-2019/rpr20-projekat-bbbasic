@@ -9,7 +9,7 @@
 
 <GridPane hgap="20.0" prefHeight="414.0" prefWidth="1010.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@/css/tehnickipregledi.css" />
+      <URL value="@/css/technicalinspection.css" />
    </stylesheets>
    <columnConstraints>
       <ColumnConstraints maxWidth="218.0" minWidth="76.0" prefWidth="218.0" />

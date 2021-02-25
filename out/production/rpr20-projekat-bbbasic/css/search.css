@@ -1,11 +1,5 @@
-#btnTrazi {
+#btnSearch {
     -fx-background-color: #a6d4fa;
-}
-.poljeIspravno {
-    -fx-border-color: #81c784;
-}
-.poljeNijeIspravno {
-    -fx-border-color: #f6a5c0;
 }
 #btnSave {
     -fx-border-color: transparent;

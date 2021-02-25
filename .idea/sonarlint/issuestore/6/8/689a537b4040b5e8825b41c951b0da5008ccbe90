@@ -1,0 +1,11 @@
+
+O
+java:S1172"2Remove this unused method parameter "actionEvent".(ıÌ·ß8üÚÊ‰ı.
+
+java:S1104"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8“Š§¶ı.
+O
+java:S1172%"2Remove this unused method parameter "actionEvent".(ğõ™°8Ù¨ªı.
+O
+java:S1172"2Remove this unused method parameter "actionEvent".(£¢º¥8¶Šı.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·òşÿÿÿÿ8è–ü…ı.

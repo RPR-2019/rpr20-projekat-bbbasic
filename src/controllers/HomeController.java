@@ -97,9 +97,9 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"));
-            PretragaController pretragaController = new PretragaController(mainPane);
-            loader.setController(pretragaController);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"), ResourceBundle.getBundle("SearchTranslation"));
+            SearchController searchController = new SearchController(mainPane);
+            loader.setController(searchController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);

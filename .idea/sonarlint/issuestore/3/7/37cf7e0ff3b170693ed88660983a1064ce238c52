@@ -1,0 +1,33 @@
+
+t
+java:S1104"WMake fldUserName a static final constant or non-public and provide accessors if needed.(öıï8ÈéíÙı.
+F
+java:S1125Y")Remove the literal "false" boolean value.(ä³âƒ8ÿñ´ı.
+u
+java:S1104"XMake fldFirstName a static final constant or non-public and provide accessors if needed.(¨öóÏ8ÏÚéÙı.
+
+java:S11309"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(¥áÏÜ8 Ï‡·ı.
+t
+java:S1104"WMake fldLastName a static final constant or non-public and provide accessors if needed.(€Ïé8ì¨ëÙı.
+O
+java:S11729"2Remove this unused method parameter "actionEvent".(¥áÏÜ8â‹ÜÚú.
+y
+java:S1104"WMake fldHireDate a static final constant or non-public and provide accessors if needed.(ºÅÏ™ıÿÿÿÿ8’¡òÙı.
+s
+java:S1104"WMake fldPassword a static final constant or non-public and provide accessors if needed.(¾¢È8¡µìÙı.
+v
+java:S1104"YMake takenUserName a static final constant or non-public and provide accessors if needed.(Ç¼î8Í§ğÙı.
+T
+java:S11723"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8â‹ÜÚú.
+o
+java:S37769"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¥áÏÜ8òãóãú.
+F
+java:S1125Z")Remove the literal "false" boolean value.(£»üŒ8©ÍÁÛú.
+d
+java:S1192>"GDefine a constant instead of duplicating this literal "valid" 12 times.(İÏ¢Ô8¯†ıÙı.
+u
+java:S1104"XMake fldBirthDate a static final constant or non-public and provide accessors if needed.(²úÛá8¼ôÙı.
+f
+java:S1192?"JDefine a constant instead of duplicating this literal "nonvalid" 12 times.(ûÖô8Ñ¿€Úı.
+n
+java:S1104"QMake admin a static final constant or non-public and provide accessors if needed.(Ó‡†×8ĞñÙı.
