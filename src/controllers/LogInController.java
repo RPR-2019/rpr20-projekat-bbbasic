@@ -65,7 +65,7 @@ public class LogInController {
         Stage stage = (Stage) fldPassword.getScene().getWindow();
         stage.close();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"), ResourceBundle.getBundle("HomeTranslation"));
             HomeController ctrl = new HomeController();
             loader.setController(ctrl);
             Parent root = null;

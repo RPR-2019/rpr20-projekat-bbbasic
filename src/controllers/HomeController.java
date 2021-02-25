@@ -43,7 +43,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"), ResourceBundle.getBundle("HomeTranslation"));
             TP1Controller voziloController = new TP1Controller(mainPane);
             loader.setController(voziloController);
             root = loader.load();
@@ -61,7 +61,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"), ResourceBundle.getBundle("HomeTranslation"));
             AdminPristupKorisnicimaController administratorGlavniController = new AdminPristupKorisnicimaController();
             loader.setController(administratorGlavniController);
             root = loader.load();
@@ -79,7 +79,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"), ResourceBundle.getBundle("HomeTranslation"));
             IzvjestajiController izvjestajiController = new IzvjestajiController();
             loader.setController(izvjestajiController);
             root = loader.load();
@@ -97,7 +97,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"), ResourceBundle.getBundle("HomeTranslation"));
             PretragaController pretragaController = new PretragaController(mainPane);
             loader.setController(pretragaController);
             root = loader.load();
@@ -113,7 +113,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"), ResourceBundle.getBundle("HomeTranslation"));
             TehnickiPregledController tehnickiPregledController = new TehnickiPregledController(mainPane);
             loader.setController(tehnickiPregledController);
             root = loader.load();
@@ -128,6 +128,9 @@ public class HomeController {
         }
 
     }
+    public void onAbout(ActionEvent actionEvent) {
+
+    }
 
     public void onbtnLogOut(ActionEvent actionEvent) {
         UserSession.cleanUserSession();
@@ -136,7 +139,7 @@ public class HomeController {
 
         Stage stage = new Stage();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), ResourceBundle.getBundle("Translation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), ResourceBundle.getBundle("LogInTranslation"));
             LogInController ctrl = new LogInController();
             loader.setController(ctrl);
             Parent root = loader.load();
@@ -152,7 +155,7 @@ public class HomeController {
     }
     public void choiceLanguageEng(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("eng"));
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        ResourceBundle bundle = ResourceBundle.getBundle("HomeTranslation");
         Stage stage = (Stage) mainPane.getScene().getWindow();
         stage.close();
         try {
@@ -174,7 +177,7 @@ public class HomeController {
 
     public void choiceLanguageBs(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("bs"));
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        ResourceBundle bundle = ResourceBundle.getBundle("HomeTranslation");
         Stage stage = (Stage) mainPane.getScene().getWindow();
         stage.close();
         try {

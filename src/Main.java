@@ -24,7 +24,7 @@ public class Main extends Application {
         }
         initDB.createDB();
         Locale.setDefault(new Locale("eng"));
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        ResourceBundle bundle = ResourceBundle.getBundle("LogInTranslation");
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
         LogInController ctrl = new LogInController();

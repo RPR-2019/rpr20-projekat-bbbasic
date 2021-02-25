@@ -32,7 +32,6 @@
            <menus>
              <Menu mnemonicParsing="false" text="%file">
                <items>
-                 <MenuItem mnemonicParsing="false" text="%close" />
                      <Menu mnemonicParsing="false" text="%language">
                        <items>
                          <MenuItem mnemonicParsing="false" onAction="#choiceLanguageEng" text="Engleski" />
@@ -43,7 +42,7 @@
              </Menu>
              <Menu mnemonicParsing="false" text="%help">
                <items>
-                 <MenuItem mnemonicParsing="false" text="%about" />
+                 <MenuItem mnemonicParsing="false" onAction="#onAbout" text="%about" />
                </items>
              </Menu>
            </menus>

@@ -29,8 +29,6 @@ M
 src/services/UserSession.java,9\7\9754649ef78f0e953ce45826972ea1be5a64ec89
 E
 src/services/VIN.java,3\7\37f6cb4fd48201b0a51513e097db87ef8d19e842
-b
-2out/production/rpr20-projekat-bbbasic/css/btns.css,5\f\5f5f23621579b5f16a45b169840a3495d4e075a4
 d
 4out/production/rpr20-projekat-bbbasic/fxml/home.fxml,f\3\f3f866ee3dbfd10b59970bf25d9940a9846bca21
 S
