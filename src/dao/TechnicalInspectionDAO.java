@@ -1,7 +1,7 @@
 package dao;
 
 import enums.TipVozila;
-import exceptions.ZakazanTermin;
+import exceptions.ScheduledDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Customer;
@@ -65,7 +65,7 @@ public class TechnicalInspectionDAO extends BaseDAO{
 
     }
 
-    public void addTI(TechnicalInspection technicalInspection) throws ZakazanTermin {
+    public void addTI(TechnicalInspection technicalInspection) throws ScheduledDate {
         try {
             if(isTIScheduled(technicalInspection)) return;
             ResultSet rs = getIDForTIStatement.executeQuery();
@@ -89,14 +89,14 @@ public class TechnicalInspectionDAO extends BaseDAO{
         }
     }
 
-    private boolean isTIScheduled(TechnicalInspection technicalInspection) throws ZakazanTermin {
+    private boolean isTIScheduled(TechnicalInspection technicalInspection) throws ScheduledDate {
         ArrayList<TechnicalInspection> rezultat = new ArrayList();
         try {
             ResultSet rs = allTIStatement.executeQuery();
             while (rs.next()) {
                 TechnicalInspection technicalInspection1 = new TechnicalInspection(rs.getInt(1),  LocalDate.parse(rs.getString(2)), getVehicle(rs.getInt(3)), getCustomer(rs.getInt(4)), rs.getString(5), rs.getString(6));
                 if(technicalInspection.equals(technicalInspection1)) {
-                    throw new ZakazanTermin("Vec zakazan termin");
+                    throw new ScheduledDate("Vec zakazan termin");
                 }
             }
             return false;

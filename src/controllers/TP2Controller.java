@@ -5,8 +5,8 @@ import dao.TechnicalInspectionDAO;
 import dao.TechnicalInspectionTeamDAO;
 import dao.EmployeeDAO;
 import enums.VrstaTehnickogPregleda;
-import exceptions.NeispravanTelefonskiBroj;
-import exceptions.ZakazanTermin;
+import exceptions.WrongPhoneNumber;
+import exceptions.ScheduledDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -90,12 +90,12 @@ public class TP2Controller {
             fldBrojTelefona.getStyleClass().add("poljeIspravno");
             fldPogresanBroj.setVisible(false);
 
-        } catch (NeispravanTelefonskiBroj neispravanTelefonskiBroj) {
+        } catch (WrongPhoneNumber wrongPhoneNumber) {
             fldBrojTelefona.getStyleClass().removeAll("poljeIspravno");
             fldBrojTelefona.getStyleClass().add("poljeNijeIspravno");
             fldPogresanBroj.setVisible(true);
             sveOk = false;
-            System.out.println(neispravanTelefonskiBroj.getMessage());
+            System.out.println(wrongPhoneNumber.getMessage());
         }
 
         //validacija prebivalista
@@ -155,8 +155,8 @@ public class TP2Controller {
             technicalInspectionTeamDAO.connectTIAndEmployee(technicalInspection.getId(), employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
-        }catch (ZakazanTermin zakazanTermin) {
-            System.out.println(zakazanTermin);
+        }catch (ScheduledDate scheduledDate) {
+            System.out.println(scheduledDate);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Vec zakazan pregled!");
@@ -166,12 +166,12 @@ public class TP2Controller {
         //mozda da se vrati na pocetnu nez
     }
 
-    private boolean validacijaTelefona(String fldBrojTelefona) throws NeispravanTelefonskiBroj {
-        if(fldBrojTelefona.length() != 11) throw new NeispravanTelefonskiBroj("Duzina telefonskob broja treba biti 11");
-        if(fldBrojTelefona.charAt(3) != '-' || fldBrojTelefona.charAt(7) != '-') throw new NeispravanTelefonskiBroj("Neispravan format telefonskog broja");
+    private boolean validacijaTelefona(String fldBrojTelefona) throws WrongPhoneNumber {
+        if(fldBrojTelefona.length() != 11) throw new WrongPhoneNumber("Duzina telefonskob broja treba biti 11");
+        if(fldBrojTelefona.charAt(3) != '-' || fldBrojTelefona.charAt(7) != '-') throw new WrongPhoneNumber("Neispravan format telefonskog broja");
         for(int i = 0; i < fldBrojTelefona.length(); i++) {
             if(i == 3 || i == 7) continue;
-            if(!Character.isDigit(fldBrojTelefona.charAt(i))) throw new NeispravanTelefonskiBroj("Neispravan format telefonskog broja");
+            if(!Character.isDigit(fldBrojTelefona.charAt(i))) throw new WrongPhoneNumber("Neispravan format telefonskog broja");
         }
         return true;
     }

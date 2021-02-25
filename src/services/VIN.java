@@ -1,10 +1,10 @@
 package services;
 
-import exceptions.NeispravanBrojSasije;
+import exceptions.WrongVINNumber;
 
 public class VIN {
 
-    public static boolean isVinValid(String vin) throws NeispravanBrojSasije {
+    public static boolean isVinValid(String vin) throws WrongVINNumber {
         int[] values = { 1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5, 0, 7, 0, 9,
                 2, 3, 4, 5, 6, 7, 8, 9 };
         int[] weights = { 8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -15,7 +15,7 @@ public class VIN {
         s = s.replaceAll(" ", "");
         s = s.toUpperCase();
         if (s.length() != 17)
-            throw new NeispravanBrojSasije("VIN mora sadrzavati 17 oznaka");
+            throw new WrongVINNumber("VIN mora sadrzavati 17 oznaka");
 
         int sum = 0;
         for (int i = 0; i < 17; i++) {
@@ -27,7 +27,7 @@ public class VIN {
             if (c >= 'A' && c <= 'Z') {
                 value = values[c - 'A'];
                 if (value == 0)
-                    throw new NeispravanBrojSasije("Neisprvna oznaka " + c);
+                    throw new WrongVINNumber("Neisprvna oznaka " + c);
             }
 
             // number
@@ -36,7 +36,7 @@ public class VIN {
 
                 // illegal character
             else
-                throw new NeispravanBrojSasije("Neisprvna oznaka " + c);
+                throw new WrongVINNumber("Neisprvna oznaka " + c);
 
             sum = sum + weight * value;
 

@@ -3,8 +3,8 @@ package controllers;
 import constants.ModelVozila;
 import dao.VehicleDAO;
 import enums.MarkaVozila;
-import exceptions.NeispravanBrojSasije;
-import exceptions.NeispravnaTablica;
+import exceptions.WrongVINNumber;
+import exceptions.WrongRegistrationNumber;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,7 +13,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -152,12 +151,12 @@ public class TP1Controller {
                 fldRegistracija.getStyleClass().add("poljeIspravno");
                 fldPogrenaRegistracija.setVisible(false);
 
-            } catch (NeispravnaTablica neispravnaTablica) {
+            } catch (WrongRegistrationNumber wrongRegistrationNumber) {
                 fldRegistracija.getStyleClass().removeAll("poljeIspravno");
                 fldRegistracija.getStyleClass().add("poljeNijeIspravno");
                 fldPogrenaRegistracija.setVisible(true);
                 sveOk = false;
-                System.out.println(neispravnaTablica.getMessage());
+                System.out.println(wrongRegistrationNumber.getMessage());
             }
 
             //validacija sasije
@@ -167,12 +166,12 @@ public class TP1Controller {
                 fldBrojSasije.getStyleClass().removeAll("poljeNijeIspravno");
                 fldBrojSasije.getStyleClass().add("poljeIspravno");
                 fldPogresnaSasija.setVisible(false);
-            } catch (NeispravanBrojSasije neispravanBrojSasije) {
+            } catch (WrongVINNumber wrongVINNumber) {
                 fldBrojSasije.getStyleClass().removeAll("poljeIspravno");
                 fldBrojSasije.getStyleClass().add("poljeNijeIspravno");
                 fldPogresnaSasija.setVisible(true);
                 sveOk = false;
-                System.out.println(neispravanBrojSasije.getMessage());
+                System.out.println(wrongVINNumber.getMessage());
             }
 
             //validacija boje
@@ -312,13 +311,13 @@ public class TP1Controller {
         return true;
     }
 
-    private boolean validacijaTablica(String text) throws NeispravnaTablica {
-        if(text.length() != 9) throw new NeispravnaTablica("Duzina Registracije treba biti 9");
-        if(text.charAt(3) != '-' || text.charAt(5) != '-') throw new NeispravnaTablica("Neispravan format registracije");
-        if(!Character.isDigit(text.charAt(1))  || !Character.isDigit(text.charAt(2))) throw new NeispravnaTablica("Neispravan format registracije");
-        if(!Character.isDigit(text.charAt(6))  || !Character.isDigit(text.charAt(7)) || !Character.isDigit(text.charAt(7))) throw new NeispravnaTablica("Neispravan format registracije");
+    private boolean validacijaTablica(String text) throws WrongRegistrationNumber {
+        if(text.length() != 9) throw new WrongRegistrationNumber("Duzina Registracije treba biti 9");
+        if(text.charAt(3) != '-' || text.charAt(5) != '-') throw new WrongRegistrationNumber("Neispravan format registracije");
+        if(!Character.isDigit(text.charAt(1))  || !Character.isDigit(text.charAt(2))) throw new WrongRegistrationNumber("Neispravan format registracije");
+        if(!Character.isDigit(text.charAt(6))  || !Character.isDigit(text.charAt(7)) || !Character.isDigit(text.charAt(7))) throw new WrongRegistrationNumber("Neispravan format registracije");
         String string = "AEJKMOT";
-        if(string.indexOf(text.charAt(0)) == -1 || string.indexOf(text.charAt(4)) == -1) throw new NeispravnaTablica("Neispravan format registracije");
+        if(string.indexOf(text.charAt(0)) == -1 || string.indexOf(text.charAt(4)) == -1) throw new WrongRegistrationNumber("Neispravan format registracije");
 
         return true;
     }

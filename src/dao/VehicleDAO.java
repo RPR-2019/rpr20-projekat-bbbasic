@@ -1,7 +1,7 @@
 package dao;
 
-import exceptions.NeispravanBrojSasije;
-import exceptions.NeispravnaTablica;
+import exceptions.WrongVINNumber;
+import exceptions.WrongRegistrationNumber;
 import models.Vehicle;
 
 import java.sql.PreparedStatement;
@@ -68,16 +68,16 @@ public class VehicleDAO extends BaseDAO{
         }
     }
 
-    public boolean isChassisNumberTaken(String text, Vehicle vehicle) throws NeispravanBrojSasije {
+    public boolean isChassisNumberTaken(String text, Vehicle vehicle) throws WrongVINNumber {
         try {
             getVehicaleWithChassisNumberStatement.setString(1, text);
             ResultSet resultSet = getVehicaleWithChassisNumberStatement.executeQuery();
             if(resultSet.next()) {
-                if(vehicle == null) throw new NeispravanBrojSasije("VIN already exists in database");
+                if(vehicle == null) throw new WrongVINNumber("VIN already exists in database");
                 if(resultSet.getInt(1) == vehicle.getId() && resultSet.getString(7).equals(vehicle.getChassisNumber())) {
                     return true;
                 }
-                throw new NeispravanBrojSasije("VIN already exists in database");
+                throw new WrongVINNumber("VIN already exists in database");
             }
 
             return true;
@@ -87,16 +87,16 @@ public class VehicleDAO extends BaseDAO{
         return false;
     }
 
-    public boolean isRegistrationTaken(String text, Vehicle vehicle) throws NeispravnaTablica {
+    public boolean isRegistrationTaken(String text, Vehicle vehicle) throws WrongRegistrationNumber {
         try {
             getVehicaleWithRegistration.setString(1, text);
             ResultSet resultSet = getVehicaleWithRegistration.executeQuery();
             if(resultSet.next()) {
-                if(vehicle == null) throw new NeispravnaTablica("Registration already exists in database");
+                if(vehicle == null) throw new WrongRegistrationNumber("Registration already exists in database");
                 if(resultSet.getInt(1) == vehicle.getId() && resultSet.getString(6).equals(vehicle.getChassisNumber())) {
                     return true;
                 }
-                throw new NeispravnaTablica("Registration already exists in database");
+                throw new WrongRegistrationNumber("Registration already exists in database");
             }
 
             return true;
