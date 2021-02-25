@@ -5,9 +5,9 @@ import dao.TechnicalInspectionDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import net.sf.jasperreports.engine.JRException;
-import reports.IspravnaVozilaIzvjestaj;
-import reports.NeispravnaVozilaIzvjestaj;
-import reports.SviTehnicki;
+import reports.ValidTIReport;
+import reports.NonValidTIReport;
+import reports.AllTIReport;
 
 
 public class IzvjestajiController {
@@ -21,14 +21,14 @@ public class IzvjestajiController {
 
     public void clickIspravna(ActionEvent actionEvent)  {
         try {
-            new IspravnaVozilaIzvjestaj().showReport(DBConnection.getSession());
+            new ValidTIReport().showReport(DBConnection.getSession());
         } catch (JRException e) {
             e.printStackTrace();
         }
     }
     public void clickNeispravna(ActionEvent actionEvent) {
         try {
-            new NeispravnaVozilaIzvjestaj().showReport(DBConnection.getSession());
+            new NonValidTIReport().showReport(DBConnection.getSession());
         } catch (JRException e) {
             e.printStackTrace();
         }
@@ -36,7 +36,7 @@ public class IzvjestajiController {
     }
     public void clickMjesecni(ActionEvent actionEvent) {
         try {
-            new SviTehnicki().showReport(DBConnection.getSession());
+            new AllTIReport().showReport(DBConnection.getSession());
         } catch (JRException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,6 @@
 package reports;
 
-import javafx.scene.image.Image;
+
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.swing.JRViewer;
 
@@ -10,10 +10,10 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SviTehnicki extends JFrame {
+public class NonValidTIReport extends JFrame {
     public void showReport(Connection conn) throws JRException {
         try {
-            String reportSrcFile = getClass().getResource("/reports/sviTehnicki.jrxml").getFile();
+            String reportSrcFile = getClass().getResource("/reports/ReportNonValid.jrxml").getFile();
             String reportsDir = getClass().getResource("/reports/").getFile();
             //zbog moje mutanje Emina Basic
             reportSrcFile = reportSrcFile.replace("%20", " ");
@@ -32,11 +32,13 @@ public class SviTehnicki extends JFrame {
             this.setVisible(true);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(
                     getClass().getResource("/img/glavna.png")));
-            this.setTitle("Sva vehicles");
+            this.setTitle("Neispravna vehicles");
         } catch (JRException e) {
             System.out.println(e.getMessage());
             System.out.println(e.getLocalizedMessage());
             throw new JRException(".");
         }
     }
+
+
 }

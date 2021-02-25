@@ -115,21 +115,15 @@ Y
 )src/controllers/IzvjestajiController.java,0\f\0f0a053a9cdebf789dfd4e28206eb6e16e13054e
 u
 Eout/production/rpr20-projekat-bbbasic/reports/IzvjestajIspravni.jrxml,f\4\f4a52eaaaadecbbed6197333407c957578b1b0d7
-Y
-)resources/reports/IzvjestajIspravni.jrxml,c\8\c8861a022e60896d0b7c2aba3697663c0f52dedb
 w
 Gout/production/rpr20-projekat-bbbasic/reports/izvjestajNeispravni.jrxml,3\0\30ea0b782d31d325b081b3b22b6b154dfeec2c02
 Z
 *src/reports/NeispravnaVozilaIzvjestaj.java,a\b\abe7a84ed099bb755146e992f12184e8cb48394f
 m
 =.idea/libraries/net_sf_jasperreports_jasperreports_6_16_0.xml,e\e\ee91da85f373b80fa9a95a7ebeaf07015e6a4105
-[
-+resources/reports/izvjestajNeispravni.jrxml,9\a\9a8e94d0fb3fa061ab7d4edbc9a0c334cfa856e5
 L
 src/reports/SviTehnicki.java,e\2\e29aa6040b6d3b002e3545c3dde518314fdfeffc
 o
 ?out/production/rpr20-projekat-bbbasic/reports/sviTehnicki.jrxml,f\b\fbecd048c04084ba17dc5af6d2f4a94e3457b47c
-S
-#resources/reports/sviTehnicki.jrxml,f\0\f09d4015ef3d2cae842f9ffab5d38c950f1f8bed
 M
 resources/fxml/uposlenik.fxml,d\2\d29e90c20f5943b6b6611bf59e0a855367ae9209

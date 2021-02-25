@@ -18,7 +18,7 @@
 	</style>
 	<subDataset name="PieChartDataset" uuid="39581794-7f4c-48d6-8f6a-b421776f515c"/>
 	<queryString language="SQL">
-		<![CDATA[select substr(t.datum_pregleda,1,4) godina, case substr(t.datum_pregleda,6,2)
+		<![CDATA[select substr(t.date_of_inspection,1,4) godina, case substr(t.date_of_inspection,6,2)
  					when '01' then  'Januar'
                     when '02' then  'Februar'
                     when '03' then 'Mart'
@@ -32,8 +32,8 @@
                     when '11' then 'Novembar'
                     else 'Decembar'
                     end mjesec, count(*) broj_pregleda
-from tehnicki_pregled t
-where t.status_tehnickog_pregleda ='Kompletiran'
+from technical_inspection t
+where t.status_of_technical_inspection ='Kompletiran'
 group by mjesec,godina
 order by godina ASC]]>
 	</queryString>

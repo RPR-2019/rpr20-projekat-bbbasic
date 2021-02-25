@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IspravnaVozilaIzvjestaj  extends JFrame {
+public class ValidTIReport extends JFrame {
         public void showReport(Connection conn) throws JRException {
             try {
                 String reportSrcFile = getClass().getResource("/reports/izvjestajIspravni.jrxml").getFile();

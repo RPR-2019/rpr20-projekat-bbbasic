@@ -22,35 +22,35 @@
 	</style>
 	<subDataset name="PieChartDataset" uuid="21b70311-b650-4678-a39c-887917366bf0"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT t.datum_pregleda,  t.vrsta_tehnickog_pregleda,  t.komentar, v.tip_vozila, v.marka,  v.model
-FROM tehnicki_pregled t
+		<![CDATA[SELECT t.date_of_inspection,  t.type_of_technical_inspection,  t.comment, v.type, v.brand,  v.model
+FROM technical_inspection t
 JOIN vehicle v
-ON t.vozilo_id = v.id
-WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 0]]>
+ON t.vehicle_id = v.id
+WHERE t.status_of_technical_inspection = "Kompletiran" AND t.valid = 0]]>
 	</queryString>
-	<field name="datum_pregleda" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.name" value="datum_pregleda"/>
-		<property name="com.jaspersoft.studio.field.label" value="datum_pregleda"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="tehnicki_pregled"/>
+	<field name="date_of_inspection" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.name" value="date_of_inspection"/>
+		<property name="com.jaspersoft.studio.field.label" value="date_of_inspection"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="technical_inspection"/>
 	</field>
-	<field name="vrsta_tehnickog_pregleda" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.name" value="vrsta_tehnickog_pregleda"/>
-		<property name="com.jaspersoft.studio.field.label" value="vrsta_tehnickog_pregleda"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="tehnicki_pregled"/>
+	<field name="type_of_technical_inspection" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.name" value="type_of_technical_inspection"/>
+		<property name="com.jaspersoft.studio.field.label" value="type_of_technical_inspection"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="technical_inspection"/>
 	</field>
-	<field name="komentar" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.name" value="komentar"/>
-		<property name="com.jaspersoft.studio.field.label" value="komentar"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="tehnicki_pregled"/>
+	<field name="comment" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.name" value="comment"/>
+		<property name="com.jaspersoft.studio.field.label" value="comment"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="technical_inspection"/>
 	</field>
-	<field name="tip_vozila" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.name" value="tip_vozila"/>
-		<property name="com.jaspersoft.studio.field.label" value="tip_vozila"/>
+	<field name="type" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.name" value="type"/>
+		<property name="com.jaspersoft.studio.field.label" value="type"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="vehicle"/>
 	</field>
-	<field name="marka" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.name" value="marka"/>
-		<property name="com.jaspersoft.studio.field.label" value="marka"/>
+	<field name="brand" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.name" value="brand"/>
+		<property name="com.jaspersoft.studio.field.label" value="brand"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="vehicle"/>
 	</field>
 	<field name="model" class="java.lang.Object">
@@ -160,7 +160,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 0]]>
 					<textElement>
 						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{datum_pregleda}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{date_of_inspection}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="Detail" positionType="Float" x="135" y="2" width="115" height="14" uuid="083da680-98d0-4f52-975e-b8841fa83211">
@@ -169,7 +169,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 0]]>
 					<textElement>
 						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{vrsta_tehnickog_pregleda}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{type_of_technical_inspection}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="Detail" positionType="Float" x="250" y="2" width="115" height="14" uuid="8c8f3c61-68b8-4af6-92f6-34538d974c3f">
@@ -178,7 +178,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 0]]>
 					<textElement>
 						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{tip_vozila}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="Detail" positionType="Float" x="365" y="2" width="115" height="14" uuid="e29f6a79-0e1a-4872-ba03-c17f786f6357">
@@ -187,7 +187,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 0]]>
 					<textElement>
 						<font fontName="Times New Roman" size="12" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{marka}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{brand}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement style="Detail" positionType="Float" x="480" y="2" width="115" height="14" uuid="dc033b8f-50b8-4b56-adc3-12d89a8bbdb1">
@@ -205,7 +205,7 @@ WHERE t.status_tehnickog_pregleda = "Kompletiran" AND t.ispravnost = 0]]>
 					<textElement>
 						<font fontName="Times New Roman"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{komentar}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{comment}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="0" y="0" width="20" height="15" uuid="e151b9d2-e223-496b-8638-2d1528bec959"/>
