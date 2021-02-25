@@ -3,14 +3,13 @@ package services;
 public final class UserSession {
 
     private static UserSession instance;
-    private static String korisnickoIme;
-    //private static int ID;
-    private static boolean privilegija;
+    private static String userName;
+    private static boolean privilege;
 
 
-    private UserSession(String korisnickoIme, boolean privilegija) {
-        this.korisnickoIme = korisnickoIme;
-        this.privilegija = privilegija;
+    private UserSession(String userName, boolean privilege) {
+        this.userName = userName;
+        this.privilege = privilege;
     }
 
 
@@ -21,17 +20,17 @@ public final class UserSession {
         return instance;
     }
 
-    public static String getKorisnickoIme() {
-        return korisnickoIme;
+    public static String getUserName() {
+        return userName;
     }
 
     public static boolean getPrivileges() {
-        return privilegija;
+        return privilege;
     }
 
     public static void cleanUserSession() {
-        korisnickoIme = "";
-        privilegija = false;
+        userName = "";
+        privilege = false;
         instance = null;
     }
 

@@ -4,7 +4,7 @@ import dao.CustomerDAO;
 import dao.TechnicalInspectionDAO;
 import dao.TechnicalInspectionTeamDAO;
 import dao.EmployeeDAO;
-import enums.VrstaTehnickogPregleda;
+import enums.TypeOfTechnicalInspection;
 import exceptions.WrongPhoneNumber;
 import exceptions.ScheduledDate;
 import javafx.collections.FXCollections;
@@ -31,8 +31,8 @@ public class TP2Controller {
     public Label fldPogresanBroj;
     public Vehicle vehicle;
 
-    public ChoiceBox<VrstaTehnickogPregleda> choiceVrstaPregleda;
-    public ObservableList<VrstaTehnickogPregleda> vrstaTehnickogPregleda;
+    public ChoiceBox<TypeOfTechnicalInspection> choiceVrstaPregleda;
+    public ObservableList<TypeOfTechnicalInspection> typeOfTechnicalInspection;
 
     public DatePicker choiceDatum;
 
@@ -42,8 +42,8 @@ public class TP2Controller {
         l2.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         l3.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         ltehnicki.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
-        choiceVrstaPregleda.setItems(vrstaTehnickogPregleda);
-        choiceVrstaPregleda.setValue(vrstaTehnickogPregleda.get(0));
+        choiceVrstaPregleda.setItems(typeOfTechnicalInspection);
+        choiceVrstaPregleda.setValue(typeOfTechnicalInspection.get(0));
 
     }
 
@@ -53,7 +53,7 @@ public class TP2Controller {
         technicalInspectionTeamDAO = new TechnicalInspectionTeamDAO();
         this.vehicle = vehicle;
         customerDAO = new CustomerDAO();
-        vrstaTehnickogPregleda = FXCollections.observableArrayList(Arrays.asList(VrstaTehnickogPregleda.values()));
+        typeOfTechnicalInspection = FXCollections.observableArrayList(Arrays.asList(TypeOfTechnicalInspection.values()));
 
     }
 
@@ -142,7 +142,7 @@ public class TP2Controller {
         //technicalInspection.setVoziloID(vehicle.getId());
         technicalInspection.setVrstaTehnickogPregleda(choiceVrstaPregleda.getValue().toString());
         technicalInspection.setDateOfInspection(choiceDatum.getValue());
-        technicalInspection.getEmployees().add(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()));
+        technicalInspection.getEmployees().add(employeeDAO.getEmployeeWithUserName(UserSession.getUserName()));
 
         try {
             technicalInspectionDAO.addTI(technicalInspection);
@@ -151,8 +151,8 @@ public class TP2Controller {
             alert.setTitle("Tehnicki pregled");
             alert.setHeaderText("Uspjesno ste zakazali tehnicki pregled!");
             System.out.println("ID novog tehnickog " + technicalInspection.getId());
-            System.out.println("ID usera je" + employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId());
-            technicalInspectionTeamDAO.connectTIAndEmployee(technicalInspection.getId(), employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId());
+            System.out.println("ID usera je" + employeeDAO.getEmployeeWithUserName(UserSession.getUserName()).getId());
+            technicalInspectionTeamDAO.connectTIAndEmployee(technicalInspection.getId(), employeeDAO.getEmployeeWithUserName(UserSession.getUserName()).getId());
             //alert.setContentText("I have a great message for you!");
             alert.showAndWait();
         }catch (ScheduledDate scheduledDate) {

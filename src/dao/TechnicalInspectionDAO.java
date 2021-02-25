@@ -1,6 +1,6 @@
 package dao;
 
-import enums.TipVozila;
+import enums.VehicleType;
 import exceptions.ScheduledDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -160,53 +160,53 @@ public class TechnicalInspectionDAO extends BaseDAO{
 
     }
 
-    public ObservableList<TechnicalInspection> search(Customer klijent, TipVozila tipVozila, LocalDate localDate) {
+    public ObservableList<TechnicalInspection> search(Customer klijent, VehicleType vehicleType, LocalDate localDate) {
         ObservableList<TechnicalInspection> technicalInspection = FXCollections.observableArrayList();
         try {
             ResultSet rs = allTIStatement.executeQuery();
             while (rs.next()) {
                 TechnicalInspection technicalInspection1 = new TechnicalInspection(rs.getInt(1),  LocalDate.parse(rs.getString(2)), getVehicle(rs.getInt(3)), getCustomer(rs.getInt(4)), rs.getString(5), rs.getString(6));
                 technicalInspection1.setEmployees(getEmployees(technicalInspection1));
-                if(UserSession.getPrivileges() || technicalInspection1.getEmployees().contains(getEmployeeWithUserName(UserSession.getKorisnickoIme())))
+                if(UserSession.getPrivileges() || technicalInspection1.getEmployees().contains(getEmployeeWithUserName(UserSession.getUserName())))
                     technicalInspection.add(technicalInspection1);
             }
-            if(klijent == null && tipVozila == null && localDate == null) return technicalInspection;
+            if(klijent == null && vehicleType == null && localDate == null) return technicalInspection;
             //klijjent
-            if(klijent != null && tipVozila == null && localDate == null)
+            if(klijent != null && vehicleType == null && localDate == null)
                 return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getCustomer().getId() == klijent.getId())
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
             //tipvozila
-            if(klijent == null && tipVozila != null && localDate == null)
-                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVehicle().getType().equals(tipVozila.name()))
+            if(klijent == null && vehicleType != null && localDate == null)
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVehicle().getType().equals(vehicleType.name()))
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
             //datum
-            if(klijent == null && tipVozila == null && localDate != null)
+            if(klijent == null && vehicleType == null && localDate != null)
                 return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection().toString().equals(localDate.toString()))
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
             //klijent + tip vehicles
-            if(klijent != null && tipVozila != null && localDate == null)
-                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVehicle().getType().equals(tipVozila.name()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
+            if(klijent != null && vehicleType != null && localDate == null)
+                return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getVehicle().getType().equals(vehicleType.name()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
                     .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
             //klijent + datum
-            if(klijent != null && tipVozila == null && localDate != null)
+            if(klijent != null && vehicleType == null && localDate != null)
                 return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection()
                         .toString()
                         .equals(localDate.toString()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
             //tip vehicles + datum
-            if(klijent == null && tipVozila != null && localDate != null)
+            if(klijent == null && vehicleType != null && localDate != null)
                 return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection()
                         .toString()
-                        .equals(localDate.toString()) && tehnickiPregled1.getVehicle().getType().equals(tipVozila.name()))
+                        .equals(localDate.toString()) && tehnickiPregled1.getVehicle().getType().equals(vehicleType.name()))
                         .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
 
             //svi
             return technicalInspection.stream().filter(tehnickiPregled1 -> tehnickiPregled1.getDateOfInspection()
                     .toString()
-                    .equals(localDate.toString()) && tehnickiPregled1.getVehicle().getType().equals(tipVozila.name()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
+                    .equals(localDate.toString()) && tehnickiPregled1.getVehicle().getType().equals(vehicleType.name()) && tehnickiPregled1.getCustomer().getId() == klijent.getId())
                     .collect(Collectors.collectingAndThen(toList(), FXCollections::observableArrayList));
 
         } catch (SQLException sqlException) {

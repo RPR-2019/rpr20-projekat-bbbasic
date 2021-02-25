@@ -26,7 +26,7 @@ public class HomeController {
     @FXML
     public void initialize() {
 
-        btnUser.setText(String.valueOf(UserSession.getKorisnickoIme()));
+        btnUser.setText(String.valueOf(UserSession.getUserName()));
         onBtnGlavnaForma(null);
         if(UserSession.getPrivileges()) {
             btnUposleni.setDisable(false);

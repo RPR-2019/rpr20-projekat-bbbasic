@@ -153,9 +153,9 @@ public class TehnickiPregledController {
 
     public void refresh(PieChart chart) {
         pieChartData  = FXCollections.observableArrayList(
-                new PieChart.Data("Zakazani", technicalInspectionTeamDAO.countScheduledTI(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId())),
-                new PieChart.Data("Otkazani", technicalInspectionTeamDAO.countCanceledTI(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId())),
-                new PieChart.Data("Kompletirani", technicalInspectionTeamDAO.countcompletedTI(employeeDAO.getEmployeeWithUserName(UserSession.getKorisnickoIme()).getId())));
+                new PieChart.Data("Zakazani", technicalInspectionTeamDAO.countScheduledTI(employeeDAO.getEmployeeWithUserName(UserSession.getUserName()).getId())),
+                new PieChart.Data("Otkazani", technicalInspectionTeamDAO.countCanceledTI(employeeDAO.getEmployeeWithUserName(UserSession.getUserName()).getId())),
+                new PieChart.Data("Kompletirani", technicalInspectionTeamDAO.countcompletedTI(employeeDAO.getEmployeeWithUserName(UserSession.getUserName()).getId())));
         chart.setData(pieChartData);
         chart.setLegendVisible(false);
         pieChartData.forEach(data ->

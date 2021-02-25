@@ -1,7 +1,7 @@
 package models;
 
-import enums.StatusTehnickogPregleda;
-import enums.VrstaTehnickogPregleda;
+import enums.StatusOfTechnicalInspection;
+import enums.TypeOfTechnicalInspection;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ public class TechnicalInspection {
     private LocalDate dateOfInspection;
     private Vehicle vehicle;
     private Customer customer;
-    private VrstaTehnickogPregleda typeOfTechnicalInspection;
-    private StatusTehnickogPregleda statusOfTechnicalInspection;
+    private TypeOfTechnicalInspection typeOfTechnicalInspection;
+    private StatusOfTechnicalInspection statusOfTechnicalInspection;
     private ArrayList<Employee> employees = new ArrayList<>();
     private String engineType, engineTact, typeOfFuel, typeOfGearbox;
     private String comment;
@@ -30,8 +30,8 @@ public class TechnicalInspection {
             this.dateOfInspection = dateOfInspection;
             this.vehicle = vehicle;
             this.customer = customer;
-            this.typeOfTechnicalInspection = VrstaTehnickogPregleda.valueOf(typeOfTechnicalInspection);
-            this.statusOfTechnicalInspection = StatusTehnickogPregleda.valueOf(statusOfTechnicalInspection);
+            this.typeOfTechnicalInspection = TypeOfTechnicalInspection.valueOf(typeOfTechnicalInspection);
+            this.statusOfTechnicalInspection = StatusOfTechnicalInspection.valueOf(statusOfTechnicalInspection);
     }
 
     public int getPlacesToSit() {
@@ -171,11 +171,11 @@ public class TechnicalInspection {
         this.customer = customer;
     }
 
-    public void setTypeOfTechnicalInspection(VrstaTehnickogPregleda typeOfTechnicalInspection) {
+    public void setTypeOfTechnicalInspection(TypeOfTechnicalInspection typeOfTechnicalInspection) {
         this.typeOfTechnicalInspection = typeOfTechnicalInspection;
     }
 
-    public void setStatusOfTechnicalInspection(StatusTehnickogPregleda statusOfTechnicalInspection) {
+    public void setStatusOfTechnicalInspection(StatusOfTechnicalInspection statusOfTechnicalInspection) {
         this.statusOfTechnicalInspection = statusOfTechnicalInspection;
     }
 
@@ -184,7 +184,7 @@ public class TechnicalInspection {
     }
 
     public void setVrstaTehnickogPregleda(String vrstaTehnickogPregleda) {
-        this.typeOfTechnicalInspection = VrstaTehnickogPregleda.valueOf(vrstaTehnickogPregleda);
+        this.typeOfTechnicalInspection = TypeOfTechnicalInspection.valueOf(vrstaTehnickogPregleda);
     }
 
     public String getStatusOfTechnicalInspection() {
@@ -192,7 +192,7 @@ public class TechnicalInspection {
     }
 
     public void setStatusTehnickogPregleda(String statusTehnickogPregleda) {
-        this.statusOfTechnicalInspection = StatusTehnickogPregleda.valueOf(statusTehnickogPregleda);
+        this.statusOfTechnicalInspection = StatusOfTechnicalInspection.valueOf(statusTehnickogPregleda);
     }
 
     public ArrayList<Employee> getEmployees() {

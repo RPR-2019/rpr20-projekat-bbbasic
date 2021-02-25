@@ -3,7 +3,7 @@ package controllers;
 import dao.CustomerDAO;
 import dao.TechnicalInspectionDAO;
 import dao.VehicleDAO;
-import enums.TipVozila;
+import enums.VehicleType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,8 +26,8 @@ public class PretragaController {
     public CustomerDAO customerDAO;
     public VehicleDAO vehicleDAO;
     public TechnicalInspectionDAO technicalInspectionDAO;
-    public ComboBox<TipVozila> choiceTipVozila;
-    public ObservableList<TipVozila> tipVozila;
+    public ComboBox<VehicleType> choiceTipVozila;
+    public ObservableList<VehicleType> vehicleType;
     public ComboBox<Customer> choiceKlijent;
     public ObservableList<Customer> klijenti;
     public Button btnSave;
@@ -46,7 +46,7 @@ public class PretragaController {
     public void initialize() {
         labelaNaslov.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08); -fx-border-width: 5;");
         labelaInfo.setStyle("-fx-border-color: #a6d4fa;");
-        choiceTipVozila.setItems(tipVozila);
+        choiceTipVozila.setItems(vehicleType);
         choiceKlijent.setItems(klijenti);
 
         colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("dateOfInspection"));
@@ -62,7 +62,7 @@ public class PretragaController {
         customerDAO = new CustomerDAO();
         vehicleDAO = new VehicleDAO();
         technicalInspectionDAO = new TechnicalInspectionDAO();
-        tipVozila = FXCollections.observableArrayList(Arrays.asList(TipVozila.values()));
+        vehicleType = FXCollections.observableArrayList(Arrays.asList(VehicleType.values()));
         klijenti = FXCollections.observableArrayList(customerDAO.customers());
     }
 

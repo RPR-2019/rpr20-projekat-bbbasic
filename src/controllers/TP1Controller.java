@@ -2,7 +2,7 @@ package controllers;
 
 import constants.ModelVozila;
 import dao.VehicleDAO;
-import enums.MarkaVozila;
+import enums.VehicleBrand;
 import exceptions.WrongVINNumber;
 import exceptions.WrongRegistrationNumber;
 import javafx.collections.FXCollections;
@@ -16,7 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import enums.TipVozila;
+import enums.VehicleType;
 import models.Vehicle;
 import services.VIN;
 
@@ -32,11 +32,11 @@ public class TP1Controller {
     public Vehicle vehicle;
     public CheckBox choiceBijela, choiceCrna, choiceSmeda, choiceCrvena, choiceSiva;
 
-    public ChoiceBox<TipVozila> choiceTipVozila = new ChoiceBox<>();
-    public  ObservableList<TipVozila> tipVozila;
+    public ChoiceBox<VehicleType> choiceTipVozila = new ChoiceBox<>();
+    public  ObservableList<VehicleType> vehicleType;
 
-    public ChoiceBox<MarkaVozila> choiceMarkaVozila = new ChoiceBox<>();
-    public ObservableList<MarkaVozila> markaVozila;
+    public ChoiceBox<VehicleBrand> choiceMarkaVozila = new ChoiceBox<>();
+    public ObservableList<VehicleBrand> vehicleBrand;
 
     public ChoiceBox<String> choiceModelVozila = new ChoiceBox<>();
     public ObservableList<String> modelVozila;
@@ -60,8 +60,8 @@ public class TP1Controller {
     public void initialize() {
         l1.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         ltehnicki.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
-        choiceTipVozila.setItems(tipVozila);
-        choiceMarkaVozila.setItems(markaVozila);
+        choiceTipVozila.setItems(vehicleType);
+        choiceMarkaVozila.setItems(vehicleBrand);
         //vidljivost
         gridNovoVozilo.setDisable(true);
         gridStaro.setDisable(false);
@@ -88,8 +88,8 @@ public class TP1Controller {
     public TP1Controller(BorderPane mainPane) {
         this.mainPane = mainPane;
         vehicleDAO = new VehicleDAO();
-        tipVozila =  FXCollections.observableArrayList(Arrays.asList(TipVozila.values()));
-        markaVozila = FXCollections.observableArrayList(Arrays.asList(MarkaVozila.values()));
+        vehicleType =  FXCollections.observableArrayList(Arrays.asList(VehicleType.values()));
+        vehicleBrand = FXCollections.observableArrayList(Arrays.asList(VehicleBrand.values()));
         listaVozila = FXCollections.observableArrayList(vehicleDAO.vehicles());
     }
 

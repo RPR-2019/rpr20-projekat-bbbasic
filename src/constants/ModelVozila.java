@@ -1,27 +1,27 @@
 package constants;
 
-import enums.MarkaVozila;
+import enums.VehicleBrand;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ModelVozila {
 
-    public static HashMap<MarkaVozila, ArrayList<String>> listaModelaPremaMarki = new HashMap<>()
+    public static HashMap<VehicleBrand, ArrayList<String>> listaModelaPremaMarki = new HashMap<>()
     {{
-        put(MarkaVozila.Suzuki, new ArrayList<>() {{
+        put(VehicleBrand.Suzuki, new ArrayList<>() {{
             add("Vitara");
             add("Ignis");
         }});
-        put(MarkaVozila.Fiat, new ArrayList<>() {{
+        put(VehicleBrand.Fiat, new ArrayList<>() {{
             add("Panda");
             add("Coupe");
         }});
-        put(MarkaVozila.Volvo, new ArrayList<>() {{
+        put(VehicleBrand.Volvo, new ArrayList<>() {{
             add("XC40");
             add("S60");
         }});
-        put(MarkaVozila.Volkswagen, new ArrayList<>() {{
+        put(VehicleBrand.Volkswagen, new ArrayList<>() {{
             add("Polo");
             add("Touareg");
         }});

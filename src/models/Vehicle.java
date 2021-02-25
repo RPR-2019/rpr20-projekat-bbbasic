@@ -1,12 +1,12 @@
 package models;
 
-import enums.MarkaVozila;
-import enums.TipVozila;
+import enums.VehicleBrand;
+import enums.VehicleType;
 
 public class Vehicle {
     private int id;
-    private TipVozila type;
-    private MarkaVozila brand;
+    private VehicleType type;
+    private VehicleBrand brand;
     private String model;
     private int yearOfProduction;
     private String registration;
@@ -19,8 +19,8 @@ public class Vehicle {
 
     public Vehicle(int id, String type, String brand, String model, int yearOfProduction, String registration, String chassisNumber, String color, String colorType) {
         this.id = id;
-        this.type = TipVozila.valueOf(type);
-        this.brand = MarkaVozila.valueOf(brand);
+        this.type = VehicleType.valueOf(type);
+        this.brand = VehicleBrand.valueOf(brand);
         this.yearOfProduction = yearOfProduction;
         this.model = model;
         this.registration = registration;
@@ -50,7 +50,7 @@ public class Vehicle {
     }
 
     public void setType(String type) {
-        this.type = TipVozila.valueOf(type);
+        this.type = VehicleType.valueOf(type);
     }
 
     public String getBrand() {
@@ -58,7 +58,7 @@ public class Vehicle {
     }
 
     public void setBrand(String brand) {
-        this.brand = MarkaVozila.valueOf(brand);
+        this.brand = VehicleBrand.valueOf(brand);
     }
 
     public int getYearOfProduction() {
