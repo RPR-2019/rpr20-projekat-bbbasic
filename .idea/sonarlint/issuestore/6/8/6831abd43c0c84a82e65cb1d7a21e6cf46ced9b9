@@ -1,39 +1,39 @@
 
+W
+java:S2209$"5Change this instance-reference to a static reference.(Š¸‚•ýÿÿÿÿ8¹¢Ü«ý.
 Y
 java:S1854]"<Remove this useless assignment to local variable "rezultat".(¸ÆžÁ8ˆˆÈü.
 R
-java:S2209("5Change this instance-reference to a static reference.(øÐšÝ8ìòó±ý.
-R
 java:S2209#"5Change this instance-reference to a static reference.(®ãÑÁ8¹¢Ü«ý.
-W
-java:S2209'"5Change this instance-reference to a static reference.(„¶…ýøÿÿÿÿ8¹¢Ü«ý.
+[	java:S106Õ"9Replace this use of System.out or System.err by a logger.(öíéÊøÿÿÿÿ8…Öîµý.
 [	java:S106‰"9Replace this use of System.out or System.err by a logger.(êÓæøùÿÿÿÿ8…Öîµý.
 
 java:S1488:"_Immediately return this expression instead of assigning it to the temporary variable "klijent".(íô¶²øÿÿÿÿ8ˆˆÈü.
-R
-java:S2209&"5Change this instance-reference to a static reference.(Ãéý¾8¹¢Ü«ý.
-L
-java:S3740]"/Provide the parametrized type for this generic.(¸ÆžÁ8ˆˆÈü.
-}
-java:S1488ï"`Immediately return this expression instead of assigning it to the temporary variable "employee".(ÔÕ›R8…Öîµý.
 W
 java:S2209!"5Change this instance-reference to a static reference.(À‰üöøÿÿÿÿ8¹¢Ü«ý.
-I
-java:S1168ç"+Return an empty collection instead of null.(¥¹ï8…Öîµý.
+L
+java:S3740]"/Provide the parametrized type for this generic.(¸ÆžÁ8ˆˆÈü.
 R
-java:S2209""5Change this instance-reference to a static reference.(Å¢–ž8¹¢Ü«ý.
-[	java:S106Õ"9Replace this use of System.out or System.err by a logger.(öíéÊøÿÿÿÿ8…Öîµý.
-R
-java:S2209%"5Change this instance-reference to a static reference.(ˆµêÆ8¹¢Ü«ý.
-p
-java:S3776£"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ÒþÝ 8Ö„ïµý.
-`
-java:S2583F"DChange this condition so that it does not always evaluate to "false"(«ÀùH8ˆˆÈü.
-J
-java:S1481]"-Remove this unused "rezultat" local variable.(¸ÆžÁ8ˆˆÈü.
-Q
-java:S2209)"5Change this instance-reference to a static reference.(¥Ž™B8¹¢Ü«ý.
-W
-java:S2209$"5Change this instance-reference to a static reference.(Š¸‚•ýÿÿÿÿ8¹¢Ü«ý.
+java:S2209&"5Change this instance-reference to a static reference.(Ãéý¾8¹¢Ü«ý.
 ‚
 java:S1488Ž"_Immediately return this expression instead of assigning it to the temporary variable "vehicle".(æÿþ¢þÿÿÿÿ8•´æ¶ý.
+W
+java:S2209'"5Change this instance-reference to a static reference.(„¶…ýøÿÿÿÿ8¹¢Ü«ý.
+Q
+java:S2209)"5Change this instance-reference to a static reference.(¥Ž™B8¹¢Ü«ý.
+I
+java:S1168ç"+Return an empty collection instead of null.(¥¹ï8…Öîµý.
+}
+java:S1488ï"`Immediately return this expression instead of assigning it to the temporary variable "employee".(ÔÕ›R8…Öîµý.
+J
+java:S1481]"-Remove this unused "rezultat" local variable.(¸ÆžÁ8ˆˆÈü.
+p
+java:S3776£"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ÒþÝ 8Ö„ïµý.
+R
+java:S2209("5Change this instance-reference to a static reference.(øÐšÝ8ìòó±ý.
+R
+java:S2209""5Change this instance-reference to a static reference.(Å¢–ž8¹¢Ü«ý.
+R
+java:S2209%"5Change this instance-reference to a static reference.(ˆµêÆ8¹¢Ü«ý.
+`
+java:S2583F"DChange this condition so that it does not always evaluate to "false"(«ÀùH8ˆˆÈü.

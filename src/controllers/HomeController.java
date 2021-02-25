@@ -43,7 +43,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"), ResourceBundle.getBundle("HomeTranslation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"));
             TP1Controller voziloController = new TP1Controller(mainPane);
             loader.setController(voziloController);
             root = loader.load();
@@ -61,7 +61,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"), ResourceBundle.getBundle("HomeTranslation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"));
             AdminPristupKorisnicimaController administratorGlavniController = new AdminPristupKorisnicimaController();
             loader.setController(administratorGlavniController);
             root = loader.load();
@@ -79,7 +79,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"), ResourceBundle.getBundle("HomeTranslation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"));
             IzvjestajiController izvjestajiController = new IzvjestajiController();
             loader.setController(izvjestajiController);
             root = loader.load();
@@ -97,7 +97,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"), ResourceBundle.getBundle("HomeTranslation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"));
             PretragaController pretragaController = new PretragaController(mainPane);
             loader.setController(pretragaController);
             root = loader.load();
@@ -113,9 +113,9 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"), ResourceBundle.getBundle("HomeTranslation"));
-            TehnickiPregledController tehnickiPregledController = new TehnickiPregledController(mainPane);
-            loader.setController(tehnickiPregledController);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/technicalinspection.fxml"), ResourceBundle.getBundle("TechnicalInspectionTranslation"));
+            TechnicalInspectionController technicalInspectionController = new TechnicalInspectionController(mainPane);
+            loader.setController(technicalInspectionController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);

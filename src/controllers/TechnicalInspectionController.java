@@ -1,8 +1,8 @@
 package controllers;
 
+import dao.EmployeeDAO;
 import dao.TechnicalInspectionDAO;
 import dao.TechnicalInspectionTeamDAO;
-import dao.EmployeeDAO;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -16,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -32,89 +31,89 @@ import java.util.ArrayList;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 
-public class TehnickiPregledController {
+public class TechnicalInspectionController {
     public EmployeeDAO employeeDAO;
-    public ObservableList<Employee> uposlenici;
+    public ObservableList<Employee> employees;
     public TechnicalInspectionDAO technicalInspectionDAO;
     public TechnicalInspectionTeamDAO technicalInspectionTeamDAO;
     public Label labela;
     private ObservableList<PieChart.Data> pieChartData;
     public PieChart chart;
     //tabelica
-    public TableColumn colDatumPregleda;
-    public TableColumn colVozilo;
-    public TableColumn colVrstaPregleda;
-    public TableColumn colStatusPregleda;
-    public TableColumn colUposlenici;
+    public TableColumn colDateOfInspection;
+    public TableColumn colVehicle;
+    public TableColumn colTypeOfTechnicalInspection;
+    public TableColumn colStatusOfTechnicalInspection;
+    public TableColumn colEmployees;
     public TableView<TechnicalInspection> tableView;
     //dugmadi
-    public Button btnOtkaziTehnicki;
-    public Button btnDodajUposlenika;
-    public ChoiceBox<Employee> choiceUposlenik;
-    public Button btnDovrsiTehnicki;
+    public Button btnCancelTI;
+    public Button btnAddEmployee;
+    public ChoiceBox<Employee> choiceEmployee;
+    public Button btnFinishTI;
     public BorderPane mainPane;
 
     @FXML
     public void initialize() {
         if(UserSession.getPrivileges()) {
-            btnDodajUposlenika.setVisible(true);
-            choiceUposlenik.setVisible(true);
+            btnAddEmployee.setVisible(true);
+            choiceEmployee.setVisible(true);
         }
         else {
-            btnDodajUposlenika.setVisible(false);
-            choiceUposlenik.setVisible(false);
+            btnAddEmployee.setVisible(false);
+            choiceEmployee.setVisible(false);
         }
 
-        choiceUposlenik.setItems(uposlenici);
+        choiceEmployee.setItems(employees);
         labela.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         //tabelica
-        colDatumPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("dateOfInspection"));
-        colVozilo.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vehicle"));
-        colVrstaPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("typeOfTechnicalInspection"));
-        colStatusPregleda.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusOfTechnicalInspection"));
-        colUposlenici.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("employees"));
+        colDateOfInspection.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("dateOfInspection"));
+        colVehicle.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("vehicle"));
+        colTypeOfTechnicalInspection.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("typeOfTechnicalInspection"));
+        colStatusOfTechnicalInspection.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, String>("statusOfTechnicalInspection"));
+        colEmployees.setCellValueFactory(new PropertyValueFactory<TechnicalInspection, ArrayList<Employee>>("employees"));
 
         tableView.setItems(technicalInspectionDAO.search(null,null,null));
-        btnOtkaziTehnicki.setDisable(true);
-        btnDodajUposlenika.setDisable(true);
-        choiceUposlenik.setDisable(true);
-        btnDovrsiTehnicki.setDisable(true);
+        btnCancelTI.setDisable(true);
+        btnAddEmployee.setDisable(true);
+        choiceEmployee.setDisable(true);
+        btnFinishTI.setDisable(true);
         refresh(chart);
         tableView.setOnMouseClicked((MouseEvent event) -> {
             if(event.getButton().equals(MouseButton.PRIMARY)){
                 //brisanje
                 if(tableView.getSelectionModel().getSelectedItem().getStatusOfTechnicalInspection() == "Zakazan" ||
                         (tableView.getSelectionModel().getSelectedItem().getDateOfInspection().isEqual(LocalDate.now()))) {
-                        btnOtkaziTehnicki.setDisable(false);
+                        btnCancelTI.setDisable(false);
                     if(tableView.getSelectionModel().getSelectedItem().getStatusOfTechnicalInspection().equals("Zakazan"))
-                        btnDovrsiTehnicki.setDisable(false);
+                        btnFinishTI.setDisable(false);
                 }
                 else {
-                    btnOtkaziTehnicki.setDisable(true);
-                    btnDovrsiTehnicki.setDisable(true);
+                    btnCancelTI.setDisable(true);
+                    btnFinishTI.setDisable(true);
                 }
-                choiceUposlenik.setDisable(false);
+                choiceEmployee.setDisable(false);
             }
         });
 
-        choiceUposlenik.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+        choiceEmployee.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                btnDodajUposlenika.setDisable(false);
+                btnAddEmployee.setDisable(false);
             }
         });
 
 
     }
-    public TehnickiPregledController(BorderPane mainPane) {
+    public TechnicalInspectionController(BorderPane mainPane) {
         this.mainPane = mainPane;
         technicalInspectionDAO = new TechnicalInspectionDAO();
         employeeDAO = new EmployeeDAO();
         technicalInspectionTeamDAO = new TechnicalInspectionTeamDAO();
-        uposlenici = FXCollections.observableArrayList(employeeDAO.employees());
+        employees = FXCollections.observableArrayList(employeeDAO.employees());
     }
 
-    public void otkaziTehnickiPregled(ActionEvent actionEvent) {
+    public void cancelTI(ActionEvent actionEvent) {
             technicalInspectionDAO.cancelTI(tableView.getSelectionModel().getSelectedItem());
             tableView.setItems(technicalInspectionDAO.search(null,null,null));
             tableView.refresh();
@@ -123,13 +122,14 @@ public class TehnickiPregledController {
 
     }
 
-    public void dodajUposlenika(ActionEvent actionEvent) {
-        if(tableView.getSelectionModel().getSelectedItem().getEmployees().contains(choiceUposlenik.getValue())) return;
-        technicalInspectionTeamDAO.connectTIAndEmployee(tableView.getSelectionModel().getSelectedItem().getId(), choiceUposlenik.getValue().getId());
+    public void addEmployee(ActionEvent actionEvent) {
+        if(tableView.getSelectionModel().getSelectedItem().getEmployees().contains(choiceEmployee.getValue())) return;
+        technicalInspectionTeamDAO.connectTIAndEmployee(tableView.getSelectionModel().getSelectedItem().getId(), choiceEmployee.getValue().getId());
         tableView.setItems(technicalInspectionDAO.search(null,null,null));
         tableView.refresh();
     }
-    public void dovrsiTehnicki(ActionEvent actionEvent) {
+
+    public void finishTI(ActionEvent actionEvent) {
         Stage stage = new Stage();
         Parent root = null;
         try {

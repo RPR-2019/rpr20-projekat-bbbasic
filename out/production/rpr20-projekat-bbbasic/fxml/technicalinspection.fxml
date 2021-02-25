@@ -24,29 +24,29 @@
       <RowConstraints maxHeight="245.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Label fx:id="labela" prefHeight="17.0" prefWidth="916.0" text="Tehnicki pregled" GridPane.columnSpan="4">
+      <Label fx:id="labela" prefHeight="17.0" prefWidth="916.0" text="%main" GridPane.columnSpan="4">
          <font>
             <Font size="14.0" />
          </font></Label>
       <PieChart fx:id="chart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="263.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-      <TableView fx:id="tableView" prefHeight="285.0" prefWidth="685.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
+      <TableView fx:id="tableView" prefHeight="284.0" prefWidth="874.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
         <columns>
-          <TableColumn fx:id="colDatumPregleda" prefWidth="78.0" text="Zakazan" />
-          <TableColumn fx:id="colVozilo" prefWidth="167.0" text="Vozilo" />
-            <TableColumn fx:id="colVrstaPregleda" prefWidth="87.0" text="Vrsta" />
-            <TableColumn fx:id="colStatusPregleda" prefWidth="86.0" text="Status" />
-            <TableColumn fx:id="colUposlenici" prefWidth="537.0" text="Uposlenici" />
+          <TableColumn fx:id="colDateOfInspection" prefWidth="100.0" text="%scheduled_for" />
+          <TableColumn fx:id="colVehicle" prefWidth="195.0" text="%vehicle" />
+            <TableColumn fx:id="colTypeOfTechnicalInspection" prefWidth="100.0" text="%type" />
+            <TableColumn fx:id="colStatusOfTechnicalInspection" prefWidth="95.0" text="%status" />
+            <TableColumn fx:id="colEmployees" prefWidth="465.0" text="%employees" />
         </columns>
          <GridPane.margin>
             <Insets left="-10.0" right="-20.0" top="-20.0" />
          </GridPane.margin>
       </TableView>
-      <ButtonBar prefHeight="150.0" prefWidth="465.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+      <ButtonBar prefHeight="118.0" prefWidth="678.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
         <buttons>
-            <Button fx:id="btnDodajUposlenika" minWidth="0.0" mnemonicParsing="false" onAction="#dodajUposlenika" prefHeight="27.0" text="Dodaj uposlenika" />
-            <ChoiceBox fx:id="choiceUposlenik" prefHeight="25.0" prefWidth="200.0" />
-          <Button fx:id="btnDovrsiTehnicki" mnemonicParsing="false" onAction="#dovrsiTehnicki" prefHeight="25.0" prefWidth="169.0" text="Dovrsi Tehnicki pregled" />
-            <Button fx:id="btnOtkaziTehnicki" mnemonicParsing="false" onAction="#otkaziTehnickiPregled" text="Otkazi Tehnicki pregled" />
+            <Button fx:id="btnAddEmployee" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addEmployee" prefHeight="27.0" prefWidth="150.0" text="%add" />
+            <ChoiceBox fx:id="choiceEmployee" minWidth="0.0" prefHeight="27.0" />
+          <Button fx:id="btnFinishTI" minWidth="0.0" mnemonicParsing="false" onAction="#finishTI" prefHeight="27.0" prefWidth="170.0" text="%finish_TI" />
+            <Button fx:id="btnCancelTI" minWidth="12.0" mnemonicParsing="false" onAction="#cancelTI" prefHeight="27.0" prefWidth="170.0" text="%cancel_TI" />
         </buttons>
       </ButtonBar>
    </children>

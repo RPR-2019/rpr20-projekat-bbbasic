@@ -41,8 +41,6 @@ R
 "src/controllers/TP2Controller.java,5\3\5383eac4cfed00e671fe8d70c00281421371f9f7
 R
 "src/controllers/TP1Controller.java,b\0\b035899de6e2b250b679907095de04681a38b8c3
-^
-.src/controllers/TehnickiPregledController.java,9\e\9e5a03e7536ee42afbdb3cb11336f6e7d65a5d09
 n
 >out/production/rpr20-projekat-bbbasic/css/tehnickipregledi.css,d\7\d78a365b961c574446aae8970885f81653ca2d73
 p
@@ -91,8 +89,6 @@ H
 src/dao/EmployeeDAO.java,8\d\8d44665a5ad505f1754b77b3e3646518d68d7734
 W
 'src/dao/TechnicalInspectionTeamDAO.java,b\5\b5a8d4aa2acb8745b39d11dc117cb0b8b34260a2
-T
-$resources/fxml/tehnickipregledi.fxml,1\d\1d6b6a25d2ff73b18ed428c120096e56d61eae25
 o
 ?out/production/rpr20-projekat-bbbasic/reports/ReportAllTI.jrxml,4\b\4b66746e3d135ca03845f7f2e129a63502a442f3
 S
@@ -137,3 +133,25 @@ N
 src/reports/ValidTIReport.java,2\0\2046159f72693264972e5454a4d363e36724a456
 O
 src/constants/VehicleModel.java,d\e\de8c99595be2e693a19173ccb74a313eba253031
+H
+resources/fxml/home.fxml,2\f\2f2858f2044fee797e3e427926835fd7b7c38b97
+p
+@out/production/rpr20-projekat-bbbasic/HomeTranslation.properties,1\4\14ff4756e99bc67f7428983d9f5215dc77ff8d61
+s
+Cout/production/rpr20-projekat-bbbasic/HomeTranslation_bs.properties,d\0\d095d778989e0f6c69bdc6878d624b53887c1f60
+t
+Dout/production/rpr20-projekat-bbbasic/HomeTranslation_eng.properties,1\e\1e6175f1b25ed792e21f6e8d010e50016ab0c396
+q
+Aout/production/rpr20-projekat-bbbasic/LogInTranslation.properties,1\0\1009b3fba867b95030b6357ba0b6f8237531033e
+U
+%resources/LogInTranslation.properties,d\0\d06bf6b37c396a69dbabe3d37310d322dcc7467f
+t
+Dout/production/rpr20-projekat-bbbasic/LogInTranslation_bs.properties,c\6\c6b6fac98e252f252a9c68027cfd9ce0ac39be20
+X
+(resources/LogInTranslation_bs.properties,a\9\a9379c8b2b75efd2e523f0ee3f9e3355fec71cc2
+u
+Eout/production/rpr20-projekat-bbbasic/LogInTranslation_eng.properties,5\8\5890f362d94339533903979dd460d95237488695
+Y
+)resources/LogInTranslation_eng.properties,4\b\4bfdfc315c5513b0d55064c8854bba3b209abeb1
+b
+2src/controllers/TechnicalInspectionController.java,e\3\e3f8c4e3a9c09fe676aaa62da1071a24e53134da
