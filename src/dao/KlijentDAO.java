@@ -1,7 +1,6 @@
 package dao;
 
-import models.Klijent;
-import models.Uposlenik;
+import models.Customer;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,12 +26,12 @@ public class KlijentDAO extends BaseDAO {
 
     //funkcije
 
-    public ArrayList<Klijent> klijenti() {
-        ArrayList<Klijent> rezultat = new ArrayList();
+    public ArrayList<Customer> klijenti() {
+        ArrayList<Customer> rezultat = new ArrayList();
         try {
             ResultSet rs = sviKlijentiUpit.executeQuery();
             while (rs.next()) {
-                Klijent klijent = new Klijent(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Customer klijent = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                 rezultat.add(klijent);
             }
         } catch (SQLException e) {
@@ -41,7 +40,7 @@ public class KlijentDAO extends BaseDAO {
         return rezultat;
     }
 
-    public void dodajKlijenta(Klijent klijent) {
+    public void dodajKlijenta(Customer klijent) {
         try {
             if(postojiLiKlijentUBazi(klijent)) return;
             ResultSet rs = odrediIdKlijentaUpit.executeQuery();
@@ -52,22 +51,22 @@ public class KlijentDAO extends BaseDAO {
             klijent.setId(id);
 
             dodajKlijentaUpit.setInt(1, klijent.getId());
-            dodajKlijentaUpit.setString(2, klijent.getIme());
-            dodajKlijentaUpit.setString(3, klijent.getPrezime());
-            dodajKlijentaUpit.setString(4, klijent.getMjestoPrebivalista());
-            dodajKlijentaUpit.setString(5, klijent.getBrojTelefona());
+            dodajKlijentaUpit.setString(2, klijent.getFirst_name());
+            dodajKlijentaUpit.setString(3, klijent.getLast_name());
+            dodajKlijentaUpit.setString(4, klijent.getAddress());
+            dodajKlijentaUpit.setString(5, klijent.getPhone_number());
 
             dodajKlijentaUpit.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    public boolean postojiLiKlijentUBazi(Klijent klijent) {
-        ArrayList<Klijent> rezultat = new ArrayList();
+    public boolean postojiLiKlijentUBazi(Customer klijent) {
+        ArrayList<Customer> rezultat = new ArrayList();
         try {
             ResultSet rs = sviKlijentiUpit.executeQuery();
             while (rs.next()) {
-                Klijent klijent2 = new Klijent(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Customer klijent2 = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                 if(klijent.equals(klijent2)) {
                     klijent.setId(klijent2.getId());
                     return true;

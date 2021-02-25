@@ -1,6 +1,5 @@
 package models;
 
-import enums.MarkaVozila;
 import enums.StatusTehnickogPregleda;
 import enums.VrstaTehnickogPregleda;
 
@@ -12,7 +11,7 @@ public class TehnickiPregled {
     private int id;
     private LocalDate datumPregleda;
     private Vozilo vozilo;
-    private Klijent klijent;
+    private Customer klijent;
     private VrstaTehnickogPregleda vrstaTehnickogPregleda;
     private StatusTehnickogPregleda statusTehnickogPregleda;
     private ArrayList<Uposlenik> uposlenici = new ArrayList<>();
@@ -27,7 +26,7 @@ public class TehnickiPregled {
     }
 
 
-    public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, Klijent klijent, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
+    public TehnickiPregled(int id, LocalDate datumPregleda, Vozilo vozilo, Customer klijent, String vrstaTehnickogPregleda, String statusTehnickogPregleda) {
             this.id = id;
             this.datumPregleda = datumPregleda;
             this.vozilo = vozilo;
@@ -165,11 +164,11 @@ public class TehnickiPregled {
         this.vozilo = vozilo;
     }
 
-    public Klijent getKlijent() {
+    public Customer getKlijent() {
         return klijent;
     }
 
-    public void setKlijent(Klijent klijent) {
+    public void setKlijent(Customer klijent) {
         this.klijent = klijent;
     }
 

@@ -12,7 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import models.Klijent;
+import models.Customer;
 import models.TehnickiPregled;
 import models.Vozilo;
 import services.UserSession;
@@ -123,11 +123,11 @@ public class TP2Controller {
 
 
         if(sveOk != true) return;
-        Klijent klijent= new Klijent();
-        klijent.setIme(fldIme.getText());
-        klijent.setPrezime(fldPrezime.getText());
-        klijent.setMjestoPrebivalista(fldMjestoPrebivalista.getText());
-        klijent.setBrojTelefona(fldBrojTelefona.getText());
+        Customer klijent= new Customer();
+        klijent.setFirst_name(fldIme.getText());
+        klijent.setLast_name(fldPrezime.getText());
+        klijent.setAddress(fldMjestoPrebivalista.getText());
+        klijent.setPhone_number(fldBrojTelefona.getText());
 
         klijentDAO.dodajKlijenta(klijent);
 

@@ -2,11 +2,9 @@ package dao;
 
 import enums.TipVozila;
 import exceptions.ZakazanTermin;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.layout.Border;
-import models.Klijent;
+import models.Customer;
 import models.TehnickiPregled;
 import models.Uposlenik;
 import models.Vozilo;
@@ -23,7 +21,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.toCollection;
 import static java.util.stream.Collectors.toList;
 
 public class TehnickiPregledDAO extends BaseDAO{
@@ -68,12 +65,12 @@ public class TehnickiPregledDAO extends BaseDAO{
         return rezultat;
     }
 
-    private Klijent dajKlijenta(int id) {
+    private Customer dajKlijenta(int id) {
         try {
             dajKlijentaUpit.setInt(1, id);
             ResultSet rs = dajKlijentaUpit.executeQuery();
             while (rs.next()) {
-                Klijent klijent = new Klijent(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Customer klijent = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                 return klijent;
             }
         } catch (SQLException e) {
@@ -179,7 +176,7 @@ public class TehnickiPregledDAO extends BaseDAO{
 
     }
 
-    public ObservableList<TehnickiPregled> pretraga(Klijent klijent, TipVozila tipVozila, LocalDate localDate) {
+    public ObservableList<TehnickiPregled> pretraga(Customer klijent, TipVozila tipVozila, LocalDate localDate) {
         ObservableList<TehnickiPregled> tehnickiPregled = FXCollections.observableArrayList();
         try {
             ResultSet rs = sviTehnickiUpit.executeQuery();
@@ -272,8 +269,8 @@ public class TehnickiPregledDAO extends BaseDAO{
                 izlaz = new PrintWriter(new FileWriter(izabrani));
                 for (int i = 0; i < tehnickiPregled.size(); i++) {
                     izlaz.println(tehnickiPregled.get(i).getDatumPregleda() + ":"
-                            + tehnickiPregled.get(i).getKlijent().getIme() + ":"
-                            + tehnickiPregled.get(i).getKlijent().getPrezime() + ":"
+                            + tehnickiPregled.get(i).getKlijent().getFirst_name() + ":"
+                            + tehnickiPregled.get(i).getKlijent().getLast_name() + ":"
                             + tehnickiPregled.get(i).getVozilo().getTipVozila() + ":"
                             + tehnickiPregled.get(i).getVozilo().getMarka() + ":"
                             + tehnickiPregled.get(i).getVozilo().getModel() + ":"
