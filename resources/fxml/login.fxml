@@ -11,12 +11,12 @@
       <URL value="@/css/validacija.css" />
    </stylesheets>
    <children>
-      <TextField fx:id="fldKorisnickoIme" minWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" GridPane.columnIndex="1" />
-      <Label text="Korisničko ime:" />
+      <TextField fx:id="fldUserName" minWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" GridPane.columnIndex="1" />
+      <Label text="%username:" />
       <Label text="Lozinka:" GridPane.rowIndex="1" />
-      <Button fx:id="btnPrijava" mnemonicParsing="false" onAction="#clickPrijava" prefHeight="25.0" prefWidth="291.0" text="Prijava" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-      <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label fx:id="fldGreska" prefHeight="2.0" prefWidth="246.0" text="Pogresno korisnicko ime ili lozinka." textFill="#e57373" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <Button fx:id="btnLogIn" mnemonicParsing="false" onAction="#clickLogIn" prefHeight="25.0" prefWidth="291.0" text="Prijava" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+      <PasswordField fx:id="fldPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="fldError" prefHeight="2.0" prefWidth="246.0" text="Pogresno korisnicko ime ili lozinka." textFill="#e57373" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <font>
             <Font size="10.0" />
          </font></Label>

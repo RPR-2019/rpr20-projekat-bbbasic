@@ -140,7 +140,7 @@ public class HomeController {
         loader.setController(ctrl);
         Parent root = loader.load();
         stage.setTitle("MeCARnic");
-        stage.getIcons().add(new Image("/img/glavna.png"));
+        stage.getIcons().add(new Image("/img/mainicon.png"));
         stage.setScene(new Scene(root, 335, 169));
         stage.setResizable(false);
         stage.show();

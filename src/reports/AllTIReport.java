@@ -30,7 +30,7 @@ public class AllTIReport extends JFrame {
             this.setSize(700, 500);
             this.setVisible(true);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(
-                    getClass().getResource("/img/glavna.png")));
+                    getClass().getResource("/img/mainicon.png")));
             this.setTitle("Sva vehicles");
         } catch (JRException e) {
             System.out.println(e.getMessage());

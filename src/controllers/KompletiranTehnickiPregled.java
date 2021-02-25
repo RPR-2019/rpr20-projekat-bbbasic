@@ -36,7 +36,7 @@ public class KompletiranTehnickiPregled {
     @FXML
     public void initialize() {
         labelaNaslov.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
-        imgdimenzije.setImage(new Image("/img/dimenzije.jpg"));
+        imgdimenzije.setImage(new Image("/img/cardimensions.jpg"));
         imgdimenzije.setFitHeight(180);
         imgdimenzije.setFitWidth(230);
         //vrsta motora

@@ -103,8 +103,6 @@ _
 /src/controllers/KompletiranTehnickiPregled.java,a\d\adfe247d9a4dc90869dd1a758f37f3c065e9d036
 h
 8out/production/rpr20-projekat-bbbasic/css/izvjestaji.css,4\d\4d8986f1f642f55272013d854faa48a3aa9641dc
-L
-resources/css/izvjestaji.css,0\f\0fac345cfa0c66ef9fc8b86a6766efc82d6390f4
 j
 :out/production/rpr20-projekat-bbbasic/fxml/izvjestaji.fxml,c\8\c8dc9f990543f34ebf9e45017baac6c863c2b8b3
 N
@@ -125,5 +123,3 @@ L
 src/reports/SviTehnicki.java,e\2\e29aa6040b6d3b002e3545c3dde518314fdfeffc
 o
 ?out/production/rpr20-projekat-bbbasic/reports/sviTehnicki.jrxml,f\b\fbecd048c04084ba17dc5af6d2f4a94e3457b47c
-M
-resources/fxml/uposlenik.fxml,d\2\d29e90c20f5943b6b6611bf59e0a855367ae9209

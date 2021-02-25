@@ -18,18 +18,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LogInController {
-    public TextField fldKorisnickoIme;
-    public PasswordField fldLozinka;
-    public Label fldGreska;
-
+    public TextField fldUserName;
+    public PasswordField fldPassword;
+    public Label fldError;
 
     private EmployeeDAO dao;
 
     @FXML
     public void initialize() {
-        fldGreska.setVisible(false);
-        fldKorisnickoIme.setText("mehomehic");
-        fldLozinka.setText("lozinka");
+        fldError.setVisible(false);
+        fldUserName.setText("mehomehic");
+        fldPassword.setText("lozinka");
     }
 
 
@@ -37,37 +36,33 @@ public class LogInController {
         dao = new EmployeeDAO();
     }
 
-    public void clickPrijava(ActionEvent actionEvent) throws InterruptedException {
+    public void clickLogIn(ActionEvent actionEvent) throws InterruptedException {
         ArrayList<Employee> pomocni = dao.employees();
         for(int i = 0; i < pomocni.size(); i++) {
-            if(pomocni.get(i).getUserName().equals(fldKorisnickoIme.getText()) && pomocni.get(i).getPassword().equals(fldLozinka.getText())) {
-                fldLozinka.getStyleClass().removeAll("poljeNijeIspravno");
-                fldLozinka.getStyleClass().add("poljeIspravno");
+            if(pomocni.get(i).getUserName().equals(fldUserName.getText()) && pomocni.get(i).getPassword().equals(fldPassword.getText())) {
+                fldPassword.getStyleClass().removeAll("poljeNijeIspravno");
+                fldPassword.getStyleClass().add("poljeIspravno");
 
-                fldKorisnickoIme.getStyleClass().removeAll("poljeNijeIspravno");
-                fldKorisnickoIme.getStyleClass().add("poljeIspravno");
+                fldUserName.getStyleClass().removeAll("poljeNijeIspravno");
+                fldUserName.getStyleClass().add("poljeIspravno");
 
-                //nasli smo korisnika sada trebamo njega sacuvati
-                System.out.println("Sada je " + pomocni.get(i).getUserName());
                 UserSession.getInstace(pomocni.get(i).getUserName(), pomocni.get(i).isAdmin());
                 closeWindow();
             }
             else {
-                fldGreska.setVisible(true);
-                fldLozinka.getStyleClass().removeAll("poljeIspravno");
-                fldLozinka.getStyleClass().add("poljeNijeIspravno");
+                fldError.setVisible(true);
+                fldPassword.getStyleClass().removeAll("poljeIspravno");
+                fldPassword.getStyleClass().add("poljeNijeIspravno");
 
-                fldKorisnickoIme.getStyleClass().removeAll("poljeIspravno");
-                fldKorisnickoIme.getStyleClass().add("poljeNijeIspravno");
+                fldUserName.getStyleClass().removeAll("poljeIspravno");
+                fldUserName.getStyleClass().add("poljeNijeIspravno");
             }
         }
     }
 
     private void closeWindow() {
-        Stage stage = (Stage) fldLozinka.getScene().getWindow();
+        Stage stage = (Stage) fldPassword.getScene().getWindow();
         stage.close();
-
-        //radi OK
         try {
             Stage pstage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
@@ -77,7 +72,6 @@ public class LogInController {
             root = loader.load();
             stage.setTitle("MeCARnic");
             stage.setScene(new Scene(root, 396, 311));
-            //stage.setFullScreen(true);
             stage.setWidth(1200);
             stage.setHeight(730);
             stage.show();

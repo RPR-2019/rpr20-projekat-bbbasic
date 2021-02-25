@@ -5,9 +5,9 @@ import enums.VehicleBrand;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ModelVozila {
+public class VehicleModel {
 
-    public static HashMap<VehicleBrand, ArrayList<String>> listaModelaPremaMarki = new HashMap<>()
+    public static HashMap<VehicleBrand, ArrayList<String>> listFromBrands = new HashMap<>()
     {{
         put(VehicleBrand.Suzuki, new ArrayList<>() {{
             add("Vitara");
@@ -28,4 +28,4 @@ public class ModelVozila {
     }};
 
 }
-// ModelVozila.listaModelaPremaTipu.get(KLJUC_OD_VOZILA)
+// VehicleModel.listaModelaPremaTipu.get(KLJUC_OD_VOZILA)

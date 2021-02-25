@@ -1,6 +1,6 @@
 package controllers;
 
-import constants.ModelVozila;
+import constants.VehicleModel;
 import dao.VehicleDAO;
 import enums.VehicleBrand;
 import exceptions.WrongVINNumber;
@@ -77,7 +77,7 @@ public class TP1Controller {
         choiceVozilo.setValue(listaVozila.get(0));
 
         choiceMarkaVozila.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, number2) -> {
-            modelVozila = FXCollections.observableArrayList(ModelVozila.listaModelaPremaMarki.get(choiceMarkaVozila.getItems().get((Integer) number2)));
+            modelVozila = FXCollections.observableArrayList(VehicleModel.listFromBrands.get(choiceMarkaVozila.getItems().get((Integer) number2)));
             choiceModelVozila.setDisable(false);
 
             choiceModelVozila.setItems(modelVozila);
