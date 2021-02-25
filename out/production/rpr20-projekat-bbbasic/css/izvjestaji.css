@@ -1,4 +1,4 @@
-#btnIspravni {
+#btnValid {
     -fx-border-color: rgba(0, 0, 0, 0.12);
     -fx-border-width: 1;
     -fx-background-radius: 0;
@@ -10,7 +10,7 @@
     -fx-background-position: center;
 
 }
-#btnNeispravni {
+#btnNonValid {
     -fx-border-color: rgba(0, 0, 0, 0.12);
     -fx-border-width: 1;
     -fx-background-radius: 0;

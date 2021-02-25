@@ -79,9 +79,9 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"));
-            IzvjestajiController izvjestajiController = new IzvjestajiController();
-            loader.setController(izvjestajiController);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/reports.fxml"), ResourceBundle.getBundle("ReportsTranslation"));
+            ReportController reportController = new ReportController();
+            loader.setController(reportController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);

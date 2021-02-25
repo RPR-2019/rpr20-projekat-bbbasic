@@ -10,7 +10,7 @@ import reports.NonValidTIReport;
 import reports.AllTIReport;
 
 
-public class IzvjestajiController {
+public class ReportController {
     public TechnicalInspectionDAO technicalInspectionDAO;
 
 
@@ -19,14 +19,14 @@ public class IzvjestajiController {
 
     }
 
-    public void clickIspravna(ActionEvent actionEvent)  {
+    public void onValid(ActionEvent actionEvent)  {
         try {
             new ValidTIReport().showReport(DBConnection.getSession());
         } catch (JRException e) {
             e.printStackTrace();
         }
     }
-    public void clickNeispravna(ActionEvent actionEvent) {
+    public void onNonValid(ActionEvent actionEvent) {
         try {
             new NonValidTIReport().showReport(DBConnection.getSession());
         } catch (JRException e) {
@@ -34,7 +34,7 @@ public class IzvjestajiController {
         }
 
     }
-    public void clickMjesecni(ActionEvent actionEvent) {
+    public void onCalendar(ActionEvent actionEvent) {
         try {
             new AllTIReport().showReport(DBConnection.getSession());
         } catch (JRException e) {

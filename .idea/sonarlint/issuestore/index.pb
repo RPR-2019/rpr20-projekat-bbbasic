@@ -65,8 +65,6 @@ h
 8out/production/rpr20-projekat-bbbasic/css/izvjestaji.css,4\d\4d8986f1f642f55272013d854faa48a3aa9641dc
 j
 :out/production/rpr20-projekat-bbbasic/fxml/izvjestaji.fxml,c\8\c8dc9f990543f34ebf9e45017baac6c863c2b8b3
-N
-resources/fxml/izvjestaji.fxml,a\c\ac4b69299ffa25d4a05e781efe164c63da1974e2
 Y
 )src/controllers/IzvjestajiController.java,0\f\0f0a053a9cdebf789dfd4e28206eb6e16e13054e
 m
@@ -133,8 +131,6 @@ N
 src/reports/ValidTIReport.java,2\0\2046159f72693264972e5454a4d363e36724a456
 O
 src/constants/VehicleModel.java,d\e\de8c99595be2e693a19173ccb74a313eba253031
-H
-resources/fxml/home.fxml,2\f\2f2858f2044fee797e3e427926835fd7b7c38b97
 p
 @out/production/rpr20-projekat-bbbasic/HomeTranslation.properties,1\4\14ff4756e99bc67f7428983d9f5215dc77ff8d61
 s
