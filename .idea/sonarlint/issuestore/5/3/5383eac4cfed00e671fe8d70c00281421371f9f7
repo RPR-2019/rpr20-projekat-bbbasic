@@ -1,60 +1,50 @@
 
-s
-java:S1104"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
-w
-java:S1104"UMake ltehnicki a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8“œ¸Àû.
-U	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(¿İ•28…øˆ»û.
-J
-java:S1659"-Declare "fldBrojTelefona" on a separate line.(´†æû8¾Ö¶û.
-|
-java:S1104""_Make choiceVrstaPregleda a static final constant or non-public and provide accessors if needed.(‹âïË8«åü¹û.
-[	java:S106™"9Replace this use of System.out or System.err by a logger.(Éå¤óıÿÿÿÿ8Â‘ˆÛû.
-Œ
-java:S1192*"jDefine a constant instead of duplicating this literal "-fx-background-color: rgba(0, 0, 0, 0.08)" 3 times.(‚Èäÿÿÿÿÿ8ì¸Àû.
-q
-java:S1104"TMake usersDAO a static final constant or non-public and provide accessors if needed.(ìøßß8³ô…¾û.
-p
-java:S1192E"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 10 times.(±‚õŒ8¶´Ì¶û.
-w
-java:S1104"ZMake timTehnickiDAO a static final constant or non-public and provide accessors if needed.(ˆõÁ‹8º›†Ûû.
+
+java:S1104"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8£Ï‡·ı.
 o
 java:S1104"RMake fldIme a static final constant or non-public and provide accessors if needed.(´†æû8ù“Ñ¶û.
-t
-java:S1104%"WMake choiceDatum a static final constant or non-public and provide accessors if needed.(›ËÚ8¿úŒºû.
-E
-java:S1659"(Declare "fldPrezime" on a separate line.(´†æû8ù“Ñ¶û.
 x
 java:S1104"[Make fldBrojTelefona a static final constant or non-public and provide accessors if needed.(´†æû8¾Ö¶û.
-}
-java:S1104"[Make fldPogresanBroj a static final constant or non-public and provide accessors if needed.(ø¸«ÿÿÿÿÿ8¤ß‘¶û.
-€
-java:S1104"^Make tehnickiPregledDAO a static final constant or non-public and provide accessors if needed.(ë©Î÷ùÿÿÿÿ8å˜ê¹û.
-P
-java:S1659"3Declare "fldMjestoPrebivalista" on a separate line.(´†æû8óñƒ¶û.
-s
-java:S1104"VMake klijentDAO a static final constant or non-public and provide accessors if needed.(“äÁâ8¼ã‡¶û.
-J
-java:S1125}"(Remove the literal "true" boolean value.(·Ä±şÿÿÿÿ8„è…·û.
-~
-java:S1104"aMake fldMjestoPrebivalista a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
-Y	java:S125œ"<This block of commented-out lines of code should be removed.(âã­Ô8õ¨•»û.
-o
-java:S1104 "RMake vozilo a static final constant or non-public and provide accessors if needed.(ÅÖÒÍ8Şİ¤¶û.
-T
-java:S1172<"2Remove this unused method parameter "actionEvent".(ûæÌ¯ÿÿÿÿÿ8Şİ¤¶û.
-B
-java:S1659" Declare "l3" on a separate line.(ëîà§øÿÿÿÿ8“œ¸Àû.
+p
+java:S1104 "SMake vehicle a static final constant or non-public and provide accessors if needed.(¼î˜¿8šÿñ´ı.
+U	java:S106b"9Replace this use of System.out or System.err by a logger.(¾¤ñ¿8¨›æ¶û.
+Œ
+java:S1192*"jDefine a constant instead of duplicating this literal "-fx-background-color: rgba(0, 0, 0, 0.08)" 3 times.(‚Èäÿÿÿÿÿ8ì¸Àû.
+t
+java:S1104%"WMake choiceDatum a static final constant or non-public and provide accessors if needed.(›ËÚ8¿úŒºû.
+|
+java:S1104""_Make choiceVrstaPregleda a static final constant or non-public and provide accessors if needed.(Â“õû8«åü¹û.
+[	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(íÛÔšøÿÿÿÿ8…øˆ»û.
+w
+java:S1104"UMake ltehnicki a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8“œ¸Àû.
+^	java:S125‹"<This block of commented-out lines of code should be removed.(Åâšıÿÿÿÿ8ëíÔİû.
 p
 java:S1104"NMake l3 a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8îíöµû.
-I
-java:S1659"'Declare "ltehnicki" on a separate line.(ëîà§øÿÿÿÿ8îíöµû.
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(ŞÚĞşÿÿÿÿ8Â‘ˆÛû.
+p
+java:S1192E"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 10 times.(±‚õŒ8¶´Ì¶û.
 p
 java:S1104"NMake l2 a static final constant or non-public and provide accessors if needed.(ëîà§øÿÿÿÿ8ÕÕîµû.
-Y	java:S125"<This block of commented-out lines of code should be removed.(Ñú¢8Ş“àû.
-[	java:S106š"9Replace this use of System.out or System.err by a logger.(Æü°„ıÿÿÿÿ8óø–Ûû.
-Y	java:S125‹"<This block of commented-out lines of code should be removed.(®Òâ¶8ëíÔİû.
-„
-java:S1104#"bMake vrstaTehnickogPregleda a static final constant or non-public and provide accessors if needed.(ñ³î£ÿÿÿÿÿ8†¨‚ºû.
+Y	java:S125"<This block of commented-out lines of code should be removed.(…Ï»ß8Ş“àû.
+V	java:S106š"9Replace this use of System.out or System.err by a logger.(‹Ñ¡8óø–Ûû.
+t
+java:S1104"WMake customerDAO a static final constant or non-public and provide accessors if needed.(Ãî‘¿8£Ï‡·ı.
+Y	java:S125œ"<This block of commented-out lines of code should be removed.(âã­Ô8õ¨•»û.
+T
+java:S1172<"2Remove this unused method parameter "actionEvent".(ûæÌ¯ÿÿÿÿÿ8Şİ¤¶û.
+t
+java:S1104"WMake employeeDAO a static final constant or non-public and provide accessors if needed.(»¼‡8£Ï‡·ı.
+J
+java:S1125}"(Remove the literal "true" boolean value.(·Ä±şÿÿÿÿ8„è…·û.
 q
 java:S1192D"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8¶´Ì¶û.
-U	java:S106b"9Replace this use of System.out or System.err by a logger.(”’ƒ8¨›æ¶û.
+~
+java:S1104"aMake fldMjestoPrebivalista a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
+}
+java:S1104"[Make fldPogresanBroj a static final constant or non-public and provide accessors if needed.(ø¸«ÿÿÿÿÿ8¤ß‘¶û.
+s
+java:S1104"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(´†æû8óñƒ¶û.
+ƒ
+java:S1104"fMake technicalInspectionTeamDAO a static final constant or non-public and provide accessors if needed.(ºÜùë8£Ï‡·ı.
+‚
+java:S1104#"eMake typeOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(éÚÄª8öê…¸ı.

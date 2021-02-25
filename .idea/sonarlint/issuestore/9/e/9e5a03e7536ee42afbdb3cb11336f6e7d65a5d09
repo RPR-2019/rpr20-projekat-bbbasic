@@ -1,59 +1,61 @@
 
-O
-java:S1172~"2Remove this unused method parameter "actionEvent".(‚í¯Ö8±ç‚ãû.
-P
-java:S1172„"2Remove this unused method parameter "actionEvent".(ë›ğ 8·„îƒü.
-w
-java:S11041"UMake tableView a static final constant or non-public and provide accessors if needed.(Šñ»€ıÿÿÿÿ8å•çÜû.
-m
-java:S1104("RMake labela a static final constant or non-public and provide accessors if needed.(’¤§şÿÿÿÿ
-Q
-java:S3740."/Provide the parametrized type for this generic.(—²Ãêùÿÿÿÿ8ôÕÑÜû.
-
-java:S11043"]Make btnOtkaziTehnicki a static final constant or non-public and provide accessors if needed.(ÉïÊøşÿÿÿÿ8İ²òàû.
-J
-java:S1604d"(Make this anonymous inner class a lambda(ôÏ‰šûÿÿÿÿ8õğêâû.
-y
-java:S1104&"^Make tehnickiPregledDAO a static final constant or non-public and provide accessors if needed.(ë©Î÷ùÿÿÿÿ
-€
-java:S11044"^Make btnDodajUposlenika a static final constant or non-public and provide accessors if needed.(ÒÕúÿüÿÿÿÿ8Üğäâû.
-x
-java:S11045"[Make choiceUposlenik a static final constant or non-public and provide accessors if needed.(Ø÷³´8èãâû.
 n
 java:S1104*"QMake chart a static final constant or non-public and provide accessors if needed.(Ø¨Ñ8©™äû.
-y
-java:S1104,"\Make colDatumPregleda a static final constant or non-public and provide accessors if needed.(Šİâä8”Š×Üû.
-9
-java:S3626“"Remove this redundant jump.(ûÁİ…8Ë«ˆ„ü.
-L
-java:S3740-"/Provide the parametrized type for this generic.(èÿ¡Ä8ôÕÑÜû.
-z
-java:S11046"]Make btnDovrsiTehnicki a static final constant or non-public and provide accessors if needed.(ÙÃï’8ñê˜‘ü.
-x
-java:S1104%"VMake uposlenici a static final constant or non-public and provide accessors if needed.(ô‚ˆàÿÿÿÿÿ8âëÄâû.
-p
-java:S1104'"ZMake timTehnickiDAO a static final constant or non-public and provide accessors if needed.(ˆõÁ‹
-L
-java:S3740,"/Provide the parametrized type for this generic.(Šİâä8ôÕÑÜû.
+J
+java:S1604d"(Make this anonymous inner class a lambda(ôÏ‰šûÿÿÿÿ8õğêâû.
 O
 java:S1172u"2Remove this unused method parameter "actionEvent".(Éì æ8õğêâû.
-L
-java:S37400"/Provide the parametrized type for this generic.(İ»ªå8Õ¬ÛÜû.
-V
-java:S4973V"9Use the "equals" method if value comparison was intended.(ˆëß‹8õğêâû.
-v
-java:S11040"YMake colUposlenici a static final constant or non-public and provide accessors if needed.(İ»ªå8Õ¬ÛÜû.
-j
-java:S1104$"TMake usersDAO a static final constant or non-public and provide accessors if needed.(ìøßß
-L
-java:S3740/"/Provide the parametrized type for this generic.(¼Ñºü8ôÕÑÜû.
+O
+java:S1172~"2Remove this unused method parameter "actionEvent".(‚í¯Ö8±ç‚ãû.
 x
 java:S1450)"[Remove the "pieChartData" field and declare it as a local variable in the relevant methods.(µÌ‰Ã8§Ë–äû.
-q
-java:S11047"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8½›òƒü.
-~
-java:S1104."\Make colVrstaPregleda a static final constant or non-public and provide accessors if needed.(—²Ãêùÿÿÿÿ8²ÏØÜû.
-r
-java:S1104-"UMake colVozilo a static final constant or non-public and provide accessors if needed.(èÿ¡Ä8Âæ×Üû.
+}
+java:S11045"[Make choiceUposlenik a static final constant or non-public and provide accessors if needed.(Ñø¼“úÿÿÿÿ8èãâû.
+ƒ
+java:S1104'"fMake technicalInspectionTeamDAO a static final constant or non-public and provide accessors if needed.(ºÜùë8Ÿ¨¶ı.
 z
 java:S1104/"]Make colStatusPregleda a static final constant or non-public and provide accessors if needed.(¼Ñºü8ÇİÙÜû.
+w
+java:S11041"UMake tableView a static final constant or non-public and provide accessors if needed.(¯„ÚØûÿÿÿÿ8å•çÜû.
+t
+java:S1104$"WMake employeeDAO a static final constant or non-public and provide accessors if needed.(»¼‡8Ÿ¨¶ı.
+
+java:S1104&"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8Ÿ¨¶ı.
+s
+java:S1104%"VMake uposlenici a static final constant or non-public and provide accessors if needed.(Íÿá€8âëÄâû.
+r
+java:S1104-"UMake colVozilo a static final constant or non-public and provide accessors if needed.(èÿ¡Ä8Âæ×Üû.
+L
+java:S3740,"/Provide the parametrized type for this generic.(Šİâä8ôÕÑÜû.
+z
+java:S11046"]Make btnDovrsiTehnicki a static final constant or non-public and provide accessors if needed.(ÙÃï’8ñê˜‘ü.
+~
+java:S1104."\Make colVrstaPregleda a static final constant or non-public and provide accessors if needed.(—²Ãêùÿÿÿÿ8²ÏØÜû.
+
+java:S11043"]Make btnOtkaziTehnicki a static final constant or non-public and provide accessors if needed.(ÉïÊøşÿÿÿÿ8İ²òàû.
+V
+java:S4973V"9Use the "equals" method if value comparison was intended.(£ÆÛÁ8Ÿ¨¶ı.
+q
+java:S11047"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8½›òƒü.
+y
+java:S1104,"\Make colDatumPregleda a static final constant or non-public and provide accessors if needed.(Šİâä8”Š×Üû.
+€
+java:S11044"^Make btnDodajUposlenika a static final constant or non-public and provide accessors if needed.(ÒÕúÿüÿÿÿÿ8Üğäâû.
+m
+java:S1104("RMake labela a static final constant or non-public and provide accessors if needed.(’¤§şÿÿÿÿ
+L
+java:S3740-"/Provide the parametrized type for this generic.(èÿ¡Ä8ôÕÑÜû.
+9
+java:S3626’"Remove this redundant jump.(ûÁİ…8Ë«ˆ„ü.
+L
+java:S37400"/Provide the parametrized type for this generic.(İ»ªå8Õ¬ÛÜû.
+v
+java:S11040"YMake colUposlenici a static final constant or non-public and provide accessors if needed.(İ»ªå8Õ¬ÛÜû.
+L
+java:S3740/"/Provide the parametrized type for this generic.(¼Ñºü8ôÕÑÜû.
+P
+java:S1172„"2Remove this unused method parameter "actionEvent".(ë›ğ 8·„îƒü.
+Q
+java:S3740."/Provide the parametrized type for this generic.(—²Ãêùÿÿÿÿ8ôÕÑÜû.
+R
+java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8ãËªÌı.

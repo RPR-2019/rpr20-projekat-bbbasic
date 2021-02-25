@@ -23,7 +23,7 @@ public class Main extends Application {
 
         }
         initDB.createDB();
-        Locale.setDefault(new Locale("bs"));
+        Locale.setDefault(new Locale("eng"));
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);

@@ -1,81 +1,61 @@
 
-v
-java:S1104"YMake vrstaMjenjaca a static final constant or non-public and provide accessors if needed.(çìÉÍ8Ü»´ü.
-Q
-java:S1659"/Declare "masaPraznogVozila" on a separate line.(ëÜ¶“ÿÿÿÿÿ8¸êÂü.
+}
+java:S1104"[Make checkNeispravno a static final constant or non-public and provide accessors if needed.(Å–šèúÿÿÿÿ8÷éôü.
+t
+java:S1104"WMake vrstaGoriva a static final constant or non-public and provide accessors if needed.(çìÉÍ8Ö×«ü.
 w
 java:S1104"ZMake taktnostMotora a static final constant or non-public and provide accessors if needed.(çìÉÍ8­ëÄü.
+u
+java:S1192X"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 14 times.(…õ¦±şÿÿÿÿ8£ÖÙü.
+
+java:S1104"_Make technicalInspection a static final constant or non-public and provide accessors if needed.(ü²°üÿÿÿÿ8ÿñ´ı.
+r	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
+t
+java:S1104"RMake cijena a static final constant or non-public and provide accessors if needed.(ëÜ¶“ÿÿÿÿÿ8ÕÌõü.
+L
+java:S1125˜")Remove the literal "false" boolean value.(ì¸°…ıÿÿÿÿ8‹±Ûü.
+q
+java:S1192W"ODefine a constant instead of duplicating this literal "poljeIspravno" 14 times.(ù²ş‘úÿÿÿÿ8£ÖÙü.
 {
 java:S1104"YMake mjestaZaStati a static final constant or non-public and provide accessors if needed.(íßÊùıÿÿÿÿ8ø ©ü.
 }
-java:S1104"[Make checkNeispravno a static final constant or non-public and provide accessors if needed.(Å–šèúÿÿÿÿ8÷éôü.
-U	java:S106T"9Replace this use of System.out or System.err by a logger.(º›–·8‹˜®ü.
-L
-java:S1125˜")Remove the literal "false" boolean value.(ì¸°…ıÿÿÿÿ8‹±Ûü.
-s
-java:S1104"WMake btnIspravno a static final constant or non-public and provide accessors if needed.(çÇØ8’ÄÀü.
-t
-java:S3776R"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(“Ïò÷üÿÿÿÿ8ÕØäü.
-u
-java:S1104"YMake btnNeispravno a static final constant or non-public and provide accessors if needed.(çÇØ8’ÄÀü.
-z
-java:S1104"]Make choiceVrstaMotora a static final constant or non-public and provide accessors if needed.(çìÉÍ8õ‡ü.
-r	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
-{
-java:S1104"YMake checkIspravno a static final constant or non-public and provide accessors if needed.(Å–šèúÿÿÿÿ8÷éôü.
-t
-java:S1104"RMake cijena a static final constant or non-public and provide accessors if needed.(ëÜ¶“ÿÿÿÿÿ8ÕÌõü.
-r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
-}
 java:S1104"[Make mjestaZaLezanje a static final constant or non-public and provide accessors if needed.(íßÊùıÿÿÿÿ8ø ©ü.
-G
-java:S1659"*Declare "visinaVozila" on a separate line.(Ìñöù8Çí¤ü.
-M
-java:S1659"+Declare "mjestaZaStati" on a separate line.(íßÊùıÿÿÿÿ8ø ©ü.
-[	java:S106š"9Replace this use of System.out or System.err by a logger.(¤ş¦éúÿÿÿÿ8‹±Ûü.
-O
-java:S1659"-Declare "checkNeispravno" on a separate line.(Å–šèúÿÿÿÿ8÷éôü.
-t
-java:S1104"WMake vrstaGoriva a static final constant or non-public and provide accessors if needed.(çìÉÍ8Ö×«ü.
-F
-java:S1659")Declare "vrstaGoriva" on a separate line.(çìÉÍ8Ö×«ü.
-O
-java:S1659"-Declare "mjestaZaLezanje" on a separate line.(íßÊùıÿÿÿÿ8ø ©ü.
-r	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
-q
-java:S1192W"ODefine a constant instead of duplicating this literal "poljeIspravno" 14 times.(ù²ş‘úÿÿÿÿ8£ÖÙü.
-u
-java:S1104"XMake sirinaVozila a static final constant or non-public and provide accessors if needed.(Ìñöù8Çí¤ü.
 t
 java:S1104"XMake labelaNaslov a static final constant or non-public and provide accessors if needed.(ÙûøY8¬²·‹ü.
-d
-java:S1192V"GDefine a constant instead of duplicating this literal "[0-9]+" 6 times.(÷‚—«8ÈÕÎü.
+u
+java:S1104"XMake duzinaVozila a static final constant or non-public and provide accessors if needed.(Ìñöù8Çí¤ü.
+|
+java:S1104"ZMake mjestaZaSjesti a static final constant or non-public and provide accessors if needed.(íßÊùıÿÿÿÿ8ø ©ü.
+r	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
 r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
+z
+java:S1104"XMake imgdimenzije a static final constant or non-public and provide accessors if needed.(’ºüÉûÿÿÿÿ8é„ø‰ü.
+u
+java:S1104"XMake visinaVozila a static final constant or non-public and provide accessors if needed.(Ìñöù8Çí¤ü.
+{
+java:S1104"YMake checkIspravno a static final constant or non-public and provide accessors if needed.(Å–šèúÿÿÿÿ8÷éôü.
+U	java:S106T"9Replace this use of System.out or System.err by a logger.(º›–·8‹˜®ü.
+[	java:S106š"9Replace this use of System.out or System.err by a logger.(¤ş¦éúÿÿÿÿ8‹±Ûü.
+z
+java:S1104"]Make choiceVrstaMotora a static final constant or non-public and provide accessors if needed.(çìÉÍ8õ‡ü.
+u
+java:S1104"XMake sirinaVozila a static final constant or non-public and provide accessors if needed.(Ìñöù8Çí¤ü.
+
+java:S1104"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8¢Ï‡·ı.
+r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±–‚íúÿÿÿÿ8ª©ıü.
+t
+java:S3776R"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(“Ïò÷üÿÿÿÿ8ÕØäü.
+
+java:S1104"]Make masaPraznogVozila a static final constant or non-public and provide accessors if needed.(ëÜ¶“ÿÿÿÿÿ8¸êÂü.
+s
+java:S1104"WMake btnIspravno a static final constant or non-public and provide accessors if needed.(çÇØ8’ÄÀü.
 v
 java:S1104"TMake komentar a static final constant or non-public and provide accessors if needed.(Ëôşõÿÿÿÿÿ8“ªñü.
 u
-java:S1104"XMake visinaVozila a static final constant or non-public and provide accessors if needed.(Ìñöù8Çí¤ü.
-H
-java:S1659"+Declare "vrstaMjenjaca" on a separate line.(çìÉÍ8Ü»´ü.
-E
-java:S1659")Declare "btnIspravno" on a separate line.(çÇØ8’ÄÀü.
-}
-java:S1104"[Make tehnickiPregled a static final constant or non-public and provide accessors if needed.(öıä¶ûÿÿÿÿ8ÈÚ‘ü.
-u
-java:S1192X"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 14 times.(…õ¦±şÿÿÿÿ8£ÖÙü.
-G
-java:S1659"*Declare "duzinaVozila" on a separate line.(Ìñöù8Çí¤ü.
-I
-java:S1659",Declare "taktnostMotora" on a separate line.(çìÉÍ8­ëÄü.
-|
-java:S1104"ZMake mjestaZaSjesti a static final constant or non-public and provide accessors if needed.(íßÊùıÿÿÿÿ8ø ©ü.
-z
-java:S1104"XMake imgdimenzije a static final constant or non-public and provide accessors if needed.(’ºüÉûÿÿÿÿ8é„ø‰ü.
-
-java:S1104"]Make masaPraznogVozila a static final constant or non-public and provide accessors if needed.(ëÜ¶“ÿÿÿÿÿ8¸êÂü.
+java:S1104"YMake btnNeispravno a static final constant or non-public and provide accessors if needed.(çÇØ8’ÄÀü.
+v
+java:S1104"YMake vrstaMjenjaca a static final constant or non-public and provide accessors if needed.(çìÉÍ8Ü»´ü.
+d
+java:S1192V"GDefine a constant instead of duplicating this literal "[0-9]+" 6 times.(÷‚—«8ÈÕÎü.
 T
 java:S1172R"2Remove this unused method parameter "actionEvent".(“Ïò÷üÿÿÿÿ8‹˜®ü.
-€
-java:S1104"^Make tehnickiPregledDAO a static final constant or non-public and provide accessors if needed.(ë©Î÷ùÿÿÿÿ8Œç×ü.
-u
-java:S1104"XMake duzinaVozila a static final constant or non-public and provide accessors if needed.(Ìñöù8Çí¤ü.

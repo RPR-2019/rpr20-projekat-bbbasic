@@ -1,39 +1,37 @@
 
-y
-java:S1104 "WMake privilegija a static final constant or non-public and provide accessors if needed.(‡¨ö¶ÿÿÿÿÿ8‰Ãîåû.
-~
-java:S1104"\Make fldKorisnickoIme a static final constant or non-public and provide accessors if needed.(—É€¢ıÿÿÿÿ8â‹ÜÚú.
-
-java:S1130?"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(¥áÏÜ8ìòóåû.
-K
-java:S1125`")Remove the literal "false" boolean value.(Ú³¢„øÿÿÿÿ8Ù†–äú.
-Z
-java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8Ó½ßú.
-F
-java:S1125_")Remove the literal "false" boolean value.(º’Üì8©ÍÁÛú.
-~
-java:S1104"\Make fldDatumRodjenja a static final constant or non-public and provide accessors if needed.(‘œİçıÿÿÿÿ8òî¶Üú.
-€
-java:S1104"^Make fldDatumZaposlenja a static final constant or non-public and provide accessors if needed.(­«Ê´úÿÿÿÿ8òî¶Üú.
-O
-java:S1172?"2Remove this unused method parameter "actionEvent".(¥áÏÜ8â‹ÜÚú.
+o
+java:S1104"RMake fldIme a static final constant or non-public and provide accessors if needed.(ŠºÁ¾8­ªÖÚú.
 x
-java:S1104"VMake fldLozinka a static final constant or non-public and provide accessors if needed.(ÅœœÉøÿÿÿÿ8â‹ÜÚú.
-s
-java:S1104"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(¬Ğ¡§8‘»ÚÚú.
-q
-java:S1192D"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8 …şÚú.
-p
-java:S1192E"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 12 times.(±‚õŒ8 …şÚú.
+java:S1104"VMake fldLozinka a static final constant or non-public and provide accessors if needed.(ÅœœÉøÿÿÿÿ8â‹ÜÚú.
+~
+java:S1104"\Make fldKorisnickoIme a static final constant or non-public and provide accessors if needed.(—É€¢ıÿÿÿÿ8â‹ÜÚú.
 T
-java:S11729"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8â‹ÜÚú.
+java:S11728"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8â‹ÜÚú.
+K
+java:S1125^")Remove the literal "false" boolean value.(ğ™¼ñûÿÿÿÿ8ÿñ´ı.
 |
-java:S1104"ZMake choiceTehnicki a static final constant or non-public and provide accessors if needed.(ûÂ¬­øÿÿÿÿ8ÊŠËÚú.
+java:S1104"ZMake choiceTehnicki a static final constant or non-public and provide accessors if needed.(•ªÏ‹ùÿÿÿÿ8ÿñ´ı.
+p
+java:S1192D"SDefine a constant instead of duplicating this literal "poljeNijeIspravno" 12 times.(±‚õŒ8 …şÚú.
+y
+java:S1104"WMake privilegija a static final constant or non-public and provide accessors if needed.(‡¨ö¶ÿÿÿÿÿ8‰Ãîåû.
+€
+java:S1104"^Make fldDatumZaposlenja a static final constant or non-public and provide accessors if needed.(­«Ê´úÿÿÿÿ8òî¶Üú.
+K
+java:S1125_")Remove the literal "false" boolean value.(ÛÈˆ¬ÿÿÿÿÿ8©ÍÁÛú.
+s
+java:S1104"VMake fldPrezime a static final constant or non-public and provide accessors if needed.(¬Ğ¡§8‘»ÚÚú.
 }
-java:S1104"`Make zauzetoKorisnickoIme a static final constant or non-public and provide accessors if needed.(ˆò˜´8¿—‚Ûú.
+java:S1104"`Make zauzetoKorisnickoIme a static final constant or non-public and provide accessors if needed.(ˆò˜´8¿—‚Ûú.
+O
+java:S1172>"2Remove this unused method parameter "actionEvent".(¥áÏÜ8â‹ÜÚú.
+
+java:S1130>"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(¥áÏÜ8 Ï‡·ı.
+~
+java:S1104"\Make fldDatumRodjenja a static final constant or non-public and provide accessors if needed.(‘œİçıÿÿÿÿ8òî¶Üú.
+q
+java:S1192C"ODefine a constant instead of duplicating this literal "poljeIspravno" 12 times.(äİÌôøÿÿÿÿ8 …şÚú.
 o
-java:S3776?"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¥áÏÜ8òãóãú.
+java:S3776>"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¥áÏÜ8òãóãú.
 }
-java:S1104"`Make listTehnickiPregledi a static final constant or non-public and provide accessors if needed.(¨ã·8®ÆÚú.
-o
-java:S1104"RMake fldIme a static final constant or non-public and provide accessors if needed.(ŠºÁ¾8­ªÖÚú.
+java:S1104"`Make listTehnickiPregledi a static final constant or non-public and provide accessors if needed.(Œ£8ÕÉ®¸ı.

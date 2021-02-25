@@ -1,10 +1,9 @@
 
-X	java:S125"<This block of commented-out lines of code should be removed.(Îà8Şâî½û.
-L
-java:S3010"*Remove this assignment of "korisnickoIme".(ñ—®àûÿÿÿÿ8¶Óï½û.
-W
-java:S2209"5Change this instance-reference to a static reference.(ñ—®àûÿÿÿÿ8¶Óï½û.
-W
-java:S2209"5Change this instance-reference to a static reference.(äÿÌ…ÿÿÿÿÿ8Û²¶»û.
-J
-java:S3010"(Remove this assignment of "privilegija".(äÿÌ…ÿÿÿÿÿ8Û²¶»û.
+R
+java:S2209"5Change this instance-reference to a static reference.(˜òÑë8Û²¶»û.
+C
+java:S3010"&Remove this assignment of "privilege".(˜òÑë8éıè·ı.
+Q
+java:S2209"5Change this instance-reference to a static reference.(’ó¼8¶Óï½û.
+A
+java:S3010"%Remove this assignment of "userName".(’ó¼8”Šè·ı.

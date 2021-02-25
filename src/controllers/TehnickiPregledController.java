@@ -139,7 +139,6 @@ public class TehnickiPregledController {
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
-            stage.getIcons().add(new Image("/img/icon.jpg"));
             stage.setWidth(1010);
             stage.setHeight(580);
             //MIJENJANJE

@@ -1,0 +1,25 @@
+
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ßêìÏ8ˆ¦¹Šû.
+u
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ìİ×8³üÌ‹û.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(»—Î°şÿÿÿÿ8³üÌ‹û.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ä¸­Ûüÿÿÿÿ8Û€¹Šû.
+w
+java:S1104
+"ZMake listFromBrands a static final constant or non-public and provide accessors if needed.(ĞÎ¿8·ËŒ¸ı.
+“
+java:S1319
+"vThe type of the "listFromBrands" object should be an interface such as "Map" rather than the implementation "HashMap".(ĞÎ¿8öÛ¹‰û.
+Q
+java:S1444
+"4Make this "public static listFromBrands" field final(ĞÎ¿8·ËŒ¸ı.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(öïéøÿÿÿÿ8Û€¹Šû.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(‚Šûîøÿÿÿÿ8Û€¹Šû.
+:
+java:S2386
+"Make this member "protected".(ĞÎ¿8ˆ¦¹Šû.
