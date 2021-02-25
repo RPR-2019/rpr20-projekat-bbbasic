@@ -32,8 +32,13 @@
            <menus>
              <Menu mnemonicParsing="false" text="File">
                <items>
-                     <MenuItem mnemonicParsing="false" text="Language" />
                  <MenuItem mnemonicParsing="false" text="Close" />
+                     <Menu mnemonicParsing="false" text="Language">
+                       <items>
+                         <MenuItem mnemonicParsing="false" onAction="#choiceLanguageEng" text="Engleski" />
+                           <MenuItem mnemonicParsing="false" onAction="#choiceLanguageBs" text="Bosanski" />
+                       </items>
+                     </Menu>
                </items>
              </Menu>
              <Menu mnemonicParsing="false" text="Help">

@@ -22,7 +22,7 @@ public class LogInController {
     public PasswordField fldPassword;
     public Label fldError;
 
-    private EmployeeDAO dao;
+    private EmployeeDAO employeeDAO;
 
     @FXML
     public void initialize() {
@@ -33,29 +33,29 @@ public class LogInController {
 
 
     public LogInController() {
-        dao = new EmployeeDAO();
+        employeeDAO = new EmployeeDAO();
     }
 
-    public void clickLogIn(ActionEvent actionEvent) throws InterruptedException {
-        ArrayList<Employee> pomocni = dao.employees();
+    public void clickLogIn(ActionEvent actionEvent) {
+        ArrayList<Employee> pomocni = employeeDAO.employees();
         for(int i = 0; i < pomocni.size(); i++) {
             if(pomocni.get(i).getUserName().equals(fldUserName.getText()) && pomocni.get(i).getPassword().equals(fldPassword.getText())) {
-                fldPassword.getStyleClass().removeAll("poljeNijeIspravno");
-                fldPassword.getStyleClass().add("poljeIspravno");
+                fldPassword.getStyleClass().removeAll("fieldIncorrect");
+                fldPassword.getStyleClass().add("fieldCorrect");
 
-                fldUserName.getStyleClass().removeAll("poljeNijeIspravno");
-                fldUserName.getStyleClass().add("poljeIspravno");
+                fldUserName.getStyleClass().removeAll("fieldIncorrect");
+                fldUserName.getStyleClass().add("fieldCorrect");
 
                 UserSession.getInstace(pomocni.get(i).getUserName(), pomocni.get(i).isAdmin());
                 closeWindow();
             }
             else {
                 fldError.setVisible(true);
-                fldPassword.getStyleClass().removeAll("poljeIspravno");
-                fldPassword.getStyleClass().add("poljeNijeIspravno");
+                fldPassword.getStyleClass().removeAll("fieldCorrect");
+                fldPassword.getStyleClass().add("fieldIncorrect");
 
-                fldUserName.getStyleClass().removeAll("poljeIspravno");
-                fldUserName.getStyleClass().add("poljeNijeIspravno");
+                fldUserName.getStyleClass().removeAll("fieldCorrect");
+                fldUserName.getStyleClass().add("fieldIncorrect");
             }
         }
     }
@@ -64,7 +64,6 @@ public class LogInController {
         Stage stage = (Stage) fldPassword.getScene().getWindow();
         stage.close();
         try {
-            Stage pstage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
             HomeController ctrl = new HomeController();
             loader.setController(ctrl);

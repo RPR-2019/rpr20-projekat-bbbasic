@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import services.UserSession;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -43,7 +45,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"), ResourceBundle.getBundle("Translation"));
             TP1Controller voziloController = new TP1Controller(mainPane);
             loader.setController(voziloController);
             root = loader.load();
@@ -61,7 +63,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPristupKorisnicima.fxml"), ResourceBundle.getBundle("Translation"));
             AdminPristupKorisnicimaController administratorGlavniController = new AdminPristupKorisnicimaController();
             loader.setController(administratorGlavniController);
             root = loader.load();
@@ -79,7 +81,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/izvjestaji.fxml"), ResourceBundle.getBundle("Translation"));
             IzvjestajiController izvjestajiController = new IzvjestajiController();
             loader.setController(izvjestajiController);
             root = loader.load();
@@ -97,7 +99,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"), ResourceBundle.getBundle("Translation"));
             PretragaController pretragaController = new PretragaController(mainPane);
             loader.setController(pretragaController);
             root = loader.load();
@@ -113,7 +115,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/tehnickipregledi.fxml"), ResourceBundle.getBundle("Translation"));
             TehnickiPregledController tehnickiPregledController = new TehnickiPregledController(mainPane);
             loader.setController(tehnickiPregledController);
             root = loader.load();
@@ -135,7 +137,7 @@ public class HomeController {
         novastage.close();
 
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), ResourceBundle.getBundle("Translation"));
         LogInController ctrl = new LogInController();
         loader.setController(ctrl);
         Parent root = loader.load();
@@ -145,5 +147,48 @@ public class HomeController {
         stage.setResizable(false);
         stage.show();
 
+    }
+    public void choiceLanguageEng(ActionEvent actionEvent) {
+        Locale.setDefault(new Locale("eng"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        Stage stage = (Stage) mainPane.getScene().getWindow();
+        stage.close();
+        try {
+            Stage pstage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"), bundle);
+            HomeController ctrl = new HomeController();
+            loader.setController(ctrl);
+            Parent root = null;
+            root = loader.load();
+            stage.setTitle("MeCARnic");
+            stage.setScene(new Scene(root, 396, 311));
+            stage.setWidth(1200);
+            stage.setHeight(730);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void choiceLanguageBs(ActionEvent actionEvent) {
+        Locale.setDefault(new Locale("bs"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        Stage stage = (Stage) mainPane.getScene().getWindow();
+        stage.close();
+        try {
+            Stage pstage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"), bundle);
+            HomeController ctrl = new HomeController();
+            loader.setController(ctrl);
+            Parent root = null;
+            root = loader.load();
+            stage.setTitle("MeCARnic");
+            stage.setScene(new Scene(root, 396, 311));
+            stage.setWidth(1200);
+            stage.setHeight(730);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
