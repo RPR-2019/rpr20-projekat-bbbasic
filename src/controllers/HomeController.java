@@ -103,6 +103,7 @@ public class HomeController {
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
+
             mainPane.setCenter(root);
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -129,7 +130,20 @@ public class HomeController {
 
     }
     public void onAbout(ActionEvent actionEvent) {
-
+        try {
+            AboutController aboutController = new AboutController();
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/about.fxml"), ResourceBundle.getBundle("AboutTranslation"));
+            loader.setController(aboutController);
+            Parent root = null;
+            root = loader.load();
+            stage.setResizable(false);
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onbtnLogOut(ActionEvent actionEvent) {
