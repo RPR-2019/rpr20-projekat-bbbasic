@@ -34,8 +34,8 @@
                <items>
                      <Menu mnemonicParsing="false" text="%language">
                        <items>
-                         <MenuItem mnemonicParsing="false" onAction="#choiceLanguageEng" text="Engleski" />
-                           <MenuItem mnemonicParsing="false" onAction="#choiceLanguageBs" text="Bosanski" />
+                         <MenuItem mnemonicParsing="false" onAction="#choiceLanguageEng" text="%eng" />
+                           <MenuItem mnemonicParsing="false" onAction="#choiceLanguageBs" text="%bos" />
                        </items>
                      </Menu>
                </items>

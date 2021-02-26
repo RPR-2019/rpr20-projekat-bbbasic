@@ -117,8 +117,6 @@ Y
 )resources/LogInTranslation_eng.properties,4\b\4bfdfc315c5513b0d55064c8854bba3b209abeb1
 b
 2src/controllers/TechnicalInspectionController.java,e\3\e3f8c4e3a9c09fe676aaa62da1071a24e53134da
-X
-(resources/HomeTranslation_eng.properties,6\6\66ab10ad97c756cb8965ce99f64eb915adf677a4
 s
 Cout/production/rpr20-projekat-bbbasic/fxml/technicalinspection.fxml,6\6\66a99554e7114694593d56b5c944f6c23070b444
 
