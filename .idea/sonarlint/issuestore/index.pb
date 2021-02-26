@@ -235,3 +235,5 @@ X
 (resources/HomeTranslation_eng.properties,6\6\66ab10ad97c756cb8965ce99f64eb915adf677a4
 k
 ;out/production/rpr20-projekat-bbbasic/fxml/scheduleTI2.fxml,a\2\a2138a86e2bfb89bcd605d01999af2d317678b11
+T
+$src/controllers/AboutController.java,5\7\57b84d20cbc0dcc87ab70ff769c7e223050a2cf3
