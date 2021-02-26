@@ -135,7 +135,7 @@ public class TechnicalInspectionController {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/completeTI.fxml"), ResourceBundle.getBundle("CompleteTITranslation"));
-            CompleteTechnicalInspectionController completeTechnicalInspectionController = new CompleteTechnicalInspectionController(tableView.getSelectionModel().getSelectedItem());
+            CompleteTechnicalInspectionController completeTechnicalInspectionController = new CompleteTechnicalInspectionController(tableView.getSelectionModel().getSelectedItem(), mainPane);
             loader.setController(completeTechnicalInspectionController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

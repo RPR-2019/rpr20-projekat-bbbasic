@@ -4,13 +4,25 @@ import dao.TechnicalInspectionDAO;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import models.TechnicalInspection;
+
+import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 
 public class CompleteTechnicalInspectionController {
+    private BorderPane mainPane;
     public TechnicalInspectionDAO technicalInspectionDAO;
     public ImageView dimensions;
     public Label main;
@@ -28,7 +40,8 @@ public class CompleteTechnicalInspectionController {
     public TextField price;
     public TechnicalInspection technicalInspection;
 
-    public CompleteTechnicalInspectionController(TechnicalInspection selectedItem) {
+    public CompleteTechnicalInspectionController(TechnicalInspection selectedItem, BorderPane mainPane) {
+        this.mainPane = mainPane;
         technicalInspectionDAO = new TechnicalInspectionDAO();
         technicalInspection = selectedItem;
     }
@@ -170,6 +183,40 @@ public class CompleteTechnicalInspectionController {
 
         technicalInspection.setStatusTehnickogPregleda("Kompletiran");
         technicalInspectionDAO.updateTI(technicalInspection);
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        if(ResourceBundle.getBundle("CompleteTITranslation").getLocale().equals(new Locale("bs"))) {
+            alert.setTitle("Kompletiranje tehničkog pregleda");
+            alert.setHeaderText(null);
+            alert.setContentText("Uspješno ste kompletirali pregled!");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+            stage.showAndWait();
+        }
+        else {
+            alert.setTitle("Completion of technical inspection");
+            alert.setHeaderText(null);
+            alert.setContentText("You have successfully completed the inspection!");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+            stage.showAndWait();
+        }
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/technicalinspection.fxml"), ResourceBundle.getBundle("TechnicalInspectionTranslation"));
+            TechnicalInspectionController technicalInspectionController = new TechnicalInspectionController(mainPane);
+            loader.setController(technicalInspectionController);
+            root = loader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            stage.setMaximized(true);
+            mainPane.setCenter(root);
+
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
 
     }
 
