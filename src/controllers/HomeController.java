@@ -145,6 +145,20 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+    public void onInfo(ActionEvent e) {
+        Parent root = null;
+        try {
+            Stage stage = new Stage();
+            root = FXMLLoader.load(getClass().getResource("/fxml/info.fxml"), ResourceBundle.getBundle("InfoTranslation"));
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.setTitle("Info");
+            stage.getIcons().add(new Image("/img/mainicon.png"));
+            stage.show();
+        } catch (IOException m) {
+            m.printStackTrace();
+        }
+    }
 
     public void onbtnLogOut(ActionEvent actionEvent) {
         UserSession.cleanUserSession();

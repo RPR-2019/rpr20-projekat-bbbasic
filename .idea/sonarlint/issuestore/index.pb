@@ -29,10 +29,6 @@ S
 #src/controllers/HomeController.java,a\a\aa5bf96505ab823bdfa6cde1d0f69d0c652099c9
 h
 8out/production/rpr20-projekat-bbbasic/fxml/pretraga.fxml,f\c\fce923036613f3ac6f44fed0354ccb328a5e3088
-z
-Jout/production/rpr20-projekat-bbbasic/fxml/kompletiranTehnickiPregled.fxml,c\c\ccfd4e759a8c2d722436f050a903fc48b972dcbe
-_
-/src/controllers/KompletiranTehnickiPregled.java,a\d\adfe247d9a4dc90869dd1a758f37f3c065e9d036
 m
 =.idea/libraries/net_sf_jasperreports_jasperreports_6_16_0.xml,e\e\ee91da85f373b80fa9a95a7ebeaf07015e6a4105
 i
@@ -101,8 +97,6 @@ t
 Dout/production/rpr20-projekat-bbbasic/HomeTranslation_eng.properties,1\e\1e6175f1b25ed792e21f6e8d010e50016ab0c396
 q
 Aout/production/rpr20-projekat-bbbasic/LogInTranslation.properties,1\0\1009b3fba867b95030b6357ba0b6f8237531033e
-U
-%resources/LogInTranslation.properties,d\0\d06bf6b37c396a69dbabe3d37310d322dcc7467f
 t
 Dout/production/rpr20-projekat-bbbasic/LogInTranslation_bs.properties,c\6\c6b6fac98e252f252a9c68027cfd9ce0ac39be20
 X
@@ -173,8 +167,6 @@ U
 %src/controllers/SearchController.java,b\1\b1500e8a4dfb2b23d167f9facd6c5de76fd23422
 M
 resources/fxml/employees.fxml,e\c\ecd3bbd55d8103bf2b90172fe9dd3dbbe0d38189
-L
-resources/fxml/pretraga.fxml,c\1\c1f731ba0dad15a887bd6a64d9c59f6ef50366e1
 e
 5out/production/rpr20-projekat-bbbasic/css/reports.css,b\f\bfde07a46c4c20e4b7a0a70d52dad2e863e1a58b
 K
@@ -223,12 +215,6 @@ j
 :out/production/rpr20-projekat-bbbasic/css/validationTI.css,2\6\26f5bda09b1643712e17d1b29042e821cdda4204
 N
 resources/css/validationTI.css,f\b\fb1127a567cc8aa9f4b04196e39c183db05db115
-H
-resources/fxml/home.fxml,2\f\2f2858f2044fee797e3e427926835fd7b7c38b97
-T
-$resources/HomeTranslation.properties,8\3\830724bf7ec29aed0bf1e133bfdedf7ac0df67eb
-X
-(resources/HomeTranslation_eng.properties,6\6\66ab10ad97c756cb8965ce99f64eb915adf677a4
 k
 ;out/production/rpr20-projekat-bbbasic/fxml/scheduleTI2.fxml,a\2\a2138a86e2bfb89bcd605d01999af2d317678b11
 T
@@ -241,3 +227,11 @@ t
 Dout/production/rpr20-projekat-bbbasic/AboutTranslation_bs.properties,8\8\88ba5ec133fe6fc43777b9461eab72fb8a4b4232
 u
 Eout/production/rpr20-projekat-bbbasic/AboutTranslation_eng.properties,b\9\b951b5364ac4e509f9758fa640705da288ec6764
+Z
+*resources/CompleteTITranslation.properties,c\e\ce07659ce871dc79884b98458056ff3b9d65a390
+^
+.resources/CompleteTITranslation_eng.properties,3\d\3d6e7926c7d51466981802a6e34ed4c216590214
+U
+%resources/css/technicalinspection.css,f\2\f2dccf28f1c7ef618644e61a787f9ce747298fc8
+j
+:src/controllers/CompleteTechnicalInspectionController.java,7\0\70d1a6477255fb7c45a19150f8666de92105c9d4
