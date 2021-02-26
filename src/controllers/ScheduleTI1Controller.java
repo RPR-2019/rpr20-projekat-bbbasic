@@ -23,6 +23,7 @@ import services.VIN;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -212,17 +213,16 @@ public class ScheduleTI1Controller {
             Stage stage = new Stage();
             Parent root = null;
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP2.fxml"));
-                TP2Controller klijentController = new TP2Controller(vehicle);
-                loader.setController(klijentController);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/scheduleTI2.fxml"), ResourceBundle.getBundle("ScheduleTITranslation"));
+                ScheduleTI2Controller scheduleTI2Controller = new ScheduleTI2Controller(vehicle);
+                loader.setController(scheduleTI2Controller);
                 root = loader.load();
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 stage.setResizable(true);
                 stage.setWidth(450);
                 stage.setHeight(580);
-                //MIJENJANJE
                 mainPane.setCenter(root);
-                return;
+
 
             } catch (IOException ioException) {
                 ioException.printStackTrace();

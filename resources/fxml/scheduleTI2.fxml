@@ -44,14 +44,14 @@
       <RowConstraints />
   </rowConstraints>
   <children>
-    <Label fx:id="l2" prefHeight="17.0" prefWidth="916.0" text="2. Identifikacijski podaci o klijentu" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-    <Label text="Ime:" GridPane.rowIndex="3" />
-    <Label text="Prezime:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-    <Label text="Mjesto prebivalista:" GridPane.rowIndex="5" />
-    <Label text="Broj telefona:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Label fx:id="l2" prefHeight="17.0" prefWidth="916.0" text="%second_part" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+    <Label text="%first_name" GridPane.rowIndex="3" />
+    <Label text="%last_name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Label text="%adress" GridPane.rowIndex="5" />
+    <Label text="%phone_number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
     <Separator prefHeight="0.0" prefWidth="608.0" GridPane.columnSpan="2" GridPane.rowIndex="8" />
-    <TextField fx:id="fldBrojTelefona" prefHeight="25.0" prefWidth="171.0" promptText="000-000-000" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-    <TextField fx:id="fldPrezime" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <TextField fx:id="fldPhoneNumber" prefHeight="25.0" prefWidth="171.0" promptText="000-000-000" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <TextField fx:id="fldLastName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
     <ButtonBar prefHeight="45.0" prefWidth="420.0" GridPane.columnSpan="3" GridPane.rowIndex="20">
       <buttons>
         <Button fx:id="btnOk" mnemonicParsing="false" onAction="#onOkClick" prefHeight="25.0" prefWidth="219.0" text="Ok" />
@@ -60,18 +60,18 @@
             <Insets right="13.0" />
          </padding>
     </ButtonBar>
-    <Label prefHeight="17.0" prefWidth="204.0" text="Datum izvodjenja pregleda:" GridPane.rowIndex="10" />
-    <ChoiceBox fx:id="choiceVrstaPregleda" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-    <Label fx:id="fldPogresanBroj" prefHeight="17.0" prefWidth="202.0" text="Neispravan format." textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="7">
+    <Label prefHeight="17.0" prefWidth="204.0" text="%date" GridPane.rowIndex="10" />
+    <ChoiceBox fx:id="choiceTypeOfTI" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+    <Label fx:id="fldWrongPhoneNumber" prefHeight="17.0" prefWidth="202.0" text="%wrong_number" textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="7">
       <font>
         <Font size="10.0" />
       </font></Label>
-      <Label fx:id="l3" prefHeight="17.0" prefWidth="916.0" text="3. Osnovne informacije o Tehnickom pregledu" GridPane.columnSpan="3" GridPane.rowIndex="9" />
-      <Label text="Vrsta pregleda:" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-      <TextField fx:id="fldMjestoPrebivalista" GridPane.rowIndex="6" />
-      <TextField fx:id="fldIme" GridPane.rowIndex="4" />
-      <DatePicker fx:id="choiceDatum" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="11" />
-      <Label fx:id="ltehnicki" prefHeight="17.0" prefWidth="916.0" text="Tehnicki pregled" GridPane.columnSpan="3">
+      <Label fx:id="l3" prefHeight="17.0" prefWidth="916.0" text="%third_part" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+      <Label text="%type_of_TI" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+      <TextField fx:id="fldAdress" GridPane.rowIndex="6" />
+      <TextField fx:id="fldFirstName" GridPane.rowIndex="4" />
+      <DatePicker fx:id="choiceDate" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="11" />
+      <Label fx:id="main" prefHeight="17.0" prefWidth="916.0" text="%main" GridPane.columnSpan="3">
          <font>
             <Font size="14.0" />
          </font></Label>

@@ -27,10 +27,3 @@
         -fx-background-color: #f44336;
         -fx-text-fill: rgba(0, 0, 0, 0.87);
 }
-
-.poljeIspravno {
-    -fx-border-color: #81c784;
-}
-.poljeNijeIspravno {
-    -fx-border-color: #f6a5c0;
-}
