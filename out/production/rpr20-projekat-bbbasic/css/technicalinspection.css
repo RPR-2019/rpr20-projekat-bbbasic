@@ -28,14 +28,14 @@
         -fx-text-fill: rgba(0, 0, 0, 0.87);
 }
 
-#btnIspravno {
+#btnValid {
         -fx-border-color: rgba(0, 0, 0, 0.12);
         -fx-border-width: 1;
         -fx-background-radius: 0;
         -fx-background-color: #4caf50;
         -fx-text-fill: rgba(0, 0, 0, 0.87);
 }
-#btnNeispravno {
+#btnInvalid {
         -fx-border-color: rgba(0, 0, 0, 0.12);
         -fx-border-width: 1;
         -fx-background-radius: 0;
@@ -43,9 +43,13 @@
         -fx-text-fill: rgba(0, 0, 0, 0.87);
 }
 
-.poljeIspravno {
+.valid {
     -fx-border-color: #81c784;
 }
-.poljeNijeIspravno {
+.invalid {
     -fx-border-color: #f6a5c0;
+}
+
+#btnComplete {
+    -fx-background-color: #a6d4fa;
 }

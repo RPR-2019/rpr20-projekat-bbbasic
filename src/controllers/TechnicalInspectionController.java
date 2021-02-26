@@ -27,6 +27,7 @@ import services.UserSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -133,9 +134,9 @@ public class TechnicalInspectionController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/kompletiranTehnickiPregled.fxml"));
-            KompletiranTehnickiPregled kompletiranTehnickiPregled = new KompletiranTehnickiPregled(tableView.getSelectionModel().getSelectedItem());
-            loader.setController(kompletiranTehnickiPregled);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/completeTI.fxml"), ResourceBundle.getBundle("CompleteTITranslation"));
+            CompleteTechnicalInspectionController completeTechnicalInspectionController = new CompleteTechnicalInspectionController(tableView.getSelectionModel().getSelectedItem());
+            loader.setController(completeTechnicalInspectionController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(true);
