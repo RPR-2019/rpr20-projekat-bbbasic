@@ -8,7 +8,7 @@
 
 <GridPane hgap="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="943.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@/css/validacija.css" />
+      <URL value="@/css/validationTI.css" />
    </stylesheets>
    <columnConstraints>
       <ColumnConstraints maxWidth="284.0" minWidth="200.0" prefWidth="284.0" />
@@ -30,21 +30,21 @@
    <children>
       <ButtonBar prefHeight="92.0" prefWidth="420.0" GridPane.columnSpan="3" GridPane.rowIndex="8">
         <buttons>
-          <Button fx:id="btnDalje" mnemonicParsing="false" onAction="#clickDalje" prefHeight="25.0" prefWidth="218.0" text="Dalje" />
+          <Button fx:id="btnContinue" mnemonicParsing="false" onAction="#clickContinue" prefHeight="25.0" prefWidth="218.0" text="%continue" />
         </buttons>
          <padding>
             <Insets right="20.0" />
          </padding>
       </ButtonBar>
-      <CheckBox fx:id="novoVozilo" mnemonicParsing="false" onAction="#actionNovoVozilo" prefHeight="17.0" prefWidth="201.0" text="Novo vehicle" GridPane.rowIndex="2" />
+      <CheckBox fx:id="newVehicle" mnemonicParsing="false" onAction="#actionNewVehicle" prefHeight="17.0" prefWidth="201.0" text="%new" GridPane.rowIndex="2" />
       <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
       <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="6" />
-      <Label fx:id="l1" prefHeight="17.0" prefWidth="916.0" text="1. Identifikacijski podaci o vozilu" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-      <Label fx:id="ltehnicki" prefHeight="20.0" prefWidth="916.0" text="Zakazivanje Tehnickog pregleda" GridPane.columnSpan="3">
+      <Label fx:id="l1" prefHeight="17.0" prefWidth="916.0" text="%first_part" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+      <Label fx:id="main" prefHeight="20.0" prefWidth="916.0" text="%main" GridPane.columnSpan="3">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <GridPane fx:id="gridNovoVozilo" hgap="20.0" prefHeight="235.0" prefWidth="933.0" vgap="8.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
+      <GridPane fx:id="gridNew" hgap="20.0" prefHeight="235.0" prefWidth="933.0" vgap="8.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -63,59 +63,59 @@
             <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Tip vozila:" />
-            <ChoiceBox fx:id="choiceTipVozila" prefHeight="25.0" prefWidth="220.0" GridPane.rowIndex="1" />
-            <Label text="Marka:" GridPane.rowIndex="2" />
-            <ChoiceBox fx:id="choiceMarkaVozila" prefHeight="25.0" prefWidth="221.0" GridPane.rowIndex="3" />
-            <Label text="Model:" GridPane.rowIndex="5" />
-            <ChoiceBox fx:id="choiceModelVozila" prefHeight="25.0" prefWidth="218.0" GridPane.rowIndex="6" />
-            <Label text="Godina proizvodnje:" GridPane.columnIndex="1" />
-            <TextField fx:id="fldGodinjaProizvodnje" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Registracija:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="fldRegistracija" promptText="X00-X-000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="fldPogrenaRegistracija" prefHeight="17.0" prefWidth="202.0" text="Neispravna registracija." textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label text="%type" />
+            <ChoiceBox fx:id="choiceVehicleType" prefHeight="25.0" prefWidth="220.0" GridPane.rowIndex="1" />
+            <Label text="%brand" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="choiceVehicleBrand" prefHeight="25.0" prefWidth="221.0" GridPane.rowIndex="3" />
+            <Label text="%model" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="choiceVehicleModel" prefHeight="25.0" prefWidth="218.0" GridPane.rowIndex="6" />
+            <Label text="%year" GridPane.columnIndex="1" />
+            <TextField fx:id="fldYearOfManufacture" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="%registration" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="fldRegistration" promptText="X00-X-000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="fldWrongRegistration" prefHeight="17.0" prefWidth="202.0" text="%wrong_registration" textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label text="Broj sasije:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField fx:id="fldBrojSasije" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label fx:id="fldPogresnaSasija" prefHeight="17.0" prefWidth="202.0" text="Neispravna sasija." textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Label text="%vin_number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="fldVINNumber" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="fldWrongVIN" prefHeight="17.0" prefWidth="202.0" text="%wrong_vin" textFill="#e57373" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label text="Izbor boje:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="%color_choice" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="3">
                <children>
-                  <CheckBox fx:id="choiceBijela" mnemonicParsing="false" onAction="#clickBijela" text="Bijela" />
-                  <CheckBox fx:id="choiceCrna" mnemonicParsing="false" onAction="#clickCrna" text="Crna" />
-                  <CheckBox fx:id="choiceSiva" mnemonicParsing="false" onAction="#clickSiva" text="Siva" />
-                  <CheckBox fx:id="choiceSmeda" mnemonicParsing="false" onAction="#clickSmeda" text="Smeđa" />
-                  <CheckBox fx:id="choiceCrvena" mnemonicParsing="false" onAction="#clickCrvena" text="Crvena" />
+                  <CheckBox fx:id="choiceWhite" mnemonicParsing="false" onAction="#clickWhite" text="%white" />
+                  <CheckBox fx:id="choiceBlack" mnemonicParsing="false" onAction="#clickBlack" text="%black" />
+                  <CheckBox fx:id="choiceGray" mnemonicParsing="false" onAction="#clickGray" text="%gray" />
+                  <CheckBox fx:id="choiceBrown" mnemonicParsing="false" onAction="#clickBrown" text="%brown" />
+                  <CheckBox fx:id="choiceRed" mnemonicParsing="false" onAction="#clickRed" text="%red" />
                </children>
             </HBox>
-            <Label fx:id="lboja" text="Niste odabrali boju." textFill="#e57373" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Label fx:id="noColor" text="%no_color" textFill="#e57373" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label text="Vrsta boje:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label text="%color_type" GridPane.columnIndex="2" GridPane.rowIndex="5" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="6">
                <children>
-                  <RadioButton fx:id="rbObicna" mnemonicParsing="false" onAction="#clickObicna" text="Obična" />
-                  <RadioButton fx:id="rbMetalik" mnemonicParsing="false" onAction="#clickMetalik" text="Metalik" />
-                  <RadioButton fx:id="rbFolija" mnemonicParsing="false" onAction="#clickFolija" text="Folija" />
+                  <RadioButton fx:id="rbRegular" mnemonicParsing="false" onAction="#clickRegular" text="%regular" />
+                  <RadioButton fx:id="rbMetalic" mnemonicParsing="false" onAction="#clickMetalic" text="%metalic" />
+                  <RadioButton fx:id="rbFolio" mnemonicParsing="false" onAction="#clickFolio" text="%folio" />
                </children>
             </HBox>
-            <Label fx:id="lvrstaBoje" text="Niste odabrali vrstu boje." textFill="#e57373" GridPane.columnIndex="2" GridPane.rowIndex="7">
+            <Label fx:id="noColorType" text="%no_type" textFill="#e57373" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
          </children>
       </GridPane>
-      <GridPane fx:id="gridStaro" prefHeight="96.0" prefWidth="284.0" GridPane.rowIndex="7">
+      <GridPane fx:id="gridOld" prefHeight="96.0" prefWidth="284.0" GridPane.rowIndex="7">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -124,8 +124,8 @@
           <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="lVozila" prefHeight="17.0" prefWidth="204.0" text="Vozila:" />
-            <ChoiceBox fx:id="choiceVozilo" prefHeight="25.0" prefWidth="204.0" GridPane.rowIndex="1" />
+            <Label fx:id="lVozila" prefHeight="17.0" prefWidth="204.0" text="%vehicle" />
+            <ChoiceBox fx:id="choiceVehicle" prefHeight="25.0" prefWidth="204.0" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

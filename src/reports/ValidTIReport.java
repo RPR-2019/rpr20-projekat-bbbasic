@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class ValidTIReport extends JFrame {
         public void showReport(Connection conn) throws JRException {
             try {
-                String reportSrcFile = getClass().getResource("/reports/izvjestajIspravni.jrxml").getFile();
+                String reportSrcFile = getClass().getResource("/reports/ReportValid.jrxml").getFile();
                 String reportsDir = getClass().getResource("/reports/").getFile();
                 //zbog moje mutanje Emina Basic
                 reportSrcFile = reportSrcFile.replace("%20", " ");
@@ -31,7 +31,6 @@ public class ValidTIReport extends JFrame {
                 this.setVisible(true);
                 this.setIconImage(Toolkit.getDefaultToolkit().getImage(
                         getClass().getResource("/img/mainicon.png")));
-                this.setTitle("Ispravna vehicles");
             } catch (JRException e) {
                 System.out.println(e.getMessage());
                 System.out.println(e.getLocalizedMessage());

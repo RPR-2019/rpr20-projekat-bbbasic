@@ -43,8 +43,8 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/zakazivanjeTP1.fxml"));
-            TP1Controller voziloController = new TP1Controller(mainPane);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/scheduleTI1.fxml"), ResourceBundle.getBundle("ScheduleTITranslation"));
+            ScheduleTI1Controller voziloController = new ScheduleTI1Controller(mainPane);
             loader.setController(voziloController);
             root = loader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

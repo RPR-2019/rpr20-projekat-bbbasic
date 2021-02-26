@@ -1,0 +1,103 @@
+
+z
+java:S1104."XMake fldVINNumber a static final constant or non-public and provide accessors if needed.(ÄÅÖ£ÿÿÿÿÿ8×Í¹Üı.
+o
+java:S3776i"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.( Ûñ¾8”Õ‡èû.
+U
+java:S1172"2Remove this unused method parameter "actionEvent".(–ğ¿Şùÿÿÿÿ8¹ı—èû.
+}
+java:S1192¼"_Define a constant instead of duplicating this literal "Neispravan format registracije" 4 times.(í²­8¹ı—èû.
+P
+java:S1172¡"2Remove this unused method parameter "actionEvent".(Éë›Ì8¹ı—èû.
+u
+java:S11045"SMake rbFolio a static final constant or non-public and provide accessors if needed.(¦ñ¨‹øÿÿÿÿ8›ôäÜı.
+t
+java:S11044"WMake fldWrongVIN a static final constant or non-public and provide accessors if needed.(¶ášÌ8ŞÇÜÜı.
+ƒ
+java:S11041"aMake vehicleObservableList a static final constant or non-public and provide accessors if needed.(§ÓÖ¹ûÿÿÿÿ8‰­½Üı.
+x
+java:S1104!"VMake choiceGray a static final constant or non-public and provide accessors if needed.(â§¡¢ÿÿÿÿÿ8©°„Üı.
+i
+java:S1192o"GDefine a constant instead of duplicating this literal "valid" 12 times.(‚ûÌşÿÿÿÿ8‘åôÜı.
+{
+java:S1104&"^Make choiceVehicleBrand a static final constant or non-public and provide accessors if needed.(ü…ÊÖ8®ş±Üı.
+{
+java:S11042"YMake choiceVehicle a static final constant or non-public and provide accessors if needed.(÷å´ıÿÿÿÿ8¾Üı.
+[	java:S106¡"9Replace this use of System.out or System.err by a logger.(Îñ°éüÿÿÿÿ8”Õ‡èû.
+U
+java:S1172§"2Remove this unused method parameter "actionEvent".(¿£œ–üÿÿÿÿ8¹ı—èû.
+U
+java:S1172ı"2Remove this unused method parameter "actionEvent".(œ¨ä¼úÿÿÿÿ8¹ı—èû.
+P
+java:S1172†"2Remove this unused method parameter "actionEvent".(ıˆÌŸ8¹ı—èû.
+n
+java:S1764¾"KCorrect one of the identical sub-expressions on both sides of operator "||"(Ú•õ¼şÿÿÿÿ8¹ı—èû.
+9
+java:S3626á"Remove this redundant jump.(ûÁİ…8”Õ‡èû.
+d
+java:S1126¶"AReplace this if-then-else statement by a single return statement.(òÔ×¥ùÿÿÿÿ8¹ı—èû.
+O
+java:S1172i"2Remove this unused method parameter "actionEvent".( Ûñ¾8”Õ‡èû.
+s
+java:S11047"QMake color a static final constant or non-public and provide accessors if needed.(ŞÃÁ÷üÿÿÿÿ8Á…æÜı.
+p
+java:S11049"SMake gridOld a static final constant or non-public and provide accessors if needed.(¢²ãª8ÎçÜı.
+€
+java:S1104)"^Make choiceVehicleModel a static final constant or non-public and provide accessors if needed.(î”îßøÿÿÿÿ8òÿ³Üı.
+w
+java:S11047"UMake colorType a static final constant or non-public and provide accessors if needed.(ŞÃÁ÷üÿÿÿÿ8Å¹æÜı.
+y
+java:S1104!"WMake choiceBrown a static final constant or non-public and provide accessors if needed.(â§¡¢ÿÿÿÿÿ8è¼ƒÜı.
+}
+java:S11044"`Make fldWrongRegistration a static final constant or non-public and provide accessors if needed.(¶ášÌ8–ŒÛÜı.
+t
+java:S11044"WMake noColorType a static final constant or non-public and provide accessors if needed.(¶ášÌ8÷ÿßÜı.
+l
+java:S1192p"JDefine a constant instead of duplicating this literal "nonvalid" 12 times.(Ôëò‚ùÿÿÿÿ8§ê÷Üı.
+k
+java:S1104"NMake l1 a static final constant or non-public and provide accessors if needed.(ŸºÍá8„âü»û.
+y
+java:S1104$"WMake vehicleType a static final constant or non-public and provide accessors if needed.(‡Ç³¹úÿÿÿÿ8öê…¸ı.
+q
+java:S11048"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8ò´û.
+U
+java:S1172ô"2Remove this unused method parameter "actionEvent".(à¼•ıÿÿÿÿ8¹ı—èû.
+p
+java:S11049"SMake gridNew a static final constant or non-public and provide accessors if needed.(¢²ãª8µ“çÜı.
+O
+java:S1172­"2Remove this unused method parameter "actionEvent".(‚“–(8¹ı—èû.
+T
+java:S1172b"2Remove this unused method parameter "actionEvent".(µø“¹ûÿÿÿÿ8”Õ‡èû.
+y
+java:S1104!"WMake choiceWhite a static final constant or non-public and provide accessors if needed.(â§¡¢ÿÿÿÿÿ8—¼‚Üı.
+p
+java:S11044"SMake noColor a static final constant or non-public and provide accessors if needed.(¶ášÌ8½²àÜı.
+m
+java:S11044"PMake main a static final constant or non-public and provide accessors if needed.(¶ášÌ8ĞşáÜı.
+y
+java:S1104!"WMake choiceBlack a static final constant or non-public and provide accessors if needed.(â§¡¢ÿÿÿÿÿ8Æ„ƒÜı.
+x
+java:S11040"VMake newVehicle a static final constant or non-public and provide accessors if needed.(‡ğ¬ìúÿÿÿÿ8â»Üı.
+w
+java:S11045"UMake rbMetalic a static final constant or non-public and provide accessors if needed.(¦ñ¨‹øÿÿÿÿ8ØÀäÜı.
+z
+java:S1104'"XMake vehicleBrand a static final constant or non-public and provide accessors if needed.(«ÉÙØûÿÿÿÿ8öê…¸ı.
+u
+java:S1104*"XMake vehicleModel a static final constant or non-public and provide accessors if needed.(­áÁˆ8©±³Üı.
+P
+java:S1172˜"2Remove this unused method parameter "actionEvent".(Ëÿ¿8¹ı—èû.
+x
+java:S1104,"[Make fldRegistration a static final constant or non-public and provide accessors if needed.(…öç8†µ¸Üı.
+[	java:S106°"9Replace this use of System.out or System.err by a logger.(ú—¬§ıÿÿÿÿ8”Õ‡èû.
+p
+java:S1104 "SMake vehicle a static final constant or non-public and provide accessors if needed.(¼î˜¿8“ÿñ´ı.
+U
+java:S1172è"2Remove this unused method parameter "actionEvent".(×´Äôùÿÿÿÿ8”Õ‡èû.
+
+java:S1104#"]Make choiceVehicleType a static final constant or non-public and provide accessors if needed.(íŠª‘üÿÿÿÿ8¿«°Üı.
+}
+java:S1104,"`Make fldYearOfManufacture a static final constant or non-public and provide accessors if needed.(…öç8ë¡·Üı.
+w
+java:S11045"UMake rbRegular a static final constant or non-public and provide accessors if needed.(¦ñ¨‹øÿÿÿÿ8ëâÜı.
+w
+java:S1104!"UMake choiceRed a static final constant or non-public and provide accessors if needed.(â§¡¢ÿÿÿÿÿ8©øƒÜı.

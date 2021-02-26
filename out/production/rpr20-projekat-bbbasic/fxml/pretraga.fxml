@@ -42,8 +42,8 @@
       <ComboBox fx:id="choiceCustomer" prefWidth="200.0" promptText="%customer" GridPane.rowIndex="2" />
       <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="6" GridPane.rowSpan="2">
         <columns>
-          <TableColumn fx:id="colDateOfInspection" prefWidth="78.0" text="%scheduled_for" />
-            <TableColumn fx:id="colCustomer" prefWidth="139.0" text="%customer" />
+          <TableColumn fx:id="colDateOfInspection" prefWidth="107.0" text="%scheduled_for" />
+            <TableColumn fx:id="colCustomer" prefWidth="110.0" text="%customer" />
           <TableColumn fx:id="colVehicle" prefWidth="183.0" text="%vehicle" />
             <TableColumn fx:id="colStatusOfTechnicalInspection" minWidth="0.0" prefWidth="76.0" text="%status" />
             <TableColumn fx:id="colEmployees" prefWidth="493.0" text="%employees" />

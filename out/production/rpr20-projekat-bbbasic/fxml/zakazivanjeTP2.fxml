@@ -8,7 +8,7 @@
 
 <GridPane hgap="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="900.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <stylesheets>
-    <URL value="@/css/validacija.css" />
+    <URL value="@/css/validationTI.css" />
   </stylesheets>
   <columnConstraints>
     <ColumnConstraints maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
