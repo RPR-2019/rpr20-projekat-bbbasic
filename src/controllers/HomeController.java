@@ -1,17 +1,22 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import services.UserSession;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -23,10 +28,28 @@ public class HomeController {
     public Button btnUser;
     public Button btnEmployees;
     public Button btnReport;
+    public Label timeLabel;
+
+
 
 
     @FXML
     public void initialize() {
+        //thread
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        Thread thread = new Thread(() -> {
+            try {
+                while (true) {
+                    Platform.runLater(() -> timeLabel.setText(LocalTime.now().format(dtf)));
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.setDaemon(true);
+        thread.start();
+
         btnUser.setText(String.valueOf(UserSession.getUserName()));
         onHome(null);
         if(UserSession.getPrivileges()) {
@@ -37,6 +60,7 @@ public class HomeController {
             btnEmployees.setDisable(true);
             btnReport.setDisable(true);
         }
+
     }
 
     public void onTI(ActionEvent actionEvent) {
@@ -109,6 +133,7 @@ public class HomeController {
             ioException.printStackTrace();
         }
     }
+
 
     public void onHome(ActionEvent actionEvent) {
         Stage stage = new Stage();

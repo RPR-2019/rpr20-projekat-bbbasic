@@ -38,6 +38,18 @@ public class LogInController {
     }
 
     public void clickLogIn(ActionEvent actionEvent) {
+        if(fldPassword.getText().isEmpty() || fldUserName.getText().isEmpty()) {
+            if(fldPassword.getText().isEmpty()) {
+                fldPassword.getStyleClass().removeAll("fieldCorrect");
+                fldPassword.getStyleClass().add("fieldIncorrect");
+            }
+            if(fldUserName.getText().isEmpty()) {
+                fldUserName.getStyleClass().removeAll("fieldCorrect");
+                fldUserName.getStyleClass().add("fieldIncorrect");
+            }
+            return;
+        }
+
         ArrayList<Employee> pomocni = employeeDAO.employees();
         for(int i = 0; i < pomocni.size(); i++) {
             if(pomocni.get(i).getUserName().equals(fldUserName.getText()) && pomocni.get(i).getPassword().equals(fldPassword.getText())) {

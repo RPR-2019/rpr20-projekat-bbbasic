@@ -1,59 +1,59 @@
 
-m
-java:S1104("RMake labela a static final constant or non-public and provide accessors if needed.(’¤§şÿÿÿÿ
-L
-java:S3740,"/Provide the parametrized type for this generic.(·ã¢Â8ôÕÑÜû.
-9
-java:S3626“"Remove this redundant jump.(ûÁİ…8Ë«ˆ„ü.
-ƒ
-java:S1104'"fMake technicalInspectionTeamDAO a static final constant or non-public and provide accessors if needed.(ºÜùë8Ÿ¨¶ı.
-Œ
-java:S1104/"jMake colStatusOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(ƒÚö‰øÿÿÿÿ8¨ÃÕı.
-w
-java:S11041"UMake tableView a static final constant or non-public and provide accessors if needed.(¯„ÚØûÿÿÿÿ8å•çÜû.
-y
-java:S11043"WMake btnCancelTI a static final constant or non-public and provide accessors if needed.(†¯¥Ğûÿÿÿÿ8öË¬Õı.
 w
 java:S11045"ZMake choiceEmployee a static final constant or non-public and provide accessors if needed.(Úºº¾8¤ œÕı.
 x
 java:S1450)"[Remove the "pieChartData" field and declare it as a local variable in the relevant methods.(µÌ‰Ã8§Ë–äû.
 L
-java:S3740."/Provide the parametrized type for this generic.(Ô¼Ñ8ôÕÑÜû.
-K
-java:S37400"/Provide the parametrized type for this generic.(Ò†Î-8Õ¬ÛÜû.
-P
-java:S1172…"2Remove this unused method parameter "actionEvent".(í™ø8·„îƒü.
+java:S3740,"/Provide the parametrized type for this generic.(·ã¢Â8ôÕÑÜû.
+m
+java:S1104("RMake labela a static final constant or non-public and provide accessors if needed.(’¤§şÿÿÿÿ
+|
+java:S1104,"_Make colDateOfInspection a static final constant or non-public and provide accessors if needed.(·ã¢Â8º‚ƒÕı.
+w
+java:S1104%"UMake employees a static final constant or non-public and provide accessors if needed.(²Ø•°şÿÿÿÿ8²øûÔı.
+x
+java:S1104-"VMake colVehicle a static final constant or non-public and provide accessors if needed.( İĞıÿÿÿÿ8•…Õı.
+s
+java:S11046"WMake btnFinishTI a static final constant or non-public and provide accessors if needed.(¬‚È48Üş©Õı.
+t
+java:S11040"XMake colEmployees a static final constant or non-public and provide accessors if needed.(Ò†Î-8ŒÒ’Õı.
+Q
+java:S3740/"/Provide the parametrized type for this generic.(ƒÚö‰øÿÿÿÿ8ôÕÑÜû.
+q
+java:S11047"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8½›òƒü.
 V
 java:S4973V"9Use the "equals" method if value comparison was intended.(£ÆÛÁ8¬“úÔı.
+P
+java:S1172…"2Remove this unused method parameter "actionEvent".(í™ø8·„îƒü.
 |
 java:S11044"ZMake btnAddEmployee a static final constant or non-public and provide accessors if needed.(Èºˆÿÿÿÿÿ8§Ğ™Õı.
 J
 java:S1604d"(Make this anonymous inner class a lambda(¿÷öÚøÿÿÿÿ8õğêâû.
-x
-java:S1104-"VMake colVehicle a static final constant or non-public and provide accessors if needed.( İĞıÿÿÿÿ8•…Õı.
-O
-java:S1172u"2Remove this unused method parameter "actionEvent".(ÛÍó¢8õğêâû.
-|
-java:S1104,"_Make colDateOfInspection a static final constant or non-public and provide accessors if needed.(·ã¢Â8º‚ƒÕı.
-t
-java:S11040"XMake colEmployees a static final constant or non-public and provide accessors if needed.(Ò†Î-8ŒÒ’Õı.
-w
-java:S1104%"UMake employees a static final constant or non-public and provide accessors if needed.(²Ø•°şÿÿÿÿ8²øûÔı.
-q
-java:S11047"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8½›òƒü.
-s
-java:S11046"WMake btnFinishTI a static final constant or non-public and provide accessors if needed.(¬‚È48Üş©Õı.
-
-java:S1104&"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8Ÿ¨¶ı.
-…
-java:S1104."hMake colTypeOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(Ô¼Ñ8À›‹Õı.
+y
+java:S11043"WMake btnCancelTI a static final constant or non-public and provide accessors if needed.(†¯¥Ğûÿÿÿÿ8öË¬Õı.
 n
 java:S1104*"QMake chart a static final constant or non-public and provide accessors if needed.(Ø¨Ñ8©™äû.
+ƒ
+java:S1104'"fMake technicalInspectionTeamDAO a static final constant or non-public and provide accessors if needed.(ºÜùë8Ÿ¨¶ı.
+T
+java:S1172~"2Remove this unused method parameter "actionEvent".(ÿ£¯¥øÿÿÿÿ8±ç‚ãû.
 Q
 java:S3740-"/Provide the parametrized type for this generic.( İĞıÿÿÿÿ8ôÕÑÜû.
 t
 java:S1104$"WMake employeeDAO a static final constant or non-public and provide accessors if needed.(»¼‡8Ÿ¨¶ı.
-T
-java:S1172~"2Remove this unused method parameter "actionEvent".(ÿ£¯¥øÿÿÿÿ8±ç‚ãû.
-Q
-java:S3740/"/Provide the parametrized type for this generic.(ƒÚö‰øÿÿÿÿ8ôÕÑÜû.
+…
+java:S1104."hMake colTypeOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(Ô¼Ñ8À›‹Õı.
+K
+java:S37400"/Provide the parametrized type for this generic.(Ò†Î-8Õ¬ÛÜû.
+Œ
+java:S1104/"jMake colStatusOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(ƒÚö‰øÿÿÿÿ8¨ÃÕı.
+9
+java:S3626“"Remove this redundant jump.(ûÁİ…8Ë«ˆ„ü.
+L
+java:S3740."/Provide the parametrized type for this generic.(Ô¼Ñ8ôÕÑÜû.
+w
+java:S11041"UMake tableView a static final constant or non-public and provide accessors if needed.(¯„ÚØûÿÿÿÿ8å•çÜû.
+
+java:S1104&"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8Ÿ¨¶ı.
+O
+java:S1172u"2Remove this unused method parameter "actionEvent".(ÛÍó¢8õğêâû.
