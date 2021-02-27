@@ -125,8 +125,6 @@ U
 %src/controllers/ReportController.java,6\8\689a537b4040b5e8825b41c951b0da5008ccbe90
 W
 'resources/ReportsTranslation.properties,b\5\b59f8b3d5d9e4cd98bf932fa1870d45de472b47c
-Z
-*resources/ReportsTranslation_bs.properties,a\9\a917b65efe8ec4c3205065ee3b4bbc457eb3cc51
 [
 +resources/ReportsTranslation_eng.properties,5\5\5576e8d6a23600046aa2384f9c53c8eded0de4f7
 b
@@ -177,8 +175,6 @@ V
 &resources/SearchTranslation.properties,0\c\0cefed540bca33d633ddc08a232dff0d76bc6225
 u
 Eout/production/rpr20-projekat-bbbasic/SearchTranslation_bs.properties,b\c\bc823eafff526cb236d0faa831afb1ac34e07282
-Y
-)resources/SearchTranslation_bs.properties,e\5\e5ef1e41a26ba396250be3018f6d67280027ec74
 v
 Fout/production/rpr20-projekat-bbbasic/SearchTranslation_eng.properties,b\5\b544fc692962804f9bf4e571e87a35759b4c786e
 Z

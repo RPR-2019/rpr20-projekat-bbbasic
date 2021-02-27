@@ -31,8 +31,6 @@ public class HomeController {
     public Label timeLabel;
 
 
-
-
     @FXML
     public void initialize() {
         //thread
