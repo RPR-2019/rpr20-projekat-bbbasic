@@ -28,8 +28,8 @@ public class LogInController {
     @FXML
     public void initialize() {
         fldError.setVisible(false);
-        fldUserName.setText("mehomehic");
-        fldPassword.setText("lozinka");
+        //fldUserName.setText("mehomehic");
+        //fldPassword.setText("lozinka");
     }
 
 
