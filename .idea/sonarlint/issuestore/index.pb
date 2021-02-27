@@ -231,8 +231,6 @@ j
 :src/controllers/CompleteTechnicalInspectionController.java,7\0\70d1a6477255fb7c45a19150f8666de92105c9d4
 j
 :out/production/rpr20-projekat-bbbasic/fxml/completeTI.fxml,8\f\8f4c94b411e3930a4ca2c7d1390fee211e5b6b57
-N
-resources/fxml/completeTI.fxml,f\9\f98200416c105d3900cf27e981451db0facd56c4
 v
 Fout/production/rpr20-projekat-bbbasic/CompleteTITranslation.properties,2\a\2a560281b99a45d6236831b9762b8490301c6021
 y
@@ -261,5 +259,3 @@ T
 $resources/HomeTranslation.properties,8\3\830724bf7ec29aed0bf1e133bfdedf7ac0df67eb
 X
 (resources/HomeTranslation_eng.properties,6\6\66ab10ad97c756cb8965ce99f64eb915adf677a4
-W
-'resources/fxml/technicalinspection.fxml,0\0\007ac8555db77b69f22b8bb2369003b593726800

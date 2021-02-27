@@ -28,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class EmployeesControllerTest {
     Stage theStage;
 
-
     @Start
     public void start(Stage stage) throws Exception {
 
