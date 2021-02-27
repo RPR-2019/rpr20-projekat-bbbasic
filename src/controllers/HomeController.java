@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import services.UserSession;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -119,7 +118,7 @@ public class HomeController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/pretraga.fxml"), ResourceBundle.getBundle("SearchTranslation"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/search.fxml"), ResourceBundle.getBundle("SearchTranslation"));
             SearchController searchController = new SearchController(mainPane);
             loader.setController(searchController);
             root = loader.load();

@@ -38,7 +38,7 @@
       <DatePicker fx:id="choiceDate" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="4" />
       <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <ComboBox fx:id="choiceTypeVehicle" prefHeight="25.0" prefWidth="200.0" promptText="%vehicle_type" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#clickSearch" prefHeight="25.0" prefWidth="206.0" text="%search" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Button fx:id="btnSearch2" mnemonicParsing="false" onAction="#clickSearch" prefHeight="25.0" prefWidth="206.0" text="%search" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <ComboBox fx:id="choiceCustomer" prefWidth="200.0" promptText="%customer" GridPane.rowIndex="2" />
       <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="6" GridPane.rowSpan="2">
         <columns>
