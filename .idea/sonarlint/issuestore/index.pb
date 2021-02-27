@@ -189,8 +189,6 @@ Z
 *src/controllers/ScheduleTI1Controller.java,8\f\8fd381ee7ce49f767353b22ee8c5f188b13f5d06
 k
 ;out/production/rpr20-projekat-bbbasic/fxml/scheduleTI1.fxml,e\8\e8fa73cc1c19a5bce805f707370294159b6efd80
-O
-resources/fxml/scheduleTI2.fxml,2\7\27020646fd1c31a9ea24db40eb499cafd020a1a1
 Z
 *src/controllers/ScheduleTI2Controller.java,3\e\3e6ea0305ffb7c5ea95d43ea8b83d0820b9e3ac5
 v
@@ -207,8 +205,6 @@ Jout/production/rpr20-projekat-bbbasic/ScheduleTITranslation_eng.properties,b\0
 .resources/ScheduleTITranslation_eng.properties,b\5\b5d4d4d78a4e5d9f449ab5b28697b1bb2d7d80aa
 j
 :out/production/rpr20-projekat-bbbasic/css/validationTI.css,2\6\26f5bda09b1643712e17d1b29042e821cdda4204
-N
-resources/css/validationTI.css,f\b\fb1127a567cc8aa9f4b04196e39c183db05db115
 k
 ;out/production/rpr20-projekat-bbbasic/fxml/scheduleTI2.fxml,a\2\a2138a86e2bfb89bcd605d01999af2d317678b11
 T
@@ -225,8 +221,6 @@ Z
 *resources/CompleteTITranslation.properties,c\e\ce07659ce871dc79884b98458056ff3b9d65a390
 ^
 .resources/CompleteTITranslation_eng.properties,3\d\3d6e7926c7d51466981802a6e34ed4c216590214
-U
-%resources/css/technicalinspection.css,f\2\f2dccf28f1c7ef618644e61a787f9ce747298fc8
 j
 :src/controllers/CompleteTechnicalInspectionController.java,7\0\70d1a6477255fb7c45a19150f8666de92105c9d4
 j

@@ -47,6 +47,7 @@ public class ScheduleTI2Controller {
         main.setStyle("-fx-background-color: rgba(0, 0, 0, 0.08)");
         choiceTypeOfTI.setItems(typeOfTechnicalInspection);
         choiceTypeOfTI.setValue(typeOfTechnicalInspection.get(0));
+        choiceDate.setValue(LocalDate.now());
 
     }
 
