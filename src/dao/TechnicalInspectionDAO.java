@@ -82,7 +82,6 @@ public class TechnicalInspectionDAO extends BaseDAO{
             addTIStatement.setString(5, technicalInspection.getTypeOfTechnicalInspection());
             addTIStatement.setString(6, technicalInspection.getStatusOfTechnicalInspection());
 
-
             addTIStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -160,6 +159,21 @@ public class TechnicalInspectionDAO extends BaseDAO{
 
     }
 
+    public ArrayList<TechnicalInspection> allTechnical() {
+        ArrayList<TechnicalInspection> technicalInspections = new ArrayList<>();
+        try {
+            ResultSet rs = allTIStatement.executeQuery();
+            while (rs.next()) {
+                TechnicalInspection technicalInspection1 = new TechnicalInspection(rs.getInt(1), LocalDate.parse(rs.getString(2)), getVehicle(rs.getInt(3)), getCustomer(rs.getInt(4)), rs.getString(5), rs.getString(6));
+                technicalInspection1.setEmployees(getEmployees(technicalInspection1));
+                technicalInspections.add(technicalInspection1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  technicalInspections;
+    }
+
     public ObservableList<TechnicalInspection> search(Customer klijent, VehicleType vehicleType, LocalDate localDate) {
         ObservableList<TechnicalInspection> technicalInspection = FXCollections.observableArrayList();
         try {
@@ -215,7 +229,7 @@ public class TechnicalInspectionDAO extends BaseDAO{
         return null;
     }
 
-    private ArrayList<Employee> getEmployees(TechnicalInspection technicalInspection) {
+    public ArrayList<Employee> getEmployees(TechnicalInspection technicalInspection) {
         try {
             ArrayList<Employee> uposlenici = new ArrayList<>();
             getEmployeesInTIStatement.setInt(1, technicalInspection.getId());

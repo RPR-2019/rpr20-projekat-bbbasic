@@ -62,7 +62,7 @@ public class EmployeesDAOTest {
     }
 
     @Test
-    void izmijeniGrad() {
+    void updateEmployee() {
         Employee employee = dao.getEmployeeWithUserName("misomisic");
         employee.setUserName("imeprezime");
         dao.updateEmployee(employee);
