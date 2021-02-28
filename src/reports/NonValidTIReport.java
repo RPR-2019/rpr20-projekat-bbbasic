@@ -32,7 +32,6 @@ public class NonValidTIReport extends JFrame {
             this.setVisible(true);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(
                     getClass().getResource("/img/mainicon.png")));
-            this.setTitle("Neispravna vehicles");
         } catch (JRException e) {
             System.out.println(e.getMessage());
             System.out.println(e.getLocalizedMessage());
