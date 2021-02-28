@@ -15,14 +15,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        InitDB initDB = new InitDB();
-//        try {
-//            initDB.delete();
-//        }
-//        catch (SQLException e) {
-//
-//        }
-//        initDB.createDB();
+        InitDB initDB = new InitDB();
+        try {
+            initDB.delete();
+        }
+        catch (SQLException e) {
+
+        }
+        initDB.createDB();
         Locale.setDefault(new Locale("eng"));
         ResourceBundle bundle = ResourceBundle.getBundle("LogInTranslation");
 
