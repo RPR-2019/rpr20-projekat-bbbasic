@@ -1,13 +1,14 @@
 
 T
 java:S1172("2Remove this unused method parameter "actionEvent".(Ó¬›•øÿÿÿÿ8ÒÏğÔı.
+o
+java:S1192+"MDefine a constant instead of duplicating this literal "fieldCorrect" 6 times.(®ËµÇıÿÿÿÿ8ÒÏğÔı.
+X	java:S125"<This block of commented-out lines of code should be removed.(×±‹‰8ï±½¥ş.
+s
+java:S1104"WMake fldPassword a static final constant or non-public and provide accessors if needed.(¾¢È8Û•ï¸ı.
 q
 java:S1192,"ODefine a constant instead of duplicating this literal "fieldIncorrect" 6 times.(éôØÕşÿÿÿÿ8ÒÏğÔı.
 q
 java:S1104"TMake fldError a static final constant or non-public and provide accessors if needed.(Å„ş8ê£ğ¸ı.
-o
-java:S1192+"MDefine a constant instead of duplicating this literal "fieldCorrect" 6 times.(®ËµÇıÿÿÿÿ8ÒÏğÔı.
 t
 java:S1104"WMake fldUserName a static final constant or non-public and provide accessors if needed.(öıï8ß¿î¸ı.
-s
-java:S1104"WMake fldPassword a static final constant or non-public and provide accessors if needed.(¾¢È8Û•ï¸ı.

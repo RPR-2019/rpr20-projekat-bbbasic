@@ -1,21 +1,21 @@
 
-L
-java:S3740"/Provide the parametrized type for this generic.( ±Œ8¬À²×ú.
-R
-java:S2209"5Change this instance-reference to a static reference.(øĞšİ8˜ÿñ´ı.
-W
-java:S2209"5Change this instance-reference to a static reference.(ş‹‰»ûÿÿÿÿ8˜ÿñ´ı.
-c
-java:S1126E"AReplace this if-then-else statement by a single return statement.(÷Å—·úÿÿÿÿ8Ìœ¨çú.
-W
-java:S2209"5Change this instance-reference to a static reference.(ª¯‡Éüÿÿÿÿ8˜ÿñ´ı.
 R
 java:S2209"5Change this instance-reference to a static reference.(…½©›8˜ÿñ´ı.
 R
 java:S2209"5Change this instance-reference to a static reference.(Û±†ú8˜ÿñ´ı.
+W
+java:S2209"5Change this instance-reference to a static reference.(ª¯‡Éüÿÿÿÿ8˜ÿñ´ı.
+W
+java:S2209"5Change this instance-reference to a static reference.(ş‹‰»ûÿÿÿÿ8˜ÿñ´ı.
 Q
 java:S2209"5Change this instance-reference to a static reference.(ˆ¦òD8˜ÿñ´ı.
+R
+java:S2209"5Change this instance-reference to a static reference.(øĞšİ8˜ÿñ´ı.
 ’
 java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Î€¦ûÿÿÿÿ8¬À²×ú.
+L
+java:S3740"/Provide the parametrized type for this generic.( ±Œ8¬À²×ú.
 |
 java:S1488V"`Immediately return this expression instead of assigning it to the temporary variable "employee".(ÔÕ›R8ÖÖ¤µı.
+c
+java:S1126E"AReplace this if-then-else statement by a single return statement.(÷Å—·úÿÿÿÿ8Ìœ¨çú.

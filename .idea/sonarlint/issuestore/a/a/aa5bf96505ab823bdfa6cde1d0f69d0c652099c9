@@ -1,51 +1,44 @@
 
-U	java:S106B"9Replace this use of System.out or System.err by a logger.(­Ãô®8²¼Ø…ş.
-\
-java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8ìää‡ş.
-T
-java:S11720"2Remove this unused method parameter "actionEvent".(ü°ÌÅûÿÿÿÿ8²¼Ø…ş.
-P
-java:S1172¿"2Remove this unused method parameter "actionEvent".(ÏÏ±Ø8²¼Ø…ş.
-U
-java:S1172‹"2Remove this unused method parameter "actionEvent".(¢¾ÀÂúÿÿÿÿ8²¼Ø…ş.
-N
-java:S1481Å"+Remove this unused "pstage" local variable.(¸ºğıÿÿÿÿ8²¼Ø…ş.
-q
-java:S1104"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8ÚãÔ¨û.
-U
-java:S1172Õ"2Remove this unused method parameter "actionEvent".(ò‡ĞÔúÿÿÿÿ8²¼Ø…ş.
-u
-java:S1192•"RDefine a constant instead of duplicating this literal "/img/mainicon.png" 3 times.(ı‚íıÿÿÿÿ8²¼Ø…ş.
-u
-java:S1104"XMake btnEmployees a static final constant or non-public and provide accessors if needed.(ãÍú8ìÆØÔı.
-R
-java:S1128"0Remove this unused import 'java.time.LocalTime'.(à®øÃùÿÿÿÿ8ìää‡ş.
-Y
-java:S1128
-"7Remove this unused import 'javafx.scene.control.Label'.(ö²­ÿÿÿÿÿ8ëää‡ş.
-Z
-java:S1128"8Remove this unused import 'javafx.application.Platform'.(§“óùÿÿÿÿ8ìää‡ş.
-T
-java:S1172e"2Remove this unused method parameter "actionEvent".(à°Ãºÿÿÿÿÿ8²¼Ø…ş.
-O
-java:S1172x"2Remove this unused method parameter "actionEvent".(ùö©8²¼Ø…ş.
-u
-java:S1104"SMake btnUser a static final constant or non-public and provide accessors if needed.(¨—ºƒùÿÿÿÿ8ï¢›¾û.
-T
-java:S1172A"2Remove this unused method parameter "actionEvent".(öÒ÷õúÿÿÿÿ8²¼Ø…ş.
-N
-java:S1481Û"+Remove this unused "pstage" local variable.(¸ºğıÿÿÿÿ8²¼Ø…ş.
-g
-java:S1192µ"IDefine a constant instead of duplicating this literal "MeCARnic" 3 times.(ÅĞî¾8²¼Ø…ş.
-O
-java:S1172S"2Remove this unused method parameter "actionEvent".(üÅÏå8²¼Ø…ş.
-Z	java:S106f"9Replace this use of System.out or System.err by a logger.(––ÂÛùÿÿÿÿ8²¼Ø…ş.
 F
-java:S1172›"(Remove this unused method parameter "e".(µÎÒ8²¼Ø…ş.
-R
-java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ìää‡ş.
-U	java:S106T"9Replace this use of System.out or System.err by a logger.(Çı×É8²¼Ø…ş.
-w
-java:S1104"UMake btnReport a static final constant or non-public and provide accessors if needed.(üĞééşÿÿÿÿ8ìÆØÔı.
+java:S1172ª"(Remove this unused method parameter "e".(µÎÒ8²¼Ø…ş.
+r
+java:S1104"UMake timeLabel a static final constant or non-public and provide accessors if needed.(óÇõà8şã»¢ş.
+O
+java:S1172b"2Remove this unused method parameter "actionEvent".(üÅÏå8²¼Ø…ş.
+Z	java:S106u"9Replace this use of System.out or System.err by a logger.(––ÂÛùÿÿÿÿ8²¼Ø…ş.
+g
+java:S1192Ä"IDefine a constant instead of duplicating this literal "MeCARnic" 3 times.(ÅĞî¾8²¼Ø…ş.
+u
+java:S1192¤"RDefine a constant instead of duplicating this literal "/img/mainicon.png" 3 times.(ı‚íıÿÿÿÿ8²¼Ø…ş.
+u
+java:S1104"XMake btnEmployees a static final constant or non-public and provide accessors if needed.(ãÍú8ìÆØÔı.
+T
+java:S1172t"2Remove this unused method parameter "actionEvent".(à°Ãºÿÿÿÿÿ8²¼Ø…ş.
 P
-java:S1172ª"2Remove this unused method parameter "actionEvent".(©˜íÿ8²¼Ø…ş.
+java:S1172¹"2Remove this unused method parameter "actionEvent".(©˜íÿ8²¼Ø…ş.
+U
+java:S1172š"2Remove this unused method parameter "actionEvent".(¢¾ÀÂúÿÿÿÿ8²¼Ø…ş.
+P
+java:S1172‡"2Remove this unused method parameter "actionEvent".(ùö©8²¼Ø…ş.
+N
+java:S1481Ô"+Remove this unused "pstage" local variable.(¸ºğıÿÿÿÿ8²¼Ø…ş.
+w
+java:S1104"UMake btnReport a static final constant or non-public and provide accessors if needed.(üĞééşÿÿÿÿ8ìÆØÔı.
+P
+java:S1172Î"2Remove this unused method parameter "actionEvent".(ÏÏ±Ø8²¼Ø…ş.
+q
+java:S1104"TMake mainPane a static final constant or non-public and provide accessors if needed.(’êıÏ8ÚãÔ¨û.
+u
+java:S1104"SMake btnUser a static final constant or non-public and provide accessors if needed.(¨—ºƒùÿÿÿÿ8ï¢›¾û.
+T
+java:S1172P"2Remove this unused method parameter "actionEvent".(öÒ÷õúÿÿÿÿ8²¼Ø…ş.
+U
+java:S1172ä"2Remove this unused method parameter "actionEvent".(ò‡ĞÔúÿÿÿÿ8²¼Ø…ş.
+T
+java:S1172?"2Remove this unused method parameter "actionEvent".(ü°ÌÅûÿÿÿÿ8²¼Ø…ş.
+U	java:S106c"9Replace this use of System.out or System.err by a logger.(Çı×É8²¼Ø…ş.
+U	java:S106Q"9Replace this use of System.out or System.err by a logger.(­Ãô®8²¼Ø…ş.
+c
+java:S2142+"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚¡¼¢ş.
+N
+java:S1481ê"+Remove this unused "pstage" local variable.(¸ºğıÿÿÿÿ8²¼Ø…ş.

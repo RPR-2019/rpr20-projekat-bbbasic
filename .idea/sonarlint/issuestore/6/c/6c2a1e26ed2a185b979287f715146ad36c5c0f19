@@ -1,11 +1,11 @@
 
+W
+java:S2209"5Change this instance-reference to a static reference.(ó®¶ıÿÿÿÿ8‚ò¤´ı.
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ×àº8‚ò¤´ı.
+L
+java:S3740"/Provide the parametrized type for this generic.(Ø©ñ§8‚ò¤´ı.
 R
 java:S2209"5Change this instance-reference to a static reference.(à´´8‚ò¤´ı.
 Q
 java:S2209"5Change this instance-reference to a static reference.(¸á\8‚ò¤´ı.
-L
-java:S3740"/Provide the parametrized type for this generic.(Ø©ñ§8‚ò¤´ı.
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ×àº8‚ò¤´ı.
-W
-java:S2209"5Change this instance-reference to a static reference.(ó®¶ıÿÿÿÿ8‚ò¤´ı.

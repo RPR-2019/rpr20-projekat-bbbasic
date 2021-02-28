@@ -1,53 +1,53 @@
 
-t
-java:S1104"WMake customerDAO a static final constant or non-public and provide accessors if needed.(Ãî‘¿8¦Ÿ¬¶ı.
-|
-java:S1104$"_Make colDateOfInspection a static final constant or non-public and provide accessors if needed.(·ã¢Â8©¥àÚı.
-x
-java:S1104&"VMake colVehicle a static final constant or non-public and provide accessors if needed.( İĞıÿÿÿÿ8æûâÚı.
-t
-java:S1104%"WMake colCustomer a static final constant or non-public and provide accessors if needed.(’òÄÊ8ÜªâÚı.
-L
-java:S1172?"/Remove this unused method parameter "gridPane".(°éÀÄ8¯·Áüû.
-x
-java:S1104"VMake vehicleDAO a static final constant or non-public and provide accessors if needed.(Š“—Ëşÿÿÿÿ8¦Ÿ¬¶ı.
-Q
-java:S3740'"/Provide the parametrized type for this generic.(ƒÚö‰øÿÿÿÿ8¾ŒÁÿû.
-Œ
-java:S1104'"jMake colStatusOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(ƒÚö‰øÿÿÿÿ8ÙïäÚı.
-u
-java:S1104!"SMake btnSave a static final constant or non-public and provide accessors if needed.(Æ ‡’úÿÿÿÿ8ÉÊ¡²ı.
-r
-java:S1104"PMake main a static final constant or non-public and provide accessors if needed.(´ÌØñúÿÿÿÿ8íôÌÚı.
-t
-java:S1104("XMake colEmployees a static final constant or non-public and provide accessors if needed.(Ò†Î-8¡ÚåÚı.
-_
-java:S1126J"BReplace this if-then-else statement by a single method invocation.(Øéš°8ñ ±²ı.
-w
-java:S1104*"UMake tableView a static final constant or non-public and provide accessors if needed.(¯„ÚØûÿÿÿÿ8ëÏ¬şû.
-y
-java:S1104"WMake vehicleType a static final constant or non-public and provide accessors if needed.(‡Ç³¹úÿÿÿÿ8÷ê…¸ı.
-Q
-java:S3740&"/Provide the parametrized type for this generic.( İĞıÿÿÿÿ8¾ŒÁÿû.
-L
-java:S3740$"/Provide the parametrized type for this generic.(·ã¢Â8¾ŒÁÿû.
-K
-java:S3740("/Provide the parametrized type for this generic.(Ò†Î-8¾ŒÁÿû.
 y
 java:S1104"]Make choiceTypeVehicle a static final constant or non-public and provide accessors if needed.(ã¸“8–ÛÒÚı.
+y
+java:S1104"WMake vehicleType a static final constant or non-public and provide accessors if needed.(‡Ç³¹úÿÿÿÿ8÷ê…¸ı.
+r
+java:S1104""VMake choiceDate a static final constant or non-public and provide accessors if needed.(Ç¾Ç^8”™×Úı.
 r
 java:S1104"PMake info a static final constant or non-public and provide accessors if needed.(´ÌØñúÿÿÿÿ8ÂŸÎÚı.
 r
-java:S1104""VMake choiceDate a static final constant or non-public and provide accessors if needed.(Ç¾Ç^8”™×Úı.
+java:S1104"PMake main a static final constant or non-public and provide accessors if needed.(´ÌØñúÿÿÿÿ8íôÌÚı.
 w
-java:S1104"ZMake choiceCustomer a static final constant or non-public and provide accessors if needed.(¯¬´“8·ÕĞÚı.
-
-java:S1104"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8¦Ÿ¬¶ı.
+java:S1104*"UMake tableView a static final constant or non-public and provide accessors if needed.(¯„ÚØûÿÿÿÿ8ëÏ¬şû.
+Œ
+java:S1104'"jMake colStatusOfTechnicalInspection a static final constant or non-public and provide accessors if needed.(ƒÚö‰øÿÿÿÿ8ÙïäÚı.
+L
+java:S3740$"/Provide the parametrized type for this generic.(·ã¢Â8¾ŒÁÿû.
+T
+java:S1172P"2Remove this unused method parameter "actionEvent".(©ŠáËùÿÿÿÿ8¬İñ±ı.
+t
+java:S1104"WMake customerDAO a static final constant or non-public and provide accessors if needed.(Ãî‘¿8¦Ÿ¬¶ı.
+K
+java:S3740("/Provide the parametrized type for this generic.(Ò†Î-8¾ŒÁÿû.
+Q
+java:S3740'"/Provide the parametrized type for this generic.(ƒÚö‰øÿÿÿÿ8¾ŒÁÿû.
+u
+java:S1104!"SMake btnSave a static final constant or non-public and provide accessors if needed.(Æ ‡’úÿÿÿÿ8ÉÊ¡²ı.
+_
+java:S1126J"BReplace this if-then-else statement by a single method invocation.(Øéš°8ñ ±²ı.
+Q
+java:S3740&"/Provide the parametrized type for this generic.( İĞıÿÿÿÿ8¾ŒÁÿû.
+t
+java:S1104%"WMake colCustomer a static final constant or non-public and provide accessors if needed.(’òÄÊ8ÜªâÚı.
 T
 java:S1172G"2Remove this unused method parameter "actionEvent".(»´Ş‰üÿÿÿÿ8î¿¡ıû.
 L
 java:S3740%"/Provide the parametrized type for this generic.(’òÄÊ8ó’±ü.
 r
 java:S1104 "UMake customers a static final constant or non-public and provide accessors if needed.(œí¡Ã8×ØÖÚı.
-T
-java:S1172P"2Remove this unused method parameter "actionEvent".(©ŠáËùÿÿÿÿ8¬İñ±ı.
+
+java:S1104"bMake technicalInspectionDAO a static final constant or non-public and provide accessors if needed.(àä¢ 8¦Ÿ¬¶ı.
+x
+java:S1104&"VMake colVehicle a static final constant or non-public and provide accessors if needed.( İĞıÿÿÿÿ8æûâÚı.
+L
+java:S1172?"/Remove this unused method parameter "gridPane".(°éÀÄ8¯·Áüû.
+x
+java:S1104"VMake vehicleDAO a static final constant or non-public and provide accessors if needed.(Š“—Ëşÿÿÿÿ8¦Ÿ¬¶ı.
+t
+java:S1104("XMake colEmployees a static final constant or non-public and provide accessors if needed.(Ò†Î-8¡ÚåÚı.
+|
+java:S1104$"_Make colDateOfInspection a static final constant or non-public and provide accessors if needed.(·ã¢Â8©¥àÚı.
+w
+java:S1104"ZMake choiceCustomer a static final constant or non-public and provide accessors if needed.(¯¬´“8·ÕĞÚı.

@@ -164,7 +164,7 @@ public class ScheduleTI2Controller {
         }catch (ScheduledDate scheduledDate) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Tecnical Inspection");
-            if(ResourceBundle.getBundle("ScheduleTITranslation").getLocale().equals(new Locale("bs")))
+            if(ResourceBundle.getBundle("ScheduleTITranslation").getLocale().equals(new Locale("eng")))
                 alert.setHeaderText("Already scheduled!");
             else
                 alert.setHeaderText("Zakazan termin!");
