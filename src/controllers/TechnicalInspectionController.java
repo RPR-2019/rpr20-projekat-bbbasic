@@ -82,6 +82,7 @@ public class TechnicalInspectionController {
         refresh(chart);
         tableView.setOnMouseClicked((MouseEvent event) -> {
             if(event.getButton().equals(MouseButton.PRIMARY)){
+                if(tableView.getSelectionModel().isEmpty()) return;
                 //brisanje
                 if(tableView.getSelectionModel().getSelectedItem().getStatusOfTechnicalInspection() == "Zakazan" ||
                         (tableView.getSelectionModel().getSelectedItem().getDateOfInspection().isEqual(LocalDate.now()))) {
